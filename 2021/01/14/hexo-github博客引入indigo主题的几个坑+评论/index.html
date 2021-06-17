@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>hexo+github博客引入indigo主题的几个坑+评论 | 皇姑区第一亚索的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#9ACD32">
+    
+    
+    <meta name="keywords" content="杂谈">
+    <meta name="description" content="众所周知，indigo是最好的主题。而且我就知道这一个，所以就用这个了。但是这个好久不更新了，新版本hexo用有坑。报错如下 1Unhandled rejection ReferenceError: F:\blog\themes\indigo\layout\layout.ejs:6 其实报错特别长，但我现在找不到了。。https:&#x2F;&#x2F;github.com&#x2F;yscoder&#x2F;hexo-theme-in">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo+github博客引入indigo主题的几个坑+评论">
+<meta property="og:url" content="http://example.com/2021/01/14/hexo-github%E5%8D%9A%E5%AE%A2%E5%BC%95%E5%85%A5indigo%E4%B8%BB%E9%A2%98%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91+%E8%AF%84%E8%AE%BA/index.html">
+<meta property="og:site_name" content="皇姑区第一亚索的博客">
+<meta property="og:description" content="众所周知，indigo是最好的主题。而且我就知道这一个，所以就用这个了。但是这个好久不更新了，新版本hexo用有坑。报错如下 1Unhandled rejection ReferenceError: F:\blog\themes\indigo\layout\layout.ejs:6 其实报错特别长，但我现在找不到了。。https:&#x2F;&#x2F;github.com&#x2F;yscoder&#x2F;hexo-theme-in">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2021/01/14/hexo-github%E5%8D%9A%E5%AE%A2%E5%BC%95%E5%85%A5indigo%E4%B8%BB%E9%A2%98%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91+%E8%AF%84%E8%AE%BA/QQ%E5%9B%BE%E7%89%8720210114003315.png">
+<meta property="article:published_time" content="2021-01-13T16:05:27.000Z">
+<meta property="article:modified_time" content="2021-05-18T12:43:17.003Z">
+<meta property="article:author" content="皇姑区第一亚索">
+<meta property="article:tag" content="杂谈">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/01/14/hexo-github%E5%8D%9A%E5%AE%A2%E5%BC%95%E5%85%A5indigo%E4%B8%BB%E9%A2%98%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91+%E8%AF%84%E8%AE%BA/QQ%E5%9B%BE%E7%89%8720210114003315.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="皇姑区第一亚索的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">皇姑区第一亚索</h5>
+          <a href="mailto:wuxingjian98@gmail.com" title="wuxingjian98@gmail.com" class="mail">wuxingjian98@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                日志
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yiyayamaya" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">hexo+github博客引入indigo主题的几个坑+评论</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">hexo+github博客引入indigo主题的几个坑+评论</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-01-13T16:05:27.000Z" itemprop="datePublished" class="page-time">
+  2021-01-14
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-hexo-github博客引入indigo主题的几个坑+评论"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">hexo+github博客引入indigo主题的几个坑+评论</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-01-14 00:05:27" datetime="2021-01-13T16:05:27.000Z"  itemprop="datePublished">2021-01-14</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>众所周知，indigo是最好的主题。而且我就知道这一个，所以就用这个了。但是这个好久不更新了，新版本hexo用有坑。报错如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Unhandled rejection ReferenceError: F:\blog\themes\indigo\layout\layout.ejs:6</span><br></pre></td></tr></table></figure>
+<p>其实报错特别长，但我现在找不到了。。<br><a target="_blank" rel="noopener" href="https://github.com/yscoder/hexo-theme-indigo/issues/522#issuecomment-717879358">https://github.com/yscoder/hexo-theme-indigo/issues/522#issuecomment-717879358</a><br>这里的方法完美的解决问题。<br>还有说最好用hexo3+版本的，毕竟indigo是为3+准备的。我的hexo版本是5.3</p>
+<hr>
+<p>第二个坑：换了主题后hexo d的文件太大了，总失败。<br>解决办法：去美国提交。<br>办法二：把_config.yml里面根据自己账号改成这样就好了。原因不详。</p>
+<img src="/2021/01/14/hexo-github%E5%8D%9A%E5%AE%A2%E5%BC%95%E5%85%A5indigo%E4%B8%BB%E9%A2%98%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91+%E8%AF%84%E8%AE%BA/QQ%E5%9B%BE%E7%89%8720210114003315.png" class="" title="This is an example image">
+<p>第二个坑的参考链接：<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues/3043#issuecomment-415035343">https://github.com/hexojs/hexo/issues/3043#issuecomment-415035343</a></p>
+<hr>
+<p>然后我用了想加评论功能，发现indigo集成了几个评论插件，其中有gitment和gitalk。前者我试了配置一下没成功，据说也不怎么维护了。于是决定用gitalk。  </p>
+<p>这个插件是一个叫@ystyle的人merge进去的。<a target="_blank" rel="noopener" href="https://github.com/yscoder/hexo-theme-indigo/pull/456">https://github.com/yscoder/hexo-theme-indigo/pull/456</a><br>他设定的配置格式在themes/indigo/_config.yml里面，长这样。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gitalk: false</span><br><span class="line">   owner: </span><br><span class="line">   repo: </span><br><span class="line">   client_id: </span><br><span class="line">   client_secret: </span><br></pre></td></tr></table></figure>
+<p>但是果然失败了。因为他的配置格式不对。  </p>
+<p>有一个叫@zzycreate的人写了一篇博客讲indigo集成gitalk。<a target="_blank" rel="noopener" href="https://zzycreate.github.io/2018/10/03/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">https://zzycreate.github.io/2018/10/03/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</a><br>他俩的实现方式是一摸一样的，太神奇了。重点是第二个人的配置格式是对的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">gitalk:</span><br><span class="line">  enable: true</span><br><span class="line">  client_id: </span><br><span class="line">  client_secret: </span><br><span class="line">  repo: yiyayamaya.github.io</span><br><span class="line">  owner: yiyayamaya</span><br><span class="line">  admin: admins </span><br><span class="line">  distractionFreeMode: false</span><br><span class="line">  #注意上面每行中间一定要有空格</span><br></pre></td></tr></table></figure>
+
+<p>总结一下就是用官方indigo里面的集成的gitalk.ejs就足够了，但是要把配置格式按照博客里面那么写，而不是官方自带格式。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2021-05-18T12:43:17.003Z" itemprop="dateUpdated">2021-05-18 20:43:17</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://example.com">
+            <img src="/img/avatar1.jpg" alt="皇姑区第一亚索">
+            皇姑区第一亚索
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9D%82%E8%B0%88/" rel="tag">杂谈</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/01/14/hexo-github%E5%8D%9A%E5%AE%A2%E5%BC%95%E5%85%A5indigo%E4%B8%BB%E9%A2%98%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91+%E8%AF%84%E8%AE%BA/&title=《hexo+github博客引入indigo主题的几个坑+评论》 — 皇姑区第一亚索的博客&pic=http://example.com/img/avatar1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/01/14/hexo-github%E5%8D%9A%E5%AE%A2%E5%BC%95%E5%85%A5indigo%E4%B8%BB%E9%A2%98%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91+%E8%AF%84%E8%AE%BA/&title=《hexo+github博客引入indigo主题的几个坑+评论》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/01/14/hexo-github%E5%8D%9A%E5%AE%A2%E5%BC%95%E5%85%A5indigo%E4%B8%BB%E9%A2%98%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91+%E8%AF%84%E8%AE%BA/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《hexo+github博客引入indigo主题的几个坑+评论》 — 皇姑区第一亚索的博客&url=http://example.com/2021/01/14/hexo-github%E5%8D%9A%E5%AE%A2%E5%BC%95%E5%85%A5indigo%E4%B8%BB%E9%A2%98%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91+%E8%AF%84%E8%AE%BA/&via=http://example.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://example.com/2021/01/14/hexo-github%E5%8D%9A%E5%AE%A2%E5%BC%95%E5%85%A5indigo%E4%B8%BB%E9%A2%98%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91+%E8%AF%84%E8%AE%BA/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/01/16/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%AAmaven%E9%95%9C%E5%83%8F%E9%85%8D%E7%BD%AE/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">记录一个maven镜像配置</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/01/13/IDEA%E4%B8%ADMave-Module%E7%9A%84Language-Level%E9%97%AE%E9%A2%98/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">IDEA中Mave Module的Language Level问题</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "lrdeEdMXEXCAsD9I3vd7hPnz-gzGzoHsz",
+            appKey: "w7U0ClAFDzQNEfIOgHoMaFwM",
+            avatar: "wavatar",
+			 emojiCDN: 'https://valinecdn.bili33.top/', 
+			 emojiMaps: {
+				"Tieba-New2": "Tieba-New/image_emoticon.png",
+				"Tieba-New3": "Tieba-New/image_emoticon10.png",
+				
+				"Tieba-New14": "Tieba-New/image_emoticon11.png",
+				
+				"Tieba-New25": "Tieba-New/image_emoticon12.png",
+				
+				"Tieba-New31": "Tieba-New/image_emoticon13.png",
+				"Tieba-New32": "Tieba-New/image_emoticon14.png",
+				"Tieba-New33": "Tieba-New/image_emoticon15.png",
+				"Tieba-New34": "Tieba-New/image_emoticon16.png",
+				"Tieba-New35": "Tieba-New/image_emoticon17.png",
+				"Tieba-New36": "Tieba-New/image_emoticon18.png",
+				"Tieba-New37": "Tieba-New/image_emoticon19.png",
+				"Tieba-New38": "Tieba-New/image_emoticon2.png",
+				"Tieba-New39": "Tieba-New/image_emoticon20.png",
+				"Tieba-New40": "Tieba-New/image_emoticon21.png",
+				"Tieba-New41": "Tieba-New/image_emoticon22.png",
+				"Tieba-New42": "Tieba-New/image_emoticon23.png",
+				"Tieba-New43": "Tieba-New/image_emoticon24.png",
+				"Tieba-New44": "Tieba-New/image_emoticon25.png",
+				"Tieba-New45": "Tieba-New/image_emoticon26.png",
+				"Tieba-New46": "Tieba-New/image_emoticon27.png",
+				"Tieba-New47": "Tieba-New/image_emoticon28.png",
+				"Tieba-New48": "Tieba-New/image_emoticon29.png",
+				"Tieba-New49": "Tieba-New/image_emoticon3.png",
+				"Tieba-New50": "Tieba-New/image_emoticon30.png",
+				"Tieba-New51": "Tieba-New/image_emoticon31.png",
+				"Tieba-New52": "Tieba-New/image_emoticon32.png",
+				"Tieba-New53": "Tieba-New/image_emoticon33.png",
+				
+				"Tieba-New60": "Tieba-New/image_emoticon4.png",
+				
+				"Tieba-New71": "Tieba-New/image_emoticon5.png",
+				"Tieba-New72": "Tieba-New/image_emoticon50.png",
+				"Tieba-New73": "Tieba-New/image_emoticon6.png",
+				"Tieba-New74": "Tieba-New/image_emoticon66.png",
+				"Tieba-New75": "Tieba-New/image_emoticon67.png",
+				"Tieba-New76": "Tieba-New/image_emoticon68.png",
+				"Tieba-New77": "Tieba-New/image_emoticon69.png",
+				"Tieba-New78": "Tieba-New/image_emoticon7.png",
+				"Tieba-New79": "Tieba-New/image_emoticon70.png",
+				"Tieba-New80": "Tieba-New/image_emoticon71.png",
+				"Tieba-New81": "Tieba-New/image_emoticon72.png",
+				"Tieba-New82": "Tieba-New/image_emoticon73.png",
+				"Tieba-New83": "Tieba-New/image_emoticon74.png",
+				"Tieba-New84": "Tieba-New/image_emoticon75.png",
+				"Tieba-New85": "Tieba-New/image_emoticon76.png",
+				
+				"Tieba-New89": "Tieba-New/image_emoticon8.png",
+				
+				"Tieba-New95": "Tieba-New/image_emoticon85.png",
+				"Tieba-New96": "Tieba-New/image_emoticon86.png",
+				"Tieba-New97": "Tieba-New/image_emoticon87.png",
+				"Tieba-New98": "Tieba-New/image_emoticon88.png",
+				"Tieba-New99": "Tieba-New/image_emoticon89.png",
+				"Tieba-New100": "Tieba-New/image_emoticon9.png",
+				"Tieba-New101": "Tieba-New/image_emoticon90.png",
+				"Tieba-New102": "Tieba-New/image_emoticon91.png",
+				"Tieba-New103": "Tieba-New/image_emoticon92.png",
+				"Tieba-New104": "Tieba-New/image_emoticon93.png",
+				"Tieba-New105": "Tieba-New/image_emoticon94.png",
+				"Tieba-New106": "Tieba-New/image_emoticon95.png",
+				"Tieba-New107": "Tieba-New/image_emoticon96.png",
+				"Tieba-New108": "Tieba-New/image_emoticon97.png",
+				"Tieba-New109": "Tieba-New/image_emoticon98.png"
+
+				
+				} ,
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>皇姑区第一亚索 &copy; 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/01/14/hexo-github%E5%8D%9A%E5%AE%A2%E5%BC%95%E5%85%A5indigo%E4%B8%BB%E9%A2%98%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91+%E8%AF%84%E8%AE%BA/&title=《hexo+github博客引入indigo主题的几个坑+评论》 — 皇姑区第一亚索的博客&pic=http://example.com/img/avatar1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/01/14/hexo-github%E5%8D%9A%E5%AE%A2%E5%BC%95%E5%85%A5indigo%E4%B8%BB%E9%A2%98%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91+%E8%AF%84%E8%AE%BA/&title=《hexo+github博客引入indigo主题的几个坑+评论》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/01/14/hexo-github%E5%8D%9A%E5%AE%A2%E5%BC%95%E5%85%A5indigo%E4%B8%BB%E9%A2%98%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91+%E8%AF%84%E8%AE%BA/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《hexo+github博客引入indigo主题的几个坑+评论》 — 皇姑区第一亚索的博客&url=http://example.com/2021/01/14/hexo-github%E5%8D%9A%E5%AE%A2%E5%BC%95%E5%85%A5indigo%E4%B8%BB%E9%A2%98%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91+%E8%AF%84%E8%AE%BA/&via=http://example.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://example.com/2021/01/14/hexo-github%E5%8D%9A%E5%AE%A2%E5%BC%95%E5%85%A5indigo%E4%B8%BB%E9%A2%98%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91+%E8%AF%84%E8%AE%BA/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAAE+CAAAAAAxUyPsAAAFO0lEQVR42u3dwW7kNhAEUP//TyfXBLbHVdUaJ8C+ORmzskg+GVCzmsB+fMSfv/7x+fz9d998/tfPd/t85+++/+4++bjfXZmMdfrgw4cPHz58wWJeD5NPt13e60XmD7V9DMl6v7gPPnz48OHDN/FtZUHyu0mhkz+qhDu//+tvolHw4cOHDx++N/O1xcTrny/b/gR6GxEfPnz48OH7//DlE319fTKHeyMhwf0P6j58+PDhw/fH87Vx/Pb63xoDbSmTt8Pb5gQ+fPjw4cN358uLgz/n54c/+PDhw4cPX/B6bkPwvAndbvXvze/2ykgDHz58+PDhmzTy41/tprrdkP9OyXUpXPDhw4cPH7538OVDbsfF8oZ0vtW/t8mT34pOGeDDhw8fPnzB2/neZr5EBvmkX3MnfwRJqZQXYfjw4cOHD1/Lt722t6LkEii0o2/0dUMdHz58+PDhi3++FAFtGbGF6e3ZsO2acf748OHDhw/fMv8I6BIftEyX0OHSQmj/dPDhw4cPH76WLz+edcok4vvnQcCzI27BPT58+PDhw3fnK45kxRH5vdH+7GPbSrEvrsGHDx8+fPiWjnP9HzDkL/s8gLgs+B7o56UMPnz48OHD9yzfVkC05c6l49wGCvkdxiNu+PDhw4cP36FNvgXcW+O5jRW2kGIrntrHgA8fPnz48OV8dTxdDvPurX4+86TEGcN6fPjw4cOHr9RIppgXAVtz/RLfbyVUe2QNHz58+PDhe5bvqZb5fcHPNte3pv4Y1uPDhw8fPnwvc+ZLRN42udu4/6nG9kb/wx3w4cOHDx++M98Wf7cxd9smbx9M8mgv0T8+fPjw4cO38SW3bqfSDp+XRHn5ko9yGRcfPnz48OG78OUFwXZYbWuitzF6Xlq1BVAEjQ8fPnz48AV8r7fi29RbprZp/fr+LeKlzYAPHz58+PDlfFsQ3x5ouzfC26NyebN/W2+dW+DDhw8fPnzlNr6Orc/hwiWSaAud07j48OHDhw/fxNdunrfffbYxkBdMeTmSH2LDhw8fPnz43sGXt9V/M7jPsfKjcu2K8OHDhw8fvo0vf2HngfiGuzXOt4j/cuQOHz58+PDh2/juTe6tuMkLgmcLkctRgC/Wgg8fPnz48O1ZdE3ZTvQeOjwVIuTlTvHngg8fPnz48MV8dWP43OR+Kix4XyRRzAQfPnz48OGLZ5JsofMyoi0I8lZ622hvg/jt6Bs+fPjw4cO38W3R+SUKzx/MFuK37fM2pPhX4YIPHz58+PB1a/xogbZ399aAvwQK+TUJTVQA4cOHDx8+fIc2eX7NFiVcwoXL8bKt/f/D6vDhw4cPH76Jr40PnooS8q1+G9bnR+K2A3P48OHDhw9fzrdt45OBL0XAvW1w+aYISvDhw4cPH76Jr13GtvHeDpNtYX3bLB/Denz48OHDh+/c522b6JfjYluJcz+U9tSc8eHDhw8fvpav3a63gfhWvmwlRdv2/og/P4T1+PDhw4cPX8mXFBPtJv+yvHYZ20NtG/BfzBkfPnz48OE7812mlR9Wy7mT++Qh+1OFVP088eHDhw8fvvLTLulZmjbOaEuoy7j48OHDhw9fy5cUK3l8sAX9bUugnW1yomxrvePDhw8fPnwbX/siz+ODpKxpQ/NLu/3j8Pk2d8GHDx8+fPjezNdG23kB0Yb+l2bDpWjDhw8fPnz4fpOvpWyD8iSO34L4NqT4ob+BDx8+fPjwTXxtEzpvTm/F0PsaA/msomvw4cOHDx++km8LqROmy2GyLabfDqi10Pjw4cOHD9/E9zfOKdnpNx+hgAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
