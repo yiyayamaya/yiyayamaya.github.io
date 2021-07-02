@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2021/01/14/hexo-github%E5%8D%9A%E5%AE%A2%E5%BC%95%E5%85%A5indigo%E4%B8%BB%E9%A2%98%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91+%E8%AF%84%E8%AE%BA/QQ%E5%9B%BE%E7%89%8720210114003315.png">
 <meta property="article:published_time" content="2021-01-13T16:05:27.000Z">
-<meta property="article:modified_time" content="2021-05-18T12:43:17.003Z">
+<meta property="article:modified_time" content="2021-07-02T02:55:24.352Z">
 <meta property="article:author" content="皇姑区第一亚索">
 <meta property="article:tag" content="杂谈">
 <meta name="twitter:card" content="summary">
@@ -180,6 +180,7 @@
             <p>众所周知，indigo是最好的主题。而且我就知道这一个，所以就用这个了。但是这个好久不更新了，新版本hexo用有坑。报错如下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Unhandled rejection ReferenceError: F:\blog\themes\indigo\layout\layout.ejs:6</span><br></pre></td></tr></table></figure>
 <p>其实报错特别长，但我现在找不到了。。<br><a href="https://github.com/yscoder/hexo-theme-indigo/issues/522#issuecomment-717879358" target="_blank" rel="noopener">https://github.com/yscoder/hexo-theme-indigo/issues/522#issuecomment-717879358</a><br>这里的方法完美的解决问题。<br>还有说最好用hexo3+版本的，毕竟indigo是为3+准备的。我的hexo版本是5.3</p>
+<p>2021.07.02更新 上述方法并不能完美解决问题。比如加入”### “标题就会报错。<br><a href="https://github.com/yscoder/hexo-theme-indigo/issues/522#issuecomment-872667641" target="_blank" rel="noopener">https://github.com/yscoder/hexo-theme-indigo/issues/522#issuecomment-872667641</a><br>后面还是换回了hexo4版本 上面的问题就解决了，之前的修改也撤销了。但是会报这个错<br>ERROR Plugin load failed: hexo-theme-landscape<br>我直接在package.json里把这行去掉了，不知道会不会有什么隐患。。。</p>
 <hr>
 <p>第二个坑：换了主题后hexo d的文件太大了，总失败。<br>解决办法：去美国提交。<br>办法二：把_config.yml里面根据自己账号改成这样就好了。原因不详。</p>
 <img src="/2021/01/14/hexo-github%E5%8D%9A%E5%AE%A2%E5%BC%95%E5%85%A5indigo%E4%B8%BB%E9%A2%98%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91+%E8%AF%84%E8%AE%BA/QQ%E5%9B%BE%E7%89%8720210114003315.png" class="" title="This is an example image">
@@ -208,7 +209,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2021-05-18T12:43:17.003Z" itemprop="dateUpdated">2021-05-18 20:43:17</time>
+    Last updated: <time datetime="2021-07-02T02:55:24.352Z" itemprop="dateUpdated">2021-07-02 10:55:24</time>
 </span><br>
 
 
