@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-06-17T08:40:27.036Z</updated>
+  <updated>2021-07-02T02:11:12.490Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,13 +17,96 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>有关git分支看到的不错的一个回答</title>
+    <link href="http://example.com/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/"/>
+    <id>http://example.com/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/</id>
+    <published>2021-07-01T05:56:03.000Z</published>
+    <updated>2021-07-02T02:11:12.490Z</updated>
+    
+    <content type="html"><![CDATA[<p>开发时怎么用好 Git 分支? - Color的回答 - 知乎<br><a href="https://www.zhihu.com/question/21995370/answer/19975870">https://www.zhihu.com/question/21995370/answer/19975870</a></p><h3 id="12314是"><a href="#12314是" class="headerlink" title="12314是"></a>12314是</h3><p>本地分支可以不同步到远程仓库，我们可以在本地dev开发，然后merge到master，使用master同步代码</p><!-- ### 假如远程有自己的分支 推远程master的同时推远程dev 这样的意义是什么？ --><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>git checkout dev  # 切换到dev分支进行开发</p><p>开发代码之后，我们有两个选择</p><p>第一个：如果功能开发完成了，可以合并主分支</p><p>git checkout master  # 切换到主分支</p><p>git merge dev  # 把dev分支的更改和master合并</p><p>git push  # 提交主分支代码远程</p><p>git checkout dev  # 切换到dev远程分支</p><p>git push  # 提交dev分支到远程</p><p>第二个：如果功能没有完成，可以直接推送</p><p>git push  # 提交到dev远程分支</p><p>注意：在分支切换之前最好先commit全部的改变，除非你真的知道自己在做什么</p><p>还有一篇文章 写的不错 关于merge和rebase配合使用</p><p><a href="https://zhuanlan.zhihu.com/p/34197548">https://zhuanlan.zhihu.com/p/34197548</a></p><p>例如现有上游分支 master，基于 master 分支拉出来一个开发分支 dev，在 dev 上开发了一段时间后要把 master 分支提交的新内容更新到 dev 分支，此时切换到 dev 分支，使用 git rebase master</p><p>等 dev 分支开发完成了之后，要合并到上游分支 master 上的时候，切换到 master 分支，使用 git merge dev</p><p>rebase类型操作<br>git checkout B1<br>git pull origin B1 –rebase<br>git rebase master<br>git push origin B1 –force  </p><p>vs我以前的merge操作 (这里为什么要merge两次 先master into B1 再B1 into master 其实我不懂 <a href="#jump">这个问题似乎得到了解答</a> )<br>git checkout B1<br>git pull origin B1<br>git merge master<br>git push origin B1</p><p>上面两个之后都要<br>git checkotu master<br>git merge B1</p><!-- ### Git push 时如何避免出现 "Merge branch 'master' of ..." --><p><a href="https://www.cnblogs.com/Sinte-Beuve/p/9195018.html">https://www.cnblogs.com/Sinte-Beuve/p/9195018.html</a></p><p> A-B-C(master)<br>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<br>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D(origin/master)</p><p>我当前拉取的远端版本为 B，此时修改了代码，并在本地仓库 commit 一次，但并未 push 到远端仓库。<br>另一位开发者在 B 的基础上，同样 commit 了一次并 push 到远端仓库。那么这个时候，我再 push 自己的代码就会发生错误，如下。<br>To github.com:maoqyhz/usegit.git<br>! [rejected]        master -&gt; master (fetch first)<br>error: failed to push some refs to ‘git@github.com:maoqyhz/usegit.git’<br>hint: Updates were rejected because the remote contains work that you do<br>hint: not have locally. This is usually caused by another repository pushing<br>hint: to the same ref. You may want to first integrate the remote changes<br>hint: (e.g., ‘git pull …’) before pushing again.  </p><p>这个时候我们会选择，先 pull，再 push。Ok，push 成功，但是此时我们查看 log 就会发现除了我们自己提交的那条日志之外，会多出一条 “Merge branch ‘master’ of …”。<br>在进行 pull 操作的同时，其实就是 fetch+merge 的一个过程。我们从 remote 分支中拉取新的更新，然后再合并到本地分支中去。</p><p>如果 remote 分支超前于本地分支，并且本地分支没有任何 commit 的，直接从 remote 进行 pull 操作，默认会采用 fast-forward 模式，这种模式下，并不会产生合并节点<br>如果想之前那样，本地先 commit 后再去 pull，那么此时，remote 分支和本地会分支会出现分叉，这个时候使用 pull 操作拉取更新时，就会进行分支合并，产生合并节点和 log 信息。<br>为了去除自动生成的 log 信息 可以git pull –rebase<br>从 remote 分支拉取更新到本地时，使用 rebase。<br>当完成 bug 修复或新功能时，使用 merge 将子分支合并到主分支。</p><p><span id="jump">跳转到的地方</span></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;开发时怎么用好 Git 分支? - Color的回答 - 知乎&lt;br&gt;&lt;a href=&quot;https://www.zhihu.com/question/21995370/answer/19975870&quot;&gt;https://www.zhihu.com/question/21995</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>b站尚硅谷springboot记录</title>
+    <link href="http://example.com/2021/06/29/b%E7%AB%99%E5%B0%9A%E7%A1%85%E8%B0%B7springboot%E8%AE%B0%E5%BD%95/"/>
+    <id>http://example.com/2021/06/29/b%E7%AB%99%E5%B0%9A%E7%A1%85%E8%B0%B7springboot%E8%AE%B0%E5%BD%95/</id>
+    <published>2021-06-29T06:46:58.000Z</published>
+    <updated>2021-06-29T06:47:54.091Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.bilibili.com/video/BV19K4y1L7MT?p=43">https://www.bilibili.com/video/BV19K4y1L7MT?p=43</a></p><p>前31p全看了</p><p>32~42源码没看</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV19K4y1L7MT?p=43&quot;&gt;https://www.bilibili.com/video/BV19K4y1L7MT?p=43&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;前31p全看了&lt;/p&gt;
+&lt;p&gt;32~</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>折腾tim微信企业微信折腾记录</title>
+    <link href="http://example.com/2021/06/28/%E6%8A%98%E8%85%BEtim%E5%BE%AE%E4%BF%A1%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/"/>
+    <id>http://example.com/2021/06/28/%E6%8A%98%E8%85%BEtim%E5%BE%AE%E4%BF%A1%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/</id>
+    <published>2021-06-28T06:23:26.000Z</published>
+    <updated>2021-06-28T06:32:13.701Z</updated>
+    
+    <content type="html"><![CDATA[<p>微信安装这个wszqkzqk仓库下的版本，然后按照(<a href="https://github.com/wszqkzqk/deepin-wine-ubuntu/issues/339)%E6%9B%B4%E6%96%B0%E5%88%B0%E6%9C%80%E6%96%B0%E7%89%88%EF%BC%8C%E5%AD%97%E4%BD%93%E7%9B%B4%E6%8E%A5%E5%B0%B1%E6%B2%A1%E9%97%AE%E9%A2%98%E4%BA%86%E3%80%82%E6%9A%82%E6%97%B6%E4%BD%BF%E7%94%A8%E6%B5%81%E7%95%85%E3%80%82">https://github.com/wszqkzqk/deepin-wine-ubuntu/issues/339)更新到最新版，字体直接就没问题了。暂时使用流畅。</a></p><p>企业微信同样安装wszqkzqk仓库下的版本，然后去zq1997的源用apt wget安装3.16.3605,然后把后者覆盖前者,不覆盖版本过老不行，直接用后者体验不好也不行。暂时使用流畅。</p><p>tim用星火商店安装，安装后中文方框，把windows字体放到tim字体文件夹后方框解决但是不流畅+卡死，然后修改user.reg(<a href="https://bbs.deepin.org/zh/post/205436)%E8%A7%A3%E5%86%B3%E4%B8%8D%E6%B5%81%E7%95%85%E5%8D%A1%E6%AD%BB%E9%97%AE%E9%A2%98%E3%80%82%E6%9A%82%E6%97%B6%E4%BD%BF%E7%94%A8%E6%B5%81%E7%95%85">https://bbs.deepin.org/zh/post/205436)解决不流畅卡死问题。暂时使用流畅</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;微信安装这个wszqkzqk仓库下的版本，然后按照(&lt;a href=&quot;https://github.com/wszqkzqk/deepin-wine-ubuntu/issues/339)%E6%9B%B4%E6%96%B0%E5%88%B0%E6%9C%80%E6%96%B</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>spring boot controller 接收参数的总结</title>
+    <link href="http://example.com/2021/06/22/spring-boot-controller-%E6%8E%A5%E6%94%B6%E5%8F%82%E6%95%B0%E7%9A%84%E6%80%BB%E7%BB%93/"/>
+    <id>http://example.com/2021/06/22/spring-boot-controller-%E6%8E%A5%E6%94%B6%E5%8F%82%E6%95%B0%E7%9A%84%E6%80%BB%E7%BB%93/</id>
+    <published>2021-06-22T06:20:03.000Z</published>
+    <updated>2021-06-22T06:37:13.091Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.@RequestBody 注解，必须与 contentType 类型application/json配合使用。</p><p>2.@RequestParam 注解，必须与 contentType 类型application/x-www-form-urlencoded配合使用，其为默认类型。</p><p>3.JSON.stringify() 把对象类型转换为字符串类型，一般配合 @RequestBody 注解和contentType 类型application/json使用。</p><p>下面是一个ajax 规定了data类型JSON.stringify()； contentType是application/json<br>‘’’</p><pre><code>        $.ajax(&#123;            type: &quot;POST&quot;,            dataType: &quot;json&quot;,            data: JSON.stringify(task),            contentType: &quot;application/json;charset=UTF-8&quot;,            url: &quot;/updateTask&quot;,        &#125;);</code></pre><p>‘’’</p><p>其对应的controller层就是这样的 完美对应上面的第三条。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public Response updateTask(@RequestBody Task task) &#123;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;1.@RequestBody 注解，必须与 contentType 类型application/json配合使用。&lt;/p&gt;
+&lt;p&gt;2.@RequestParam 注解，必须与 contentType 类型application/x-www-form-urlencoded配合</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>spring mvc笔记</title>
     <link href="http://example.com/2021/06/17/spring-mvc%E7%AC%94%E8%AE%B0/"/>
     <id>http://example.com/2021/06/17/spring-mvc%E7%AC%94%E8%AE%B0/</id>
     <published>2021-06-17T08:39:18.000Z</published>
-    <updated>2021-06-17T08:40:27.036Z</updated>
+    <updated>2021-06-29T01:59:48.955Z</updated>
     
-    <content type="html"><![CDATA[<p>5000 字的 Spring MVC 总结 - 动力节点在线的文章 - 知乎<br><a href="https://zhuanlan.zhihu.com/p/213805180">https://zhuanlan.zhihu.com/p/213805180</a></p><p>1.@Requestbody自动解析JSON字符串封装到对象</p><p>2.@ResponseBody这个注解会把对象自动转成json数据返回。</p>]]></content>
+    <content type="html"><![CDATA[<p>5000 字的 Spring MVC 总结 - 动力节点在线的文章 - 知乎<br><a href="https://zhuanlan.zhihu.com/p/213805180">https://zhuanlan.zhihu.com/p/213805180</a></p><p>1.@Requestbody自动解析JSON字符串封装到对象</p><p>2.@ResponseBody这个注解会把对象自动转成json数据返回。不会再走视图。</p><p>2021-06-19 09:34:15更新</p><p><a href="https://www.bilibili.com/video/BV1sk4y167pD?from=search&amp;seid=6134974228129061133">https://www.bilibili.com/video/BV1sk4y167pD?from=search&amp;seid=6134974228129061133</a></p><p>web开发底层是serverlet，springmvc中有一个dispatcherserverlet（中央调度器），负责接收用户的所有请求，用户把请求给了Dispatcherserverlet，Dispatcherserverlet把请求转发给Controller</p><p>在springboot中dispatcherserverlet被starterweb自动引入了。</p><p>关于组件扫描：</p><p>@SpringBootApplication定义在MyApplication这个类上面，而这个类在包com.jdon.springboot下面。</p><p>@SpringBootApplication定义了对包com.jdon.springboot进行自动组件扫描。</p><p>如果所有组件都在上述包或其子包中定义，则一切正常。</p><p>关于ServletContext</p><p>首先，对于一个web应用，其部署在web容器中，web容器提供其一个全局的上下文环境，这个上下文就是ServletContext，其为后面的spring IoC容器提供宿主环境；</p><p>关于应用上下文</p><p><a href="https://www.cnblogs.com/chenbenbuyi/p/8166304.html">https://www.cnblogs.com/chenbenbuyi/p/8166304.html</a></p><p>什么是应用上下文呢，你可以简单的理解成就是将你需要Spring帮你管理的对象放入容器的那么一种。。一种。。额。。一种容器对象——是的，应用上下文即是Spring容器的一种抽象化表述；而我们常见的ApplicationContext本质上说就是一个维护Bean定义以及对象之间协作关系的高级接口。额，听起来是不是很抽象拗口？那你再读一遍呢。。。这里，我们必须明确，Spring的核心是容器，而容器并不唯一，框架本身就提供了很多个容器的实现，大概分为两种类型：一种是不常用的BeanFactory，这是最简单的容器，只能提供基本的DI功能；还有一种就是继承了BeanFactory后派生而来的应用上下文，其抽象接口也就是我们上面提到的的ApplicationContext，它能提供更多企业级的服务，例如解析配置文本信息等等，这也是应用上下文实例对象最常见的应用场景。有了上下文对象，我们就能向容器注册需要Spring管理的对象了。对于上下文抽象接口，Spring也为我们提供了多种类型的容器实现，供我们在不同的应用场景选择</p><p>　有了以上理解，问题就很好办了。你只要将你需要IOC容器替你管理的对象基于xml也罢，java注解也好，总之你要将需要管理的对象（Spring中我们都称之问bean）、bean之间的协作关系配置好，然后利用应用上下文对象加载进我们的Spring容器，容器就能为你的程序提供你想要的对象管理服务了。</p>]]></content>
     
     
       
@@ -357,96 +440,6 @@
     
     
     <category term="杂谈" scheme="http://example.com/tags/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo+github博客引入indigo主题的几个坑+评论</title>
-    <link href="http://example.com/2021/01/14/hexo-github%E5%8D%9A%E5%AE%A2%E5%BC%95%E5%85%A5indigo%E4%B8%BB%E9%A2%98%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91+%E8%AF%84%E8%AE%BA/"/>
-    <id>http://example.com/2021/01/14/hexo-github%E5%8D%9A%E5%AE%A2%E5%BC%95%E5%85%A5indigo%E4%B8%BB%E9%A2%98%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91+%E8%AF%84%E8%AE%BA/</id>
-    <published>2021-01-13T16:05:27.000Z</published>
-    <updated>2021-05-18T12:43:17.003Z</updated>
-    
-    <content type="html"><![CDATA[<p>众所周知，indigo是最好的主题。而且我就知道这一个，所以就用这个了。但是这个好久不更新了，新版本hexo用有坑。报错如下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Unhandled rejection ReferenceError: F:\blog\themes\indigo\layout\layout.ejs:6</span><br></pre></td></tr></table></figure><p>其实报错特别长，但我现在找不到了。。<br><a href="https://github.com/yscoder/hexo-theme-indigo/issues/522#issuecomment-717879358">https://github.com/yscoder/hexo-theme-indigo/issues/522#issuecomment-717879358</a><br>这里的方法完美的解决问题。<br>还有说最好用hexo3+版本的，毕竟indigo是为3+准备的。我的hexo版本是5.3</p><hr><p>第二个坑：换了主题后hexo d的文件太大了，总失败。<br>解决办法：去美国提交。<br>办法二：把_config.yml里面根据自己账号改成这样就好了。原因不详。</p><img src="/2021/01/14/hexo-github%E5%8D%9A%E5%AE%A2%E5%BC%95%E5%85%A5indigo%E4%B8%BB%E9%A2%98%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91+%E8%AF%84%E8%AE%BA/QQ%E5%9B%BE%E7%89%8720210114003315.png" class="" title="This is an example image"><p>第二个坑的参考链接：<a href="https://github.com/hexojs/hexo/issues/3043#issuecomment-415035343">https://github.com/hexojs/hexo/issues/3043#issuecomment-415035343</a></p><hr><p>然后我用了想加评论功能，发现indigo集成了几个评论插件，其中有gitment和gitalk。前者我试了配置一下没成功，据说也不怎么维护了。于是决定用gitalk。  </p><p>这个插件是一个叫@ystyle的人merge进去的。<a href="https://github.com/yscoder/hexo-theme-indigo/pull/456">https://github.com/yscoder/hexo-theme-indigo/pull/456</a><br>他设定的配置格式在themes/indigo/_config.yml里面，长这样。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gitalk: false</span><br><span class="line">   owner: </span><br><span class="line">   repo: </span><br><span class="line">   client_id: </span><br><span class="line">   client_secret: </span><br></pre></td></tr></table></figure><p>但是果然失败了。因为他的配置格式不对。  </p><p>有一个叫@zzycreate的人写了一篇博客讲indigo集成gitalk。<a href="https://zzycreate.github.io/2018/10/03/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">https://zzycreate.github.io/2018/10/03/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</a><br>他俩的实现方式是一摸一样的，太神奇了。重点是第二个人的配置格式是对的。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">gitalk:</span><br><span class="line">  enable: true</span><br><span class="line">  client_id: </span><br><span class="line">  client_secret: </span><br><span class="line">  repo: yiyayamaya.github.io</span><br><span class="line">  owner: yiyayamaya</span><br><span class="line">  admin: admins </span><br><span class="line">  distractionFreeMode: false</span><br><span class="line">  #注意上面每行中间一定要有空格</span><br></pre></td></tr></table></figure><p>总结一下就是用官方indigo里面的集成的gitalk.ejs就足够了，但是要把配置格式按照博客里面那么写，而不是官方自带格式。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;众所周知，indigo是最好的主题。而且我就知道这一个，所以就用这个了。但是这个好久不更新了，新版本hexo用有坑。报错如下&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;sp</summary>
-      
-    
-    
-    
-    
-    <category term="杂谈" scheme="http://example.com/tags/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>IDEA中Mave Module的Language Level问题</title>
-    <link href="http://example.com/2021/01/13/IDEA%E4%B8%ADMave-Module%E7%9A%84Language-Level%E9%97%AE%E9%A2%98/"/>
-    <id>http://example.com/2021/01/13/IDEA%E4%B8%ADMave-Module%E7%9A%84Language-Level%E9%97%AE%E9%A2%98/</id>
-    <published>2021-01-13T11:59:48.000Z</published>
-    <updated>2021-05-18T12:43:17.003Z</updated>
-    
-    <content type="html"><![CDATA[<p>idea maven工程的module的Language Level总是自动变到5, 每次reload项目都要手动改。</p><img src="/2021/01/13/IDEA%E4%B8%ADMave-Module%E7%9A%84Language-Level%E9%97%AE%E9%A2%98/QQ%E5%9B%BE%E7%89%8720210113200356.png" class="" title="This is an example image"><p>可能是某个module的包默认用5编译(参考里这么说的)。上网一搜发现很多人遇到过这个问题。<br>在pom.xml中加入下面这个，好了。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;properties&gt;</span><br><span class="line">  &lt;maven.compiler.source&gt;1.8&lt;&#x2F;maven.compiler.source&gt;</span><br><span class="line">  &lt;maven.compiler.target&gt;1.8&lt;&#x2F;maven.compiler.target&gt;</span><br><span class="line">&lt;&#x2F;properties&gt;</span><br></pre></td></tr></table></figure><p>参考:<br><a href="https://www.cnblogs.com/larryzeal/p/5552360.html">https://www.cnblogs.com/larryzeal/p/5552360.html</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;idea maven工程的module的Language Level总是自动变到5, 每次reload项目都要手动改。&lt;/p&gt;
-&lt;img src=&quot;/2021/01/13/IDEA%E4%B8%ADMave-Module%E7%9A%84Language-Level%E9%</summary>
-      
-    
-    
-    
-    
-    <category term="杂谈" scheme="http://example.com/tags/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>二分查找总结</title>
-    <link href="http://example.com/2021/01/10/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E6%80%BB%E7%BB%93/"/>
-    <id>http://example.com/2021/01/10/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E6%80%BB%E7%BB%93/</id>
-    <published>2021-01-10T08:05:04.000Z</published>
-    <updated>2021-05-18T12:43:17.011Z</updated>
-    
-    <content type="html"><![CDATA[<p>看到一个总结网址，还没来得及看完。<br><a href="https://leetcode-cn.com/problems/search-insert-position/solution/te-bie-hao-yong-de-er-fen-cha-fa-fa-mo-ban-python-/">https://leetcode-cn.com/problems/search-insert-position/solution/te-bie-hao-yong-de-er-fen-cha-fa-fa-mo-ban-python-/</a>  </p><p>牛客剑指offer中一道题，二维数组中的查找<br>leetcode第35题Search Insert Position </p><p>文章的总结两个思路<br>思路1 while(left &lt;= right)<br>思路2 while(left &lt; right) 是排除，在left=right时终止，最后剩下一个元素，可能就是答案。「左右边界向中间走，两边夹」<font color=red>本文主要讨论思路2</font></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">while (left &lt; right) &#123;</span><br><span class="line">    用本轮区间即leftright值算mid;</span><br><span class="line">    比较mid和target确定下轮区间即leftright值；</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></br> <p>举例如下 最普通二分-找到一个等于target的值就行</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">    <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">    <span class="comment">// 严格小于 target 的元素一定不是解</span></span><br><span class="line">    <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">        <span class="comment">// 下一轮搜索区间是 [mid + 1, right]</span></span><br><span class="line">        left = mid + <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 下一轮搜索区间是 [left, mid]</span></span><br><span class="line">        right = mid;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">可能找到最后也没找到，后面可能要加补丁。下面有详细介绍。</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>因为35题可以理解为找到大于等于 target 的第 11 个元素的位置，所以严格小于 target 的元素一定不是解。上面是把 (left,mid) 排除出去了所以剩下的区间就是 (mid+1,right) .  </p></br><p><font color=red>关于取中位数</font><br>基于此题解，有个记忆的口诀是「左动取左，右动取右」，即 if (…) left = mid + 1; 归为「左动」，对应左中位数；if (…) right = mid - 1; 归为「右动」，对应右中位数。  详见这个里面<a href="https://leetcode-cn.com/problems/search-insert-position/solution/te-bie-hao-yong-de-er-fen-cha-fa-fa-mo-ban-python-/">https://leetcode-cn.com/problems/search-insert-position/solution/te-bie-hao-yong-de-er-fen-cha-fa-fa-mo-ban-python-/</a><br>评论区里lzhlyle的回答。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//找到第一个出现的target</span></span><br><span class="line"><span class="keyword">while</span>(left&lt;right)</span><br><span class="line">    &#123;</span><br><span class="line">        mid=left+(right-left)/<span class="number">2</span>;<span class="comment">//左中点</span></span><br><span class="line">        <span class="keyword">if</span>(nums[mid]&lt;target)</span><br><span class="line">             left=mid+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(nums[mid]&gt;target)</span><br><span class="line">            right=mid-<span class="number">1</span>;<span class="comment">//此处两个right可以合并成right=mid 但我觉得不好理解 没有合并</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            right=mid;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查找最后一个值等于给定值的元素</span></span><br><span class="line">  <span class="keyword">while</span>(left&lt;right)<span class="comment">//找到最后一个出现的target 此时必须上取整 右中点</span></span><br><span class="line">    &#123;</span><br><span class="line">        mid=left+((right-left+<span class="number">1</span>)&gt;&gt;<span class="number">1</span>);<span class="comment">//上取整 右中点</span></span><br><span class="line">        <span class="keyword">if</span>(nums[mid]&lt;target)</span><br><span class="line">            left=mid+<span class="number">1</span>;<span class="comment">//此处两个left可以合并</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(nums[mid]&gt;target)</span><br><span class="line">            right=mid-<span class="number">1</span>;         </span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            left=mid;<span class="comment">//此处不一样          </span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><hr><p>以下把等于改成大等或小等 只需要改补丁的if就行了</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 查找第一个大于等于给定值的元素</span><br><span class="line">private int firstLargeOrEquals(int[] arr, int target) &#123;</span><br><span class="line">    int l &#x3D; 0, r &#x3D; arr.length - 1;</span><br><span class="line">    while (l &lt; r) &#123;</span><br><span class="line">        int mid &#x3D; l + ((r - l) &gt;&gt; 1);</span><br><span class="line">        if (arr[mid] &lt; target) l &#x3D; mid + 1;</span><br><span class="line">        else r &#x3D; mid; &#x2F;&#x2F; 收缩右边界不影响 first equals</span><br><span class="line">    &#125;</span><br><span class="line">    if (arr[l] &gt;&#x3D; target &amp;&amp; (l &#x3D;&#x3D; 0 || arr[l - 1] &lt; target)) return l; &#x2F;&#x2F; &gt;&#x3D;</span><br><span class="line">    return -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#x2F;&#x2F; 查找最后一个小于等于给定值的元素</span><br><span class="line">private int lastLessOrEquals(int[] arr, int target) &#123;</span><br><span class="line">    int l &#x3D; 0, r &#x3D; arr.length - 1;</span><br><span class="line">    while (l &lt; r) &#123;</span><br><span class="line">        int mid &#x3D; l + ((r - l + 1) &gt;&gt; 1);</span><br><span class="line">        if (arr[mid] &gt; target) r &#x3D; mid - 1;</span><br><span class="line">        else l &#x3D; mid; &#x2F;&#x2F; 收缩左边界不影响 last equals</span><br><span class="line">    &#125;</span><br><span class="line">    if (arr[l] &lt;&#x3D; target &amp;&amp; (l &#x3D;&#x3D; arr.length - 1 || arr[l + 1] &gt; target)) return l; &#x2F;&#x2F; &lt;&#x3D;</span><br><span class="line">    return -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></br>---<p><font color=red>对于704题最普通的二分查找来说</font>标准答案给的是 </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">while(left &lt;&#x3D; right) &#123;</span><br><span class="line">    ···</span><br><span class="line">        left &#x3D; mid + 1; </span><br><span class="line">    ···</span><br><span class="line">        right &#x3D; mid - 1;</span><br><span class="line">    ···</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p><font color=red>搜索区间为空的时候应该终止。</font></p><p>如果硬要用while(left &lt; right) 也可以但在结束后得加上一个<font color=red>补丁。</font><br>循环只剩一个数时候会终止，此时left=right。得判断一下他是不是target。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">while(left &lt;&#x3D; right) &#123;</span><br><span class="line">    ···</span><br><span class="line">        left &#x3D; mid + 1; </span><br><span class="line">    ···</span><br><span class="line">        right &#x3D; mid - 1;</span><br><span class="line">    ···</span><br><span class="line">&#125;</span><br><span class="line">if (nums[left]&#x3D;&#x3D;target)</span><br><span class="line">        return left;</span><br><span class="line"></span><br></pre></td></tr></table></figure></br><p><a href="https://leetcode-cn.com/problems/find-in-mountain-array/">https://leetcode-cn.com/problems/find-in-mountain-array/</a> 山脉这道题里判断mid处单调性为什么要mid和mid+1比；而不用mid和mid-1比？可能是因为前者需要</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">left&#x3D;mid+1;</span><br><span class="line">right&#x3D;mid;</span><br></pre></td></tr></table></figure><p>而后者要 </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">left&#x3D;mid;</span><br><span class="line">right&#x3D;mid-1;</span><br></pre></td></tr></table></figure><p>我不确定这里说的对不对，但是前面提到过左中点要左动，也就是前者。后者会死循环。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;看到一个总结网址，还没来得及看完。&lt;br&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/search-insert-position/solution/te-bie-hao-yong-de-er-fen-cha-fa-fa-mo-ban</summary>
-      
-    
-    
-    
-    
-    <category term="leetcode" scheme="http://example.com/tags/leetcode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>学习规划</title>
-    <link href="http://example.com/2021/01/08/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/"/>
-    <id>http://example.com/2021/01/08/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/</id>
-    <published>2021-01-08T06:19:54.000Z</published>
-    <updated>2021-05-18T12:43:17.015Z</updated>
-    
-    <content type="html"><![CDATA[<p>现在有的材料<br>剑指offer题库<br>计网操作系统面向对象网课<br>github一个大厂面试常问问题。<br><a href="https://github.com/resumejob/interview-questions">https://github.com/resumejob/interview-questions</a></p><p>还有一个java大全，这个好像有点太多了。<br><a href="https://github.com/xingshaocheng/architect-awesome">https://github.com/xingshaocheng/architect-awesome</a></p><hr><p>不知道怎么分配时间啊。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;现在有的材料&lt;br&gt;剑指offer题库&lt;br&gt;计网操作系统面向对象网课&lt;br&gt;github一个大厂面试常问问题。&lt;br&gt;&lt;a href=&quot;https://github.com/resumejob/interview-questions&quot;&gt;https://github.com</summary>
-      
-    
-    
-    
-    
-    <category term="找工" scheme="http://example.com/tags/%E6%89%BE%E5%B7%A5/"/>
     
   </entry>
   
