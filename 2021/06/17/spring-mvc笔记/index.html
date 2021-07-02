@@ -42,7 +42,7 @@
     <!-- custom head -->
     
 
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -174,11 +174,11 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>5000 字的 Spring MVC 总结 - 动力节点在线的文章 - 知乎<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/213805180">https://zhuanlan.zhihu.com/p/213805180</a></p>
+            <p>5000 字的 Spring MVC 总结 - 动力节点在线的文章 - 知乎<br><a href="https://zhuanlan.zhihu.com/p/213805180" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/213805180</a></p>
 <p>1.@Requestbody自动解析JSON字符串封装到对象</p>
 <p>2.@ResponseBody这个注解会把对象自动转成json数据返回。不会再走视图。</p>
 <p>2021-06-19 09:34:15更新</p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1sk4y167pD?from=search&amp;seid=6134974228129061133">https://www.bilibili.com/video/BV1sk4y167pD?from=search&amp;seid=6134974228129061133</a></p>
+<p><a href="https://www.bilibili.com/video/BV1sk4y167pD?from=search&amp;seid=6134974228129061133" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1sk4y167pD?from=search&amp;seid=6134974228129061133</a></p>
 <p>web开发底层是serverlet，springmvc中有一个dispatcherserverlet（中央调度器），负责接收用户的所有请求，用户把请求给了Dispatcherserverlet，Dispatcherserverlet把请求转发给Controller</p>
 <p>在springboot中dispatcherserverlet被starterweb自动引入了。</p>
 <p>关于组件扫描：</p>
@@ -188,7 +188,7 @@
 <p>关于ServletContext</p>
 <p>首先，对于一个web应用，其部署在web容器中，web容器提供其一个全局的上下文环境，这个上下文就是ServletContext，其为后面的spring IoC容器提供宿主环境；</p>
 <p>关于应用上下文</p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/chenbenbuyi/p/8166304.html">https://www.cnblogs.com/chenbenbuyi/p/8166304.html</a></p>
+<p><a href="https://www.cnblogs.com/chenbenbuyi/p/8166304.html" target="_blank" rel="noopener">https://www.cnblogs.com/chenbenbuyi/p/8166304.html</a></p>
 <p>什么是应用上下文呢，你可以简单的理解成就是将你需要Spring帮你管理的对象放入容器的那么一种。。一种。。额。。一种容器对象——是的，应用上下文即是Spring容器的一种抽象化表述；而我们常见的ApplicationContext本质上说就是一个维护Bean定义以及对象之间协作关系的高级接口。额，听起来是不是很抽象拗口？那你再读一遍呢。。。这里，我们必须明确，Spring的核心是容器，而容器并不唯一，框架本身就提供了很多个容器的实现，大概分为两种类型：一种是不常用的BeanFactory，这是最简单的容器，只能提供基本的DI功能；还有一种就是继承了BeanFactory后派生而来的应用上下文，其抽象接口也就是我们上面提到的的ApplicationContext，它能提供更多企业级的服务，例如解析配置文本信息等等，这也是应用上下文实例对象最常见的应用场景。有了上下文对象，我们就能向容器注册需要Spring管理的对象了。对于上下文抽象接口，Spring也为我们提供了多种类型的容器实现，供我们在不同的应用场景选择</p>
 <p>　有了以上理解，问题就很好办了。你只要将你需要IOC容器替你管理的对象基于xml也罢，java注解也好，总之你要将需要管理的对象（Spring中我们都称之问bean）、bean之间的协作关系配置好，然后利用应用上下文对象加载进我们的Spring容器，容器就能为你的程序提供你想要的对象管理服务了。</p>
 
@@ -433,7 +433,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">

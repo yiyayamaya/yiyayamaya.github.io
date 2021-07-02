@@ -42,7 +42,7 @@
     <!-- custom head -->
     
 
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -174,7 +174,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><a target="_blank" rel="noopener" href="https://segmentfault.com/q/1010000010357830">https://segmentfault.com/q/1010000010357830</a></p>
+            <p><a href="https://segmentfault.com/q/1010000010357830" target="_blank" rel="noopener">https://segmentfault.com/q/1010000010357830</a></p>
 <p>1.上面这段话中，跨站伪造请求最开始窃取了目标网站的cookie发送了请求，那么如果我们将token放在了cookie中，不还是被窃取到了，到服务器的时候也是一样的拿到cookie中的token然后通过了认证么？</p>
 <p>你的应用用到了 cookie,那么后台验证就不能仅仅依赖 cookie,所以要额外加一个不通过 cookie 携带的验证参数，就是你题中说的 token 了。 至于这个 Token 怎么发送到前台就是另一个问题了：</p>
 <p>提交表单时，token一般会作为表单的一个隐藏域被提交，类似<input type='hidden' name='token' value='xxxxxx'>，提交到服务器之后，服务器再校验表单提交的token和cookie中的token是否一致，一致则校验通过，不一致则很可能是CSRF攻击者的伪造请求。CSRF的确可以把Cookie提交到服务器，但是伪造不了表单的token，因为他拿不到Cookie的内容，那就通过不了校验。</p>
@@ -422,7 +422,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">

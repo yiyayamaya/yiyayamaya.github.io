@@ -45,7 +45,7 @@
     <!-- custom head -->
     
 
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -179,19 +179,26 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>众所周知，indigo是最好的主题。而且我就知道这一个，所以就用这个了。但是这个好久不更新了，新版本hexo用有坑。报错如下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Unhandled rejection ReferenceError: F:\blog\themes\indigo\layout\layout.ejs:6</span><br></pre></td></tr></table></figure>
-<p>其实报错特别长，但我现在找不到了。。<br><a target="_blank" rel="noopener" href="https://github.com/yscoder/hexo-theme-indigo/issues/522#issuecomment-717879358">https://github.com/yscoder/hexo-theme-indigo/issues/522#issuecomment-717879358</a><br>这里的方法完美的解决问题。<br>还有说最好用hexo3+版本的，毕竟indigo是为3+准备的。我的hexo版本是5.3</p>
+<p>其实报错特别长，但我现在找不到了。。<br><a href="https://github.com/yscoder/hexo-theme-indigo/issues/522#issuecomment-717879358" target="_blank" rel="noopener">https://github.com/yscoder/hexo-theme-indigo/issues/522#issuecomment-717879358</a><br>这里的方法完美的解决问题。<br>还有说最好用hexo3+版本的，毕竟indigo是为3+准备的。我的hexo版本是5.3</p>
 <hr>
 <p>第二个坑：换了主题后hexo d的文件太大了，总失败。<br>解决办法：去美国提交。<br>办法二：把_config.yml里面根据自己账号改成这样就好了。原因不详。</p>
 <img src="/2021/01/14/hexo-github%E5%8D%9A%E5%AE%A2%E5%BC%95%E5%85%A5indigo%E4%B8%BB%E9%A2%98%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9D%91+%E8%AF%84%E8%AE%BA/QQ%E5%9B%BE%E7%89%8720210114003315.png" class="" title="This is an example image">
-<p>第二个坑的参考链接：<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues/3043#issuecomment-415035343">https://github.com/hexojs/hexo/issues/3043#issuecomment-415035343</a></p>
+<p>第二个坑的参考链接：<a href="https://github.com/hexojs/hexo/issues/3043#issuecomment-415035343" target="_blank" rel="noopener">https://github.com/hexojs/hexo/issues/3043#issuecomment-415035343</a></p>
 <hr>
 <p>然后我用了想加评论功能，发现indigo集成了几个评论插件，其中有gitment和gitalk。前者我试了配置一下没成功，据说也不怎么维护了。于是决定用gitalk。  </p>
-<p>这个插件是一个叫@ystyle的人merge进去的。<a target="_blank" rel="noopener" href="https://github.com/yscoder/hexo-theme-indigo/pull/456">https://github.com/yscoder/hexo-theme-indigo/pull/456</a><br>他设定的配置格式在themes/indigo/_config.yml里面，长这样。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gitalk: false</span><br><span class="line">   owner: </span><br><span class="line">   repo: </span><br><span class="line">   client_id: </span><br><span class="line">   client_secret: </span><br></pre></td></tr></table></figure>
+<p>这个插件是一个叫@ystyle的人merge进去的。<a href="https://github.com/yscoder/hexo-theme-indigo/pull/456" target="_blank" rel="noopener">https://github.com/yscoder/hexo-theme-indigo/pull/456</a><br>他设定的配置格式在themes/indigo/_config.yml里面，长这样。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gitalk: false</span><br><span class="line">   owner: </span><br><span class="line">   repo: </span><br><span class="line">   client_id: </span><br><span class="line">   client_secret:</span><br></pre></td></tr></table></figure>
 <p>但是果然失败了。因为他的配置格式不对。  </p>
-<p>有一个叫@zzycreate的人写了一篇博客讲indigo集成gitalk。<a target="_blank" rel="noopener" href="https://zzycreate.github.io/2018/10/03/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">https://zzycreate.github.io/2018/10/03/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</a><br>他俩的实现方式是一摸一样的，太神奇了。重点是第二个人的配置格式是对的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">gitalk:</span><br><span class="line">  enable: true</span><br><span class="line">  client_id: </span><br><span class="line">  client_secret: </span><br><span class="line">  repo: yiyayamaya.github.io</span><br><span class="line">  owner: yiyayamaya</span><br><span class="line">  admin: admins </span><br><span class="line">  distractionFreeMode: false</span><br><span class="line">  #注意上面每行中间一定要有空格</span><br></pre></td></tr></table></figure>
-
+<p>有一个叫@zzycreate的人写了一篇博客讲indigo集成gitalk。<a href="https://zzycreate.github.io/2018/10/03/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/" target="_blank" rel="noopener">https://zzycreate.github.io/2018/10/03/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</a><br>他俩的实现方式是一摸一样的，太神奇了。重点是第二个人的配置格式是对的。</p>
+<pre><code>gitalk:
+  enable: true
+  client_id: 
+  client_secret: 
+  repo: yiyayamaya.github.io
+  owner: yiyayamaya
+  admin: admins 
+  distractionFreeMode: false
+  #注意上面每行中间一定要有空格</code></pre>
 <p>总结一下就是用官方indigo里面的集成的gitalk.ejs就足够了，但是要把配置格式按照博客里面那么写，而不是官方自带格式。</p>
 
         </div>
@@ -437,7 +444,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">

@@ -46,7 +46,7 @@
     <!-- custom head -->
     
 
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -183,8 +183,11 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ListNode nextNode&#x3D;new ListNode();</span><br><span class="line">currentNode.next&#x3D;nextNode;</span><br><span class="line">currentNode&#x3D;currentNode.next;</span><br></pre></td></tr></table></figure>
 <p>这个currentNode，只有.next时候他才能代表一个节点，不然只能看作一个指针。还挺巧妙。<br>这题我想了很久很久啊，其实挺多细节的。比如</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 保证有值才读 --&gt;</span><br><span class="line">int l1val&#x3D;0;</span><br><span class="line">int l2val&#x3D;0;</span><br><span class="line">if(l1!&#x3D;null)</span><br><span class="line">    l1val&#x3D;l1.val;</span><br><span class="line">if(l2!&#x3D;null)</span><br><span class="line">    l2val&#x3D;l2.val;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> while(l1!&#x3D;null||l2!&#x3D;null)&#123;</span><br><span class="line">     &#x2F;&#x2F;把两个加数都走完了</span><br><span class="line"> &#125;</span><br><span class="line">if(carry&gt;0)</span><br><span class="line">    currentNode.next&#x3D;new ListNode(carry);</span><br><span class="line">    &#x2F;&#x2F;但是结果比长的加数还多一位</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- while里面，每次都是给next节点赋值，也就是说第一次进来的currentNode根本没被用到，直接就是0了。 所以最后要return 头.next--&gt;</span><br><span class="line">ListNode nextNode&#x3D;new ListNode();</span><br><span class="line">currentNode.next&#x3D;nextNode;</span><br><span class="line">currentNode&#x3D;currentNode.next;</span><br><span class="line">currentNode.val&#x3D;(l1val+l2val+carry)%10;</span><br></pre></td></tr></table></figure>
+
 <p>3.Longest Substring Without Repeating Characters<br>最长不重复子串，就是左标右标，右标遇到重复的了，就把左标挪到上一次遇到右标字母的位置的下一个。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for(int i&#x3D;leftIndex;i&lt;leftIndexNew;i++)</span><br><span class="line">    map.remove(s.charAt(i));</span><br></pre></td></tr></table></figure>
 <p>我是上面这么写的。比如abcdcb当左=2右=4时，左会被更新为3。可是3以前的字母为什么不应该从map中删除呢，比如右接着滑到5发现map里面有(b,1)了，可是此时当前子串是dc里明明没有b啊。</p>
@@ -197,6 +200,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if(i2&#x3D;&#x3D;nums2.length)&#123;</span><br><span class="line">    for(int j&#x3D;0;j&lt;total-i-1;j++)</span><br><span class="line">        numsAdded[i+1+j]&#x3D;nums1[i1+j];</span><br><span class="line">    break;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>改成</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">while(i1!&#x3D;nums1.length)</span><br><span class="line">&#123;</span><br><span class="line">    numsAdded[(i++)+1]&#x3D;nums1[i1++];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>答案给的是二分。。。懒得看了。。。 </p>
 <p>5.Longest Palindromic Substring<br>这个没啥说的，写一个函数传入(string,左,右)判断是不是对称的。如果传入(string,i,i)就是围绕一个字母对称,传入(string,i,i+1)就是围绕两个字母对称。先判断当前对不对称，对称了再移动，所以围绕两个的字母会先验证。<br>6.ZigZag Conversion<br>我没有写，就大概想了一下。。。<br>7.Reverse Integer<br>要点就是怎么用while取反，真挺巧妙，让我不看答案我肯定写不出来。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">while(left!&#x3D;0)&#123;</span><br><span class="line">    unit&#x3D;left%10;&#x2F;&#x2F;个位</span><br><span class="line">    left&#x3D;left&#x2F;10;&#x2F;&#x2F;剩下的</span><br><span class="line">    result&#x3D;result*10+unit;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -451,7 +455,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">

@@ -21,12 +21,12 @@
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="这棵树    普通的bfs 12345678910 while(!queue.isEmpty()) &amp;#123;         root&#x3D;queue.poll();    depth++;    if(root.left!&#x3D;null)        queue.offer(root.left);    if(root.right!&#x3D;null)          qu">
+    <meta name="description" content="这棵树    普通的bfs 123456789 while(!queue.isEmpty()) &amp;#123;         root&#x3D;queue.poll();    depth++;    if(root.left!&#x3D;null)        queue.offer(root.left);    if(root.right!&#x3D;null)          queu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="剑指 Offer 55 - I.二叉树的深度">
 <meta property="og:url" content="http://example.com/2021/03/12/%E5%89%91%E6%8C%87-Offer-55-I-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/index.html">
 <meta property="og:site_name" content="皇姑区第一亚索的博客">
-<meta property="og:description" content="这棵树    普通的bfs 12345678910 while(!queue.isEmpty()) &amp;#123;         root&#x3D;queue.poll();    depth++;    if(root.left!&#x3D;null)        queue.offer(root.left);    if(root.right!&#x3D;null)          qu">
+<meta property="og:description" content="这棵树    普通的bfs 123456789 while(!queue.isEmpty()) &amp;#123;         root&#x3D;queue.poll();    depth++;    if(root.left!&#x3D;null)        queue.offer(root.left);    if(root.right!&#x3D;null)          queu">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2021/03/12/%E5%89%91%E6%8C%87-Offer-55-I-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/QQ%E6%88%AA%E5%9B%BE20210312171120.jpg">
 <meta property="og:image" content="http://example.com/2021/03/12/%E5%89%91%E6%8C%87-Offer-55-I-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/QQ%E6%88%AA%E5%9B%BE20210312172842.jpg">
@@ -45,7 +45,7 @@
     <!-- custom head -->
     
 
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -182,10 +182,12 @@
 
 
 <p>普通的bfs</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> while(!queue.isEmpty())</span><br><span class="line"> &#123;     </span><br><span class="line">    root&#x3D;queue.poll();</span><br><span class="line">    depth++;</span><br><span class="line">    if(root.left!&#x3D;null)</span><br><span class="line">        queue.offer(root.left);</span><br><span class="line">    if(root.right!&#x3D;null)  </span><br><span class="line">        queue.offer(root.right);   </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> while(!queue.isEmpty())</span><br><span class="line"> &#123;     </span><br><span class="line">    root&#x3D;queue.poll();</span><br><span class="line">    depth++;</span><br><span class="line">    if(root.left!&#x3D;null)</span><br><span class="line">        queue.offer(root.left);</span><br><span class="line">    if(root.right!&#x3D;null)  </span><br><span class="line">        queue.offer(root.right);   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
 <p>求深度用的bfs</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">while (!queue.isEmpty()) &#123;</span><br><span class="line">           res++;</span><br><span class="line">           int n &#x3D; queue.size();</span><br><span class="line">           for (int i &#x3D; 0; i &lt; n; i++) &#123;</span><br><span class="line">               TreeNode node &#x3D; queue.poll();</span><br><span class="line">               if (node.left !&#x3D; null) queue.add(node.left);</span><br><span class="line">               if (node.right !&#x3D; null) queue.add(node.right);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">while (!queue.isEmpty()) &#123;</span><br><span class="line">           res++;</span><br><span class="line">           int n &#x3D; queue.size();</span><br><span class="line">           for (int i &#x3D; 0; i &lt; n; i++) &#123;</span><br><span class="line">               TreeNode node &#x3D; queue.poll();</span><br><span class="line">               if (node.left !&#x3D; null) queue.add(node.left);</span><br><span class="line">               if (node.right !&#x3D; null) queue.add(node.right);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+
 <p>对应的每次while时队列状态如下图。</p>
 <img src="/2021/03/12/%E5%89%91%E6%8C%87-Offer-55-I-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/QQ%E6%88%AA%E5%9B%BE20210312172842.jpg" class="" title="This is an example image">
 
@@ -432,7 +434,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">

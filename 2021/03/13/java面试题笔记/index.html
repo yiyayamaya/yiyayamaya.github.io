@@ -56,7 +56,7 @@
     <!-- custom head -->
     
 
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -188,11 +188,12 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Eb4y1R7zd">https://www.bilibili.com/video/BV1Eb4y1R7zd</a></p>
+            <p><a href="https://www.bilibili.com/video/BV1Eb4y1R7zd" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1Eb4y1R7zd</a></p>
 <p>p1.面向对象</p>
 <p>多态 编译时运行时指向不一样。 多态无法调用子类成员函数。Person XiaoMing= new Man(); XiaoMing.只能跟Person有的方法,如果Man重写过就用Man的,不然就Person的。 要是想用Man的得加个(Man)XiaoMing。属性和方法不一样，访问得到的是Person的属性。</p>
 <p>多态作用一个是方法参数一个是返回值。都可以编译时写成Person运行时用Man。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">public void test(A a)&#123;</span><br><span class="line">   a.x()</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; b是B的对象，这时候test方法中就调用了B的x方法</span><br><span class="line">test(b)</span><br><span class="line">&#x2F;&#x2F; c是C的对象，这时候test方法中就调用了C的x方法</span><br><span class="line">test(c)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">public void test(A a)&#123;</span><br><span class="line">   a.x()</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; b是B的对象，这时候test方法中就调用了B的x方法</span><br><span class="line">test(b)</span><br><span class="line">&#x2F;&#x2F; c是C的对象，这时候test方法中就调用了C的x方法</span><br><span class="line">test(c)</span><br></pre></td></tr></table></figure>
+
 <p>另外,我我们在JDK中可以大量的看到多态的应用,比如在Object类中的equals(Object obj)方法中,参数是个Object类型的参数.因为Object是Java中所有类的基类.,但是才传入参数的时候,可以传入任何一个类的对象</p>
 <p>p3.JDK JRE JVM</p>
 <img src="/2021/03/13/java%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AC%94%E8%AE%B0/QQ%E6%88%AA%E5%9B%BE20210313162138.jpg" class="" title="This is an example image">
@@ -215,13 +216,14 @@
 <p>p7.重载重写</p>
 <p>重载：只有返回类型不同，没法区分方法，会报错。参数列表不同的基础上返回类型可以不同。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public int add(int a,int b)&#123; return 0;&#125;</span><br><span class="line"></span><br><span class="line">public String add(int a,int b)&#123; return &quot;sb&quot;;&#125; &#x2F;&#x2F;会报错</span><br><span class="line"></span><br><span class="line">public String add(String a,int b)&#123; return &quot;sb&quot;;&#125;&#x2F;&#x2F;没问题</span><br></pre></td></tr></table></figure>
+
 <p>重写：private方法不能重写。</p>
 <p>p8.抽象类和接口</p>
 <p>抽象类可以有普通成员函数，接口只能存在public abstract 方法。换句话说抽象类可以有实现，接口只有声明没有实现。<br>抽象类继承一个，接口实现多个。</p>
 <p>接口目的是规范，抽象类目的是复用。接口是has A，抽象类是is A。</p>
 <p>以下内容介绍抽象类，摘抄自</p>
-<p><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744/1260456371027744">https://www.liaoxuefeng.com/wiki/1252599548343744/1260456371027744</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.runoob.com/java/java-abstraction.html">https://www.runoob.com/java/java-abstraction.html</a></p>
+<p><a href="https://www.liaoxuefeng.com/wiki/1252599548343744/1260456371027744" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/1252599548343744/1260456371027744</a></p>
+<p><a href="https://www.runoob.com/java/java-abstraction.html" target="_blank" rel="noopener">https://www.runoob.com/java/java-abstraction.html</a></p>
 <p>在面向对象的概念中，所有的对象都是通过类来描绘的，但是反过来，并不是所有的类都是用来描绘对象的，如果一个类中没有包含足够的信息来描绘一个具体的对象，这样的类就是抽象类。</p>
 <p>从Person类派生的Student和Teacher都可以覆写run()方法。</p>
 <p>如果父类Person的run()方法没有实际意义，能否去掉方法的执行语句？<br>答案是不行，会导致编译错误，因为定义方法的时候，必须实现方法的语句。</p>
@@ -230,6 +232,7 @@
 <p>如果父类的方法本身不需要实现任何功能，仅仅是为了定义方法签名，目的是让子类去覆写它，那么，可以把父类的方法声明为抽象方法：</p>
 <p>必须把Person类本身也声明为abstract，才能正确编译它：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">abstract class Person &#123;</span><br><span class="line">    public abstract void run();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>抽象类强迫子类实现其定义的抽象方法，否则编译会报错(除非子类也是抽象类)。因此，抽象方法实际上相当于定义了“规范”。</p>
 <ol>
 <li><p>抽象类不能被实例化(初学者很容易犯的错)，如果被实例化，就会报错，编译无法通过。只有抽象类的非抽象子类可以创建对象。</p>
@@ -249,7 +252,7 @@
 <img src="/2021/03/13/java%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AC%94%E8%AE%B0/QQ%E6%88%AA%E5%9B%BE20210422185359.jpg" class="" title="This is an example image">
 
 
-<p>视频讲的不好<br>建议看这篇<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/skywang12345/p/3324958.html">https://www.cnblogs.com/skywang12345/p/3324958.html</a></p>
+<p>视频讲的不好<br>建议看这篇<br><a href="https://www.cnblogs.com/skywang12345/p/3324958.html" target="_blank" rel="noopener">https://www.cnblogs.com/skywang12345/p/3324958.html</a></p>
 <p>p11.ArrayList和LinkedList</p>
 <ol>
 <li>读取(也就是按位get)数组快 O(1) vs O(n)</li>
@@ -268,8 +271,8 @@
 <p>用时间复杂度表示的话，ArrayList的get（n）是o（1），而LinkedList是o（n）。</p>
 <p>图里说链表不能用get意思是很慢 所以不能用。</p>
 <p>p12.hashmap</p>
-<p><a target="_blank" rel="noopener" href="https://yikun.github.io/2015/04/01/Java-HashMap%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/">https://yikun.github.io/2015/04/01/Java-HashMap%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744/1265117217944672">https://www.liaoxuefeng.com/wiki/1252599548343744/1265117217944672</a></p>
+<p><a href="https://yikun.github.io/2015/04/01/Java-HashMap%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/" target="_blank" rel="noopener">https://yikun.github.io/2015/04/01/Java-HashMap%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/</a></p>
+<p><a href="https://www.liaoxuefeng.com/wiki/1252599548343744/1265117217944672" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/1252599548343744/1265117217944672</a></p>
 <p>我们再思考一下HashMap为什么能通过key直接计算出value存储的索引。相同的key对象（使用equals()判断时返回true）必须要计算出相同的索引，否则，相同的key每次取出的value就不一定对。</p>
 <p>通过key计算索引的方式就是调用key对象的hashCode()方法，它返回一个int整数。HashMap正是通过这个方法直接定位key对应的value的索引，继而直接返回value。</p>
 <p>由上面可以看出，当我们根据key的hash确定其在数组的位置时，如果n为2的幂次方，可以保证数据的均匀插入。因此，HashMap 容量为2次幂的原因，就是为了数据的的均匀分布。</p>
@@ -294,7 +297,7 @@
 <li>可达性分析法。</li>
 </ol>
 <p>p20.线程生命周期和状态</p>
-<p>p21.讲的不好 关于线程状态建议看这篇文章 讲的超级好<br><a target="_blank" rel="noopener" href="https://my.oschina.net/goldenshaw/blog/802620">https://my.oschina.net/goldenshaw/blog/802620</a></p>
+<p>p21.讲的不好 关于线程状态建议看这篇文章 讲的超级好<br><a href="https://my.oschina.net/goldenshaw/blog/802620" target="_blank" rel="noopener">https://my.oschina.net/goldenshaw/blog/802620</a></p>
 <p>主要是sleep和wait的关系 两种阻塞 是否释放锁。还得再看看。</p>
 <img src="/2021/03/13/java%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AC%94%E8%AE%B0/QQ%E6%88%AA%E5%9B%BE20210315195943.jpg" class="" title="This is an example image">
 
@@ -303,7 +306,7 @@
 <p>栈是线程独有的。是线程安全的。</p>
 <p>在Java中，栈stack内存是用来存储函数的主体和变量名的。Java中的代码是在函数体中执行的，每个函数主体都会被放在栈内存中，比如main函数。加入main函数里调用了其他的函数，比如add（），那么在栈里面的的存储就是最底层是main，mian上面是add。栈的运行时后入先出的，所以会执行时会先销毁add，再销毁main。</p>
 <p>在Java中，堆内存是用来存储实例的。比如main函数里面声明了一个people的类per，people per；这个per是存储在栈stack内存中的，实例化后（per = new people（））；实例后的对象实体是存在堆heap内存中的。栈stack内存中存储的per存储着指向堆heap内存的地址指向。堆heap内存的存在是为了更好的管理内存，实现garbage collection。当per不再指向堆heap内存中的实例的时候，garbage collection机制就会把这个堆heap内存中的new people（）实例删除，释放内存。</p>
-<p>链接：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/24807877/answer/139282174">https://www.zhihu.com/question/24807877/answer/139282174</a></p>
+<p>链接：<a href="https://www.zhihu.com/question/24807877/answer/139282174" target="_blank" rel="noopener">https://www.zhihu.com/question/24807877/answer/139282174</a></p>
 <p>p24.守护线程 没看完 开始跳着看了</p>
 <p>p27.并发、并行、串行。</p>
 <p>串行就是执行完任务1执行任务2。</p>
@@ -321,10 +324,10 @@
 
 
 <p>p34.AOP 讲的不好 看这两个知乎回答。</p>
-<p>什么是面向切面编程AOP？ - 柳树的回答 - 知乎<br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/24863332/answer/350410712">https://www.zhihu.com/question/24863332/answer/350410712</a></p>
-<p>面向切面编程（AOP），那我们说的切面到底是什么？ - 葛尧的回答 - 知乎<br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/57741911/answer/154139735">https://www.zhihu.com/question/57741911/answer/154139735</a></p>
+<p>什么是面向切面编程AOP？ - 柳树的回答 - 知乎<br><a href="https://www.zhihu.com/question/24863332/answer/350410712" target="_blank" rel="noopener">https://www.zhihu.com/question/24863332/answer/350410712</a></p>
+<p>面向切面编程（AOP），那我们说的切面到底是什么？ - 葛尧的回答 - 知乎<br><a href="https://www.zhihu.com/question/57741911/answer/154139735" target="_blank" rel="noopener">https://www.zhihu.com/question/57741911/answer/154139735</a></p>
 <p>p35.IOC 讲的不好 看这个知乎回答。</p>
-<p>Spring IoC有什么好处呢？ - Mingqi的回答 - 知乎<br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/23277575/answer/169698662">https://www.zhihu.com/question/23277575/answer/169698662</a></p>
+<p>Spring IoC有什么好处呢？ - Mingqi的回答 - 知乎<br><a href="https://www.zhihu.com/question/23277575/answer/169698662" target="_blank" rel="noopener">https://www.zhihu.com/question/23277575/answer/169698662</a></p>
 
         </div>
 
@@ -567,7 +570,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">
