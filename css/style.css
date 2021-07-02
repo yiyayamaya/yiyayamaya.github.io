@@ -2828,7 +2828,7 @@ hr,
   min-height: calc(100vh - 340px);
 }
 .container {
-  width: 960px;
+  width: 80%;
   margin: 0 auto;
 }
 .container:after {
