@@ -3317,7 +3317,7 @@ pre .javascript .function {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.26);
 }
 .post-more {
-  display: inline-block;
+  display: none;
   padding: 0 6px;
   font-weight: 500;
   color: #3f51b5 !important;
