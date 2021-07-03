@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-07-02T06:46:37.697Z</updated>
+  <updated>2021-07-03T01:32:04.597Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,13 +17,53 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>google7df335c6cac00dc5</title>
+    <link href="http://example.com/2021/07/03/google7df335c6cac00dc5/"/>
+    <id>http://example.com/2021/07/03/google7df335c6cac00dc5/</id>
+    <published>2021-07-03T01:32:04.597Z</published>
+    <updated>2021-07-03T01:32:04.597Z</updated>
+    
+    <content type="html"><![CDATA[google-site-verification: google7df335c6cac00dc5.html]]></content>
+    
+    
+      
+      
+    <summary type="html">google-site-verification: google7df335c6cac00dc5.html</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>classpath到底是个什么玩意</title>
+    <link href="http://example.com/2021/07/02/classpath%E5%88%B0%E5%BA%95%E6%98%AF%E4%B8%AA%E4%BB%80%E4%B9%88%E7%8E%A9%E6%84%8F/"/>
+    <id>http://example.com/2021/07/02/classpath%E5%88%B0%E5%BA%95%E6%98%AF%E4%B8%AA%E4%BB%80%E4%B9%88%E7%8E%A9%E6%84%8F/</id>
+    <published>2021-07-02T09:58:27.000Z</published>
+    <updated>2021-07-02T09:59:35.925Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="先开个坑，我大一初学java被环境配置严重劝退，现在也仅仅是会配，但是不懂为什么要这么配。有空我要把这个问题搞懂。"><a href="#先开个坑，我大一初学java被环境配置严重劝退，现在也仅仅是会配，但是不懂为什么要这么配。有空我要把这个问题搞懂。" class="headerlink" title="先开个坑，我大一初学java被环境配置严重劝退，现在也仅仅是会配，但是不懂为什么要这么配。有空我要把这个问题搞懂。"></a>先开个坑，我大一初学java被环境配置严重劝退，现在也仅仅是会配，但是不懂为什么要这么配。有空我要把这个问题搞懂。</h2><p>python Run.py 与 python /home/path/Run.py 执行结果是不一样的<br>因为在执行的过程中，命令行默认只是搜索当前执行路径，所以会导致一部分引用的模块找不到</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;先开个坑，我大一初学java被环境配置严重劝退，现在也仅仅是会配，但是不懂为什么要这么配。有空我要把这个问题搞懂。&quot;&gt;&lt;a href=&quot;#先开个坑，我大一初学java被环境配置严重劝退，现在也仅仅是会配，但是不懂为什么要这么配。有空我要把这个问题搞懂。&quot; clas</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>有关git分支看到的不错的一个回答</title>
     <link href="http://example.com/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/"/>
     <id>http://example.com/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/</id>
     <published>2021-07-01T05:56:03.000Z</published>
-    <updated>2021-07-02T06:46:37.697Z</updated>
+    <updated>2021-07-02T08:21:15.561Z</updated>
     
-    <content type="html"><![CDATA[<p>开发时怎么用好 Git 分支? - Color的回答 - 知乎<br><a href="https://www.zhihu.com/question/21995370/answer/19975870" target="_blank" rel="noopener">https://www.zhihu.com/question/21995370/answer/19975870</a></p><h3 id="假如远程只有一个master"><a href="#假如远程只有一个master" class="headerlink" title="假如远程只有一个master"></a>假如远程只有一个master</h3><p>本地分支可以不同步到远程仓库，我们可以在本地dev开发，然后merge到master，使用master同步代码</p><h3 id="假如远程有自己的分支-推远程master的同时推远程dev-这样的意义是什么？"><a href="#假如远程有自己的分支-推远程master的同时推远程dev-这样的意义是什么？" class="headerlink" title="假如远程有自己的分支 推远程master的同时推远程dev 这样的意义是什么？"></a>假如远程有自己的分支 推远程master的同时推远程dev 这样的意义是什么？</h3><p>git checkout dev  # 切换到dev分支进行开发</p><p>开发代码之后，我们有两个选择</p><p>第一个：如果功能开发完成了，可以合并主分支</p><p>git checkout master  # 切换到主分支</p><p>git merge dev  # 把dev分支的更改和master合并</p><p>git push  # 提交主分支代码远程</p><p>git checkout dev  # 切换到dev远程分支</p><p>git push  # 提交dev分支到远程</p><p>第二个：如果功能没有完成，可以直接推送</p><p>git push  # 提交到dev远程分支</p><p>注意：在分支切换之前最好先commit全部的改变，除非你真的知道自己在做什么</p><p>还有一篇文章 写的不错 关于merge和rebase配合使用</p><p><a href="https://zhuanlan.zhihu.com/p/34197548" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/34197548</a></p><p>例如现有上游分支 master，基于 master 分支拉出来一个开发分支 dev，在 dev 上开发了一段时间后要把 master 分支提交的新内容更新到 dev 分支，此时切换到 dev 分支，使用 git rebase master</p><p>等 dev 分支开发完成了之后，要合并到上游分支 master 上的时候，切换到 master 分支，使用 git merge dev</p><p>rebase类型操作<br>git checkout B1<br>git pull origin B1 –rebase<br>git rebase master<br>git push origin B1 –force  </p><p>vs我以前的merge操作 (这里为什么要merge两次 先master into B1 再B1 into master 其实我不懂 <a href="#jump">这个问题似乎得到了解答</a> )<br>git checkout B1<br>git pull origin B1<br>git merge master<br>git push origin B1</p><p>上面两个之后都要<br>git checkotu master<br>git merge B1</p><h3 id="Git-push-时如何避免出现-“Merge-branch-‘master’-of-…”"><a href="#Git-push-时如何避免出现-“Merge-branch-‘master’-of-…”" class="headerlink" title="Git push 时如何避免出现 “Merge branch ‘master’ of …”"></a>Git push 时如何避免出现 “Merge branch ‘master’ of …”</h3><p><a href="https://www.cnblogs.com/Sinte-Beuve/p/9195018.html" target="_blank" rel="noopener">https://www.cnblogs.com/Sinte-Beuve/p/9195018.html</a></p><p> A-B-C(master)<br>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<br>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D(origin/master)</p><p>我当前拉取的远端版本为 B，此时修改了代码，并在本地仓库 commit 一次，但并未 push 到远端仓库。<br>另一位开发者在 B 的基础上，同样 commit 了一次并 push 到远端仓库。那么这个时候，我再 push 自己的代码就会发生错误，如下。<br>To github.com:maoqyhz/usegit.git<br>! [rejected]        master -&gt; master (fetch first)<br>error: failed to push some refs to ‘git@github.com:maoqyhz/usegit.git’<br>hint: Updates were rejected because the remote contains work that you do<br>hint: not have locally. This is usually caused by another repository pushing<br>hint: to the same ref. You may want to first integrate the remote changes<br>hint: (e.g., ‘git pull …’) before pushing again.  </p><p>这个时候我们会选择，先 pull，再 push。Ok，push 成功，但是此时我们查看 log 就会发现除了我们自己提交的那条日志之外，会多出一条 “Merge branch ‘master’ of …”。<br>在进行 pull 操作的同时，其实就是 fetch+merge 的一个过程。我们从 remote 分支中拉取新的更新，然后再合并到本地分支中去。</p><p>如果 remote 分支超前于本地分支，并且本地分支没有任何 commit 的，直接从 remote 进行 pull 操作，默认会采用 fast-forward 模式，这种模式下，并不会产生合并节点<br>如果想之前那样，本地先 commit 后再去 pull，那么此时，remote 分支和本地会分支会出现分叉，这个时候使用 pull 操作拉取更新时，就会进行分支合并，产生合并节点和 log 信息。<br>为了去除自动生成的 log 信息 可以git pull –rebase<br>从 remote 分支拉取更新到本地时，使用 rebase。<br>当完成 bug 修复或新功能时，使用 merge 将子分支合并到主分支。</p><p><span id="jump">跳转到的地方</span></p><p>reddit上面一个讨论 <a href="https://www.reddit.com/r/git/comments/j38kb1/what_does_it_mean_to_merge_master_into_feature/" target="_blank" rel="noopener">https://www.reddit.com/r/git/comments/j38kb1/what_does_it_mean_to_merge_master_into_feature/</a>  </p><p>这是您的情况：您有一个commit一些内容的branch。同时，别人的更改更改已合并到 master。  </p><img src="/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/JdCe2RM.png" class="" title="This is an example image">  <hr><p><strong> 下面内容二选一</strong>  </p><p>将 master 合并到您的功能分支  </p><img src="/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/g8lMgW8.png" class="" title="This is an example image">  <p><strong> 或者</strong>  </p><p>变基    </p><img src="/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/rBf70aC.png" class="" title="This is an example image">  <hr><p>然后再把功能分支合并到master  (下图为第三步选择merge的效果)</p><img src="/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/bHJpOKF.png" class="" title="This is an example image">  ]]></content>
+    <content type="html"><![CDATA[<p>开发时怎么用好 Git 分支? - Color的回答 - 知乎<br><a href="https://www.zhihu.com/question/21995370/answer/19975870" target="_blank" rel="noopener">https://www.zhihu.com/question/21995370/answer/19975870</a></p><h3 id="假如远程只有一个master"><a href="#假如远程只有一个master" class="headerlink" title="假如远程只有一个master"></a>假如远程只有一个master</h3><p>本地分支可以不同步到远程仓库，我们可以在本地dev开发，然后merge到master，使用master同步代码</p><h3 id="假如远程有自己的分支-推远程master的同时推远程dev-这样的意义是什么？"><a href="#假如远程有自己的分支-推远程master的同时推远程dev-这样的意义是什么？" class="headerlink" title="假如远程有自己的分支 推远程master的同时推远程dev 这样的意义是什么？"></a>假如远程有自己的分支 推远程master的同时推远程dev 这样的意义是什么？</h3><p>git checkout dev  # 切换到dev分支进行开发</p><p>开发代码之后，我们有两个选择</p><p>第一个：如果功能开发完成了，可以合并主分支</p><p>git checkout master  # 切换到主分支</p><p>git merge dev  # 把dev分支的更改和master合并</p><p>git push  # 提交主分支代码远程</p><p>git checkout dev  # 切换到dev远程分支</p><p>git push  # 提交dev分支到远程</p><p>第二个：如果功能没有完成，可以直接推送</p><p>git push  # 提交到dev远程分支</p><p>注意：在分支切换之前最好先commit全部的改变，除非你真的知道自己在做什么</p><p>还有一篇文章 写的不错 关于merge和rebase配合使用</p><p><a href="https://zhuanlan.zhihu.com/p/34197548" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/34197548</a></p><p>例如现有上游分支 master，基于 master 分支拉出来一个开发分支 dev，在 dev 上开发了一段时间后要把 master 分支提交的新内容更新到 dev 分支，此时切换到 dev 分支，使用 git rebase master</p><p>等 dev 分支开发完成了之后，要合并到上游分支 master 上的时候，切换到 master 分支，使用 git merge dev</p><p>rebase类型操作<br>git checkout B1<br>git pull origin B1 –rebase<br>git rebase master<br>git push origin B1 –force  </p><p>vs我以前的merge操作 (这里为什么要merge两次 先master into B1 再B1 into master 其实我不懂 <a href="#jump">这个问题似乎得到了解答</a> )<br>git checkout B1<br>git pull origin B1<br>git merge master<br>git push origin B1</p><p>上面两个之后都要<br>git checkotu master<br>git merge B1</p><h3 id="Git-push-时如何避免出现-“Merge-branch-‘master’-of-…”"><a href="#Git-push-时如何避免出现-“Merge-branch-‘master’-of-…”" class="headerlink" title="Git push 时如何避免出现 “Merge branch ‘master’ of …”"></a>Git push 时如何避免出现 “Merge branch ‘master’ of …”</h3><p><a href="https://www.cnblogs.com/Sinte-Beuve/p/9195018.html" target="_blank" rel="noopener">https://www.cnblogs.com/Sinte-Beuve/p/9195018.html</a></p><p> A-B-C(master)<br>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<br>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D(origin/master)</p><p>我当前拉取的远端版本为 B，此时修改了代码，并在本地仓库 commit 一次，但并未 push 到远端仓库。<br>另一位开发者在 B 的基础上，同样 commit 了一次并 push 到远端仓库。那么这个时候，我再 push 自己的代码就会发生错误，如下。<br>To github.com:maoqyhz/usegit.git<br>! [rejected]        master -&gt; master (fetch first)<br>error: failed to push some refs to ‘git@github.com:maoqyhz/usegit.git’<br>hint: Updates were rejected because the remote contains work that you do<br>hint: not have locally. This is usually caused by another repository pushing<br>hint: to the same ref. You may want to first integrate the remote changes<br>hint: (e.g., ‘git pull …’) before pushing again.  </p><p>这个时候我们会选择，先 pull，再 push。Ok，push 成功，但是此时我们查看 log 就会发现除了我们自己提交的那条日志之外，会多出一条 “Merge branch ‘master’ of …”。<br>在进行 pull 操作的同时，其实就是 fetch+merge 的一个过程。我们从 remote 分支中拉取新的更新，然后再合并到本地分支中去。</p><p>如果 remote 分支超前于本地分支，并且本地分支没有任何 commit 的，直接从 remote 进行 pull 操作，默认会采用 fast-forward 模式，这种模式下，并不会产生合并节点<br>如果想之前那样，本地先 commit 后再去 pull，那么此时，remote 分支和本地会分支会出现分叉，这个时候使用 pull 操作拉取更新时，就会进行分支合并，产生合并节点和 log 信息。<br>为了去除自动生成的 log 信息 可以git pull –rebase<br>从 remote 分支拉取更新到本地时，使用 rebase。<br>当完成 bug 修复或新功能时，使用 merge 将子分支合并到主分支。</p><p><span id="jump">跳转到的地方</span></p><p>reddit上面一个讨论 <a href="https://www.reddit.com/r/git/comments/j38kb1/what_does_it_mean_to_merge_master_into_feature/" target="_blank" rel="noopener">https://www.reddit.com/r/git/comments/j38kb1/what_does_it_mean_to_merge_master_into_feature/</a>  </p><p>这是您的情况：您有一个commit一些内容的branch。同时，别人的更改更改已合并到 master。  </p><img src="/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/JdCe2RM.png" class="" title="This is an example image">  <hr><p><strong> 下面内容二选一</strong>  </p><p>将 master 合并到您的功能分支  </p><img src="/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/g8lMgW8.png" class="" title="This is an example image">  <p><strong> 或者</strong>  </p><p>变基    </p><img src="/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/rBf70aC.png" class="" title="This is an example image">  <hr><p>然后再把功能分支合并到master  (下图为第三步选择merge的效果)</p><img src="/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/bHJpOKF.png" class="" title="This is an example image">  <p>上面的内容似乎并没有真正回答问题，于是我继续搜索，又看到了reddit上一篇帖子。感觉比上面的更贴近我想要的答案。<br><a href="https://www.reddit.com/r/git/comments/3qpvzk/question_why_would_you_merge_master_into_a_branch/" target="_blank" rel="noopener">https://www.reddit.com/r/git/comments/3qpvzk/question_why_would_you_merge_master_into_a_branch/</a>  </p><p>本质上我们在讨论下面两种步骤的区别</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">在branch解决冲突</span><br><span class="line">git commit -m &#39;final feature commit&#39;   # SHA: X1</span><br><span class="line"># git pull, git fetch&#x2F;merge</span><br><span class="line">git merge master</span><br><span class="line">git commit -m &#39;resolve merge conflicts&#39;  # SHA: Y1</span><br><span class="line">git checkout master</span><br><span class="line">git merge feature  # SHA: M1 (merge commit)</span><br><span class="line">git branch -d feature</span><br><span class="line"></span><br><span class="line">在master解决冲突</span><br><span class="line">git commit -m &#39;final feature commit&#39;  # SHA: X2</span><br><span class="line">git checkout master</span><br><span class="line"># git pull, git fetch&#x2F;merge</span><br><span class="line">git merge feature  # SHA: M2 (merge commit)</span><br><span class="line">git commit -m &#39;resolve merge conflicts&#39;  # SHA: Y2</span><br><span class="line">git branch -d feature</span><br></pre></td></tr></table></figure><p>文就在于你想在哪里解决冲突,在branch还是在master? 在master解决冲突，命令会更少。如果实在branch解决，会使得回滚更加方便。第一种只需要revert M1才能恢复之前的master。 第二种需要revert M2 and Y2. 尽管不是每个项目都需要第一种，还是建议养成这个习惯。</p><p>还有一点意义在于：长时间开发个人分支，时不时合并master into个人可以紧跟实事，减少最终大合并的工作量。</p>]]></content>
     
     
       
@@ -394,49 +434,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>java8,使用Lambda表达式和foreach</title>
-    <link href="http://example.com/2021/01/17/java8-%E4%BD%BF%E7%94%A8Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8Cforeach/"/>
-    <id>http://example.com/2021/01/17/java8-%E4%BD%BF%E7%94%A8Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8Cforeach/</id>
-    <published>2021-01-17T10:28:41.000Z</published>
-    <updated>2021-05-18T12:43:17.003Z</updated>
-    
-    <content type="html"><![CDATA[<p>先开个坑！！！</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;先开个坑！！！&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>记录一个maven镜像配置</title>
-    <link href="http://example.com/2021/01/16/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%AAmaven%E9%95%9C%E5%83%8F%E9%85%8D%E7%BD%AE/"/>
-    <id>http://example.com/2021/01/16/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%AAmaven%E9%95%9C%E5%83%8F%E9%85%8D%E7%BD%AE/</id>
-    <published>2021-01-16T15:57:33.000Z</published>
-    <updated>2021-05-18T12:43:17.015Z</updated>
-    
-    <content type="html"><![CDATA[<p>maven匹配镜像的原理这篇讲的很好，贴了源码。<a href="https://www.cnblogs.com/ctxsdhy/p/8482725.html" target="_blank" rel="noopener">https://www.cnblogs.com/ctxsdhy/p/8482725.html</a><br>以后我就按下面这么配了，先去阿里云找，找不到的去官方找。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;mirrors&gt;</span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">  &lt;id&gt;aliyunmaven&lt;&#x2F;id&gt;</span><br><span class="line">  &lt;mirrorOf&gt;central&lt;&#x2F;mirrorOf&gt;</span><br><span class="line">  &lt;name&gt;aliyun maven&lt;&#x2F;name&gt;</span><br><span class="line">  &lt;url&gt;https:&#x2F;&#x2F;maven.aliyun.com&#x2F;repository&#x2F;public&lt;&#x2F;url&gt;</span><br><span class="line">  &lt;&#x2F;mirror&gt;</span><br><span class="line">  &lt;mirror&gt;</span><br><span class="line">      &lt;id&gt;central-repository&lt;&#x2F;id&gt;</span><br><span class="line">      &lt;mirrorOf&gt;*&lt;&#x2F;mirrorOf&gt;</span><br><span class="line">      &lt;name&gt;Other Mirror Repository&lt;&#x2F;name&gt;</span><br><span class="line">      &lt;url&gt;https:&#x2F;&#x2F;repo.maven.apache.org&#x2F;maven2&lt;&#x2F;url&gt;</span><br><span class="line">  &lt;&#x2F;mirror&gt;</span><br><span class="line">&lt;&#x2F;mirrors&gt;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;maven匹配镜像的原理这篇讲的很好，贴了源码。&lt;a href=&quot;https://www.cnblogs.com/ctxsdhy/p/8482725.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.cnblogs.com/c</summary>
-      
-    
-    
-    
-    
-    <category term="杂谈" scheme="http://example.com/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
