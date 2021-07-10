@@ -150,6 +150,139 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-mysql-索引什么时候更新"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-07-09 11:47:23" datetime="2021-07-09T03:47:23.000Z"  itemprop="datePublished">2021-07-09</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/07/09/mysql-%E7%B4%A2%E5%BC%95%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E6%9B%B4%E6%96%B0/">mysql 索引什么时候更新</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        https://stackoverflow.com/questions/17282041/when-does-mysql-update-the-indexes
+索引更新有两个方面。
+第一部分是在索引中插入/更新/删除条目。一旦记录更改，索引就会更新，并且此过程会阻止查询直到完成。这允许基于索引列上的条件更快地检索记录，这是索引最容易理解的目的。
+第二部分是更新索引的统计信息。这允许优化器确定...
+    
+
+        <a href="/2021/07/09/mysql-%E7%B4%A2%E5%BC%95%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E6%9B%B4%E6%96%B0/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-mysql-索引选择的原理—优化器"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-07-09 11:35:55" datetime="2021-07-09T03:35:55.000Z"  itemprop="datePublished">2021-07-09</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/07/09/mysql-%E7%B4%A2%E5%BC%95%E9%80%89%E6%8B%A9%E7%9A%84%E5%8E%9F%E7%90%86%E2%80%94%E4%BC%98%E5%8C%96%E5%99%A8/">mysql 索引选择的原理—优化器</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        https://blog.csdn.net/weixin_39846186/article/details/113370118
+选择索引是mysql决定的写 SQL 语句的时候，并没有主动指定使用哪个索引。也就是说，使用哪个索引是由 MySQL 来确定的。有这种情况，一条本来可以执行得很快的语句，却由于 MySQL 选错了索引，而导致执行速度变得很慢。  
+
+将慢查询日志的阈值设置为 0，表...
+    
+
+        <a href="/2021/07/09/mysql-%E7%B4%A2%E5%BC%95%E9%80%89%E6%8B%A9%E7%9A%84%E5%8E%9F%E7%90%86%E2%80%94%E4%BC%98%E5%8C%96%E5%99%A8/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-java同步试水"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-07-06 15:57:20" datetime="2021-07-06T07:57:20.000Z"  itemprop="datePublished">2021-07-06</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/07/06/java%E5%90%8C%E6%AD%A5%E8%AF%95%E6%B0%B4/">java同步试水</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+今天遇到个需求，可能有同时两个方法写入同一个excel。  
+
+
+ 怎么能让一个方法同时被调用，创建线程就行了
+ 为什么用匿名内部类的形式创建thread及两种实现多线程的基本方式
+ static不能向上抛出异常了
+ 即使不是static，实现Runnable接口不能抛异常只能捕获异常
+ main里不能访问实例方法，只能静态方法
+ java中方法必须写在类体里
+ 为什么要向上转型而不是直接...
+    
+
+        <a href="/2021/07/06/java%E5%90%8C%E6%AD%A5%E8%AF%95%E6%B0%B4/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-classpath到底是个什么玩意"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -176,7 +309,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        先开个坑，我大一初学java被环境配置严重劝退，现在也仅仅是会配，但是不懂为什么要这么配。有空我要把这个问题搞懂。python Run.py 与 python /home/path/Run.py 执行结果是不一样的因为在执行的过程中，命令行默认只是搜索当前执行路径，所以会导致一部分引用的模块找不到
+        先开个坑，我大一初学java被环境配置严重劝退，现在也仅仅是会配，但是不懂为什么要这么配。有空我要把这个问题搞懂。python Run.py 与 python /home/path/Run.py 执行结果是不一样的因为在执行的过程中，命令行默认只是搜索当前执行路径，所以会导致一部分引用的模块找不到  log
 
     
 
@@ -430,130 +563,6 @@ git fetch –...
     
 
         <a href="/2021/05/18/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1hexo%E5%8D%9A%E5%AE%A2%E4%BB%8Ewindows%E8%A2%AB%E5%88%86%E5%88%B0linux/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-一次笔试遇到的问题小总结"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-04-29 19:26:01" datetime="2021-04-29T11:26:01.000Z"  itemprop="datePublished">2021-04-29</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/04/29/%E4%B8%80%E6%AC%A1%E7%AC%94%E8%AF%95%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%B0%8F%E6%80%BB%E7%BB%93/">一次笔试遇到的问题小总结</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        123456789public static int test(int i) &#123;       try &#123;           i++;           return i - 1;       &#125; finally &#123;           return i + 2;       &#125;   &#125;
-
-上面的代码返回啥？答案是4.原因
-try...
-    
-
-        <a href="/2021/04/29/%E4%B8%80%E6%AC%A1%E7%AC%94%E8%AF%95%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%B0%8F%E6%80%BB%E7%BB%93/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-圣安地列斯裤子鞋子mod"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-04-17 21:29:04" datetime="2021-04-17T13:29:04.000Z"  itemprop="datePublished">2021-04-17</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/04/17/%E5%9C%A3%E5%AE%89%E5%9C%B0%E5%88%97%E6%96%AF%E8%A3%A4%E5%AD%90%E9%9E%8B%E5%AD%90mod/">圣安地列斯裤子鞋子mod</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        裤子txd贴图必须完全符合默认 128x256鞋子txd贴图只需要比例符合就可以  比如默认是64x64 那么512x512的也是可以的
-有的人把裤子做的前移，和原版鞋子会穿模。但是这个人做的鞋子也会前移，这样只要你用他的裤子和他的搭配得鞋就不会出现问题。当然最好的作者是完全按照原版坐标来，随意搭配。
-
-    
-
-        <a href="/2021/04/17/%E5%9C%A3%E5%AE%89%E5%9C%B0%E5%88%97%E6%96%AF%E8%A3%A4%E5%AD%90%E9%9E%8B%E5%AD%90mod/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-leetcode57的两道题双指针对撞"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-04-16 22:44:52" datetime="2021-04-16T14:44:52.000Z"  itemprop="datePublished">2021-04-16</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/04/16/leetcode57%E7%9A%84%E4%B8%A4%E9%81%93%E9%A2%98%E5%8F%8C%E6%8C%87%E9%92%88%E5%AF%B9%E6%92%9E/">leetcode57的两道题双指针对撞</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        剑指 Offer 57 - II. 和为s的连续正数序列剑指 Offer 57. 和为s的两个数字
-感觉有点像 第二个是双指针对撞法  第一个也是双指针 但是不是撞了
-
-    
-
-        <a href="/2021/04/16/leetcode57%E7%9A%84%E4%B8%A4%E9%81%93%E9%A2%98%E5%8F%8C%E6%8C%87%E9%92%88%E5%AF%B9%E6%92%9E/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
