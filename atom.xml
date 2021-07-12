@@ -6,7 +6,7 @@
   <link href="https://yiyayamaya.github.io/atom.xml" rel="self"/>
   
   <link href="https://yiyayamaya.github.io/"/>
-  <updated>2021-07-09T03:51:42.035Z</updated>
+  <updated>2021-07-12T06:22:45.547Z</updated>
   <id>https://yiyayamaya.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java 异常</title>
+    <link href="https://yiyayamaya.github.io/2021/07/12/java-%E5%BC%82%E5%B8%B8/"/>
+    <id>https://yiyayamaya.github.io/2021/07/12/java-%E5%BC%82%E5%B8%B8/</id>
+    <published>2021-07-12T05:54:22.000Z</published>
+    <updated>2021-07-12T06:22:45.547Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>我怎么隐隐约约觉得写过异常相关的文章 但是找不到了。  </p></blockquote><img src="/2021/07/12/java-%E5%BC%82%E5%B8%B8/1.png" class="" title="This is an example image"><ul><li><p>Error是内存不足这种。</p></li><li><p>Exception：分为未检查异常(RuntimeException)和已检查异常(非RuntimeException)</p><ul><li>checkedException ：受检查的异常，这种异常是强制我们catch或方法声明throws的异常。如果不处理，编译器会报错。计的目的是为了提醒开发者处理一些场景中必然可能存在的异常情况。比如IOException  </li><li>RuntimeException：运行时异常，这种异常我们不需要处理，完全由虚拟机接管。比如我们常见的NullPointerException，我们在写程序时不会进行catch或throw。  </li></ul></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;我怎么隐隐约约觉得写过异常相关的文章 但是找不到了。  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;img src=&quot;/2021/07/12/java-%E5%BC%82%E5%B8%B8/1.png&quot; class=&quot;&quot; title=&quot;This is </summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>mysql 索引什么时候更新</title>
@@ -402,31 +425,6 @@
       
       
     <summary type="html">&lt;a href=&quot;/2021/03/06/%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F/&quot; title=&quot;前中后序&quot;&gt;前中后序&lt;/a&gt; 非递归前序写法(即DFS) 中序三种非递归写法(说实话我都不熟悉) BFS用得很少，没有递归(可能有不常用 常用qu</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>通过lc160-相交链表学习双指针法</title>
-    <link href="https://yiyayamaya.github.io/2021/03/08/%E9%80%9A%E8%BF%87lc160-%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8%E5%AD%A6%E4%B9%A0%E5%8F%8C%E6%8C%87%E9%92%88%E6%B3%95/"/>
-    <id>https://yiyayamaya.github.io/2021/03/08/%E9%80%9A%E8%BF%87lc160-%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8%E5%AD%A6%E4%B9%A0%E5%8F%8C%E6%8C%87%E9%92%88%E6%B3%95/</id>
-    <published>2021-03-08T13:22:34.000Z</published>
-    <updated>2021-05-18T12:43:17.015Z</updated>
-    
-    <content type="html"><![CDATA[<p>编写一个程序，找到两个单链表相交的起始节点。</p><p>我的办法是把A链表节点全断了，这样B的尽头就是相交的节点了。但是题目要求不改变原本链表。所以我的办法不行</p></br><p>双指针法</p><p><a href="https://leetcode-cn.com/problems/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof/solution/shuang-zhi-zhen-fa-lang-man-xiang-yu-by-ml-zimingm/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof/solution/shuang-zhi-zhen-fa-lang-man-xiang-yu-by-ml-zimingm/</a></p><img src="/2021/03/08/%E9%80%9A%E8%BF%87lc160-%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8%E5%AD%A6%E4%B9%A0%E5%8F%8C%E6%8C%87%E9%92%88%E6%B3%95/160_statement.png" class="" title="This is an example image"><p><font color=red>做法：</font>我们使用两个指针 node1，node2 分别指向两个链表 headA，headB 的头结点，然后同时分别逐结点遍历，当 node1 到达链表 headA 的末尾时，重新定位到链表 headB 的头结点；当 node2 到达链表 headB 的末尾时，重新定位到链表 headA 的头结点。这样，当它们相遇时，所指向的结点就是第一个公共结点。</p><p><font color=red>评论：</font>太6了，我的理解： 两个链表长度分别为L1+C、L2+C， C为公共部分的长度，按照楼主的做法： 第一个人走了L1+C步后，回到第二个人起点走L2步；第2个人走了L2+C步后，回到第一个人起点走L1步。 当两个人走的步数都为L1+L2+C时就两个家伙就相爱了</p><p>之前有一道题也是用的类似方法，剑指offer22题，链表中倒数第k个节点。</p><p>给定一个链表: 1-&gt;2-&gt;3-&gt;4-&gt;5, 和 k = 2.返回链表 4-&gt;5.</p><p><a href="https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/</a></p><p><font color=red>做法：</font>两个指针，前指针先走k步了后指针出发，前指针走到头，后指针停下。</p></br>-- <p>这类题给我感觉像小学桌子上站个小猫，地上站个大狗然后谁比谁高多少，让你求谁多高那种题。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;编写一个程序，找到两个单链表相交的起始节点。&lt;/p&gt;
-&lt;p&gt;我的办法是把A链表节点全断了，这样B的尽头就是相交的节点了。但是题目要求不改变原本链表。所以我的办法不行&lt;/p&gt;
-&lt;/br&gt;
-
-&lt;p&gt;双指针法&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode-cn</summary>
       
     
     
