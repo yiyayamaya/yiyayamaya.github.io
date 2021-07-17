@@ -6,7 +6,7 @@
   <link href="https://yiyayamaya.github.io/atom.xml" rel="self"/>
   
   <link href="https://yiyayamaya.github.io/"/>
-  <updated>2021-07-12T06:22:45.547Z</updated>
+  <updated>2021-07-13T08:52:28.815Z</updated>
   <id>https://yiyayamaya.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java synchronized</title>
+    <link href="https://yiyayamaya.github.io/2021/07/13/java-synchronized/"/>
+    <id>https://yiyayamaya.github.io/2021/07/13/java-synchronized/</id>
+    <published>2021-07-13T06:36:29.000Z</published>
+    <updated>2021-07-13T08:52:28.815Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>当一个线程访问同步代码块时，首先是需要得到锁才能执行  </p></blockquote><blockquote><p>其实“锁”本身是个对象，synchronized这个关键字并不是“锁”。<br>从语法上讲，Java中的每个对象都可以看做一把锁，在HotSpot JVM实现中，锁有个专门的名字：监视器（Monitor）。<br>Monitor对象存在于每个Java对象的对象头中，这也是为什么Java中任意对象可以作为锁的原因，有关Monitor后续会详细介绍，有了这些概念看下面这张图应该就容易多了。</p></blockquote><img src="/2021/07/13/java-synchronized/1.jpeg" class="" title="This is an example image"><p>一个对象中有两个<font color=red>实例</font>方法同时被synchronized，则同一个对象，调用这两个方法时，只能同时执行一个。<br>原因：翻看相关书籍，发现jvm在执行方法以前，如果发现该方法前面有对象的synchronized关键字，就现在该对象的ID上加锁，当其他线程执行同时执行这个方法时，会检测改对象ＩＤ上是否加锁，如果加锁时就等待锁释放。 </p><p>Java Thread acquires an object level lock when it enters into an instance synchronized java method and acquires a class level lock when it enters into static synchronized java method.  </p><p>如果是<font color=red>静态</font>的方法呢？<br><a href="https://stackoverflow.com/questions/15438727/if-i-synchronized-two-methods-on-the-same-class-can-they-run-simultaneously" target="_blank" rel="noopener">https://stackoverflow.com/questions/15438727/if-i-synchronized-two-methods-on-the-same-class-can-they-run-simultaneously</a><br>静态方法使用.class上的锁。如果class A  {static synchronized void m() {} }，然后 new A().m()会锁住新的A()对象，此时别人调用A.m()需要的是A.class的锁但现在没有这样的锁，所以不会互相阻塞。所以永远不要实例化对象来调用静态方法。<br>Have in mind that static methods use lock on .class object. So if you have class A {static synchronized void m() {} }. And then one thread calls new A().m() it acquires lock on new A() object. If then another thread calls A.m() it ENTERS THE METHOD NO PROBLEM because what it looks for is lock on A.class object while NO THREADS possess this kind of lock. So even though you declared method synchronized it actualy IS accessed by two different threads AT THE SAME TIME. Thus: never use object references to call static methods</p><p>Putting synchronized on an instance method means that the thread has to acquire the lock (the “intrinsic lock”) on the object instance that the method is called on before the thread can start executing any code in that method.<font color=red>把synchronized放一个实例方法上意味着，该线程必须获取关于对象实例锁（以下简称“本征锁”），该方法被调用之前线程可以开始在该方法中执行的任何代码。</font></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;当一个线程访问同步代码块时，首先是需要得到锁才能执行  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;其实“锁”本身是个对象，synchronized这个关键字并不是“锁”。&lt;br&gt;从语法上讲，Java中的每个对象都可以看做</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>java 异常</title>
@@ -148,9 +172,9 @@
     <link href="https://yiyayamaya.github.io/2021/06/29/b%E7%AB%99%E5%B0%9A%E7%A1%85%E8%B0%B7springboot%E8%AE%B0%E5%BD%95/"/>
     <id>https://yiyayamaya.github.io/2021/06/29/b%E7%AB%99%E5%B0%9A%E7%A1%85%E8%B0%B7springboot%E8%AE%B0%E5%BD%95/</id>
     <published>2021-06-29T06:46:58.000Z</published>
-    <updated>2021-07-12T07:33:53.361Z</updated>
+    <updated>2021-07-15T08:47:49.584Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="https://www.bilibili.com/video/BV19K4y1L7MT?p=43" target="_blank" rel="noopener">https://www.bilibili.com/video/BV19K4y1L7MT?p=43</a></p><p>前31p全看了</p><p>32~42源码没看</p><p>2021年07月12日15:33:45 从p45继续看</p>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://www.bilibili.com/video/BV19K4y1L7MT?p=43" target="_blank" rel="noopener">https://www.bilibili.com/video/BV19K4y1L7MT?p=43</a></p><p>前31p全看了</p><p>32~42源码没看</p><p>2021年07月12日15:33:45 从p45继续看</p><p>2021年07月15日10:05:51 p47跳过了 p48看了  49~51没看 63没看 646566看了 剩下的不想看了</p>]]></content>
     
     
       
@@ -188,15 +212,15 @@
     <link href="https://yiyayamaya.github.io/2021/06/22/spring-boot-controller-%E6%8E%A5%E6%94%B6%E5%8F%82%E6%95%B0%E7%9A%84%E6%80%BB%E7%BB%93/"/>
     <id>https://yiyayamaya.github.io/2021/06/22/spring-boot-controller-%E6%8E%A5%E6%94%B6%E5%8F%82%E6%95%B0%E7%9A%84%E6%80%BB%E7%BB%93/</id>
     <published>2021-06-22T06:20:03.000Z</published>
-    <updated>2021-06-22T06:37:13.091Z</updated>
+    <updated>2021-07-17T02:55:00.751Z</updated>
     
-    <content type="html"><![CDATA[<p>1.@RequestBody 注解，必须与 contentType 类型application/json配合使用。</p><p>2.@RequestParam 注解，必须与 contentType 类型application/x-www-form-urlencoded配合使用，其为默认类型。</p><p>3.JSON.stringify() 把对象类型转换为字符串类型，一般配合 @RequestBody 注解和contentType 类型application/json使用。</p><p>下面是一个ajax 规定了data类型JSON.stringify()； contentType是application/json<br>‘’’</p><pre><code>        $.ajax({            type: &quot;POST&quot;,            dataType: &quot;json&quot;,            data: JSON.stringify(task),            contentType: &quot;application/json;charset=UTF-8&quot;,            url: &quot;/updateTask&quot;,        });</code></pre><p>‘’’</p><p>其对应的controller层就是这样的 完美对应上面的第三条。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public Response updateTask(@RequestBody Task task) &#123;&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>1.@RequestBody 注解，必须与 contentType 类型application/json配合使用。 把前端接收来的json封装到对象中。</p><p>2.@RequestParam 注解，必须与 contentType 类型application/x-www-form-urlencoded配合使用，其为默认类型。</p><p>3.JSON.stringify() 把对象类型转换为字符串类型，一般配合 @RequestBody 注解和contentType 类型application/json使用。</p><p>下面是一个ajax 规定了data类型JSON.stringify()； contentType是application/json<br>‘’’</p><pre><code>        $.ajax({            type: &quot;POST&quot;,            dataType: &quot;json&quot;,            data: JSON.stringify(task),            contentType: &quot;application/json;charset=UTF-8&quot;,            url: &quot;/updateTask&quot;,        });</code></pre><p>‘’’</p><p>其对应的controller层就是这样的 完美对应上面的第三条。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public Response updateTask(@RequestBody Task task) &#123;&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;1.@RequestBody 注解，必须与 contentType 类型application/json配合使用。&lt;/p&gt;
-&lt;p&gt;2.@RequestParam 注解，必须与 contentType 类型application/x-www-form-urlencoded配合</summary>
+    <summary type="html">&lt;p&gt;1.@RequestBody 注解，必须与 contentType 类型application/json配合使用。 把前端接收来的json封装到对象中。&lt;/p&gt;
+&lt;p&gt;2.@RequestParam 注解，必须与 contentType 类型application/x-ww</summary>
       
     
     
@@ -405,26 +429,6 @@
       
     <summary type="html">&lt;p&gt;剑指offer 54. 二叉搜索树的第k大节点&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/&quot; target=&quot;_blank&quot; rel</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>二叉树相关问题目录</title>
-    <link href="https://yiyayamaya.github.io/2021/03/11/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E7%9B%AE%E5%BD%95/"/>
-    <id>https://yiyayamaya.github.io/2021/03/11/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E7%9B%AE%E5%BD%95/</id>
-    <published>2021-03-11T08:04:52.000Z</published>
-    <updated>2021-05-18T12:43:17.011Z</updated>
-    
-    <content type="html"><![CDATA[<a href="/2021/03/06/%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F/" title="前中后序">前中后序</a> 非递归前序写法(即DFS) 中序三种非递归写法(说实话我都不熟悉) BFS用得很少，没有递归(可能有不常用 常用queue实现)</br> <a href="/2021/03/07/lc257-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%89%80%E6%9C%89%E8%B7%AF%E5%BE%84/" title="lc257-二叉树的所有路径">lc257-二叉树的所有路径</a> 递归 非递归DFS 非递归BFS]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;a href=&quot;/2021/03/06/%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F/&quot; title=&quot;前中后序&quot;&gt;前中后序&lt;/a&gt; 非递归前序写法(即DFS) 中序三种非递归写法(说实话我都不熟悉) BFS用得很少，没有递归(可能有不常用 常用qu</summary>
       
     
     
