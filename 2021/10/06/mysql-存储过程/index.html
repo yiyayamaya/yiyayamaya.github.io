@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>mysql 存储过程 | 皇姑区第一亚索的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#9ACD32">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="一次写的mysql造数据脚本 感觉写的不错 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql 存储过程">
+<meta property="og:url" content="https://yiyayamaya.github.io/2021/10/06/mysql-%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/index.html">
+<meta property="og:site_name" content="皇姑区第一亚索的博客">
+<meta property="og:description" content="一次写的mysql造数据脚本 感觉写的不错 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-10-06T05:54:44.000Z">
+<meta property="article:modified_time" content="2021-10-06T05:56:36.554Z">
+<meta property="article:author" content="皇姑区第一亚索">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="皇姑区第一亚索的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">皇姑区第一亚索</h5>
+          <a href="mailto:wuxingjian98@gmail.com" title="wuxingjian98@gmail.com" class="mail">wuxingjian98@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                日志
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yiyayamaya" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">mysql 存储过程</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">mysql 存储过程</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-10-06T05:54:44.000Z" itemprop="datePublished" class="page-time">
+  2021-10-06
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-mysql-存储过程"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">mysql 存储过程</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-10-06 13:54:44" datetime="2021-10-06T05:54:44.000Z"  itemprop="datePublished">2021-10-06</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>一次写的mysql造数据脚本 感觉写的不错</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">delimiter //</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">PROCEDURE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> function_test;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> function_test(event_arr <span class="built_in">varchar</span>(<span class="number">150</span>),retry_arr <span class="built_in">varchar</span>(<span class="number">150</span>),task_source_idVal <span class="built_in">INT</span>,rand_time  <span class="built_in">varchar</span>(<span class="number">25</span>))</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">DECLARE</span> event_arr_tmp <span class="built_in">varchar</span>(<span class="number">150</span>);</span><br><span class="line">    <span class="keyword">DECLARE</span> retry_arr_tmp <span class="built_in">varchar</span>(<span class="number">150</span>);</span><br><span class="line">    <span class="keyword">DECLARE</span> eventVal <span class="built_in">varchar</span>(<span class="number">150</span>);</span><br><span class="line">    <span class="keyword">DECLARE</span> retryVal <span class="built_in">varchar</span>(<span class="number">150</span>);</span><br><span class="line">    <span class="keyword">DECLARE</span> i <span class="built_in">INT</span> <span class="keyword">default</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">DECLARE</span> random_task_id <span class="built_in">INT</span> <span class="keyword">DEFAULT</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">DECLARE</span> task_name_val_arr <span class="built_in">varchar</span>(<span class="number">1000</span>) <span class="keyword">default</span></span><br><span class="line"><span class="string">'mt_daily,'</span></span><br><span class="line"><span class="string">'mt_monthly,'</span></span><br><span class="line"><span class="string">'mt_b2b_monthly,'</span></span><br><span class="line"><span class="string">'returns_daily,'</span></span><br><span class="line"><span class="string">'returns_monthly,'</span></span><br><span class="line"><span class="string">'mt_summary_monthly,'</span></span><br><span class="line"><span class="string">'deal,'</span></span><br><span class="line"><span class="string">'deal_result,'</span></span><br><span class="line"><span class="string">'inventory_age,'</span></span><br><span class="line"><span class="string">'vat_monthly,'</span></span><br><span class="line"><span class="string">'business_daily,'</span></span><br><span class="line"><span class="string">'bank_card,'</span></span><br><span class="line"><span class="string">'box_upload,'</span></span><br><span class="line"><span class="string">'box_download,'</span></span><br><span class="line"><span class="string">'order_shoot,'</span></span><br><span class="line"><span class="string">'balance_daily,'</span></span><br><span class="line"><span class="string">'balance_quarterly,'</span></span><br><span class="line"><span class="string">'account_status,'</span></span><br><span class="line"><span class="string">'feedback_daily,'</span></span><br><span class="line"><span class="string">'request_review,'</span></span><br><span class="line"><span class="string">'storage_free_monthly,'</span></span><br><span class="line"><span class="string">'storage_mon_monthly,'</span></span><br><span class="line"><span class="string">'referenceid,'</span></span><br><span class="line"><span class="string">'amazon_rank,'</span></span><br><span class="line"><span class="string">'amazon_rating,'</span></span><br><span class="line"><span class="string">'walmart_rank,'</span></span><br><span class="line"><span class="string">'get_boss_positions_by_search,'</span></span><br><span class="line"><span class="string">'get_boss_positions_by_company,'</span></span><br><span class="line"><span class="string">'get_boss_position_detail,'</span></span><br><span class="line"><span class="string">'balance_monthly'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">DECLARE</span> task_name_val <span class="built_in">varchar</span>(<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="keyword">select</span> <span class="number">1</span> + (<span class="keyword">RAND</span>() * <span class="number">31</span>) <span class="keyword">into</span> random_task_id;</span><br><span class="line">            <span class="keyword">SET</span> task_name_val = SUBSTRING_INDEX(task_name_val_arr, <span class="string">','</span>, random_task_id);</span><br><span class="line">            <span class="keyword">SET</span> task_name_val = SUBSTRING_INDEX(task_name_val, <span class="string">','</span>, <span class="number">-1</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="keyword">SET</span> event_arr_tmp=event_arr;</span><br><span class="line">            <span class="keyword">SET</span> retry_arr_tmp=retry_arr;</span><br><span class="line">            WHILE event_arr_tmp != ''  <span class="keyword">DO</span></span><br><span class="line">                    <span class="keyword">SET</span> eventVal = SUBSTRING_INDEX(event_arr_tmp, <span class="string">','</span>, <span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">SET</span> retryVal = SUBSTRING_INDEX(retry_arr_tmp, <span class="string">','</span>, <span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">INSERT</span> <span class="keyword">INTO</span> atc_task_logs(task_source_id, <span class="keyword">event</span>, result_hash_key, task_name, retry_times,</span><br><span class="line">                                              created_time)</span><br><span class="line">                    <span class="keyword">VALUES</span> (task_source_idVal, eventVal, <span class="number">0</span>, task_name_val, retryVal, rand_time);</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">select</span> <span class="keyword">date_add</span>(rand_time, <span class="built_in">interval</span> <span class="number">1</span> <span class="keyword">second</span>) <span class="keyword">into</span> rand_time;</span><br><span class="line"></span><br><span class="line">                    IF LOCATE(',', event_arr_tmp) &gt; 0 THEN</span><br><span class="line">                        <span class="keyword">SET</span> event_arr_tmp = <span class="keyword">SUBSTRING</span>(event_arr_tmp, <span class="keyword">LOCATE</span>(<span class="string">','</span>, event_arr_tmp) + <span class="number">1</span>);</span><br><span class="line">                    ELSE</span><br><span class="line">                        <span class="keyword">SET</span> event_arr_tmp = <span class="string">''</span>;</span><br><span class="line">                    <span class="keyword">END</span> <span class="keyword">IF</span>;</span><br><span class="line"></span><br><span class="line">                    IF LOCATE(',', retry_arr_tmp) &gt; 0 THEN</span><br><span class="line">                        <span class="keyword">SET</span> retry_arr_tmp = <span class="keyword">SUBSTRING</span>(retry_arr_tmp, <span class="keyword">LOCATE</span>(<span class="string">','</span>, retry_arr_tmp) + <span class="number">1</span>);</span><br><span class="line">                    ELSE</span><br><span class="line">                        <span class="keyword">SET</span> retry_arr_tmp = <span class="string">''</span>;</span><br><span class="line">                    <span class="keyword">END</span> <span class="keyword">IF</span>;</span><br><span class="line">            <span class="keyword">END</span> <span class="keyword">WHILE</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span> //</span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">PROCEDURE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> proc_batch_insert;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> proc_batch_insert()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">    <span class="keyword">DECLARE</span> event_arr1 <span class="built_in">varchar</span>(<span class="number">150</span>) <span class="keyword">DEFAULT</span> <span class="string">'1,2,3,4'</span>;</span><br><span class="line">    <span class="keyword">DECLARE</span> event_arr2 <span class="built_in">varchar</span>(<span class="number">150</span>) <span class="keyword">DEFAULT</span> <span class="string">'1,2,3,5,1,2,3,4'</span>;</span><br><span class="line">    <span class="keyword">DECLARE</span> event_arr3 <span class="built_in">varchar</span>(<span class="number">150</span>) <span class="keyword">DEFAULT</span> <span class="string">'1,2,3,5,1,2,3,5,1,2,3,4'</span>;</span><br><span class="line">    <span class="keyword">DECLARE</span> event_arr4 <span class="built_in">varchar</span>(<span class="number">150</span>) <span class="keyword">DEFAULT</span> <span class="string">'1,2,3,5,1,2,3,5,1,2,3,5,1,2,3,4'</span>;</span><br><span class="line">    <span class="keyword">DECLARE</span> event_arr5 <span class="built_in">varchar</span>(<span class="number">150</span>) <span class="keyword">DEFAULT</span> <span class="string">'1,2,3,5,1,2,3,5,1,2,3,5,1,2,3,5,1,2,3,4'</span>;</span><br><span class="line">    <span class="keyword">DECLARE</span> event_arr6 <span class="built_in">varchar</span>(<span class="number">150</span>) <span class="keyword">DEFAULT</span> <span class="string">'1,2,3,5,1,2,3,5,1,2,3,5,1,2,3,5,1,2,3,5'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">DECLARE</span> retry_arr1 <span class="built_in">varchar</span>(<span class="number">150</span>) <span class="keyword">DEFAULT</span> <span class="string">'1,1,1,1'</span>;</span><br><span class="line">    <span class="keyword">DECLARE</span> retry_arr2 <span class="built_in">varchar</span>(<span class="number">150</span>) <span class="keyword">DEFAULT</span> <span class="string">'1,1,1,1,2,2,2,2'</span>;</span><br><span class="line">    <span class="keyword">DECLARE</span> retry_arr3 <span class="built_in">varchar</span>(<span class="number">150</span>) <span class="keyword">DEFAULT</span> <span class="string">'1,1,1,1,2,2,2,2,3,3,3,3'</span>;</span><br><span class="line">    <span class="keyword">DECLARE</span> retry_arr4 <span class="built_in">varchar</span>(<span class="number">150</span>) <span class="keyword">DEFAULT</span> <span class="string">'1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4'</span>;</span><br><span class="line">    <span class="keyword">DECLARE</span> retry_arr5 <span class="built_in">varchar</span>(<span class="number">150</span>) <span class="keyword">DEFAULT</span> <span class="string">'1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5'</span>;</span><br><span class="line">    <span class="keyword">DECLARE</span> retry_arr6 <span class="built_in">varchar</span>(<span class="number">150</span>) <span class="keyword">DEFAULT</span> <span class="string">'1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">DECLARE</span> event_arr <span class="built_in">varchar</span>(<span class="number">150</span>);</span><br><span class="line">    <span class="keyword">DECLARE</span> retry_arr <span class="built_in">varchar</span>(<span class="number">150</span>) ;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">DECLARE</span> task_source_idVal <span class="built_in">INT</span>;</span><br><span class="line">    <span class="keyword">DECLARE</span> i <span class="built_in">INT</span> <span class="keyword">default</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">DECLARE</span> arr_index_probability_distribution <span class="built_in">varchar</span>(<span class="number">1000</span>) <span class="keyword">default</span></span><br><span class="line"><span class="string">'1,1,1,1,1,1,1,1,1,1,2,2,2,2,3,3,4,4,5,6,'</span></span><br><span class="line"><span class="string">'1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,'</span></span><br><span class="line"><span class="string">'1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,'</span></span><br><span class="line"><span class="string">'1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,'</span></span><br><span class="line"><span class="string">'1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">DECLARE</span>  arr_index_key <span class="built_in">INT</span> <span class="keyword">DEFAULT</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">DECLARE</span>  rand_time <span class="built_in">varchar</span>(<span class="number">25</span>) ;</span><br><span class="line">    <span class="keyword">DECLARE</span>  arr_value_value <span class="built_in">varchar</span>(<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">SET</span> task_source_idVal = <span class="number">3000001</span>;</span><br><span class="line"></span><br><span class="line">    WHILE task_source_idVal &lt;= 4000000 DO</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">select</span> <span class="number">1</span> + (<span class="keyword">RAND</span>() * <span class="number">101</span>) <span class="keyword">into</span> arr_index_key;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">SELECT</span> FROM_UNIXTIME(</span><br><span class="line">         <span class="keyword">FLOOR</span>((@s := <span class="keyword">UNIX_TIMESTAMP</span>(<span class="string">'2021-10-19 23:59:56'</span>)) + <span class="keyword">RAND</span>() * (<span class="keyword">UNIX_TIMESTAMP</span>(<span class="string">'2021-10-14 23:59:59'</span>) - @s + <span class="number">1</span>)</span><br><span class="line">    )) <span class="keyword">into</span> rand_time  ;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">SET</span> arr_value_value = SUBSTRING_INDEX(arr_index_probability_distribution, <span class="string">','</span>, arr_index_key);</span><br><span class="line">    <span class="keyword">SET</span> arr_value_value = SUBSTRING_INDEX(arr_value_value, <span class="string">','</span>, <span class="number">-1</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    CASE arr_value_value</span><br><span class="line">        WHEN '1' THEN <span class="keyword">SET</span> event_arr = event_arr1;</span><br><span class="line">                    <span class="keyword">SET</span> retry_arr = retry_arr1;</span><br><span class="line">        WHEN '2' THEN <span class="keyword">SET</span> event_arr = event_arr2;</span><br><span class="line">                    <span class="keyword">SET</span> retry_arr = retry_arr2;</span><br><span class="line">        WHEN '3' THEN <span class="keyword">SET</span> event_arr = event_arr3;</span><br><span class="line">                    <span class="keyword">SET</span> retry_arr = retry_arr3;</span><br><span class="line">        WHEN '4' THEN <span class="keyword">SET</span> event_arr = event_arr4;</span><br><span class="line">                    <span class="keyword">SET</span> retry_arr = retry_arr4;</span><br><span class="line">        WHEN '5' THEN <span class="keyword">SET</span> event_arr = event_arr5;</span><br><span class="line">                    <span class="keyword">SET</span> retry_arr = retry_arr5;</span><br><span class="line">        WHEN '6' THEN <span class="keyword">SET</span> event_arr = event_arr6;</span><br><span class="line">                    <span class="keyword">SET</span> retry_arr = retry_arr6;</span><br><span class="line">        ELSE <span class="keyword">BEGIN</span> <span class="keyword">END</span>;</span><br><span class="line">        <span class="keyword">END</span> <span class="keyword">CASE</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">call</span> function_test(event_arr,retry_arr,task_source_idVal,rand_time);</span><br><span class="line">    <span class="keyword">SET</span> task_source_idVal = task_source_idVal + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     <span class="keyword">SET</span> i = i+<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">END</span> <span class="keyword">WHILE</span>;</span><br><span class="line"><span class="keyword">END</span>;</span><br><span class="line">//</span><br><span class="line">delimiter ;</span><br><span class="line"><span class="keyword">call</span> proc_batch_insert();</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2021-10-06T05:56:36.554Z" itemprop="dateUpdated">2021-10-06 13:56:36</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://yiyayamaya.github.io">
+            <img src="/img/avatar1.jpg" alt="皇姑区第一亚索">
+            皇姑区第一亚索
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/10/06/mysql-%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/&title=《mysql 存储过程》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/10/06/mysql-%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/&title=《mysql 存储过程》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/10/06/mysql-%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《mysql 存储过程》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/10/06/mysql-%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/10/06/mysql-%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/10/25/mysql-not-in-GROUP-BY-clause-and-contains-nonaggregated-column/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">mysql not in GROUP BY clause and contains nonaggregated column</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/09/18/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F-%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">全局变量 局部变量的生命周期</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "lrdeEdMXEXCAsD9I3vd7hPnz-gzGzoHsz",
+            appKey: "w7U0ClAFDzQNEfIOgHoMaFwM",
+            avatar: "wavatar",
+			 emojiCDN: 'https://valinecdn.bili33.top/', 
+			 emojiMaps: {
+				"Tieba-New2": "Tieba-New/image_emoticon.png",
+				"Tieba-New3": "Tieba-New/image_emoticon10.png",
+				
+				"Tieba-New14": "Tieba-New/image_emoticon11.png",
+				
+				"Tieba-New25": "Tieba-New/image_emoticon12.png",
+				
+				"Tieba-New31": "Tieba-New/image_emoticon13.png",
+				"Tieba-New32": "Tieba-New/image_emoticon14.png",
+				"Tieba-New33": "Tieba-New/image_emoticon15.png",
+				"Tieba-New34": "Tieba-New/image_emoticon16.png",
+				"Tieba-New35": "Tieba-New/image_emoticon17.png",
+				"Tieba-New36": "Tieba-New/image_emoticon18.png",
+				"Tieba-New37": "Tieba-New/image_emoticon19.png",
+				"Tieba-New38": "Tieba-New/image_emoticon2.png",
+				"Tieba-New39": "Tieba-New/image_emoticon20.png",
+				"Tieba-New40": "Tieba-New/image_emoticon21.png",
+				"Tieba-New41": "Tieba-New/image_emoticon22.png",
+				"Tieba-New42": "Tieba-New/image_emoticon23.png",
+				"Tieba-New43": "Tieba-New/image_emoticon24.png",
+				"Tieba-New44": "Tieba-New/image_emoticon25.png",
+				"Tieba-New45": "Tieba-New/image_emoticon26.png",
+				"Tieba-New46": "Tieba-New/image_emoticon27.png",
+				"Tieba-New47": "Tieba-New/image_emoticon28.png",
+				"Tieba-New48": "Tieba-New/image_emoticon29.png",
+				"Tieba-New49": "Tieba-New/image_emoticon3.png",
+				"Tieba-New50": "Tieba-New/image_emoticon30.png",
+				"Tieba-New51": "Tieba-New/image_emoticon31.png",
+				"Tieba-New52": "Tieba-New/image_emoticon32.png",
+				"Tieba-New53": "Tieba-New/image_emoticon33.png",
+				
+				"Tieba-New60": "Tieba-New/image_emoticon4.png",
+				
+				"Tieba-New71": "Tieba-New/image_emoticon5.png",
+				"Tieba-New72": "Tieba-New/image_emoticon50.png",
+				"Tieba-New73": "Tieba-New/image_emoticon6.png",
+				"Tieba-New74": "Tieba-New/image_emoticon66.png",
+				"Tieba-New75": "Tieba-New/image_emoticon67.png",
+				"Tieba-New76": "Tieba-New/image_emoticon68.png",
+				"Tieba-New77": "Tieba-New/image_emoticon69.png",
+				"Tieba-New78": "Tieba-New/image_emoticon7.png",
+				"Tieba-New79": "Tieba-New/image_emoticon70.png",
+				"Tieba-New80": "Tieba-New/image_emoticon71.png",
+				"Tieba-New81": "Tieba-New/image_emoticon72.png",
+				"Tieba-New82": "Tieba-New/image_emoticon73.png",
+				"Tieba-New83": "Tieba-New/image_emoticon74.png",
+				"Tieba-New84": "Tieba-New/image_emoticon75.png",
+				"Tieba-New85": "Tieba-New/image_emoticon76.png",
+				
+				"Tieba-New89": "Tieba-New/image_emoticon8.png",
+				
+				"Tieba-New95": "Tieba-New/image_emoticon85.png",
+				"Tieba-New96": "Tieba-New/image_emoticon86.png",
+				"Tieba-New97": "Tieba-New/image_emoticon87.png",
+				"Tieba-New98": "Tieba-New/image_emoticon88.png",
+				"Tieba-New99": "Tieba-New/image_emoticon89.png",
+				"Tieba-New100": "Tieba-New/image_emoticon9.png",
+				"Tieba-New101": "Tieba-New/image_emoticon90.png",
+				"Tieba-New102": "Tieba-New/image_emoticon91.png",
+				"Tieba-New103": "Tieba-New/image_emoticon92.png",
+				"Tieba-New104": "Tieba-New/image_emoticon93.png",
+				"Tieba-New105": "Tieba-New/image_emoticon94.png",
+				"Tieba-New106": "Tieba-New/image_emoticon95.png",
+				"Tieba-New107": "Tieba-New/image_emoticon96.png",
+				"Tieba-New108": "Tieba-New/image_emoticon97.png",
+				"Tieba-New109": "Tieba-New/image_emoticon98.png"
+
+				
+				} ,
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>皇姑区第一亚索 &copy; 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/10/06/mysql-%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/&title=《mysql 存储过程》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/10/06/mysql-%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/&title=《mysql 存储过程》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/10/06/mysql-%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《mysql 存储过程》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/10/06/mysql-%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/10/06/mysql-%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuklEQVR42u3aQXLCMBAEQP7/aXIlldjMrKSEQ/tEOVi4lSpLnt3HIz6eL8fPM6/n89F+fr4aefYrDzw8PLxjvGS45PyuCboa8/7ayzvBw8PDO8ZrH9/35+9hCXvb/eDh4eF9AG9lez3bKM+mAA8PD+8zebMtcjtx/7Yw4OHh4d3ykjBiJUTIN9b5dG/OWvDw8PAOVJE+5/OR+h4eHh7eclV9FhnMmgBmi8eb8fHw8PAO8GZFrPWbaBsLlopteHh4eAd4s5vLg9TZMpB8M2nPwsPDw9vLyx+77dB5HJwvPPloRZcWHh4eXsnLb3SltN/GELOtc1Tfw8PDw9vKy0v1s210224VvQG0tTs8PDy8ZV4eHLRF/b3LSXLmsr6Hh4eHt5XXZr15+Sqh3gcW7WIwDCPw8PDwRrw2Gmjjg2RhaM8U7QJ4eHh4W3l5a1QerbbR8Gy0qKEBDw8P7zBv5YV/1hCQT267YHzLWvDw8PC28toGrLYpKg98V5quosUGDw8PbxMvJ7XhRV4qq/8P+SYeDw8P7zAvj3fbx33biND+9fJ38fDw8A7zks1uQs2Xkza8yANcPDw8vHO8NpKoS1CbrtrcdIWHh4e3zMubBvLlYdZilePz7T4eHh7eCd6szJ9HuuvlrtlU4uHh4Z3mtWHr3onIv/OMDzw8PLxzvJXX/vbxPXugr0wlHh4e3t/w1gtR7VrUFtiKUBgPDw/vT3jr7LYYtl4Gu5xEPDw8vK28Z3nMrmpD2NkG+pcx8fDw8A7w2gAij3HXy11toPxYOfDw8PBKXvsoz5eH2da5LbkNeyLw8PDwlnl5A8HKIzth7yrI4eHh4X0y7/7mWsYsLD64MODh4eEt82bb7rzhoN304+Hh4f0Xb6X4NAt/T4QRl50ReHh4eFt5G17448UmKXrl7V+b63t4eHh473lfGDdpzp/Aw+4AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

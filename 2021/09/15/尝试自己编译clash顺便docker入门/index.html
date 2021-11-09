@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>尝试自己编译clash顺便docker入门 | 皇姑区第一亚索的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#9ACD32">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="镜像是文件，容器是进程$ docker ps &#x2F;&#x2F; 查看所有正在运行容器$ docker stop containerId &#x2F;&#x2F; containerId 是容器的ID   $ docker ps -a &#x2F;&#x2F; 查看所有容器$ docker ps -a -q &#x2F;&#x2F; 查看所有容器ID   $ docker stop $(docker ps -a -q) &#x2F;&#x2F;  stop停止所有容器$ docker  r">
+<meta property="og:type" content="article">
+<meta property="og:title" content="尝试自己编译clash顺便docker入门">
+<meta property="og:url" content="https://yiyayamaya.github.io/2021/09/15/%E5%B0%9D%E8%AF%95%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91clash%E9%A1%BA%E4%BE%BFdocker%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="皇姑区第一亚索的博客">
+<meta property="og:description" content="镜像是文件，容器是进程$ docker ps &#x2F;&#x2F; 查看所有正在运行容器$ docker stop containerId &#x2F;&#x2F; containerId 是容器的ID   $ docker ps -a &#x2F;&#x2F; 查看所有容器$ docker ps -a -q &#x2F;&#x2F; 查看所有容器ID   $ docker stop $(docker ps -a -q) &#x2F;&#x2F;  stop停止所有容器$ docker  r">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-09-15T07:37:29.000Z">
+<meta property="article:modified_time" content="2021-09-15T09:23:52.560Z">
+<meta property="article:author" content="皇姑区第一亚索">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="皇姑区第一亚索的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">皇姑区第一亚索</h5>
+          <a href="mailto:wuxingjian98@gmail.com" title="wuxingjian98@gmail.com" class="mail">wuxingjian98@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                日志
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yiyayamaya" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">尝试自己编译clash顺便docker入门</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">尝试自己编译clash顺便docker入门</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-09-15T07:37:29.000Z" itemprop="datePublished" class="page-time">
+  2021-09-15
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-尝试自己编译clash顺便docker入门"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">尝试自己编译clash顺便docker入门</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-09-15 15:37:29" datetime="2021-09-15T07:37:29.000Z"  itemprop="datePublished">2021-09-15</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>镜像是文件，容器是进程<br>$ docker ps // 查看所有正在运行容器<br>$ docker stop containerId // containerId 是容器的ID  </p>
+<p>$ docker ps -a // 查看所有容器<br>$ docker ps -a -q // 查看所有容器ID  </p>
+<p>$ docker stop $(docker ps -a -q) //  stop停止所有容器<br>$ docker  rm $(docker ps -a -q) //   remove删除所有容器   </p>
+<p>查看所有镜像<br>docker images  </p>
+<p>docker run为镜像创建一个容器</p>
+<p>可以利用 docker container start 命令，直接将一个已经终止（exited）的容器启动运行。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2021-09-15T09:23:52.560Z" itemprop="dateUpdated">2021-09-15 17:23:52</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://yiyayamaya.github.io">
+            <img src="/img/avatar1.jpg" alt="皇姑区第一亚索">
+            皇姑区第一亚索
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/09/15/%E5%B0%9D%E8%AF%95%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91clash%E9%A1%BA%E4%BE%BFdocker%E5%85%A5%E9%97%A8/&title=《尝试自己编译clash顺便docker入门》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/09/15/%E5%B0%9D%E8%AF%95%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91clash%E9%A1%BA%E4%BE%BFdocker%E5%85%A5%E9%97%A8/&title=《尝试自己编译clash顺便docker入门》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/09/15/%E5%B0%9D%E8%AF%95%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91clash%E9%A1%BA%E4%BE%BFdocker%E5%85%A5%E9%97%A8/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《尝试自己编译clash顺便docker入门》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/09/15/%E5%B0%9D%E8%AF%95%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91clash%E9%A1%BA%E4%BE%BFdocker%E5%85%A5%E9%97%A8/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/09/15/%E5%B0%9D%E8%AF%95%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91clash%E9%A1%BA%E4%BE%BFdocker%E5%85%A5%E9%97%A8/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/09/18/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F-%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">全局变量 局部变量的生命周期</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/09/07/mysql-%E5%88%86%E9%A1%B5/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">mysql 分页</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "lrdeEdMXEXCAsD9I3vd7hPnz-gzGzoHsz",
+            appKey: "w7U0ClAFDzQNEfIOgHoMaFwM",
+            avatar: "wavatar",
+			 emojiCDN: 'https://valinecdn.bili33.top/', 
+			 emojiMaps: {
+				"Tieba-New2": "Tieba-New/image_emoticon.png",
+				"Tieba-New3": "Tieba-New/image_emoticon10.png",
+				
+				"Tieba-New14": "Tieba-New/image_emoticon11.png",
+				
+				"Tieba-New25": "Tieba-New/image_emoticon12.png",
+				
+				"Tieba-New31": "Tieba-New/image_emoticon13.png",
+				"Tieba-New32": "Tieba-New/image_emoticon14.png",
+				"Tieba-New33": "Tieba-New/image_emoticon15.png",
+				"Tieba-New34": "Tieba-New/image_emoticon16.png",
+				"Tieba-New35": "Tieba-New/image_emoticon17.png",
+				"Tieba-New36": "Tieba-New/image_emoticon18.png",
+				"Tieba-New37": "Tieba-New/image_emoticon19.png",
+				"Tieba-New38": "Tieba-New/image_emoticon2.png",
+				"Tieba-New39": "Tieba-New/image_emoticon20.png",
+				"Tieba-New40": "Tieba-New/image_emoticon21.png",
+				"Tieba-New41": "Tieba-New/image_emoticon22.png",
+				"Tieba-New42": "Tieba-New/image_emoticon23.png",
+				"Tieba-New43": "Tieba-New/image_emoticon24.png",
+				"Tieba-New44": "Tieba-New/image_emoticon25.png",
+				"Tieba-New45": "Tieba-New/image_emoticon26.png",
+				"Tieba-New46": "Tieba-New/image_emoticon27.png",
+				"Tieba-New47": "Tieba-New/image_emoticon28.png",
+				"Tieba-New48": "Tieba-New/image_emoticon29.png",
+				"Tieba-New49": "Tieba-New/image_emoticon3.png",
+				"Tieba-New50": "Tieba-New/image_emoticon30.png",
+				"Tieba-New51": "Tieba-New/image_emoticon31.png",
+				"Tieba-New52": "Tieba-New/image_emoticon32.png",
+				"Tieba-New53": "Tieba-New/image_emoticon33.png",
+				
+				"Tieba-New60": "Tieba-New/image_emoticon4.png",
+				
+				"Tieba-New71": "Tieba-New/image_emoticon5.png",
+				"Tieba-New72": "Tieba-New/image_emoticon50.png",
+				"Tieba-New73": "Tieba-New/image_emoticon6.png",
+				"Tieba-New74": "Tieba-New/image_emoticon66.png",
+				"Tieba-New75": "Tieba-New/image_emoticon67.png",
+				"Tieba-New76": "Tieba-New/image_emoticon68.png",
+				"Tieba-New77": "Tieba-New/image_emoticon69.png",
+				"Tieba-New78": "Tieba-New/image_emoticon7.png",
+				"Tieba-New79": "Tieba-New/image_emoticon70.png",
+				"Tieba-New80": "Tieba-New/image_emoticon71.png",
+				"Tieba-New81": "Tieba-New/image_emoticon72.png",
+				"Tieba-New82": "Tieba-New/image_emoticon73.png",
+				"Tieba-New83": "Tieba-New/image_emoticon74.png",
+				"Tieba-New84": "Tieba-New/image_emoticon75.png",
+				"Tieba-New85": "Tieba-New/image_emoticon76.png",
+				
+				"Tieba-New89": "Tieba-New/image_emoticon8.png",
+				
+				"Tieba-New95": "Tieba-New/image_emoticon85.png",
+				"Tieba-New96": "Tieba-New/image_emoticon86.png",
+				"Tieba-New97": "Tieba-New/image_emoticon87.png",
+				"Tieba-New98": "Tieba-New/image_emoticon88.png",
+				"Tieba-New99": "Tieba-New/image_emoticon89.png",
+				"Tieba-New100": "Tieba-New/image_emoticon9.png",
+				"Tieba-New101": "Tieba-New/image_emoticon90.png",
+				"Tieba-New102": "Tieba-New/image_emoticon91.png",
+				"Tieba-New103": "Tieba-New/image_emoticon92.png",
+				"Tieba-New104": "Tieba-New/image_emoticon93.png",
+				"Tieba-New105": "Tieba-New/image_emoticon94.png",
+				"Tieba-New106": "Tieba-New/image_emoticon95.png",
+				"Tieba-New107": "Tieba-New/image_emoticon96.png",
+				"Tieba-New108": "Tieba-New/image_emoticon97.png",
+				"Tieba-New109": "Tieba-New/image_emoticon98.png"
+
+				
+				} ,
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>皇姑区第一亚索 &copy; 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/09/15/%E5%B0%9D%E8%AF%95%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91clash%E9%A1%BA%E4%BE%BFdocker%E5%85%A5%E9%97%A8/&title=《尝试自己编译clash顺便docker入门》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/09/15/%E5%B0%9D%E8%AF%95%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91clash%E9%A1%BA%E4%BE%BFdocker%E5%85%A5%E9%97%A8/&title=《尝试自己编译clash顺便docker入门》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/09/15/%E5%B0%9D%E8%AF%95%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91clash%E9%A1%BA%E4%BE%BFdocker%E5%85%A5%E9%97%A8/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《尝试自己编译clash顺便docker入门》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/09/15/%E5%B0%9D%E8%AF%95%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91clash%E9%A1%BA%E4%BE%BFdocker%E5%85%A5%E9%97%A8/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/09/15/%E5%B0%9D%E8%AF%95%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91clash%E9%A1%BA%E4%BE%BFdocker%E5%85%A5%E9%97%A8/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEk0lEQVR42u3aW27rMAwFwO5/07lAvy7QxD0kFcBMx1+F61ryqID40NdXfD2+r593/r9//czPqzfKzyfzObx65tiFCRMmTJhuyZR8zGSY5Pn8na/mdk15TRwtJCZMmDBhWs6UvG4eEFTHrbLmsyrPARMmTJgw/QGm9yWcCWKPL/8KTJgwYcKEqYcyT5uT0vD1iElKjwkTJkyYPpspeV1SDK0+k3NcP5lTvr0WjgkTJkyYbsZUbUl+0s+HL0yYMGHCdDOmR+uqtirz4mx1m89nkgcBT96GCRMmTJjWMuVT6R24qR7Z6R3QyYu/k4YrJkyYMGHayzQ/LtMb/tT9s4l99K+DCRMmTJiWME1CgTzdzY/R5KlpdXmSpDrq92LChAkTplVMCUSvjJsz5d3DefO1WhrGhAkTJkzbmapNxMnnTTbyZLa9xYvSbEyYMGHCtJapt7lWk8bqAiRRTP7O/P3HGpyYMGHChOlmTNXkNimV9sKI+UeeDSmaE8WECRMmTDdj6sUO16+bl4Dz1mazJRkvEiZMmDBh2suUTKu6leZAeRZeHTdftmgJMWHChAnTWqZkupMNO/mr3uGeyXt6S4UJEyZMmDYyVY/aVFF6h2wmYUqVu3m+CRMmTJgwLWHqlWh7jcxqoDAPLKoLcOBMEyZMmDBhuiXT9eR6BdNJCzMft3okaJRsY8KECROm5Uyn2o2Tcm3vYFD1yoOGJ3UCTJgwYcK0immUHx8C6o2VU/YCjtHAmDBhwoTpZkx5iXZSFE625F5hN0+Sk7Fedn0xYcKECdNapvKfTfLsYgl4ktD2FvXJezBhwoQJ03KmswHBdbI6SVNHzch4rCejYMKECROm5UyTUuz8WGp1835fWbmQ+mLChAkTpiVM8/ZhddLVNPsxuHot2Ld0WTFhwoQJ0w2Yqk3EXijQW6RTB3Ty8AITJkyYMH0eUzL8Wb5kopNjQ/k7k7IyJkyYMGHayJQrzg/lFNqHwSdNOMpvw4QJEyZMH8F06jOqB3F6LcmkTFwNTV7OARMmTJgwfRBTknBONtrqAaBeMTr/bfQzJkyYMGFay9RLZZNAIW9w5k3E6kySUCYPODBhwoQJ016m3kGWPFzIS8B5iXneiK1+FyZMmDBh2shU/bNqC3OeoFaT2N6C/fJFmDBhwoRpLVPvUE7equyNki9YNd0dhQ6YMGHChOmDmKpk+f1q0TYJEfIjR9UF/uWgKiZMmDBhuj1TdZPupaz580m6O2lY5odif/k/woQJEyZMC5nyhPDUQZk8pMhDh/x+YZEwYcKECdNapgSot0lPQoE8OIg+qXhF78GECRMmTEuYHsVr/hl5o3SSHlcLxFHchAkTJkyYFjL1tslJC3P+/rO93MOBBSZMmDBhuiVTtZh7yr7cVnzDzAspOiZMmDBhWs7U26TzO5Mib7UYPVlOTJgwYcKEKRmyenQ1b4XmH5+n4tGTmDBhwoTpDzBVj4RW09T8g5P7k9bsKCDAhAkTJky3ZEpKpb3i6SShrbYe50d/RuuMCRMmTJhuyXSq9ZhMd7IlV1Px3gGdERwmTJgwYboX0z9fiUwNl8m2zAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

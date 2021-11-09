@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>$.post可以说是缩写版的$.ajax | 皇姑区第一亚索的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#9ACD32">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="石锤了 官方说法 总忘 水了一篇文章">
+<meta property="og:type" content="article">
+<meta property="og:title" content="$.post可以说是缩写版的$.ajax">
+<meta property="og:url" content="https://yiyayamaya.github.io/2021/08/24/post%E5%8F%AF%E4%BB%A5%E8%AF%B4%E6%98%AF%E7%BC%A9%E5%86%99%E7%89%88%E7%9A%84-ajax/index.html">
+<meta property="og:site_name" content="皇姑区第一亚索的博客">
+<meta property="og:description" content="石锤了 官方说法 总忘 水了一篇文章">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yiyayamaya.github.io/2021/08/24/post%E5%8F%AF%E4%BB%A5%E8%AF%B4%E6%98%AF%E7%BC%A9%E5%86%99%E7%89%88%E7%9A%84-ajax/2021-08-24_16-09.png">
+<meta property="article:published_time" content="2021-08-24T08:07:02.000Z">
+<meta property="article:modified_time" content="2021-08-24T08:11:07.455Z">
+<meta property="article:author" content="皇姑区第一亚索">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yiyayamaya.github.io/2021/08/24/post%E5%8F%AF%E4%BB%A5%E8%AF%B4%E6%98%AF%E7%BC%A9%E5%86%99%E7%89%88%E7%9A%84-ajax/2021-08-24_16-09.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="皇姑区第一亚索的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">皇姑区第一亚索</h5>
+          <a href="mailto:wuxingjian98@gmail.com" title="wuxingjian98@gmail.com" class="mail">wuxingjian98@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                日志
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yiyayamaya" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">$.post可以说是缩写版的$.ajax</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">$.post可以说是缩写版的$.ajax</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-08-24T08:07:02.000Z" itemprop="datePublished" class="page-time">
+  2021-08-24
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-post可以说是缩写版的-ajax"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">$.post可以说是缩写版的$.ajax</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-08-24 16:07:02" datetime="2021-08-24T08:07:02.000Z"  itemprop="datePublished">2021-08-24</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>石锤了 官方说法 总忘 水了一篇文章</p>
+<img src="/2021/08/24/post%E5%8F%AF%E4%BB%A5%E8%AF%B4%E6%98%AF%E7%BC%A9%E5%86%99%E7%89%88%E7%9A%84-ajax/2021-08-24_16-09.png" class="" title="This is an example image">
+
+
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2021-08-24T08:11:07.455Z" itemprop="dateUpdated">2021-08-24 16:11:07</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://yiyayamaya.github.io">
+            <img src="/img/avatar1.jpg" alt="皇姑区第一亚索">
+            皇姑区第一亚索
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/08/24/post%E5%8F%AF%E4%BB%A5%E8%AF%B4%E6%98%AF%E7%BC%A9%E5%86%99%E7%89%88%E7%9A%84-ajax/&title=《$.post可以说是缩写版的$.ajax》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/08/24/post%E5%8F%AF%E4%BB%A5%E8%AF%B4%E6%98%AF%E7%BC%A9%E5%86%99%E7%89%88%E7%9A%84-ajax/&title=《$.post可以说是缩写版的$.ajax》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/08/24/post%E5%8F%AF%E4%BB%A5%E8%AF%B4%E6%98%AF%E7%BC%A9%E5%86%99%E7%89%88%E7%9A%84-ajax/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《$.post可以说是缩写版的$.ajax》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/08/24/post%E5%8F%AF%E4%BB%A5%E8%AF%B4%E6%98%AF%E7%BC%A9%E5%86%99%E7%89%88%E7%9A%84-ajax/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/08/24/post%E5%8F%AF%E4%BB%A5%E8%AF%B4%E6%98%AF%E7%BC%A9%E5%86%99%E7%89%88%E7%9A%84-ajax/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/09/07/java%E4%B8%ADsuper-%E7%9A%84%E7%94%A8%E6%B3%95/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">java中super()的用法</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/08/24/mysql-%E5%A4%96%E9%94%AE-ON-DELETE-CASCADE/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">mysql 外键 ON DELETE CASCADE</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "lrdeEdMXEXCAsD9I3vd7hPnz-gzGzoHsz",
+            appKey: "w7U0ClAFDzQNEfIOgHoMaFwM",
+            avatar: "wavatar",
+			 emojiCDN: 'https://valinecdn.bili33.top/', 
+			 emojiMaps: {
+				"Tieba-New2": "Tieba-New/image_emoticon.png",
+				"Tieba-New3": "Tieba-New/image_emoticon10.png",
+				
+				"Tieba-New14": "Tieba-New/image_emoticon11.png",
+				
+				"Tieba-New25": "Tieba-New/image_emoticon12.png",
+				
+				"Tieba-New31": "Tieba-New/image_emoticon13.png",
+				"Tieba-New32": "Tieba-New/image_emoticon14.png",
+				"Tieba-New33": "Tieba-New/image_emoticon15.png",
+				"Tieba-New34": "Tieba-New/image_emoticon16.png",
+				"Tieba-New35": "Tieba-New/image_emoticon17.png",
+				"Tieba-New36": "Tieba-New/image_emoticon18.png",
+				"Tieba-New37": "Tieba-New/image_emoticon19.png",
+				"Tieba-New38": "Tieba-New/image_emoticon2.png",
+				"Tieba-New39": "Tieba-New/image_emoticon20.png",
+				"Tieba-New40": "Tieba-New/image_emoticon21.png",
+				"Tieba-New41": "Tieba-New/image_emoticon22.png",
+				"Tieba-New42": "Tieba-New/image_emoticon23.png",
+				"Tieba-New43": "Tieba-New/image_emoticon24.png",
+				"Tieba-New44": "Tieba-New/image_emoticon25.png",
+				"Tieba-New45": "Tieba-New/image_emoticon26.png",
+				"Tieba-New46": "Tieba-New/image_emoticon27.png",
+				"Tieba-New47": "Tieba-New/image_emoticon28.png",
+				"Tieba-New48": "Tieba-New/image_emoticon29.png",
+				"Tieba-New49": "Tieba-New/image_emoticon3.png",
+				"Tieba-New50": "Tieba-New/image_emoticon30.png",
+				"Tieba-New51": "Tieba-New/image_emoticon31.png",
+				"Tieba-New52": "Tieba-New/image_emoticon32.png",
+				"Tieba-New53": "Tieba-New/image_emoticon33.png",
+				
+				"Tieba-New60": "Tieba-New/image_emoticon4.png",
+				
+				"Tieba-New71": "Tieba-New/image_emoticon5.png",
+				"Tieba-New72": "Tieba-New/image_emoticon50.png",
+				"Tieba-New73": "Tieba-New/image_emoticon6.png",
+				"Tieba-New74": "Tieba-New/image_emoticon66.png",
+				"Tieba-New75": "Tieba-New/image_emoticon67.png",
+				"Tieba-New76": "Tieba-New/image_emoticon68.png",
+				"Tieba-New77": "Tieba-New/image_emoticon69.png",
+				"Tieba-New78": "Tieba-New/image_emoticon7.png",
+				"Tieba-New79": "Tieba-New/image_emoticon70.png",
+				"Tieba-New80": "Tieba-New/image_emoticon71.png",
+				"Tieba-New81": "Tieba-New/image_emoticon72.png",
+				"Tieba-New82": "Tieba-New/image_emoticon73.png",
+				"Tieba-New83": "Tieba-New/image_emoticon74.png",
+				"Tieba-New84": "Tieba-New/image_emoticon75.png",
+				"Tieba-New85": "Tieba-New/image_emoticon76.png",
+				
+				"Tieba-New89": "Tieba-New/image_emoticon8.png",
+				
+				"Tieba-New95": "Tieba-New/image_emoticon85.png",
+				"Tieba-New96": "Tieba-New/image_emoticon86.png",
+				"Tieba-New97": "Tieba-New/image_emoticon87.png",
+				"Tieba-New98": "Tieba-New/image_emoticon88.png",
+				"Tieba-New99": "Tieba-New/image_emoticon89.png",
+				"Tieba-New100": "Tieba-New/image_emoticon9.png",
+				"Tieba-New101": "Tieba-New/image_emoticon90.png",
+				"Tieba-New102": "Tieba-New/image_emoticon91.png",
+				"Tieba-New103": "Tieba-New/image_emoticon92.png",
+				"Tieba-New104": "Tieba-New/image_emoticon93.png",
+				"Tieba-New105": "Tieba-New/image_emoticon94.png",
+				"Tieba-New106": "Tieba-New/image_emoticon95.png",
+				"Tieba-New107": "Tieba-New/image_emoticon96.png",
+				"Tieba-New108": "Tieba-New/image_emoticon97.png",
+				"Tieba-New109": "Tieba-New/image_emoticon98.png"
+
+				
+				} ,
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>皇姑区第一亚索 &copy; 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/08/24/post%E5%8F%AF%E4%BB%A5%E8%AF%B4%E6%98%AF%E7%BC%A9%E5%86%99%E7%89%88%E7%9A%84-ajax/&title=《$.post可以说是缩写版的$.ajax》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/08/24/post%E5%8F%AF%E4%BB%A5%E8%AF%B4%E6%98%AF%E7%BC%A9%E5%86%99%E7%89%88%E7%9A%84-ajax/&title=《$.post可以说是缩写版的$.ajax》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/08/24/post%E5%8F%AF%E4%BB%A5%E8%AF%B4%E6%98%AF%E7%BC%A9%E5%86%99%E7%89%88%E7%9A%84-ajax/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《$.post可以说是缩写版的$.ajax》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/08/24/post%E5%8F%AF%E4%BB%A5%E8%AF%B4%E6%98%AF%E7%BC%A9%E5%86%99%E7%89%88%E7%9A%84-ajax/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/08/24/post%E5%8F%AF%E4%BB%A5%E8%AF%B4%E6%98%AF%E7%BC%A9%E5%86%99%E7%89%88%E7%9A%84-ajax/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAD4ElEQVR42u3cS24bUQwEQN3/0s4BglG6SUpwgNLKEPR5U7Og2CT8esWPn4fH369J3vX+8fTe9lRP7zp44MCBAweO0aU+Ha595onsPesVZX6NOHDgwIHjluOp4sxek5TGhKytj/m3PD6PAwcOHDi+zjErdTlZ8spZUceBAwcOHL+Z47bgRQd92+btfyjgwIEDB45bjnyEcxXG5c/nZXXzmThw4MCB44pjFr39X39/ZL8DBw4cOHAEjdBV0X0fESZtWBIIHl8dDhw4cOC4KRRRQcovrI35Zt87G3pFn48DBw4cOBYceZncrMTNym1betvwMbLHgQMHDhwlR7uIkKNsVtk2C3BX9Dhw4MCB44ojv+xZUcwDxFnhnP2NAwcOHDhuOfZtW370No6c0cwGZjhw4MCBY8+xOVYS/80OOgv+WprXbD6GAwcOHDjiCUtbDmchXdu8tYsL7XjpsdziwIEDB46bnbf6nwhsmr229OYjsfZacODAgQPHLUce6hUlqrwb7eLCbLAU/aTAgQMHDhxHHG1hy5chNiOrNrhM1uP+cctx4MCBA8eaY1+68kJbjH/i8dKGIAoHceDAgQNHyTG7pLbEbkZWs4CyjSxx4MCBA8ctR1788qWH2ZJBUs6Ha3DJqXDgwIEDx4IjjwVXWxJHkWI7mqqxcODAgQPHmmO2LrBv9vIgMjlV+5nDcBAHDhw4cJQcm0K1WYmerV/nt7Bd18CBAwcOHBuO/YJaG+214WBOOQsHceDAgQPH5ziS5i0/xIwgHyzlp8pbPhw4cODAccXRDnWKtbMymJsNwK4+HwcOHDhw7Dna8K4NCmdHvGrJ8oAy2vXAgQMHDhwxR3ug/Vfu1+CuGjkcOHDgwHHLkSwx5FhFg1SW+VmJbdFx4MCBA8fnODZrCnl71jaN7UJe3S7iwIEDB441R97I7cve7DVtSzlrTXHgwIEDxyc48nW3TZuXh4yzmDJvI6NZHA4cOHDgGHEkrVQ+8smDv7xtmw3AZjElDhw4cODYcOyXANoI73YBIvmughsHDhw4cBxxtAW4DQfztYO2eXvFjyiIxIEDBw4ca458GNMW41VPWS5GXK3W4cCBAweOPUfd5AQfmg949iU5J6tTUhw4cODAMeKYtUB1UxQPn9oblrw3vyU4cODAgeOKo/3KVnS2jrAvje1aBg4cOHDguOWYFar8mc3gKm8gD7Bw4MCBA8fXOdoh0yy2m73m4MbgwIEDB46vc+xL4GzpYf850U8HHDhw4MBxxJGEg+0y3CZwbFff2lHZwdgJBw4cOHBMZkZFOzcbYs3Cx+Ri2tuGAwcOHDjWHH8ASJzilWKnyJoAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

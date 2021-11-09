@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>记录一下2021年1月5号飞机上看的APAS前十道题-有图了 | 皇姑区第一亚索的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#9ACD32">
+    
+    
+    <meta name="keywords" content="leetcode">
+    <meta name="description" content="这MD我也不会用啊 先凑合写写吧我发现APAS就是leetcode的顺序啊 这也太神奇了 哈哈   1.two sum在一个数组里找俩数，和是target要我自己做的话肯定是固定左标，然后右标跳，右标跳完左标跳。就是i (0,n)，然后j(i,n)。这个复杂度是n方，我还想了一下为啥是n方，想完发现还真是，也不知道算的对不对。然后他给的答案是用map,复杂度是n。为啥一个for里面加一个map.c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录一下2021年1月5号飞机上看的APAS前十道题-有图了">
+<meta property="og:url" content="https://yiyayamaya.github.io/2021/01/06/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B2021%E5%B9%B41%E6%9C%885%E5%8F%B7%E9%A3%9E%E6%9C%BA%E4%B8%8A%E7%9C%8B%E7%9A%84APAS%E5%89%8D%E5%8D%81%E9%81%93%E9%A2%98-%E6%9C%89%E5%9B%BE%E4%BA%86/index.html">
+<meta property="og:site_name" content="皇姑区第一亚索的博客">
+<meta property="og:description" content="这MD我也不会用啊 先凑合写写吧我发现APAS就是leetcode的顺序啊 这也太神奇了 哈哈   1.two sum在一个数组里找俩数，和是target要我自己做的话肯定是固定左标，然后右标跳，右标跳完左标跳。就是i (0,n)，然后j(i,n)。这个复杂度是n方，我还想了一下为啥是n方，想完发现还真是，也不知道算的对不对。然后他给的答案是用map,复杂度是n。为啥一个for里面加一个map.c">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yiyayamaya.github.io/2021/01/06/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B2021%E5%B9%B41%E6%9C%885%E5%8F%B7%E9%A3%9E%E6%9C%BA%E4%B8%8A%E7%9C%8B%E7%9A%84APAS%E5%89%8D%E5%8D%81%E9%81%93%E9%A2%98-%E6%9C%89%E5%9B%BE%E4%BA%86/1610028957468.jpg">
+<meta property="og:image" content="https://yiyayamaya.github.io/2021/01/06/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B2021%E5%B9%B41%E6%9C%885%E5%8F%B7%E9%A3%9E%E6%9C%BA%E4%B8%8A%E7%9C%8B%E7%9A%84APAS%E5%89%8D%E5%8D%81%E9%81%93%E9%A2%98-%E6%9C%89%E5%9B%BE%E4%BA%86/QQ%E6%88%AA%E5%9B%BE20210108015942.jpg">
+<meta property="article:published_time" content="2021-01-06T13:30:55.000Z">
+<meta property="article:modified_time" content="2021-05-18T12:43:17.015Z">
+<meta property="article:author" content="皇姑区第一亚索">
+<meta property="article:tag" content="leetcode">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yiyayamaya.github.io/2021/01/06/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B2021%E5%B9%B41%E6%9C%885%E5%8F%B7%E9%A3%9E%E6%9C%BA%E4%B8%8A%E7%9C%8B%E7%9A%84APAS%E5%89%8D%E5%8D%81%E9%81%93%E9%A2%98-%E6%9C%89%E5%9B%BE%E4%BA%86/1610028957468.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="皇姑区第一亚索的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">皇姑区第一亚索</h5>
+          <a href="mailto:wuxingjian98@gmail.com" title="wuxingjian98@gmail.com" class="mail">wuxingjian98@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                日志
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yiyayamaya" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">记录一下2021年1月5号飞机上看的APAS前十道题-有图了</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">记录一下2021年1月5号飞机上看的APAS前十道题-有图了</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-01-06T13:30:55.000Z" itemprop="datePublished" class="page-time">
+  2021-01-06
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-记录一下2021年1月5号飞机上看的APAS前十道题-有图了"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">记录一下2021年1月5号飞机上看的APAS前十道题-有图了</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-01-06 21:30:55" datetime="2021-01-06T13:30:55.000Z"  itemprop="datePublished">2021-01-06</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>这MD我也不会用啊 先凑合写写吧<br>我发现APAS就是leetcode的顺序啊 这也太神奇了 哈哈  </p>
+<p>1.two sum<br>在一个数组里找俩数，和是target<br>要我自己做的话肯定是固定左标，然后右标跳，右标跳完左标跳。就是i (0,n)，然后j(i,n)。这个复杂度是n方，我还想了一下为啥是n方，想完发现还真是，也不知道算的对不对。然后他给的答案是用map,复杂度是n。为啥一个for里面加一个map.contaisKey是n？难道containsKey是复杂度1吗？查了一下有人讲解containsKey源码，太长懒得看了。还有什么正常复杂度是1最坏复杂度是nlogn，不能用最坏的算。<br>2.Add Two Sum<br>两个整数相加求和，要考虑进位啥的。这题练练链表怎么遍历，怎么一个节点一个节点的生成一个链表。我真正写的时候遇到了问题。。。(1)结果链表的头怎么保留，如果一直移动指向，头不就找不到了吗(2)我的结果链表续节点时候，如果两个加数已经遍历完了，那就不应该续新节点了。但是我会多续一个导致结果多一个0。问题1我看标准答案也没解决，直接把头和参与移动的指针分开了，到时候直接返回头.next。问题二就是先续节点，加数还有才续，不要加完了才续。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ListNode nextNode&#x3D;new ListNode();</span><br><span class="line">currentNode.next&#x3D;nextNode;</span><br><span class="line">currentNode&#x3D;currentNode.next;</span><br></pre></td></tr></table></figure>
+<p>这个currentNode，只有.next时候他才能代表一个节点，不然只能看作一个指针。还挺巧妙。<br>这题我想了很久很久啊，其实挺多细节的。比如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 保证有值才读 --&gt;</span><br><span class="line">int l1val&#x3D;0;</span><br><span class="line">int l2val&#x3D;0;</span><br><span class="line">if(l1!&#x3D;null)</span><br><span class="line">    l1val&#x3D;l1.val;</span><br><span class="line">if(l2!&#x3D;null)</span><br><span class="line">    l2val&#x3D;l2.val;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> while(l1!&#x3D;null||l2!&#x3D;null)&#123;</span><br><span class="line">     &#x2F;&#x2F;把两个加数都走完了</span><br><span class="line"> &#125;</span><br><span class="line">if(carry&gt;0)</span><br><span class="line">    currentNode.next&#x3D;new ListNode(carry);</span><br><span class="line">    &#x2F;&#x2F;但是结果比长的加数还多一位</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- while里面，每次都是给next节点赋值，也就是说第一次进来的currentNode根本没被用到，直接就是0了。 所以最后要return 头.next--&gt;</span><br><span class="line">ListNode nextNode&#x3D;new ListNode();</span><br><span class="line">currentNode.next&#x3D;nextNode;</span><br><span class="line">currentNode&#x3D;currentNode.next;</span><br><span class="line">currentNode.val&#x3D;(l1val+l2val+carry)%10;</span><br></pre></td></tr></table></figure>
+
+<p>3.Longest Substring Without Repeating Characters<br>最长不重复子串，就是左标右标，右标遇到重复的了，就把左标挪到上一次遇到右标字母的位置的下一个。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for(int i&#x3D;leftIndex;i&lt;leftIndexNew;i++)</span><br><span class="line">    map.remove(s.charAt(i));</span><br></pre></td></tr></table></figure>
+<p>我是上面这么写的。比如abcdcb当左=2右=4时，左会被更新为3。可是3以前的字母为什么不应该从map中删除呢，比如右接着滑到5发现map里面有(b,1)了，可是此时当前子串是dc里明明没有b啊。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if (map.containsKey(s.charAt(j))) &#123;</span><br><span class="line">    i &#x3D; Math.max(map.get(s.charAt(j)), i);</span><br></pre></td></tr></table></figure>
+<p>答案Sliding Window Optimized是这么写的,max()里比较的两个数，有下面两种情况，都可以用这一句话，挺神奇。</p>
+<img src="/2021/01/06/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B2021%E5%B9%B41%E6%9C%885%E5%8F%B7%E9%A3%9E%E6%9C%BA%E4%B8%8A%E7%9C%8B%E7%9A%84APAS%E5%89%8D%E5%8D%81%E9%81%93%E9%A2%98-%E6%9C%89%E5%9B%BE%E4%BA%86/1610028957468.jpg" class="" title="This is an example image">
+<p>4.Median of Two Sorted Arrays<br>我就把两个数组合成一个数组了。  <strong>两个有序数组的合并也是归并排序中的一部分</strong> 顺便奇偶个数数组求中值的问题我每次遇到都要想好久。。。我还写得什么长度-1后除以2再-0.2和+0.2之后四舍五入。。。<br>下次我要按照下面这么写</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if (count % 2 &#x3D;&#x3D; 0) &#123;</span><br><span class="line">       return (nums[count &#x2F; 2 - 1] + nums[count &#x2F; 2]) &#x2F; 2.0;</span><br><span class="line">   &#125; else &#123;</span><br><span class="line">       return nums[count &#x2F; 2];</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>改一下，其实是照着答案改的，好看了不少。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if(i2&#x3D;&#x3D;nums2.length)&#123;</span><br><span class="line">    for(int j&#x3D;0;j&lt;total-i-1;j++)</span><br><span class="line">        numsAdded[i+1+j]&#x3D;nums1[i1+j];</span><br><span class="line">    break;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>改成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">while(i1!&#x3D;nums1.length)</span><br><span class="line">&#123;</span><br><span class="line">    numsAdded[(i++)+1]&#x3D;nums1[i1++];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>答案给的是二分。。。懒得看了。。。 </p>
+<p>5.Longest Palindromic Substring<br>这个没啥说的，写一个函数传入(string,左,右)判断是不是对称的。如果传入(string,i,i)就是围绕一个字母对称,传入(string,i,i+1)就是围绕两个字母对称。先判断当前对不对称，对称了再移动，所以围绕两个的字母会先验证。<br>6.ZigZag Conversion<br>我没有写，就大概想了一下。。。<br>7.Reverse Integer<br>要点就是怎么用while取反，真挺巧妙，让我不看答案我肯定写不出来。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">while(left!&#x3D;0)&#123;</span><br><span class="line">    unit&#x3D;left%10;&#x2F;&#x2F;个位</span><br><span class="line">    left&#x3D;left&#x2F;10;&#x2F;&#x2F;剩下的</span><br><span class="line">    result&#x3D;result*10+unit;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其实也不一定，我5号看的，今天8号。居然能写出来，哈哈。然后记得为了防止越界result要声明为long。 </p>
+<p>8.String to Integer (atoi)<br>没写感觉没什么意思。 </p>
+<img src="/2021/01/06/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B2021%E5%B9%B41%E6%9C%885%E5%8F%B7%E9%A3%9E%E6%9C%BA%E4%B8%8A%E7%9C%8B%E7%9A%84APAS%E5%89%8D%E5%8D%81%E9%81%93%E9%A2%98-%E6%9C%89%E5%9B%BE%E4%BA%86/QQ%E6%88%AA%E5%9B%BE20210108015942.jpg" class="" title="This is an example image">
+<p>9.Palindrome Number<br>也没写，我感觉这题和第七题一样。</p>
+<p>10.Regular Expression Matching<br>一道hard题，没什么思路。这个得以后认真做一下。 </p>
+<hr>
+<p>后记<br>第六题和第十题都没写，第一次写日志有点虎肉蛇尾啊，哈哈。完成时间是上午2:25<br>2021年1月8日（星期五）</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2021-05-18T12:43:17.015Z" itemprop="dateUpdated">2021-05-18 20:43:17</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://yiyayamaya.github.io">
+            <img src="/img/avatar1.jpg" alt="皇姑区第一亚索">
+            皇姑区第一亚索
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/01/06/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B2021%E5%B9%B41%E6%9C%885%E5%8F%B7%E9%A3%9E%E6%9C%BA%E4%B8%8A%E7%9C%8B%E7%9A%84APAS%E5%89%8D%E5%8D%81%E9%81%93%E9%A2%98-%E6%9C%89%E5%9B%BE%E4%BA%86/&title=《记录一下2021年1月5号飞机上看的APAS前十道题-有图了》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/01/06/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B2021%E5%B9%B41%E6%9C%885%E5%8F%B7%E9%A3%9E%E6%9C%BA%E4%B8%8A%E7%9C%8B%E7%9A%84APAS%E5%89%8D%E5%8D%81%E9%81%93%E9%A2%98-%E6%9C%89%E5%9B%BE%E4%BA%86/&title=《记录一下2021年1月5号飞机上看的APAS前十道题-有图了》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/01/06/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B2021%E5%B9%B41%E6%9C%885%E5%8F%B7%E9%A3%9E%E6%9C%BA%E4%B8%8A%E7%9C%8B%E7%9A%84APAS%E5%89%8D%E5%8D%81%E9%81%93%E9%A2%98-%E6%9C%89%E5%9B%BE%E4%BA%86/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《记录一下2021年1月5号飞机上看的APAS前十道题-有图了》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/01/06/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B2021%E5%B9%B41%E6%9C%885%E5%8F%B7%E9%A3%9E%E6%9C%BA%E4%B8%8A%E7%9C%8B%E7%9A%84APAS%E5%89%8D%E5%8D%81%E9%81%93%E9%A2%98-%E6%9C%89%E5%9B%BE%E4%BA%86/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/01/06/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B2021%E5%B9%B41%E6%9C%885%E5%8F%B7%E9%A3%9E%E6%9C%BA%E4%B8%8A%E7%9C%8B%E7%9A%84APAS%E5%89%8D%E5%8D%81%E9%81%93%E9%A2%98-%E6%9C%89%E5%9B%BE%E4%BA%86/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/01/08/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">学习规划</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/01/06/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">第一篇文章</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "lrdeEdMXEXCAsD9I3vd7hPnz-gzGzoHsz",
+            appKey: "w7U0ClAFDzQNEfIOgHoMaFwM",
+            avatar: "wavatar",
+			 emojiCDN: 'https://valinecdn.bili33.top/', 
+			 emojiMaps: {
+				"Tieba-New2": "Tieba-New/image_emoticon.png",
+				"Tieba-New3": "Tieba-New/image_emoticon10.png",
+				
+				"Tieba-New14": "Tieba-New/image_emoticon11.png",
+				
+				"Tieba-New25": "Tieba-New/image_emoticon12.png",
+				
+				"Tieba-New31": "Tieba-New/image_emoticon13.png",
+				"Tieba-New32": "Tieba-New/image_emoticon14.png",
+				"Tieba-New33": "Tieba-New/image_emoticon15.png",
+				"Tieba-New34": "Tieba-New/image_emoticon16.png",
+				"Tieba-New35": "Tieba-New/image_emoticon17.png",
+				"Tieba-New36": "Tieba-New/image_emoticon18.png",
+				"Tieba-New37": "Tieba-New/image_emoticon19.png",
+				"Tieba-New38": "Tieba-New/image_emoticon2.png",
+				"Tieba-New39": "Tieba-New/image_emoticon20.png",
+				"Tieba-New40": "Tieba-New/image_emoticon21.png",
+				"Tieba-New41": "Tieba-New/image_emoticon22.png",
+				"Tieba-New42": "Tieba-New/image_emoticon23.png",
+				"Tieba-New43": "Tieba-New/image_emoticon24.png",
+				"Tieba-New44": "Tieba-New/image_emoticon25.png",
+				"Tieba-New45": "Tieba-New/image_emoticon26.png",
+				"Tieba-New46": "Tieba-New/image_emoticon27.png",
+				"Tieba-New47": "Tieba-New/image_emoticon28.png",
+				"Tieba-New48": "Tieba-New/image_emoticon29.png",
+				"Tieba-New49": "Tieba-New/image_emoticon3.png",
+				"Tieba-New50": "Tieba-New/image_emoticon30.png",
+				"Tieba-New51": "Tieba-New/image_emoticon31.png",
+				"Tieba-New52": "Tieba-New/image_emoticon32.png",
+				"Tieba-New53": "Tieba-New/image_emoticon33.png",
+				
+				"Tieba-New60": "Tieba-New/image_emoticon4.png",
+				
+				"Tieba-New71": "Tieba-New/image_emoticon5.png",
+				"Tieba-New72": "Tieba-New/image_emoticon50.png",
+				"Tieba-New73": "Tieba-New/image_emoticon6.png",
+				"Tieba-New74": "Tieba-New/image_emoticon66.png",
+				"Tieba-New75": "Tieba-New/image_emoticon67.png",
+				"Tieba-New76": "Tieba-New/image_emoticon68.png",
+				"Tieba-New77": "Tieba-New/image_emoticon69.png",
+				"Tieba-New78": "Tieba-New/image_emoticon7.png",
+				"Tieba-New79": "Tieba-New/image_emoticon70.png",
+				"Tieba-New80": "Tieba-New/image_emoticon71.png",
+				"Tieba-New81": "Tieba-New/image_emoticon72.png",
+				"Tieba-New82": "Tieba-New/image_emoticon73.png",
+				"Tieba-New83": "Tieba-New/image_emoticon74.png",
+				"Tieba-New84": "Tieba-New/image_emoticon75.png",
+				"Tieba-New85": "Tieba-New/image_emoticon76.png",
+				
+				"Tieba-New89": "Tieba-New/image_emoticon8.png",
+				
+				"Tieba-New95": "Tieba-New/image_emoticon85.png",
+				"Tieba-New96": "Tieba-New/image_emoticon86.png",
+				"Tieba-New97": "Tieba-New/image_emoticon87.png",
+				"Tieba-New98": "Tieba-New/image_emoticon88.png",
+				"Tieba-New99": "Tieba-New/image_emoticon89.png",
+				"Tieba-New100": "Tieba-New/image_emoticon9.png",
+				"Tieba-New101": "Tieba-New/image_emoticon90.png",
+				"Tieba-New102": "Tieba-New/image_emoticon91.png",
+				"Tieba-New103": "Tieba-New/image_emoticon92.png",
+				"Tieba-New104": "Tieba-New/image_emoticon93.png",
+				"Tieba-New105": "Tieba-New/image_emoticon94.png",
+				"Tieba-New106": "Tieba-New/image_emoticon95.png",
+				"Tieba-New107": "Tieba-New/image_emoticon96.png",
+				"Tieba-New108": "Tieba-New/image_emoticon97.png",
+				"Tieba-New109": "Tieba-New/image_emoticon98.png"
+
+				
+				} ,
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>皇姑区第一亚索 &copy; 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/01/06/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B2021%E5%B9%B41%E6%9C%885%E5%8F%B7%E9%A3%9E%E6%9C%BA%E4%B8%8A%E7%9C%8B%E7%9A%84APAS%E5%89%8D%E5%8D%81%E9%81%93%E9%A2%98-%E6%9C%89%E5%9B%BE%E4%BA%86/&title=《记录一下2021年1月5号飞机上看的APAS前十道题-有图了》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/01/06/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B2021%E5%B9%B41%E6%9C%885%E5%8F%B7%E9%A3%9E%E6%9C%BA%E4%B8%8A%E7%9C%8B%E7%9A%84APAS%E5%89%8D%E5%8D%81%E9%81%93%E9%A2%98-%E6%9C%89%E5%9B%BE%E4%BA%86/&title=《记录一下2021年1月5号飞机上看的APAS前十道题-有图了》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/01/06/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B2021%E5%B9%B41%E6%9C%885%E5%8F%B7%E9%A3%9E%E6%9C%BA%E4%B8%8A%E7%9C%8B%E7%9A%84APAS%E5%89%8D%E5%8D%81%E9%81%93%E9%A2%98-%E6%9C%89%E5%9B%BE%E4%BA%86/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《记录一下2021年1月5号飞机上看的APAS前十道题-有图了》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/01/06/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B2021%E5%B9%B41%E6%9C%885%E5%8F%B7%E9%A3%9E%E6%9C%BA%E4%B8%8A%E7%9C%8B%E7%9A%84APAS%E5%89%8D%E5%8D%81%E9%81%93%E9%A2%98-%E6%9C%89%E5%9B%BE%E4%BA%86/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/01/06/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B2021%E5%B9%B41%E6%9C%885%E5%8F%B7%E9%A3%9E%E6%9C%BA%E4%B8%8A%E7%9C%8B%E7%9A%84APAS%E5%89%8D%E5%8D%81%E9%81%93%E9%A2%98-%E6%9C%89%E5%9B%BE%E4%BA%86/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,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" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

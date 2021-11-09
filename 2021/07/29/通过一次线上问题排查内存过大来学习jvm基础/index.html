@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>通过一次线上问题排查内存过大来学习jvm基础 | 皇姑区第一亚索的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#9ACD32">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="用到的工具 jmap jstack jvisualvm现在叫visualVM MAT JConsole  生成的dump文件可以用jhat分析 jmap命令将程序的内存数据保存下来，jmap -dump:live,format&#x3D;b,file&#x3D;m.hprof PID 然后我指着监控信息，让运维看：“大哥你看这监控历史，堆内存是达到过 6G 的，只是后面 GC 了，没问题啊！” “JVM 的垃圾回收，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="通过一次线上问题排查内存过大来学习jvm基础">
+<meta property="og:url" content="https://yiyayamaya.github.io/2021/07/29/%E9%80%9A%E8%BF%87%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%86%85%E5%AD%98%E8%BF%87%E5%A4%A7%E6%9D%A5%E5%AD%A6%E4%B9%A0jvm%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="皇姑区第一亚索的博客">
+<meta property="og:description" content="用到的工具 jmap jstack jvisualvm现在叫visualVM MAT JConsole  生成的dump文件可以用jhat分析 jmap命令将程序的内存数据保存下来，jmap -dump:live,format&#x3D;b,file&#x3D;m.hprof PID 然后我指着监控信息，让运维看：“大哥你看这监控历史，堆内存是达到过 6G 的，只是后面 GC 了，没问题啊！” “JVM 的垃圾回收，">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-07-29T06:31:35.000Z">
+<meta property="article:modified_time" content="2021-08-02T08:26:35.699Z">
+<meta property="article:author" content="皇姑区第一亚索">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="皇姑区第一亚索的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">皇姑区第一亚索</h5>
+          <a href="mailto:wuxingjian98@gmail.com" title="wuxingjian98@gmail.com" class="mail">wuxingjian98@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                日志
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yiyayamaya" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">通过一次线上问题排查内存过大来学习jvm基础</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">通过一次线上问题排查内存过大来学习jvm基础</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-07-29T06:31:35.000Z" itemprop="datePublished" class="page-time">
+  2021-07-29
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-通过一次线上问题排查内存过大来学习jvm基础"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">通过一次线上问题排查内存过大来学习jvm基础</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-07-29 14:31:35" datetime="2021-07-29T06:31:35.000Z"  itemprop="datePublished">2021-07-29</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>用到的工具 jmap jstack jvisualvm现在叫visualVM MAT JConsole </p>
+<p>生成的dump文件可以用jhat分析</p>
+<p>jmap命令将程序的内存数据保存下来，jmap -dump:live,format=b,file=m.hprof PID</p>
+<p>然后我指着监控信息，让运维看：“大哥你看这监控历史，堆内存是达到过 6G 的，只是后面 GC 了，没问题啊！”</p>
+<p>“JVM 的垃圾回收，只是一个逻辑上的回收，回收的只是 JVM 申请的那一块逻辑堆区域，将数据标记为空闲之类的操作，不是调用 free 将内存归还给操作系统”</p>
+<p>JVM 的自动内存管理，其实只是先向操作系统申请了一大块内存，然后自己在这块已申请的内存区域中进行“自动内存管理”。JAVA 中的对象在创建前，会先从这块申请的一大块内存中划分出一部分来给这个对象使用，在 GC 时也只是这个对象所处的内存区域数据清空，标记为空闲而已</p>
+<p>运维：“原来是这样，那按你的意思，JVM 就不会将 GC 回收后的空闲内存还给操作系统了吗？”</p>
+<p>JVM 还是会归还内存给操作系统的，只是因为这个代价比较大，所以不会轻易进行。而且不同垃圾回收器 的内存分配算法不同，归还内存的代价也不同。</p>
+<p>java加jvm参数正确格式应该是nohup java -Xms800m -Xmx800m -XX:PermSize=256m -XX:MaxPermSize=512m -XX:MaxNewSize=512m -jar 你的jar包 &gt;&gt;/dev/null &amp;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;local&#x2F;java&#x2F;jdk1.8.0_131&#x2F;bin&#x2F;java -jar -server -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath&#x3D;&#x2F;data&#x2F;spb_zcmweb&#x2F;8103&#x2F;dump&#x2F;heap&#x2F;</span><br><span class="line"> -Djava.io.tmpdir&#x3D;&#x2F;data&#x2F;spb_zcmweb&#x2F;8103&#x2F;tmp&#x2F; </span><br><span class="line"> -Dserver.port&#x3D;8103 </span><br><span class="line"> -Dcom.sun.management.jmxremote</span><br><span class="line"> -Dcom.sun.management.jmxremote.port&#x3D;5103 </span><br><span class="line"> -Dcom.sun.management.jmxremote.rmi.port&#x3D;6103 </span><br><span class="line"> -Dcom.sun.management.jmxremote.authenticate&#x3D;false </span><br><span class="line"> -Dcom.sun.management.jmxremote.ssl&#x3D;false </span><br><span class="line"> -Dcom.sun.management.jmxremote.access.file&#x3D;&#x2F;usr&#x2F;local&#x2F;java&#x2F;jdk1.8.0_131&#x2F;jre&#x2F;lib&#x2F;management&#x2F;jmxremote.access </span><br><span class="line"> -Xmx2G -Xms2G -XX:+DisableExplicitGC -verbose:gc -Xloggc:&#x2F;data&#x2F;spb_zcmweb&#x2F;8103&#x2F;log&#x2F;gc.%t.log -XX:+PrintHeapAtGC -XX:+PrintTenuringDistribution -XX:+PrintGCApplicationStoppedTime -XX:+PrintGCTaskTimeStamps -XX:+PrintGCDetails -XX:+PrintGCDateStamps </span><br><span class="line"> -Dserver.connection-timeout&#x3D;60000 </span><br><span class="line"> -Dserver.tomcat.accept-count&#x3D;1000 </span><br><span class="line"> -Dserver.tomcat.max-threads&#x3D;300 </span><br><span class="line"> -Dserver.tomcat.min-spare-threads&#x3D;65 </span><br><span class="line"> -Dserver.tomcat.accesslog.enabled&#x3D;false </span><br><span class="line"> -Dserver.tomcat.accesslog.directory&#x3D;&#x2F;data&#x2F;spb_zcmweb&#x2F;8103&#x2F;log&#x2F; </span><br><span class="line"> -Dserver.tomcat.accesslog.prefix&#x3D;access_log </span><br><span class="line"> -Dserver.tomcat.accesslog.pattern&#x3D;combine </span><br><span class="line"> -Dserver.tomcat.accesslog.suffix&#x3D;.log </span><br><span class="line"> -Dserver.tomcat.accesslog.rotate&#x3D;true </span><br><span class="line"> -Dserver.tomcat.accesslog.rename-on-rotate&#x3D;true </span><br><span class="line"> -Dserver.tomcat.accesslog.request-attributes-enabled&#x3D;true </span><br><span class="line"> -Dserver.tomcat.accesslog.buffered&#x3D;true </span><br><span class="line"> -XX:NewRatio&#x3D;4 -XX:SurvivorRatio&#x3D;30 -XX:TargetSurvivorRatio&#x3D;90 -XX:MaxTenuringThreshold&#x3D;8 -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction&#x3D;70 -XX:ParallelGCThreads&#x3D;24 -XX:ConcGCThreads&#x3D;24 -XX:-UseGCOverheadLimit -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSFullGCsBeforeCompaction&#x3D;1 -XX:+CMSParallelRemarkEnabled -XX:+CMSScavengeBeforeRemark -XX:+ParallelRefProcEnabled -XX:+UseCMSCompactAtFullCollection -XX:CMSMaxAbortablePrecleanTime&#x3D;6000 -XX:CompileThreshold&#x3D;10 -XX:MaxInlineSize&#x3D;1024 -Dsun.net.client.defaultConnectTimeout&#x3D;60000 </span><br><span class="line"> -Dsun.net.client.defaultReadTimeout&#x3D;60000 </span><br><span class="line"> -Dnetworkaddress.cache.ttl&#x3D;300 -Dsun.net.inetaddr.ttl&#x3D;300 </span><br><span class="line"> -Djsse.enableCBCProtection&#x3D;false </span><br><span class="line"> -Djava.security.egd&#x3D;file:&#x2F;dev&#x2F;.&#x2F;urandom </span><br><span class="line"> -Dfile.encoding&#x3D;UTF-8 </span><br><span class="line"> -Dlog.path&#x3D;&#x2F;data&#x2F;spb_zcmweb&#x2F;8103&#x2F;log&#x2F; </span><br><span class="line"> -Dspring.profiles.active&#x3D;online  </span><br><span class="line"> &#x2F;data&#x2F;spb_zcmweb&#x2F;8103&#x2F;deploy&#x2F;zcmweb.jar zcmweb</span><br></pre></td></tr></table></figure>
+
+
+<p>最后xxx.jar 后面加–spring.config.location</p>
+<p>jmap指定<br>-heap：打印jvm heap的情况<br>-histo：打印jvm heap的直方图。其输出信息包括类名，对象数量，对象占用大小。<br>-histo:live ：同上，但是只答应存活对象的情况<br>-permstat：打印permanent generation heap情况</p>
+<p>jmap -histo 18473 | head -30<br>jmap -histo 18473 | tail -30 </p>
+<p>/home/wxj/Documents/Hexo-source-files/source/_posts/通过一次线上问题排查内存过大来学习jvm基础/2021-07-30_11-41.png</p>
+<p>从打印结果可看出，类名中存在[C、[B等内容，只知道它占用了那么大的内存，但不知道由什么对象创建的。下一步需要将其他dump出来，使用内存分析工具进一步明确它是由谁引用的、由什么对象。</p>
+<p>Heap Dump 是Java进程所使用的内存情况在某一时间的一次快照。 以文件的形式持久化到磁盘中。 </p>
+<p>分析dump文件的几种方式<br>1、visualVM<br>2、MAT<br>3、jhat 15397.hprof (去localhost:7000查看)</p>
+<p>插入内容：JDK命令行（jps、jstat、jinfo、jmap、jhat、jstack、jstatd、hprof）与JConsole<br><a href="https://www.huaweicloud.com/articles/9871161f404d4e817e18db0f40e815a1.html" target="_blank" rel="noopener">https://www.huaweicloud.com/articles/9871161f404d4e817e18db0f40e815a1.html</a></p>
+<p>看本身大小时，占大头的都是char[] ,byte[]之类的，没什么意思（用jmap -histo:live pid 看的也是本身大小）。所以需要关心的是保留大小比较大的对象，看谁在引用这些char[], byte[]。</p>
+<p>(MAT能看的信息更多，但VisualVM胜在JVM自带，用法如下：命令行输入jvisualvm，文件-&gt;装入-&gt;堆Dump－&gt;检查 -&gt; 查找20保留大小最大的对象，就会触发保留大小的计算，然后就可以类视图里浏览，按保留大小排序了)</p>
+<p>可以从这个图看出这个类java.lang.ref.Finalizer占用500多M，表示这其中很多不能够被回对象的对象，此时点开hisgogram视图，并通过Retained Heap进行排序，如下截图：</p>
+<p>从图中可以看出，被线线框圈起来的三个对象占用量非常大，那说明这几个大的对象并没有被释放，那现在就可以有针对性的从代码中去找这几个对象为什么没有被释放了。<br>再切换到dominator_tree视图：</p>
+<p>这里可以看到velocity渲染也存在着问题，以及数据库的请求也比较多。</p>
+<p><a href="https://blog.51cto.com/supercharles888/1347144" target="_blank" rel="noopener">https://blog.51cto.com/supercharles888/1347144</a> 讲了shallow size Retained size区别<br>Shallow Size是对象本身占据的内存的大小，不包含其引用的对象。对于常规对象（非数组）的Shallow Size由其成员变量的数量和类型来定，而数组的ShallowSize由数组类型和数组长度来决定，它为数组元素大小的总和。</p>
+<p>Retained Size=当前对象大小+当前对象可直接或间接引用到的对象的大小总和。(间接引用的含义：A-&gt;B-&gt;C,C就是间接引用) ，并且排除被GC Roots直接或者间接引用的对象</p>
+<p>Incoming references被什么实例引用了 和 Outgoing references引用了什么实例</p>
+<p>一般来说，如果浅堆比较小，但是深堆比较大，那么这种对象比较可疑，首先找到深堆大的对象，然后通过incoming查看哪些对象引用这个对象，通过outgoing查看这个对象内部都有哪些对象</p>
+<p>不确定这行写的对：dominator_tree中这两个值与Histogram中的区别是：dominator_tree基于实例的角度，而historgram基于类的角度</p>
+<p>X86是一种架构，但是他有32位的和64位的！<br>32位的叫x86 ，后来出现基于它的64位版，就叫X86-64，后来有时简称X64。</p>
+<p>Histogram是类粒度的，可以找到哪个类占用的堆内存比较多；dominator tree是对象粒度的，可以用来查看哪个对象引起占用堆内存比较大。选择dominator tree以后可以 group by class 就能按class看了！！！但是可能是因为unreachable 的原因，数目对不上。</p>
+<p>升级版 JConsole 即 jvisualvm 。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2021-08-02T08:26:35.699Z" itemprop="dateUpdated">2021-08-02 16:26:35</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://yiyayamaya.github.io">
+            <img src="/img/avatar1.jpg" alt="皇姑区第一亚索">
+            皇姑区第一亚索
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/07/29/%E9%80%9A%E8%BF%87%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%86%85%E5%AD%98%E8%BF%87%E5%A4%A7%E6%9D%A5%E5%AD%A6%E4%B9%A0jvm%E5%9F%BA%E7%A1%80/&title=《通过一次线上问题排查内存过大来学习jvm基础》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/07/29/%E9%80%9A%E8%BF%87%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%86%85%E5%AD%98%E8%BF%87%E5%A4%A7%E6%9D%A5%E5%AD%A6%E4%B9%A0jvm%E5%9F%BA%E7%A1%80/&title=《通过一次线上问题排查内存过大来学习jvm基础》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/07/29/%E9%80%9A%E8%BF%87%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%86%85%E5%AD%98%E8%BF%87%E5%A4%A7%E6%9D%A5%E5%AD%A6%E4%B9%A0jvm%E5%9F%BA%E7%A1%80/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《通过一次线上问题排查内存过大来学习jvm基础》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/07/29/%E9%80%9A%E8%BF%87%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%86%85%E5%AD%98%E8%BF%87%E5%A4%A7%E6%9D%A5%E5%AD%A6%E4%B9%A0jvm%E5%9F%BA%E7%A1%80/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/07/29/%E9%80%9A%E8%BF%87%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%86%85%E5%AD%98%E8%BF%87%E5%A4%A7%E6%9D%A5%E5%AD%A6%E4%B9%A0jvm%E5%9F%BA%E7%A1%80/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/08/12/form%E8%A1%A8%E5%8D%95%E4%B8%ADbutton-type%E6%98%AFbutton%E8%80%8C%E4%B8%8D%E6%98%AFsubmit/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">form表单中button type是button而不是submit</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/07/22/java-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AD%A6%E4%B9%A0/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">java 多线程学习</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "lrdeEdMXEXCAsD9I3vd7hPnz-gzGzoHsz",
+            appKey: "w7U0ClAFDzQNEfIOgHoMaFwM",
+            avatar: "wavatar",
+			 emojiCDN: 'https://valinecdn.bili33.top/', 
+			 emojiMaps: {
+				"Tieba-New2": "Tieba-New/image_emoticon.png",
+				"Tieba-New3": "Tieba-New/image_emoticon10.png",
+				
+				"Tieba-New14": "Tieba-New/image_emoticon11.png",
+				
+				"Tieba-New25": "Tieba-New/image_emoticon12.png",
+				
+				"Tieba-New31": "Tieba-New/image_emoticon13.png",
+				"Tieba-New32": "Tieba-New/image_emoticon14.png",
+				"Tieba-New33": "Tieba-New/image_emoticon15.png",
+				"Tieba-New34": "Tieba-New/image_emoticon16.png",
+				"Tieba-New35": "Tieba-New/image_emoticon17.png",
+				"Tieba-New36": "Tieba-New/image_emoticon18.png",
+				"Tieba-New37": "Tieba-New/image_emoticon19.png",
+				"Tieba-New38": "Tieba-New/image_emoticon2.png",
+				"Tieba-New39": "Tieba-New/image_emoticon20.png",
+				"Tieba-New40": "Tieba-New/image_emoticon21.png",
+				"Tieba-New41": "Tieba-New/image_emoticon22.png",
+				"Tieba-New42": "Tieba-New/image_emoticon23.png",
+				"Tieba-New43": "Tieba-New/image_emoticon24.png",
+				"Tieba-New44": "Tieba-New/image_emoticon25.png",
+				"Tieba-New45": "Tieba-New/image_emoticon26.png",
+				"Tieba-New46": "Tieba-New/image_emoticon27.png",
+				"Tieba-New47": "Tieba-New/image_emoticon28.png",
+				"Tieba-New48": "Tieba-New/image_emoticon29.png",
+				"Tieba-New49": "Tieba-New/image_emoticon3.png",
+				"Tieba-New50": "Tieba-New/image_emoticon30.png",
+				"Tieba-New51": "Tieba-New/image_emoticon31.png",
+				"Tieba-New52": "Tieba-New/image_emoticon32.png",
+				"Tieba-New53": "Tieba-New/image_emoticon33.png",
+				
+				"Tieba-New60": "Tieba-New/image_emoticon4.png",
+				
+				"Tieba-New71": "Tieba-New/image_emoticon5.png",
+				"Tieba-New72": "Tieba-New/image_emoticon50.png",
+				"Tieba-New73": "Tieba-New/image_emoticon6.png",
+				"Tieba-New74": "Tieba-New/image_emoticon66.png",
+				"Tieba-New75": "Tieba-New/image_emoticon67.png",
+				"Tieba-New76": "Tieba-New/image_emoticon68.png",
+				"Tieba-New77": "Tieba-New/image_emoticon69.png",
+				"Tieba-New78": "Tieba-New/image_emoticon7.png",
+				"Tieba-New79": "Tieba-New/image_emoticon70.png",
+				"Tieba-New80": "Tieba-New/image_emoticon71.png",
+				"Tieba-New81": "Tieba-New/image_emoticon72.png",
+				"Tieba-New82": "Tieba-New/image_emoticon73.png",
+				"Tieba-New83": "Tieba-New/image_emoticon74.png",
+				"Tieba-New84": "Tieba-New/image_emoticon75.png",
+				"Tieba-New85": "Tieba-New/image_emoticon76.png",
+				
+				"Tieba-New89": "Tieba-New/image_emoticon8.png",
+				
+				"Tieba-New95": "Tieba-New/image_emoticon85.png",
+				"Tieba-New96": "Tieba-New/image_emoticon86.png",
+				"Tieba-New97": "Tieba-New/image_emoticon87.png",
+				"Tieba-New98": "Tieba-New/image_emoticon88.png",
+				"Tieba-New99": "Tieba-New/image_emoticon89.png",
+				"Tieba-New100": "Tieba-New/image_emoticon9.png",
+				"Tieba-New101": "Tieba-New/image_emoticon90.png",
+				"Tieba-New102": "Tieba-New/image_emoticon91.png",
+				"Tieba-New103": "Tieba-New/image_emoticon92.png",
+				"Tieba-New104": "Tieba-New/image_emoticon93.png",
+				"Tieba-New105": "Tieba-New/image_emoticon94.png",
+				"Tieba-New106": "Tieba-New/image_emoticon95.png",
+				"Tieba-New107": "Tieba-New/image_emoticon96.png",
+				"Tieba-New108": "Tieba-New/image_emoticon97.png",
+				"Tieba-New109": "Tieba-New/image_emoticon98.png"
+
+				
+				} ,
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>皇姑区第一亚索 &copy; 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/07/29/%E9%80%9A%E8%BF%87%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%86%85%E5%AD%98%E8%BF%87%E5%A4%A7%E6%9D%A5%E5%AD%A6%E4%B9%A0jvm%E5%9F%BA%E7%A1%80/&title=《通过一次线上问题排查内存过大来学习jvm基础》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/07/29/%E9%80%9A%E8%BF%87%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%86%85%E5%AD%98%E8%BF%87%E5%A4%A7%E6%9D%A5%E5%AD%A6%E4%B9%A0jvm%E5%9F%BA%E7%A1%80/&title=《通过一次线上问题排查内存过大来学习jvm基础》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/07/29/%E9%80%9A%E8%BF%87%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%86%85%E5%AD%98%E8%BF%87%E5%A4%A7%E6%9D%A5%E5%AD%A6%E4%B9%A0jvm%E5%9F%BA%E7%A1%80/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《通过一次线上问题排查内存过大来学习jvm基础》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/07/29/%E9%80%9A%E8%BF%87%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%86%85%E5%AD%98%E8%BF%87%E5%A4%A7%E6%9D%A5%E5%AD%A6%E4%B9%A0jvm%E5%9F%BA%E7%A1%80/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/07/29/%E9%80%9A%E8%BF%87%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%86%85%E5%AD%98%E8%BF%87%E5%A4%A7%E6%9D%A5%E5%AD%A6%E4%B9%A0jvm%E5%9F%BA%E7%A1%80/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,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" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

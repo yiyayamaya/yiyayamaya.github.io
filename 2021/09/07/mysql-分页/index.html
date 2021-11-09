@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>mysql 分页 | 皇姑区第一亚索的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#9ACD32">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="MySQL 百万级数据量分页查询方法及其优化 https:&#x2F;&#x2F;www.huaweicloud.com&#x2F;articles&#x2F;7cb1402c2d18baedfa12dd610ff2eaac.html 在使用Mybatis时，最头痛的就是写分页了，需要先写一个查询count的select语句，然后再写一个真正分页查询(limit)的语句https:&#x2F;&#x2F;blog.csdn.net&#x2F;Agly_Clarlie">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql 分页">
+<meta property="og:url" content="https://yiyayamaya.github.io/2021/09/07/mysql-%E5%88%86%E9%A1%B5/index.html">
+<meta property="og:site_name" content="皇姑区第一亚索的博客">
+<meta property="og:description" content="MySQL 百万级数据量分页查询方法及其优化 https:&#x2F;&#x2F;www.huaweicloud.com&#x2F;articles&#x2F;7cb1402c2d18baedfa12dd610ff2eaac.html 在使用Mybatis时，最头痛的就是写分页了，需要先写一个查询count的select语句，然后再写一个真正分页查询(limit)的语句https:&#x2F;&#x2F;blog.csdn.net&#x2F;Agly_Clarlie">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-09-07T09:49:53.000Z">
+<meta property="article:modified_time" content="2021-09-11T03:44:58.785Z">
+<meta property="article:author" content="皇姑区第一亚索">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="皇姑区第一亚索的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">皇姑区第一亚索</h5>
+          <a href="mailto:wuxingjian98@gmail.com" title="wuxingjian98@gmail.com" class="mail">wuxingjian98@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                日志
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yiyayamaya" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">mysql 分页</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">mysql 分页</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-09-07T09:49:53.000Z" itemprop="datePublished" class="page-time">
+  2021-09-07
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-mysql-分页"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">mysql 分页</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-09-07 17:49:53" datetime="2021-09-07T09:49:53.000Z"  itemprop="datePublished">2021-09-07</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>MySQL 百万级数据量分页查询方法及其优化</p>
+<p><a href="https://www.huaweicloud.com/articles/7cb1402c2d18baedfa12dd610ff2eaac.html" target="_blank" rel="noopener">https://www.huaweicloud.com/articles/7cb1402c2d18baedfa12dd610ff2eaac.html</a></p>
+<p>在使用Mybatis时，最头痛的就是写分页了，需要先写一个查询count的select语句，然后再写一个真正分页查询(limit)的语句<a href="https://blog.csdn.net/Agly_Clarlie/article/details/53185750" target="_blank" rel="noopener">https://blog.csdn.net/Agly_Clarlie/article/details/53185750</a><br>猜想结合pagehelper会容易 但是怎么结合呢？ 有前端的从前端发送pageNum pageSize的我会 name无前端的呢</p>
+<p>无前端 单纯想要批量查询 结合pagehelper如何使用 ?<br>参考了这个<a href="https://blog.csdn.net/a_c_c_a/article/details/106060621" target="_blank" rel="noopener">https://blog.csdn.net/a_c_c_a/article/details/106060621</a> 可以通过pageInfo.getPages()得到总页数 结束pageNum的遍历</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> pageNum = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> pageSize =<span class="number">500</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line"></span><br><span class="line">    PageHelper.startPage(pageNum, pageSize);  <span class="comment">// TODO 不count的话下面就得不到pageInfo.getTotal()</span></span><br><span class="line">    List&lt;Machine&gt; machineListPart = machineDao.getMachineAll();</span><br><span class="line">    PageInfo&lt;Machine&gt; pageInfo = <span class="keyword">new</span> PageInfo&lt;&gt;(machineListPart);</span><br><span class="line">    System.out.println(</span><br><span class="line">            <span class="string">" 当前页数["</span>+pageNum</span><br><span class="line">            +<span class="string">"],页大小["</span>+pageInfo.getPageSize()</span><br><span class="line">            +<span class="string">"],总页数["</span>+pageInfo.getPages()</span><br><span class="line">            +<span class="string">"],总记录数["</span>+pageInfo.getTotal()+<span class="string">"]"</span></span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(pageInfo.getPageNum()&gt;=pageInfo.getPages())&#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    pageNum++;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">网元参数迁移 当前页数[1],页大小[10000],当页大小[10000],总页数[105],总记录数[1040376]</span><br><span class="line">网元参数迁移 当前页数[2],页大小[10000],当页大小[10000],总页数[105],总记录数[1040376]</span><br><span class="line">网元参数迁移 当前页数[3],页大小[10000],当页大小[10000],总页数[105],总记录数[1040376]</span><br><span class="line">网元参数迁移 当前页数[4],页大小[10000],当页大小[10000],总页数[105],总记录数[1040376]</span><br><span class="line">网元参数迁移 当前页数[5],页大小[10000],当页大小[10000],总页数[105],总记录数[1040376]</span><br><span class="line">网元参数迁移 当前页数[6],页大小[10000],当页大小[10000],总页数[105],总记录数[1040376]</span><br><span class="line">网元参数迁移 当前页数[7],页大小[10000],当页大小[10000],总页数[105],总记录数[1040376]</span><br><span class="line">网元参数迁移 当前页数[8],页大小[10000],当页大小[10000],总页数[105],总记录数[1040376]</span><br><span class="line">网元参数迁移 当前页数[9],页大小[10000],当页大小[10000],总页数[105],总记录数[1040376]</span><br><span class="line">网元参数迁移 当前页数[10],页大小[10000],当页大小[10000],总页数[105],总记录数[1040376]</span><br><span class="line">...</span><br><span class="line">网元参数迁移 当前页数[100],页大小[10000],当页大小[10000],总页数[105],总记录数[1040376]</span><br><span class="line">网元参数迁移 当前页数[101],页大小[10000],当页大小[10000],总页数[105],总记录数[1040376]</span><br><span class="line">网元参数迁移 当前页数[102],页大小[10000],当页大小[10000],总页数[105],总记录数[1040376]</span><br><span class="line">网元参数迁移 当前页数[103],页大小[10000],当页大小[10000],总页数[105],总记录数[1040376]</span><br><span class="line">网元参数迁移 当前页数[104],页大小[10000],当页大小[10000],总页数[105],总记录数[1040376]</span><br><span class="line">网元参数迁移 当前页数[105],页大小[10000],当页大小[376],总页数[105],总记录数[1040376]</span><br></pre></td></tr></table></figure>
+
+<p>但是上述pagehelper也是通过limit简单实现 </p>
+<p>可以利用索引</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> pageIdIndex=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> pageSize=<span class="number">100</span>;</span><br><span class="line">        <span class="keyword">int</span> totalNum=machineDao.getMachineNum();</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">            List&lt;Machine&gt; machineListPart = machineDao.getMachineAllBetter(pageIdIndex,pageSize);</span><br><span class="line">            pageIdIndex+=pageSize;</span><br><span class="line">            <span class="keyword">if</span> (pageIdIndex&gt;totalNum)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>未完待续</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2021-09-11T03:44:58.785Z" itemprop="dateUpdated">2021-09-11 11:44:58</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://yiyayamaya.github.io">
+            <img src="/img/avatar1.jpg" alt="皇姑区第一亚索">
+            皇姑区第一亚索
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/09/07/mysql-%E5%88%86%E9%A1%B5/&title=《mysql 分页》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/09/07/mysql-%E5%88%86%E9%A1%B5/&title=《mysql 分页》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/09/07/mysql-%E5%88%86%E9%A1%B5/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《mysql 分页》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/09/07/mysql-%E5%88%86%E9%A1%B5/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/09/07/mysql-%E5%88%86%E9%A1%B5/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/09/15/%E5%B0%9D%E8%AF%95%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91clash%E9%A1%BA%E4%BE%BFdocker%E5%85%A5%E9%97%A8/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">尝试自己编译clash顺便docker入门</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/09/07/java%E4%B8%ADsuper-%E7%9A%84%E7%94%A8%E6%B3%95/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">java中super()的用法</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "lrdeEdMXEXCAsD9I3vd7hPnz-gzGzoHsz",
+            appKey: "w7U0ClAFDzQNEfIOgHoMaFwM",
+            avatar: "wavatar",
+			 emojiCDN: 'https://valinecdn.bili33.top/', 
+			 emojiMaps: {
+				"Tieba-New2": "Tieba-New/image_emoticon.png",
+				"Tieba-New3": "Tieba-New/image_emoticon10.png",
+				
+				"Tieba-New14": "Tieba-New/image_emoticon11.png",
+				
+				"Tieba-New25": "Tieba-New/image_emoticon12.png",
+				
+				"Tieba-New31": "Tieba-New/image_emoticon13.png",
+				"Tieba-New32": "Tieba-New/image_emoticon14.png",
+				"Tieba-New33": "Tieba-New/image_emoticon15.png",
+				"Tieba-New34": "Tieba-New/image_emoticon16.png",
+				"Tieba-New35": "Tieba-New/image_emoticon17.png",
+				"Tieba-New36": "Tieba-New/image_emoticon18.png",
+				"Tieba-New37": "Tieba-New/image_emoticon19.png",
+				"Tieba-New38": "Tieba-New/image_emoticon2.png",
+				"Tieba-New39": "Tieba-New/image_emoticon20.png",
+				"Tieba-New40": "Tieba-New/image_emoticon21.png",
+				"Tieba-New41": "Tieba-New/image_emoticon22.png",
+				"Tieba-New42": "Tieba-New/image_emoticon23.png",
+				"Tieba-New43": "Tieba-New/image_emoticon24.png",
+				"Tieba-New44": "Tieba-New/image_emoticon25.png",
+				"Tieba-New45": "Tieba-New/image_emoticon26.png",
+				"Tieba-New46": "Tieba-New/image_emoticon27.png",
+				"Tieba-New47": "Tieba-New/image_emoticon28.png",
+				"Tieba-New48": "Tieba-New/image_emoticon29.png",
+				"Tieba-New49": "Tieba-New/image_emoticon3.png",
+				"Tieba-New50": "Tieba-New/image_emoticon30.png",
+				"Tieba-New51": "Tieba-New/image_emoticon31.png",
+				"Tieba-New52": "Tieba-New/image_emoticon32.png",
+				"Tieba-New53": "Tieba-New/image_emoticon33.png",
+				
+				"Tieba-New60": "Tieba-New/image_emoticon4.png",
+				
+				"Tieba-New71": "Tieba-New/image_emoticon5.png",
+				"Tieba-New72": "Tieba-New/image_emoticon50.png",
+				"Tieba-New73": "Tieba-New/image_emoticon6.png",
+				"Tieba-New74": "Tieba-New/image_emoticon66.png",
+				"Tieba-New75": "Tieba-New/image_emoticon67.png",
+				"Tieba-New76": "Tieba-New/image_emoticon68.png",
+				"Tieba-New77": "Tieba-New/image_emoticon69.png",
+				"Tieba-New78": "Tieba-New/image_emoticon7.png",
+				"Tieba-New79": "Tieba-New/image_emoticon70.png",
+				"Tieba-New80": "Tieba-New/image_emoticon71.png",
+				"Tieba-New81": "Tieba-New/image_emoticon72.png",
+				"Tieba-New82": "Tieba-New/image_emoticon73.png",
+				"Tieba-New83": "Tieba-New/image_emoticon74.png",
+				"Tieba-New84": "Tieba-New/image_emoticon75.png",
+				"Tieba-New85": "Tieba-New/image_emoticon76.png",
+				
+				"Tieba-New89": "Tieba-New/image_emoticon8.png",
+				
+				"Tieba-New95": "Tieba-New/image_emoticon85.png",
+				"Tieba-New96": "Tieba-New/image_emoticon86.png",
+				"Tieba-New97": "Tieba-New/image_emoticon87.png",
+				"Tieba-New98": "Tieba-New/image_emoticon88.png",
+				"Tieba-New99": "Tieba-New/image_emoticon89.png",
+				"Tieba-New100": "Tieba-New/image_emoticon9.png",
+				"Tieba-New101": "Tieba-New/image_emoticon90.png",
+				"Tieba-New102": "Tieba-New/image_emoticon91.png",
+				"Tieba-New103": "Tieba-New/image_emoticon92.png",
+				"Tieba-New104": "Tieba-New/image_emoticon93.png",
+				"Tieba-New105": "Tieba-New/image_emoticon94.png",
+				"Tieba-New106": "Tieba-New/image_emoticon95.png",
+				"Tieba-New107": "Tieba-New/image_emoticon96.png",
+				"Tieba-New108": "Tieba-New/image_emoticon97.png",
+				"Tieba-New109": "Tieba-New/image_emoticon98.png"
+
+				
+				} ,
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>皇姑区第一亚索 &copy; 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/09/07/mysql-%E5%88%86%E9%A1%B5/&title=《mysql 分页》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/09/07/mysql-%E5%88%86%E9%A1%B5/&title=《mysql 分页》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/09/07/mysql-%E5%88%86%E9%A1%B5/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《mysql 分页》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/09/07/mysql-%E5%88%86%E9%A1%B5/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/09/07/mysql-%E5%88%86%E9%A1%B5/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqUlEQVR42u3aQW7jMBAEwPz/07vnRdZy9wxp+FA6BZYgs2iAnPTw5ye+/jxev5/MP/l9d/bk6sLDw8O7MPRXQ0yu54Fu3pBMNx4eHt49Xr4oJ8+/mojk7vNU1mPAw8PD+wLe89KckJJhzQpxPDw8vG/jRSVsiX+elAObEx4eHt41XrvQz8rcfDo2EQYeHh7ebV5b8n7D31f6e3h4eHjrrvqmIE4W8fzucLR4eHh4F3ibowOz1tfZZlsUSeDh4eEd5bUtrjxs3cS+eZ38ZoLw8PDwLvA2C3SyVeSxbA6YbV14eHh4p3j5EJNP8iV7tuXk78TDw8O7x2uDgwSQfGUdxT6SoqIcDw8P7xDv1KKfhwizFtosBMHDw8O7x2vL1nwD2ITC7VS+DCPw8PDwrvE2hwbqaGBxeCvPafHw8PBu8OrWexnvbvpyeY6yOjSAh4eHV/I2S3Pb2m8x7TT95214eHh4F3hJE2sWTGyOarWbRL3v4eHh4S14syG2UzA7cNAW92+ODuDh4eEd4m0OXbWBwuZuW5pHvT48PDy8BW92LCAPLPI2VbKF1IU7Hh4e3gXe2aU5jxJOTUp9jAAPDw9vwWujhORqI4P8bv1j4OHh4V3mfShOLbec9nuLfhoeHh7eiJcPtD3kdDYCzovyog2Gh4eHt+DNmvptILsJIA78Ynh4eHiXeXk7qv36PPJYJdB4eHh4H+HlDfsZJn/nWQUeHh7eWd6suZUHr2fzkrxJ9k8DDA8PD+8ob7PsHkuOg21jNll4eHh493ibcnk2Z/nQZxsDHh4e3md4+TLdtsfyAn0zWW8iCTw8PLyv4W1iiPzgwqY5h4eHh/edvHa4bfDaBs14eHh4n+G1YcTsGFY7rbOjXXh4eHi3ee0//LPtpGW3hTUeHh7eR3h/AeVv/ivIbYzrAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

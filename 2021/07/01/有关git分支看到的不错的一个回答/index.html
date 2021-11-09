@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>有关git分支看到的不错的一个回答 | 皇姑区第一亚索的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#9ACD32">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="开发时怎么用好 Git 分支? - Color的回答 - 知乎https:&#x2F;&#x2F;www.zhihu.com&#x2F;question&#x2F;21995370&#x2F;answer&#x2F;19975870 假如远程只有一个master本地分支可以不同步到远程仓库，我们可以在本地dev开发，然后merge到master，使用master同步代码 假如远程有自己的分支 推远程master的同时推远程dev 这样的意义是什么？git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="有关git分支看到的不错的一个回答">
+<meta property="og:url" content="https://yiyayamaya.github.io/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/index.html">
+<meta property="og:site_name" content="皇姑区第一亚索的博客">
+<meta property="og:description" content="开发时怎么用好 Git 分支? - Color的回答 - 知乎https:&#x2F;&#x2F;www.zhihu.com&#x2F;question&#x2F;21995370&#x2F;answer&#x2F;19975870 假如远程只有一个master本地分支可以不同步到远程仓库，我们可以在本地dev开发，然后merge到master，使用master同步代码 假如远程有自己的分支 推远程master的同时推远程dev 这样的意义是什么？git">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yiyayamaya.github.io/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/JdCe2RM.png">
+<meta property="og:image" content="https://yiyayamaya.github.io/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/g8lMgW8.png">
+<meta property="og:image" content="https://yiyayamaya.github.io/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/rBf70aC.png">
+<meta property="og:image" content="https://yiyayamaya.github.io/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/bHJpOKF.png">
+<meta property="article:published_time" content="2021-07-01T05:56:03.000Z">
+<meta property="article:modified_time" content="2021-07-02T08:21:15.561Z">
+<meta property="article:author" content="皇姑区第一亚索">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yiyayamaya.github.io/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/JdCe2RM.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="皇姑区第一亚索的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">皇姑区第一亚索</h5>
+          <a href="mailto:wuxingjian98@gmail.com" title="wuxingjian98@gmail.com" class="mail">wuxingjian98@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                日志
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yiyayamaya" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">有关git分支看到的不错的一个回答</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">有关git分支看到的不错的一个回答</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-07-01T05:56:03.000Z" itemprop="datePublished" class="page-time">
+  2021-07-01
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#假如远程只有一个master"><span class="post-toc-number">1.</span> <span class="post-toc-text">假如远程只有一个master</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#假如远程有自己的分支-推远程master的同时推远程dev-这样的意义是什么？"><span class="post-toc-number">2.</span> <span class="post-toc-text">假如远程有自己的分支 推远程master的同时推远程dev 这样的意义是什么？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Git-push-时如何避免出现-“Merge-branch-‘master’-of-…”"><span class="post-toc-number">3.</span> <span class="post-toc-text">Git push 时如何避免出现 “Merge branch ‘master’ of …”</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-有关git分支看到的不错的一个回答"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">有关git分支看到的不错的一个回答</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-07-01 13:56:03" datetime="2021-07-01T05:56:03.000Z"  itemprop="datePublished">2021-07-01</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>开发时怎么用好 Git 分支? - Color的回答 - 知乎<br><a href="https://www.zhihu.com/question/21995370/answer/19975870" target="_blank" rel="noopener">https://www.zhihu.com/question/21995370/answer/19975870</a></p>
+<h3 id="假如远程只有一个master"><a href="#假如远程只有一个master" class="headerlink" title="假如远程只有一个master"></a>假如远程只有一个master</h3><p>本地分支可以不同步到远程仓库，我们可以在本地dev开发，然后merge到master，使用master同步代码</p>
+<h3 id="假如远程有自己的分支-推远程master的同时推远程dev-这样的意义是什么？"><a href="#假如远程有自己的分支-推远程master的同时推远程dev-这样的意义是什么？" class="headerlink" title="假如远程有自己的分支 推远程master的同时推远程dev 这样的意义是什么？"></a>假如远程有自己的分支 推远程master的同时推远程dev 这样的意义是什么？</h3><p>git checkout dev  # 切换到dev分支进行开发</p>
+<p>开发代码之后，我们有两个选择</p>
+<p>第一个：如果功能开发完成了，可以合并主分支</p>
+<p>git checkout master  # 切换到主分支</p>
+<p>git merge dev  # 把dev分支的更改和master合并</p>
+<p>git push  # 提交主分支代码远程</p>
+<p>git checkout dev  # 切换到dev远程分支</p>
+<p>git push  # 提交dev分支到远程</p>
+<p>第二个：如果功能没有完成，可以直接推送</p>
+<p>git push  # 提交到dev远程分支</p>
+<p>注意：在分支切换之前最好先commit全部的改变，除非你真的知道自己在做什么</p>
+<p>还有一篇文章 写的不错 关于merge和rebase配合使用</p>
+<p><a href="https://zhuanlan.zhihu.com/p/34197548" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/34197548</a></p>
+<p>例如现有上游分支 master，基于 master 分支拉出来一个开发分支 dev，在 dev 上开发了一段时间后要把 master 分支提交的新内容更新到 dev 分支，此时切换到 dev 分支，使用 git rebase master</p>
+<p>等 dev 分支开发完成了之后，要合并到上游分支 master 上的时候，切换到 master 分支，使用 git merge dev</p>
+<p>rebase类型操作<br>git checkout B1<br>git pull origin B1 –rebase<br>git rebase master<br>git push origin B1 –force  </p>
+<p>vs我以前的merge操作 (这里为什么要merge两次 先master into B1 再B1 into master 其实我不懂 <a href="#jump">这个问题似乎得到了解答</a> )<br>git checkout B1<br>git pull origin B1<br>git merge master<br>git push origin B1</p>
+<p>上面两个之后都要<br>git checkotu master<br>git merge B1</p>
+<h3 id="Git-push-时如何避免出现-“Merge-branch-‘master’-of-…”"><a href="#Git-push-时如何避免出现-“Merge-branch-‘master’-of-…”" class="headerlink" title="Git push 时如何避免出现 “Merge branch ‘master’ of …”"></a>Git push 时如何避免出现 “Merge branch ‘master’ of …”</h3><p><a href="https://www.cnblogs.com/Sinte-Beuve/p/9195018.html" target="_blank" rel="noopener">https://www.cnblogs.com/Sinte-Beuve/p/9195018.html</a></p>
+<p> A-B-C(master)<br>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<br>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D(origin/master)</p>
+<p>我当前拉取的远端版本为 B，此时修改了代码，并在本地仓库 commit 一次，但并未 push 到远端仓库。<br>另一位开发者在 B 的基础上，同样 commit 了一次并 push 到远端仓库。那么这个时候，我再 push 自己的代码就会发生错误，如下。<br>To github.com:maoqyhz/usegit.git<br>! [rejected]        master -&gt; master (fetch first)<br>error: failed to push some refs to ‘git@github.com:maoqyhz/usegit.git’<br>hint: Updates were rejected because the remote contains work that you do<br>hint: not have locally. This is usually caused by another repository pushing<br>hint: to the same ref. You may want to first integrate the remote changes<br>hint: (e.g., ‘git pull …’) before pushing again.  </p>
+<p>这个时候我们会选择，先 pull，再 push。Ok，push 成功，但是此时我们查看 log 就会发现除了我们自己提交的那条日志之外，会多出一条 “Merge branch ‘master’ of …”。<br>在进行 pull 操作的同时，其实就是 fetch+merge 的一个过程。我们从 remote 分支中拉取新的更新，然后再合并到本地分支中去。</p>
+<p>如果 remote 分支超前于本地分支，并且本地分支没有任何 commit 的，直接从 remote 进行 pull 操作，默认会采用 fast-forward 模式，这种模式下，并不会产生合并节点<br>如果想之前那样，本地先 commit 后再去 pull，那么此时，remote 分支和本地会分支会出现分叉，这个时候使用 pull 操作拉取更新时，就会进行分支合并，产生合并节点和 log 信息。<br>为了去除自动生成的 log 信息 可以git pull –rebase<br>从 remote 分支拉取更新到本地时，使用 rebase。<br>当完成 bug 修复或新功能时，使用 merge 将子分支合并到主分支。</p>
+<p><span id="jump">跳转到的地方</span></p>
+<p>reddit上面一个讨论 <a href="https://www.reddit.com/r/git/comments/j38kb1/what_does_it_mean_to_merge_master_into_feature/" target="_blank" rel="noopener">https://www.reddit.com/r/git/comments/j38kb1/what_does_it_mean_to_merge_master_into_feature/</a>  </p>
+<p>这是您的情况：您有一个commit一些内容的branch。同时，别人的更改更改已合并到 master。  </p>
+<img src="/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/JdCe2RM.png" class="" title="This is an example image">  
+
+<hr>
+<p><strong> 下面内容二选一</strong>  </p>
+<p>将 master 合并到您的功能分支  </p>
+<img src="/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/g8lMgW8.png" class="" title="This is an example image">  
+
+<p><strong> 或者</strong>  </p>
+<p>变基    </p>
+<img src="/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/rBf70aC.png" class="" title="This is an example image">  
+
+
+
+<hr>
+<p>然后再把功能分支合并到master  (下图为第三步选择merge的效果)</p>
+<img src="/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/bHJpOKF.png" class="" title="This is an example image">  
+
+
+<p>上面的内容似乎并没有真正回答问题，于是我继续搜索，又看到了reddit上一篇帖子。感觉比上面的更贴近我想要的答案。<br><a href="https://www.reddit.com/r/git/comments/3qpvzk/question_why_would_you_merge_master_into_a_branch/" target="_blank" rel="noopener">https://www.reddit.com/r/git/comments/3qpvzk/question_why_would_you_merge_master_into_a_branch/</a>  </p>
+<p>本质上我们在讨论下面两种步骤的区别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">在branch解决冲突</span><br><span class="line">git commit -m &#39;final feature commit&#39;   # SHA: X1</span><br><span class="line"># git pull, git fetch&#x2F;merge</span><br><span class="line">git merge master</span><br><span class="line">git commit -m &#39;resolve merge conflicts&#39;  # SHA: Y1</span><br><span class="line">git checkout master</span><br><span class="line">git merge feature  # SHA: M1 (merge commit)</span><br><span class="line">git branch -d feature</span><br><span class="line"></span><br><span class="line">在master解决冲突</span><br><span class="line">git commit -m &#39;final feature commit&#39;  # SHA: X2</span><br><span class="line">git checkout master</span><br><span class="line"># git pull, git fetch&#x2F;merge</span><br><span class="line">git merge feature  # SHA: M2 (merge commit)</span><br><span class="line">git commit -m &#39;resolve merge conflicts&#39;  # SHA: Y2</span><br><span class="line">git branch -d feature</span><br></pre></td></tr></table></figure>
+
+
+
+<p>文就在于你想在哪里解决冲突,在branch还是在master? 在master解决冲突，命令会更少。如果实在branch解决，会使得回滚更加方便。第一种只需要revert M1才能恢复之前的master。 第二种需要revert M2 and Y2. 尽管不是每个项目都需要第一种，还是建议养成这个习惯。</p>
+<p>还有一点意义在于：长时间开发个人分支，时不时合并master into个人可以紧跟实事，减少最终大合并的工作量。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2021-07-02T08:21:15.561Z" itemprop="dateUpdated">2021-07-02 16:21:15</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://yiyayamaya.github.io">
+            <img src="/img/avatar1.jpg" alt="皇姑区第一亚索">
+            皇姑区第一亚索
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/&title=《有关git分支看到的不错的一个回答》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/&title=《有关git分支看到的不错的一个回答》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《有关git分支看到的不错的一个回答》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/07/02/classpath%E5%88%B0%E5%BA%95%E6%98%AF%E4%B8%AA%E4%BB%80%E4%B9%88%E7%8E%A9%E6%84%8F/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">classpath到底是个什么玩意</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/06/29/b%E7%AB%99%E5%B0%9A%E7%A1%85%E8%B0%B7springboot%E8%AE%B0%E5%BD%95/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">b站尚硅谷springboot记录</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "lrdeEdMXEXCAsD9I3vd7hPnz-gzGzoHsz",
+            appKey: "w7U0ClAFDzQNEfIOgHoMaFwM",
+            avatar: "wavatar",
+			 emojiCDN: 'https://valinecdn.bili33.top/', 
+			 emojiMaps: {
+				"Tieba-New2": "Tieba-New/image_emoticon.png",
+				"Tieba-New3": "Tieba-New/image_emoticon10.png",
+				
+				"Tieba-New14": "Tieba-New/image_emoticon11.png",
+				
+				"Tieba-New25": "Tieba-New/image_emoticon12.png",
+				
+				"Tieba-New31": "Tieba-New/image_emoticon13.png",
+				"Tieba-New32": "Tieba-New/image_emoticon14.png",
+				"Tieba-New33": "Tieba-New/image_emoticon15.png",
+				"Tieba-New34": "Tieba-New/image_emoticon16.png",
+				"Tieba-New35": "Tieba-New/image_emoticon17.png",
+				"Tieba-New36": "Tieba-New/image_emoticon18.png",
+				"Tieba-New37": "Tieba-New/image_emoticon19.png",
+				"Tieba-New38": "Tieba-New/image_emoticon2.png",
+				"Tieba-New39": "Tieba-New/image_emoticon20.png",
+				"Tieba-New40": "Tieba-New/image_emoticon21.png",
+				"Tieba-New41": "Tieba-New/image_emoticon22.png",
+				"Tieba-New42": "Tieba-New/image_emoticon23.png",
+				"Tieba-New43": "Tieba-New/image_emoticon24.png",
+				"Tieba-New44": "Tieba-New/image_emoticon25.png",
+				"Tieba-New45": "Tieba-New/image_emoticon26.png",
+				"Tieba-New46": "Tieba-New/image_emoticon27.png",
+				"Tieba-New47": "Tieba-New/image_emoticon28.png",
+				"Tieba-New48": "Tieba-New/image_emoticon29.png",
+				"Tieba-New49": "Tieba-New/image_emoticon3.png",
+				"Tieba-New50": "Tieba-New/image_emoticon30.png",
+				"Tieba-New51": "Tieba-New/image_emoticon31.png",
+				"Tieba-New52": "Tieba-New/image_emoticon32.png",
+				"Tieba-New53": "Tieba-New/image_emoticon33.png",
+				
+				"Tieba-New60": "Tieba-New/image_emoticon4.png",
+				
+				"Tieba-New71": "Tieba-New/image_emoticon5.png",
+				"Tieba-New72": "Tieba-New/image_emoticon50.png",
+				"Tieba-New73": "Tieba-New/image_emoticon6.png",
+				"Tieba-New74": "Tieba-New/image_emoticon66.png",
+				"Tieba-New75": "Tieba-New/image_emoticon67.png",
+				"Tieba-New76": "Tieba-New/image_emoticon68.png",
+				"Tieba-New77": "Tieba-New/image_emoticon69.png",
+				"Tieba-New78": "Tieba-New/image_emoticon7.png",
+				"Tieba-New79": "Tieba-New/image_emoticon70.png",
+				"Tieba-New80": "Tieba-New/image_emoticon71.png",
+				"Tieba-New81": "Tieba-New/image_emoticon72.png",
+				"Tieba-New82": "Tieba-New/image_emoticon73.png",
+				"Tieba-New83": "Tieba-New/image_emoticon74.png",
+				"Tieba-New84": "Tieba-New/image_emoticon75.png",
+				"Tieba-New85": "Tieba-New/image_emoticon76.png",
+				
+				"Tieba-New89": "Tieba-New/image_emoticon8.png",
+				
+				"Tieba-New95": "Tieba-New/image_emoticon85.png",
+				"Tieba-New96": "Tieba-New/image_emoticon86.png",
+				"Tieba-New97": "Tieba-New/image_emoticon87.png",
+				"Tieba-New98": "Tieba-New/image_emoticon88.png",
+				"Tieba-New99": "Tieba-New/image_emoticon89.png",
+				"Tieba-New100": "Tieba-New/image_emoticon9.png",
+				"Tieba-New101": "Tieba-New/image_emoticon90.png",
+				"Tieba-New102": "Tieba-New/image_emoticon91.png",
+				"Tieba-New103": "Tieba-New/image_emoticon92.png",
+				"Tieba-New104": "Tieba-New/image_emoticon93.png",
+				"Tieba-New105": "Tieba-New/image_emoticon94.png",
+				"Tieba-New106": "Tieba-New/image_emoticon95.png",
+				"Tieba-New107": "Tieba-New/image_emoticon96.png",
+				"Tieba-New108": "Tieba-New/image_emoticon97.png",
+				"Tieba-New109": "Tieba-New/image_emoticon98.png"
+
+				
+				} ,
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>皇姑区第一亚索 &copy; 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/&title=《有关git分支看到的不错的一个回答》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/&title=《有关git分支看到的不错的一个回答》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《有关git分支看到的不错的一个回答》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/07/01/%E6%9C%89%E5%85%B3git%E5%88%86%E6%94%AF%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%8D%E9%94%99%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9B%9E%E7%AD%94/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAAE+CAAAAAAxUyPsAAAFIUlEQVR42u3bW24cORAEQN3/0rsHsCVlZlHrBRzzZYz6QQYbmGJW++Mj/vzzyac969fvfz3+63O3O769S/3Bhw8fPnz4Appkwu0g8mOSaedXbs9NTPDhw4cPH74LX/4DnxQl7SCSUib5vn0gvp5ddF98+PDhw4fvh/kSoK/LhTw+yP/aLm0+Qnz48OHDh+/P8m1b/a1QyKfaftNC48OHDx8+fG/58hKkLSDyTf7W6r5crS3I8OHDhw8fvjtf/hbW3/Pvxx98+PDhw4cv+HluA/E8FEhC87xQ2OL4Bw748OHDhw/f4hBF5/eCoI3+85qhPbJdZnz48OHDh+8V3xbTt+uTR/l5M76N13+k5MKHDx8+fPiW3XoxvfYltm1h2tZ7W760bfhvRo4PHz58+PDFfO2FLpvzthC5ELdLniz2b66ADx8+fPjwLb/LD4qS9mWvPBpo2+HtQ7A9HPjw4cOHD9/G9/VF2wFdtuL5YrwKHR48HPjw4cOHD9+hWd6WDq+KiXyS901+/te6TY4PHz58+PCd37DKh9iG8lt0vpU+bXHTRvz48OHDhw/fxneJy/NX2fLFaAuU/AW4/F748OHDhw/fW762ZNkGscX9eQuhxd0KmgcVHz58+PDhwzdtsy/FTRs9XOL77SEozsKHDx8+fPiWs378vzFvhUt+zcv1LwUTPnz48OHDd+HbIuz7sLZX5bYmQd7UL14CwIcPHz58+GK+PP7ehp68rJYUTG0okI//a9xvroYPHz58+PAtCfmpkbyVL19zb6Bb+fINStwwwIcPHz58+C58ybTb4qBtol/i+59bbHz48OHDh+/Ol/x459l/S/as53CO+0+9Dnz48OHDhy/u826Rett0z2uotuDIo/xLiPCbWeDDhw8fPnwlX15YbIXIVi4k19zGlo+2CEfw4cOHDx++A19eQLRt7DyYaK/THvnqvvjw4cOHD9+F7xLZJwVKGw1cyp3LN237AR8+fPjw4dv42qIk37q/anKPYXocNCR3eTBofPjw4cP3F/PlHBfc/6bEaYOPBOibY/Dhw4cPH76SL98evw3ZL4iXMmUrs4oHCx8+fPjw4TukzZcNf7IA2/FtcJAvZ359fPjw4cOH7xXf5TWvdijbuRtK3tqv43t8+PDhw4fvUee3PWaLFVrij+mzFUb5ufjw4cOHD1/Clwfo27TvEf+luZ5jjWfhw4cPHz58h7Muzew2NL9g3Rds4yvCAnz48OHDh++TKycTaGP0+/Xvy9A21Nvx48OHDx8+fBtfXo7kW+i2NNmmcQkX2kINHz58+PDhe8X3NrBui4k8fC9eESu3/Zd2BT58+PDhw7fx5Zd7G+LntdV9w5/fvSiD8OHDhw8fvokvJ7sUE3mUcI/j84Dg9OIdPnz48OHDt+zNi1e72vh+C+j/P0DFI4IPHz58+PAFR7bN4y3cbyOJtgGfTz5fjAgRHz58+PDhm/hypm1K+XDzsikvL9oSqh4QPnz48OHDd+Db4vJ2qi1KDrHNYmxL4MOHDx8+fG862sXLW22hcIn124Ij586vPyLiw4cPHz58cflyL0SSIuMS6Cd/zf+dzx0fPnz48OG78LWvo7XRfBKsb8F9PqqPw+fTMePDhw8fPnw/xtcWLsXP/2EZ8s51WzZFjw4+fPjw4cP3Y3xtU/myXW+b8UkjIYHOj8eHDx8+fPgufO2P/RayXwqgtvTZIoy2eY8PHz58+PC1fPdwvC1o8sV4uzyXUgYfPnz48OE78/0LisBaoajHSrUAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

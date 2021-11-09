@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>前中后序 | 皇姑区第一亚索的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#9ACD32">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="本篇讨论都是迭代写法   二叉树的前序&#x3D;二叉树的dfs 比较符合人的思路 123456789101112131415161718192021class Solution &amp;#123;    public List&lt;Integer&gt; preorderTraversal(TreeNode root) &amp;#123;                Stack&lt;TreeNode&gt; s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前中后序">
+<meta property="og:url" content="https://yiyayamaya.github.io/2021/03/06/%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F/index.html">
+<meta property="og:site_name" content="皇姑区第一亚索的博客">
+<meta property="og:description" content="本篇讨论都是迭代写法   二叉树的前序&#x3D;二叉树的dfs 比较符合人的思路 123456789101112131415161718192021class Solution &amp;#123;    public List&lt;Integer&gt; preorderTraversal(TreeNode root) &amp;#123;                Stack&lt;TreeNode&gt; s">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-06T07:05:18.000Z">
+<meta property="article:modified_time" content="2021-05-18T12:43:17.011Z">
+<meta property="article:author" content="皇姑区第一亚索">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="皇姑区第一亚索的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">皇姑区第一亚索</h5>
+          <a href="mailto:wuxingjian98@gmail.com" title="wuxingjian98@gmail.com" class="mail">wuxingjian98@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                日志
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yiyayamaya" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">前中后序</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">前中后序</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-03-06T07:05:18.000Z" itemprop="datePublished" class="page-time">
+  2021-03-06
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-前中后序"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">前中后序</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-03-06 15:05:18" datetime="2021-03-06T07:05:18.000Z"  itemprop="datePublished">2021-03-06</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>本篇讨论都是迭代写法</p>
+</br>
+
+<p>二叉树的前序=二叉树的dfs 比较符合人的思路</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public List&lt;Integer&gt; preorderTraversal(TreeNode root) &#123;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">        Stack&lt;TreeNode&gt; st&#x3D;new Stack&lt;TreeNode&gt;();</span><br><span class="line">        List&lt;Integer&gt; result&#x3D;new ArrayList&lt;Integer&gt;();</span><br><span class="line">        if(root&#x3D;&#x3D;null)</span><br><span class="line">            return result;</span><br><span class="line">        st.push(root);</span><br><span class="line">        while(!st.empty())&#123;</span><br><span class="line">            TreeNode cur&#x3D;st.pop();</span><br><span class="line">            result.add(cur.val);</span><br><span class="line">            if(cur.right!&#x3D;null)</span><br><span class="line">                st.push(cur.right);</span><br><span class="line">            if(cur.left!&#x3D;null)</span><br><span class="line">                st.push(cur.left);</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</br>
+
+<p>中序按照符合人的思路来比较不优雅，解题思路<br><a href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/jin-hu-shuang-bai-de-die-dai-zhong-xu-by-h4ri/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/jin-hu-shuang-bai-de-die-dai-zhong-xu-by-h4ri/</a></p>
+<p>1.对于当前中序遍历到的某个节点，如果他左子树不空，就往左遍历，</p>
+<p>2.当作子树为空或遍历返回到当前节点时，访问当前这个节点（操作一下），然后将当前节点的左指针制空（防止循环遍历卡住）</p>
+<p>3.判断当前节点的右子树是否为空，不空就向右遍历，回到1，空就向上返回。</p>
+<p>大概思路就是 如果如果左边有孩子，第一次会在if里加进去，第二次就会跳过这if了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">class Solution &#123;</span><br><span class="line">    public List&lt;Integer&gt; inorderTraversal(TreeNode root) &#123;</span><br><span class="line">        &#x2F;&#x2F; 使用迭代 直接压栈即可</span><br><span class="line">        List&lt;Integer&gt; res &#x3D; new ArrayList&lt;&gt;();</span><br><span class="line">        Stack &lt;TreeNode&gt; stack&#x3D;new Stack&lt;TreeNode&gt;();</span><br><span class="line">        stack.push(root);</span><br><span class="line"></span><br><span class="line">         if(root &#x3D;&#x3D; null) &#x2F;&#x2F;处理特殊情况</span><br><span class="line">            return res;</span><br><span class="line">        while(!stack.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            if(root.left !&#x3D; null) &#x2F;&#x2F;如果当前节点的左子树不空，就向左走，压栈左儿子节点</span><br><span class="line">            &#123;</span><br><span class="line">                stack.push(root.left);</span><br><span class="line">                root &#x3D; root.left;</span><br><span class="line">            &#125;</span><br><span class="line">            else &#x2F;&#x2F;如果当前节点的左子树空了</span><br><span class="line">            &#123;</span><br><span class="line">                root &#x3D; stack.pop(); &#x2F;&#x2F;弹栈，返回上一个遍历到的节点</span><br><span class="line">                </span><br><span class="line">                res.add(root.val); &#x2F;&#x2F;把他压入返回数组，此时就是中序的顺序</span><br><span class="line">                root. left &#x3D; null; &#x2F;&#x2F;将左指针制空，表明当前节点的左边已经处理过了</span><br><span class="line">                if(root.right !&#x3D; null) &#x2F;&#x2F;判断当前节点的右子树空不空，不空就进入右遍处理</span><br><span class="line">                &#123;</span><br><span class="line">                    root &#x3D; root.right;</span><br><span class="line">                    stack.push(root);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return res;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>还有一个写法 也比标准答案舒服一点。<br><a href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/shou-hua-tu-jie-yong-zhan-mo-ni-zhong-xu-bian-li-z/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/shou-hua-tu-jie-yong-zhan-mo-ni-zhong-xu-bian-li-z/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">const inorderTraversal &#x3D; (root) &#x3D;&gt; &#123;</span><br><span class="line">  const res &#x3D; [];</span><br><span class="line">  const stack &#x3D; [];</span><br><span class="line"></span><br><span class="line">  while (root) &#123;        &#x2F;&#x2F; 能压入栈的左子节点都压进来</span><br><span class="line">    stack.push(root);</span><br><span class="line">    root &#x3D; root.left;</span><br><span class="line">  &#125;</span><br><span class="line">  while (stack.length) &#123;</span><br><span class="line">    let node &#x3D; stack.pop(); &#x2F;&#x2F; 栈顶的节点出栈</span><br><span class="line">    res.push(node.val);     &#x2F;&#x2F; 在压入右子树之前，处理它的数值部分（因为中序遍历）</span><br><span class="line">    node &#x3D; node.right;      &#x2F;&#x2F; 获取它的右子树</span><br><span class="line">    while (node) &#123;          &#x2F;&#x2F; 右子树存在，执行while循环    </span><br><span class="line">      stack.push(node);     &#x2F;&#x2F; 压入当前root</span><br><span class="line">      node &#x3D; node.left;     &#x2F;&#x2F; 不断压入左子节点</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>不按照人的思路来写 个人感觉这个看能看懂 自己写很容易忘 没什么意思 但是这种写法可以推广到前序和后序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public List&lt;Integer&gt; inorderTraversal(TreeNode root) &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">          </span><br><span class="line">       if (root &#x3D;&#x3D; null) &#123;</span><br><span class="line">            return Collections.emptyList();</span><br><span class="line">        &#125;</span><br><span class="line">        Stack&lt;TreeNode&gt; stack &#x3D; new Stack&lt;TreeNode&gt;();</span><br><span class="line">        List&lt;Integer&gt; res &#x3D; new LinkedList&lt;&gt;();</span><br><span class="line">        while (root !&#x3D; null || !stack.isEmpty()) &#123;</span><br><span class="line">            if (root !&#x3D; null) &#123;</span><br><span class="line">                stack.push(root);</span><br><span class="line">                root &#x3D; root.left;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                TreeNode node &#x3D; stack.pop();</span><br><span class="line">                res.add(node.val);</span><br><span class="line">                if (node.right !&#x3D; null) &#123;</span><br><span class="line">                    root &#x3D; node.right;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</br>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2021-05-18T12:43:17.011Z" itemprop="dateUpdated">2021-05-18 20:43:17</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://yiyayamaya.github.io">
+            <img src="/img/avatar1.jpg" alt="皇姑区第一亚索">
+            皇姑区第一亚索
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/03/06/%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F/&title=《前中后序》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/03/06/%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F/&title=《前中后序》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/03/06/%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《前中后序》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/03/06/%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/03/06/%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/03/07/lc257-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%89%80%E6%9C%89%E8%B7%AF%E5%BE%84/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">lc257-二叉树的所有路径</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/01/17/java8-%E4%BD%BF%E7%94%A8Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8Cforeach/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">java8,使用Lambda表达式和foreach</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "lrdeEdMXEXCAsD9I3vd7hPnz-gzGzoHsz",
+            appKey: "w7U0ClAFDzQNEfIOgHoMaFwM",
+            avatar: "wavatar",
+			 emojiCDN: 'https://valinecdn.bili33.top/', 
+			 emojiMaps: {
+				"Tieba-New2": "Tieba-New/image_emoticon.png",
+				"Tieba-New3": "Tieba-New/image_emoticon10.png",
+				
+				"Tieba-New14": "Tieba-New/image_emoticon11.png",
+				
+				"Tieba-New25": "Tieba-New/image_emoticon12.png",
+				
+				"Tieba-New31": "Tieba-New/image_emoticon13.png",
+				"Tieba-New32": "Tieba-New/image_emoticon14.png",
+				"Tieba-New33": "Tieba-New/image_emoticon15.png",
+				"Tieba-New34": "Tieba-New/image_emoticon16.png",
+				"Tieba-New35": "Tieba-New/image_emoticon17.png",
+				"Tieba-New36": "Tieba-New/image_emoticon18.png",
+				"Tieba-New37": "Tieba-New/image_emoticon19.png",
+				"Tieba-New38": "Tieba-New/image_emoticon2.png",
+				"Tieba-New39": "Tieba-New/image_emoticon20.png",
+				"Tieba-New40": "Tieba-New/image_emoticon21.png",
+				"Tieba-New41": "Tieba-New/image_emoticon22.png",
+				"Tieba-New42": "Tieba-New/image_emoticon23.png",
+				"Tieba-New43": "Tieba-New/image_emoticon24.png",
+				"Tieba-New44": "Tieba-New/image_emoticon25.png",
+				"Tieba-New45": "Tieba-New/image_emoticon26.png",
+				"Tieba-New46": "Tieba-New/image_emoticon27.png",
+				"Tieba-New47": "Tieba-New/image_emoticon28.png",
+				"Tieba-New48": "Tieba-New/image_emoticon29.png",
+				"Tieba-New49": "Tieba-New/image_emoticon3.png",
+				"Tieba-New50": "Tieba-New/image_emoticon30.png",
+				"Tieba-New51": "Tieba-New/image_emoticon31.png",
+				"Tieba-New52": "Tieba-New/image_emoticon32.png",
+				"Tieba-New53": "Tieba-New/image_emoticon33.png",
+				
+				"Tieba-New60": "Tieba-New/image_emoticon4.png",
+				
+				"Tieba-New71": "Tieba-New/image_emoticon5.png",
+				"Tieba-New72": "Tieba-New/image_emoticon50.png",
+				"Tieba-New73": "Tieba-New/image_emoticon6.png",
+				"Tieba-New74": "Tieba-New/image_emoticon66.png",
+				"Tieba-New75": "Tieba-New/image_emoticon67.png",
+				"Tieba-New76": "Tieba-New/image_emoticon68.png",
+				"Tieba-New77": "Tieba-New/image_emoticon69.png",
+				"Tieba-New78": "Tieba-New/image_emoticon7.png",
+				"Tieba-New79": "Tieba-New/image_emoticon70.png",
+				"Tieba-New80": "Tieba-New/image_emoticon71.png",
+				"Tieba-New81": "Tieba-New/image_emoticon72.png",
+				"Tieba-New82": "Tieba-New/image_emoticon73.png",
+				"Tieba-New83": "Tieba-New/image_emoticon74.png",
+				"Tieba-New84": "Tieba-New/image_emoticon75.png",
+				"Tieba-New85": "Tieba-New/image_emoticon76.png",
+				
+				"Tieba-New89": "Tieba-New/image_emoticon8.png",
+				
+				"Tieba-New95": "Tieba-New/image_emoticon85.png",
+				"Tieba-New96": "Tieba-New/image_emoticon86.png",
+				"Tieba-New97": "Tieba-New/image_emoticon87.png",
+				"Tieba-New98": "Tieba-New/image_emoticon88.png",
+				"Tieba-New99": "Tieba-New/image_emoticon89.png",
+				"Tieba-New100": "Tieba-New/image_emoticon9.png",
+				"Tieba-New101": "Tieba-New/image_emoticon90.png",
+				"Tieba-New102": "Tieba-New/image_emoticon91.png",
+				"Tieba-New103": "Tieba-New/image_emoticon92.png",
+				"Tieba-New104": "Tieba-New/image_emoticon93.png",
+				"Tieba-New105": "Tieba-New/image_emoticon94.png",
+				"Tieba-New106": "Tieba-New/image_emoticon95.png",
+				"Tieba-New107": "Tieba-New/image_emoticon96.png",
+				"Tieba-New108": "Tieba-New/image_emoticon97.png",
+				"Tieba-New109": "Tieba-New/image_emoticon98.png"
+
+				
+				} ,
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>皇姑区第一亚索 &copy; 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/03/06/%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F/&title=《前中后序》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/03/06/%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F/&title=《前中后序》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/03/06/%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《前中后序》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/03/06/%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/03/06/%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACr0lEQVR42u3aQW6EMAwF0Ln/pafbSi3l245HVHqsUAdIXioRY/v1io/3t+Pq1+TKq+uvxvp5vDYOPDw8vMHUrx43X79367gavbAEeHh4eGu86uv7apjeppI/J58zHh4e3nN4yfZwNdFeuHy1MeDh4eH9F151yHyx/n4mHh4e3tN4STogCaOrf6+G5ou5Fjw8PLyFKtJzzlfqe3h4eHgLRamzz5ykg6Pn4+Hh4S3wemnZSRj995XV8D1KH+Ph4eGt8ZKH9jaPfOpnmxXw8PDw9ni9wXohcjVNnJfcbrYNPDw8vKO8arkrwVSbA5KlzEtieHh4eJ/hTRqqCoMF40YhcvwrHh4e3llenlStFqUmzQdJOB4F6Hh4eHgLvOoUJ6/pJCif9I5FXwx4eHh4R3nVVGkv7E6C6bw1IQrf8fDw8NZ4eVg8aYQ6u5TRHPDw8PCO8vKGql75Km8CqAblUdoXDw8Pb41XTbyeTWQky9rcHvDw8PDWePl08yB4HqxXkxq/3IuHh4e3wMuLSdUCfzVd20vsllO6eHh4eGNesgH0guleo0A1sL4ZEQ8PD++DvF5BaxL49loQbnY8PDw8vDVe8oI+VSSrvu4TcJTGxcPDwzvE6718q81b1QWaBOV4eHh4T+DlL+u8aWAj2dH7PMDDw8Pr8aprUC2P9doO8i3n5j+Gh4eHt8artgUkjVbVZESyEOXAGg8PD+8jvPzmU4xeAjdadDw8PLyjvHfxmCQa8vNjjVx4eHh4C7xJnWi+DSTlrsk5Hh4e3h4vL/nnaYh8I5lsG1HwjYeHh7fGq+Y/q8nWvLRW3cFursTDw8N7AK/amJUsU14My+eMh4eH9xxe3lY1v3cS9OPh4eFt86rFp7yonycyJueXs8LDw8Nb4PU++OeJg94yTdqz8PDw8Ma8L1Rku2CKc+2xAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

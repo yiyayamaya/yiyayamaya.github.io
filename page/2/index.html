@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>皇姑区第一亚索的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#9ACD32">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="什么都写">
+<meta property="og:type" content="website">
+<meta property="og:title" content="皇姑区第一亚索的博客">
+<meta property="og:url" content="https://yiyayamaya.github.io/page/2/index.html">
+<meta property="og:site_name" content="皇姑区第一亚索的博客">
+<meta property="og:description" content="什么都写">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="皇姑区第一亚索">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="皇姑区第一亚索的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">皇姑区第一亚索</h5>
+          <a href="mailto:wuxingjian98@gmail.com" title="wuxingjian98@gmail.com" class="mail">wuxingjian98@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                日志
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yiyayamaya" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">皇姑区第一亚索的博客</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header index-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">皇姑区第一亚索的博客</h1>
+        <h5 class="subtitle">
+            
+                
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+<div class="container body-wrap">
+
+    <ul class="post-list">
+    
+        <li class="post-list-item fade">
+            <article id="post-mysql-外键-ON-DELETE-CASCADE"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-08-24 14:35:34" datetime="2021-08-24T06:35:34.000Z"  itemprop="datePublished">2021-08-24</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/08/24/mysql-%E5%A4%96%E9%94%AE-ON-DELETE-CASCADE/">mysql 外键 ON DELETE CASCADE</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        https://www.yiibai.com/mysql/foreign-key.html
+https://www.yiibai.com/mysql/on-delete-cascade.html
+假设有两张表：建筑物(buildings)和房间(rooms)。 在这个数据库模型中，每个建筑物都有一个或多个房间。 然而，每个房间只属于一个建筑物。没有建筑物则房间是不会存在的。
+当我们从buil...
+    
+
+        <a href="/2021/08/24/mysql-%E5%A4%96%E9%94%AE-ON-DELETE-CASCADE/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-一次前端父页面向子页面传值的思考"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-08-24 13:42:15" datetime="2021-08-24T05:42:15.000Z"  itemprop="datePublished">2021-08-24</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/08/24/%E4%B8%80%E6%AC%A1%E5%89%8D%E7%AB%AF%E7%88%B6%E9%A1%B5%E9%9D%A2%E5%90%91%E5%AD%90%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC%E7%9A%84%E6%80%9D%E8%80%83/">一次前端父页面向子页面传值的思考</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+
+
+点开的新窗口的一个值是从父页面传进子页面的值而不是子页面异步获取的这种东西通常不能在子里面修改 如果嗯要修改一、需要刷新父刷新父亲的两种方法1.reload 2.不reload 单纯改值二、要么不要传 用子异步请求
+
+    
+
+        <a href="/2021/08/24/%E4%B8%80%E6%AC%A1%E5%89%8D%E7%AB%AF%E7%88%B6%E9%A1%B5%E9%9D%A2%E5%90%91%E5%AD%90%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC%E7%9A%84%E6%80%9D%E8%80%83/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-jquery-学习"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-08-22 14:04:01" datetime="2021-08-22T06:04:01.000Z"  itemprop="datePublished">2021-08-22</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/08/22/jquery-%E5%AD%A6%E4%B9%A0/">jquery 学习</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        jquery 对象 vs dom对象用#id作为选择符取得的是jQuery对象与document.getElementById(“id”)得到的DOM对象，这两者并不等价。
+(一)jQuery对象是一个数据对象，可以通过[index]的方法，来得到相应的DOM对象。例：
+var $v =$(“#v”) ; //jQuery对象
+var v=$v[0]; //DOM对象
+alert(v.che...
+    
+
+        <a href="/2021/08/22/jquery-%E5%AD%A6%E4%B9%A0/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-form表单中button-type是button而不是submit"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-08-12 09:41:34" datetime="2021-08-12T01:41:34.000Z"  itemprop="datePublished">2021-08-12</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/08/12/form%E8%A1%A8%E5%8D%95%E4%B8%ADbutton-type%E6%98%AFbutton%E8%80%8C%E4%B8%8D%E6%98%AFsubmit/">form表单中button type是button而不是submit</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        遇到了一个需求和这个楼主一抹一样。   https://segmentfault.com/q/1010000005039644
+因为是通过ajax请求服务器来实现登录的，所以我没有用button type=”submit”，但是现在问题是如果type是button的话，就不能实现敲回车自动触发按钮的功能了，我想做到在输入框里敲一下回车就自动触发登录的功能，请问该如何实现啊？
+换回 type=...
+    
+
+        <a href="/2021/08/12/form%E8%A1%A8%E5%8D%95%E4%B8%ADbutton-type%E6%98%AFbutton%E8%80%8C%E4%B8%8D%E6%98%AFsubmit/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-通过一次线上问题排查内存过大来学习jvm基础"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-07-29 14:31:35" datetime="2021-07-29T06:31:35.000Z"  itemprop="datePublished">2021-07-29</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/07/29/%E9%80%9A%E8%BF%87%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%86%85%E5%AD%98%E8%BF%87%E5%A4%A7%E6%9D%A5%E5%AD%A6%E4%B9%A0jvm%E5%9F%BA%E7%A1%80/">通过一次线上问题排查内存过大来学习jvm基础</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        用到的工具 jmap jstack jvisualvm现在叫visualVM MAT JConsole 
+生成的dump文件可以用jhat分析
+jmap命令将程序的内存数据保存下来，jmap -dump:live,format=b,file=m.hprof PID
+然后我指着监控信息，让运维看：“大哥你看这监控历史，堆内存是达到过 6G 的，只是后面 GC 了，没问题啊！”
+“JVM 的垃圾...
+    
+
+        <a href="/2021/07/29/%E9%80%9A%E8%BF%87%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%86%85%E5%AD%98%E8%BF%87%E5%A4%A7%E6%9D%A5%E5%AD%A6%E4%B9%A0jvm%E5%9F%BA%E7%A1%80/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-java-多线程学习"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-07-22 11:28:26" datetime="2021-07-22T03:28:26.000Z"  itemprop="datePublished">2021-07-22</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/07/22/java-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AD%A6%E4%B9%A0/">java 多线程学习</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        先看廖雪峰https://www.liaoxuefeng.com/wiki/1252599548343744/1304521607217185在计算机中，我们把一个任务称为一个进程，浏览器就是一个进程，视频播放器是另一个进程，类似的，音乐播放器和Word都是进程。某些进程内部还需要同时执行多个子任务。例如，我们在使用Word时，Word可以让我们一边打字，一边进行拼写检查，同时还可以在后台进...
+    
+
+        <a href="/2021/07/22/java-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AD%A6%E4%B9%A0/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-java-synchronized"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-07-13 14:36:29" datetime="2021-07-13T06:36:29.000Z"  itemprop="datePublished">2021-07-13</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/07/13/java-synchronized/">java synchronized</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+当一个线程访问同步代码块时，首先是需要得到锁才能执行  
+
+
+其实“锁”本身是个对象，synchronized这个关键字并不是“锁”。从语法上讲，Java中的每个对象都可以看做一把锁，在HotSpot JVM实现中，锁有个专门的名字：监视器（Monitor）。Monitor对象存在于每个Java对象的对象头中，这也是为什么Java中任意对象可以作为锁的原因，有关Monitor后续会详细介绍...
+    
+
+        <a href="/2021/07/13/java-synchronized/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-java-异常"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-07-12 13:54:22" datetime="2021-07-12T05:54:22.000Z"  itemprop="datePublished">2021-07-12</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/07/12/java-%E5%BC%82%E5%B8%B8/">java 异常</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+我怎么隐隐约约觉得写过异常相关的文章 但是找不到了。  
+
+
+
+
+
+Error是内存不足这种。
+
+Exception：分为未检查异常(RuntimeException)和已检查异常(非RuntimeException)
+
+checkedException ：受检查的异常，这种异常是强制我们catch或方法声明throws的异常。如果不处理，编译器会报错。计的目的是为了提醒开发者处理一些场景...
+    
+
+        <a href="/2021/07/12/java-%E5%BC%82%E5%B8%B8/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-mysql-索引什么时候更新"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-07-09 11:47:23" datetime="2021-07-09T03:47:23.000Z"  itemprop="datePublished">2021-07-09</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/07/09/mysql-%E7%B4%A2%E5%BC%95%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E6%9B%B4%E6%96%B0/">mysql 索引什么时候更新</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        https://stackoverflow.com/questions/17282041/when-does-mysql-update-the-indexes
+索引更新有两个方面。
+第一部分是在索引中插入/更新/删除条目。一旦记录更改，索引就会更新，并且此过程会阻止查询直到完成。这允许基于索引列上的条件更快地检索记录，这是索引最容易理解的目的。
+第二部分是更新索引的统计信息。这允许优化器确定...
+    
+
+        <a href="/2021/07/09/mysql-%E7%B4%A2%E5%BC%95%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E6%9B%B4%E6%96%B0/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-mysql-索引选择的原理—优化器"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-07-09 11:35:55" datetime="2021-07-09T03:35:55.000Z"  itemprop="datePublished">2021-07-09</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/07/09/mysql-%E7%B4%A2%E5%BC%95%E9%80%89%E6%8B%A9%E7%9A%84%E5%8E%9F%E7%90%86%E2%80%94%E4%BC%98%E5%8C%96%E5%99%A8/">mysql 索引选择的原理—优化器</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        https://blog.csdn.net/weixin_39846186/article/details/113370118
+选择索引是mysql决定的写 SQL 语句的时候，并没有主动指定使用哪个索引。也就是说，使用哪个索引是由 MySQL 来确定的。有这种情况，一条本来可以执行得很快的语句，却由于 MySQL 选错了索引，而导致执行速度变得很慢。  
+
+将慢查询日志的阈值设置为 0，表...
+    
+
+        <a href="/2021/07/09/mysql-%E7%B4%A2%E5%BC%95%E9%80%89%E6%8B%A9%E7%9A%84%E5%8E%9F%E7%90%86%E2%80%94%E4%BC%98%E5%8C%96%E5%99%A8/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+    </ul>
+
+    
+<nav id="page-nav">
+    <div class="inner">
+    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
+    </div>
+</nav>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>皇姑区第一亚索 &copy; 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/page/2/&title=皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/page/2/&title=皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/page/2/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/page/2/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/page/2/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABy0lEQVR42u3ay46DMAwFUP7/p5ltpRnotU0yrXSyqqANJ11Y+HEc8Tpf1tWV1+u/P1/teaxYuLi4Y+55u+65VVay/9V3cHFx93OTx9yHturBkgPj4uJ+IzcJWJNQiIuL+13c5PXl/mUFFxf387lJ8pMT87sLczVcXNwBN69Srvu8pL6Li4vb4p7FlRQ9eztHT8fFxd3CzQNK7wB50SRv7uLi4q7m5mXNXqEzP0D0W1xc3C3cKM4VBynyJKoXNHFxcVdzE9ykoTIJWH/sgIuLu4WbpyXVtkcytpU3YnFxcfdzqy8cSZo0aZGOdsDFxX2I2ytf5sErb8AU6ru4uLhbuFc/Tu4+VRiNjoSLi7uYW4VOglR1gOOyyYqLi7uYO29+VINX9W4zV8PFxR1z8xBzH+yqj2+OcOHi4m7nVpugyfVzsN7kari4uFu41bSk15qdvFTh4uKu5s7DSj5Ikf815U4OLi7uo9ynRiJ6DZU8EXpsZgQXFzfmzoNXrwVbHfnCxcXdz510YHopUzUZw8XF/WRuddiimnQ1u764uLj/yu2lNJPyx2NxFxcXt8hNkp/8O5NyyZs/CxcXdwu3GkqqD540YEb1XVxc3A73B2Kj4jG6MYDqAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
