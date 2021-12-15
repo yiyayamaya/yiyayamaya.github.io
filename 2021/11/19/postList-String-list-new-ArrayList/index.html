@@ -14,22 +14,22 @@
     
     
     
-    <title>springBoot 自动配置遇到的问题 | 皇姑区第一亚索的博客</title>
+    <title>postList&lt;String&gt; list = new ArrayList&lt;&gt;() | 皇姑区第一亚索的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#9ACD32">
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="1.配置数据源问题 application.yml可不可以什么都不写？不配置数据源可能会报错 可能需要 @SpringBootApplication(exclude &#x3D;{ DataSourceAutoConfiguration.class})但是有时候不exclude也不报错？ 不懂为什么 2.用到shardingsphere时候，仅仅在maven中引用，没在任何地方调用就会报错(缺少shardi">
+    <meta name="description" content="List list &#x3D; new ArrayList&lt;&gt;();多年来令我费解这个问题的不同问法有为什么面向接口编程？  插曲实现接口的方法一定要声明为public，因为接口中定义的方法都是默认为public（可以省略不写）的。  这个回答讲的很好烦人的苍蝇和烦人的电话推销员的例子但是他讲的是为什么要用接口 不能回答上面的问题 L l&#x3D;new AL;https:&#x2F;&#x2F;stackoverflo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="springBoot 自动配置遇到的问题">
-<meta property="og:url" content="https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="postList&lt;String&gt; list &#x3D; new ArrayList&lt;&gt;()">
+<meta property="og:url" content="https://yiyayamaya.github.io/2021/11/19/postList-String-list-new-ArrayList/index.html">
 <meta property="og:site_name" content="皇姑区第一亚索的博客">
-<meta property="og:description" content="1.配置数据源问题 application.yml可不可以什么都不写？不配置数据源可能会报错 可能需要 @SpringBootApplication(exclude &#x3D;{ DataSourceAutoConfiguration.class})但是有时候不exclude也不报错？ 不懂为什么 2.用到shardingsphere时候，仅仅在maven中引用，没在任何地方调用就会报错(缺少shardi">
+<meta property="og:description" content="List list &#x3D; new ArrayList&lt;&gt;();多年来令我费解这个问题的不同问法有为什么面向接口编程？  插曲实现接口的方法一定要声明为public，因为接口中定义的方法都是默认为public（可以省略不写）的。  这个回答讲的很好烦人的苍蝇和烦人的电话推销员的例子但是他讲的是为什么要用接口 不能回答上面的问题 L l&#x3D;new AL;https:&#x2F;&#x2F;stackoverflo">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-10-28T09:20:30.000Z">
-<meta property="article:modified_time" content="2021-10-28T09:24:55.212Z">
+<meta property="article:published_time" content="2021-11-19T07:29:21.000Z">
+<meta property="article:modified_time" content="2021-11-22T02:17:13.789Z">
 <meta property="article:author" content="皇姑区第一亚索">
 <meta name="twitter:card" content="summary">
     
@@ -112,7 +112,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">springBoot 自动配置遇到的问题</div>
+        <div class="flex-col header-title ellipsis">postList&lt;String&gt; list = new ArrayList&lt;&gt;()</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,11 +134,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">springBoot 自动配置遇到的问题</h1>
+        <h1 class="title">postList&lt;String&gt; list = new ArrayList&lt;&gt;()</h1>
         <h5 class="subtitle">
             
-                <time datetime="2021-10-28T09:20:30.000Z" itemprop="datePublished" class="page-time">
-  2021-10-28
+                <time datetime="2021-11-19T07:29:21.000Z" itemprop="datePublished" class="page-time">
+  2021-11-19
 </time>
 
 
@@ -155,13 +155,13 @@
 <div class="container body-wrap">
     
 
-<article id="post-springBoot-自动配置遇到的问题"
+<article id="post-postList-String-list-new-ArrayList"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">springBoot 自动配置遇到的问题</h1>
+        <h1 class="post-card-title">postList<String> list = new ArrayList<>()</h1>
         <div class="post-meta">
-            <time class="post-time" title="2021-10-28 17:20:30" datetime="2021-10-28T09:20:30.000Z"  itemprop="datePublished">2021-10-28</time>
+            <time class="post-time" title="2021-11-19 15:29:21" datetime="2021-11-19T07:29:21.000Z"  itemprop="datePublished">2021-11-19</time>
 
             
 
@@ -174,9 +174,26 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>1.配置数据源问题 application.yml可不可以什么都不写？<br>不配置数据源可能会报错 可能需要 @SpringBootApplication(exclude ={ DataSourceAutoConfiguration.class})<br>但是有时候不exclude也不报错？ 不懂为什么</p>
-<p>2.用到shardingsphere时候，仅仅在maven中引用，没在任何地方调用就会报错(缺少shardingsphere的数据源配置)。<br>第一次遇见 是因为自动配置吗？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.apache.shardingsphere&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;sharding-jdbc-spring-boot-starter&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;4.1.1&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+            <p>List<String> list = new ArrayList&lt;&gt;();<br>多年来令我费解<br>这个问题的不同问法有为什么面向接口编程？</p>
+<blockquote>
+<p>插曲<br>实现接口的方法一定要声明为public，因为接口中定义的方法都是默认为public（可以省略不写）的。</p>
+</blockquote>
+<p>这个回答讲的很好烦人的苍蝇和烦人的电话推销员的例子<br>但是他讲的是为什么要用接口 不能回答上面的问题 L l=new AL;<br><a href="https://stackoverflow.com/a/384067" target="_blank" rel="noopener">https://stackoverflow.com/a/384067</a></p>
+<p>我惊讶地发现实现了同一个接口的两个类居然都可以放进参数声明为借口的方法中<br>这么基本的功能我现在才意识到<br>比如</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">比如</span><br><span class="line">IPest[] iPestsArr=<span class="keyword">new</span> IPest[]&#123;telemarketer1,telemarketer2,houseFly1,houseFly2&#125;;</span><br><span class="line"></span><br><span class="line">再比如</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">inviteIPestOnly</span><span class="params">(IPest iPest)</span> </span>&#123;</span><br><span class="line">       iPest.BeAnnoying();</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="class"><span class="keyword">class</span> <span class="title">HouseFly</span> <span class="keyword">extends</span> <span class="title">Insect</span>  <span class="keyword">implements</span> <span class="title">IPest</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">   <span class="title">HouseFly</span> <span class="title">houseFly1</span> </span>= <span class="keyword">new</span> HouseFly();</span><br><span class="line"></span><br><span class="line">   diningRoom.inviteIPestOnly(houseFly1);</span><br></pre></td></tr></table></figure>
+
+<p>接口可以被理解成弱化的继承。<br>他也是一种分类手段，当不同类的对象(电话推销员、苍蝇)表现出相同特征(恼人)时通过这个特征来分类。<br>原文:I finally understood their use as a language construct by thinking of them as a means of classifying common traits or behaviors that were exhibited by potentially many non-related classes of objects.</p>
+<blockquote>
+<p>插播下策略模式<br>interface Fly, interface highhighFly extends Fly, interface landFly extends Fly</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Duck</span> </span>&#123;</span><br><span class="line">     <span class="keyword">protected</span> FlyBehavior flyBehavior;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">performFly</span><span class="params">()</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">       flyBehavior.fly();</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>定义下策略模式：定义了算法族(陆地飞、高高地飞)，分别封装起来让他们可以相互替换。让算法的变化独立于使用算法的客户(各种duck)。</p>
+</blockquote>
+<p>这样做的好处之一<br>这个设计在 DiningRoom 和各种 Pests 之间耦合得足够松散，你可以引入新的害虫（想想 class Covid19 implements IPest {…};！），在编写 DiningRoom 类时甚至不存在！您不仅不需要更改Diningroom，甚至不需要重新编译它！在测试和大型项目中派上用场</p>
+<p>云顶阵容类型</p>
+<p>排名部分先后</p>
+<p>永动机 圣杯琴女&gt;S3.5女团&gt;人马维克托&gt;白学=niko<br>烂肉   森林雪人 重骑女枪 森林人马<br>爆发法王 龙魂法 S3女团</p>
+<p>斗枪<br>莫名其妙射手<br>攻速 裁决天使 决斗 征服<br>召唤物 狗都不玩 盖论猩红丧失发明</p>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -184,7 +201,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2021-10-28T09:24:55.212Z" itemprop="dateUpdated">2021-10-28 17:24:55</time>
+    最后更新时间：<time datetime="2021-11-22T02:17:13.789Z" itemprop="dateUpdated">2021-11-22 10:17:13</time>
 </span><br>
 
 
@@ -212,7 +229,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/&title=《springBoot 自动配置遇到的问题》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/11/19/postList-String-list-new-ArrayList/&title=《postList<String> list = new ArrayList<>()》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -222,22 +239,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/&title=《springBoot 自动配置遇到的问题》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/11/19/postList-String-list-new-ArrayList/&title=《postList<String> list = new ArrayList<>()》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/11/19/postList-String-list-new-ArrayList/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《springBoot 自动配置遇到的问题》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《postList<String> list = new ArrayList<>()》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/11/19/postList-String-list-new-ArrayList/&via=https://yiyayamaya.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/11/19/postList-String-list-new-ArrayList/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -260,18 +277,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2021/11/17/x86-x86-64-x64%E8%BF%99%E5%87%A0%E4%B8%AA%E8%AF%B4%E6%B3%95%E5%88%B0%E5%BA%95%E6%80%8E%E4%B9%88%E5%9B%9E%E4%BA%8B/" id="post-prev" class="post-nav-link">
+      <a href="/2021/11/30/%E4%BB%A5%E5%89%8D%E7%9C%8B%E5%88%B0%E8%BF%87%E4%B8%80%E7%AF%87%E5%BE%88%E5%A5%BD%E7%9A%84%E5%A4%A7offset-limit%E4%BC%98%E5%8C%96%E7%9A%84%E6%96%87%E7%AB%A0-%E7%8E%B0%E5%9C%A8%E6%89%BE%E4%B8%8D%E5%88%B0%E4%BA%86/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">x86 x86_64 x64这几个说法到底怎么回事</h4>
+        <h4 class="title">以前看到过一篇很好的大offset limit优化的文章 现在找不到了</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2021/10/25/mysql-%E5%88%86%E7%BB%84%E7%BB%93%E6%9E%9C%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC%E8%AE%B0%E5%BD%95/" id="post-next" class="post-nav-link">
+      <a href="/2021/11/18/%E6%96%87%E6%A1%A3/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">mysql 分组结果的最大值记录</h4>
+        <h4 class="title">文档</h4>
       </a>
     </div>
   
@@ -440,7 +457,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/&title=《springBoot 自动配置遇到的问题》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/11/19/postList-String-list-new-ArrayList/&title=《postList<String> list = new ArrayList<>()》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -450,22 +467,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/&title=《springBoot 自动配置遇到的问题》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/11/19/postList-String-list-new-ArrayList/&title=《postList<String> list = new ArrayList<>()》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/11/19/postList-String-list-new-ArrayList/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《springBoot 自动配置遇到的问题》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《postList<String> list = new ArrayList<>()》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/11/19/postList-String-list-new-ArrayList/&via=https://yiyayamaya.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/11/19/postList-String-list-new-ArrayList/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -476,7 +493,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEeElEQVR42u3aS24bMRAFQN3/0s4BAsnvdVOAKNesAtuZIYsL9u/xiJ+f8nn2f///+bO/efbO5IvJGx7veDBhwoQJ00cyJRtuF9RuuF1J/vVnq82/iAkTJkyYvoMpf13+ydc/z2/hzbeSNb/+LiZMmDBh+mtMyXWbJ8Ovr/xN0JCHIJgwYcKECVNeVG2314YF7U/aRBoTJkyYMH0r06a0miz9VPMySV/3zVFMmDBhwvRNTPti673/fst8EyZMmDBh+himn/Xz+hrOl7UpIiejRZv9YsKECROme5k2Seysfdjy5WXcTZkYEyZMmDB9K1N+zc/KqWebo5ty7SyAqGeRMGHChAnThzHl7ck2ypgtKA878sAiHx6K0m9MmDBhwnQV07vHX9qG6Ky3mJDl5emnqS8mTJgwYbqQqW0Wtlf4qRZmW8Btw4J6L5gwYcKE6RKm2ZhLnprm+Xc7HnS26PzLmzFhwoQJ07VM+ys23/xsiS1fnr7mg0qYMGHChOl2pryROWuCzq7eVW82PsiCDxMmTJgwXciUl3TbjZ1KTdvttYcd7QUTJkyYMH0FU55A5u3AWSl5U/ydHWE034QJEyZMmC5kyq/tUwtqr/P8Ip9BF+vEhAkTJkzXMrWhQFtCnaXWbbsx79zmpedfmpqYMGHChOnjmdrW4D6MeF/YMWtqRoEIJkyYMGG6lmnzgRw0CSaSMnFedG6ftjCNCRMmTJhuZMr9Zg3I2Rfz0Z9NiblYGyZMmDBhupAp3/AsMW4Tzll5dzbiUxBjwoQJE6avYGoT0VnK2r7hsXjaFPeXiAkTJkyYMF3L1Ka4s6xwdkm3Az374ONp6osJEyZMmK5i2hRAi6u0RJ+VYt9RUMaECRMmTLcznU1ck8t4E4K0EIeTbUyYMGHCdC3T5upNlt5e0pumZnL8bcqNCRMmTJhuZ9pcz6cu9VkheHOpt6NImDBhwoTpRqZZ4XUTa2wGXjcjpwcSWkyYMGHCdC1T2ybME9rZkM2seTkbRY3Sb0yYMGHCdDnT2eW2QcMp7jwEadeMCRMmTJjuZZo1AtuCbN4QnZWV9wcTJcmYMGHChOlCplkBdLPJfJgmD0Q2hxoVhTFhwoQJ07VMm6Lt5pLO4TZJdZ66R4EOJkyYMGG6kKmwXLQn80bj2aChTcWfvgETJkyYMF3L1F6f7UU7I8vbjZujmu0REyZMmDDdxXTqdbN25iw02UDkb8OECRMmTN/HtGkB5s3RU6M5s7brrEGLCRMmTJjuZdq/ug0O8vefoj9WA8CECRMmTBcy/ZRPni62KMm3ZmFKnuRHw6mYMGHChOkqptmdmP82H4iZ/eWsYL0ZDMKECRMmTDcytdftbNvtUM6s6Jwc4SykwIQJEyZMtzNttto2ONsib35U7XEm+8WECRMmTH+HaV8gzouws9S3Pc6ieI0JEyZMmP4AU3vZ7xuQeeLaFqPrJBwTJkyYMF3OlA/rbJZ4dlhnM5STU2LChAkTptuZ2gJoW8yd9QTbwZq2vbovCmPChAkTpo9n+geM+Vip5LGDngAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACt0lEQVR42u3awW7rMAwEwP7/T/ddCzSJd0krzQPGJ8NNLY0OEk3y6yu+vn9cv5+//q/29z9/8+z+5gsPDw9vMfXf1+uBn7FfT64dK3/Dg5ng4eHhHePNJpdMKF+C10+SQwIPDw/vM3n7gDva0F8uEB4eHt7/yEsOgzbF0P4SDw8P7295SYIgyZe29/mIx3MteHh4eDEvryJ9zv2R+h4eHh7euqreFsPaN+8TExfvx8PDwzvAa8PlTXtBkpadldAuUiR4eHh4t/Lasv3s4789JPLGgovCGx4eHt5hXpsG3YTjs5RunWjGw8PDeyOvLe23T5JWg80S4+Hh4b2Ht0kK5O+ZBcc3NATg4eHhvYWXB8TtEuwD6xsOBjw8PLwDvPa7Pt/620aEJNS+SEbg4eHh3cqbYRJk/nzWcHDxVzw8PLwDvDZt2u66efkqOVSKIwEPDw/vGK8t2LfheJ6czZsDiuAbDw8P7wBvc1S0mA3s5iIZHh4e3oKXbLWzslZUoMoTCnG0fJFrwcPDw1vzZl/u+2nlKYZZI8LFIYGHh4d3gJeUvtpQO5n6ZkEvZoiHh4d3Ey9JCsyi01kyIknOFqlbPDw8vAO8WZA6u980Tu2PIjw8PLy7eG1bQLtN74v9+SgP3oOHh4d3gJe/uj0MEsAscM+PHzw8PLx38k5s6LOk7azNq15XPDw8vAUvTyK0pf02UTtrwHr63YCHh4d3gNe2TLVDbkpubSMXHh4e3jned3m1zQFt4iBvMkjmgIeHh3eC126+7RTb5oB80isMHh4e3pq3KTW1LQibA2B4MODh4eEd4+WVo1kw3Ybms2QEHh4e3mfy2jasWXvBrMD2YCw8PDy8j+e172kXok2C4OHh4Z3j5S1WObLd6JMGgjYRjIeHh3eCN2tsmk2u/a98gW6o7+Hh4eFdj/IPXnAiFiPAPKEAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 

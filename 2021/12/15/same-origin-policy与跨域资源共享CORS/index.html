@@ -14,22 +14,22 @@
     
     
     
-    <title>springBoot 自动配置遇到的问题 | 皇姑区第一亚索的博客</title>
+    <title>same-origin policy与跨域资源共享CORS | 皇姑区第一亚索的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#9ACD32">
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="1.配置数据源问题 application.yml可不可以什么都不写？不配置数据源可能会报错 可能需要 @SpringBootApplication(exclude &#x3D;{ DataSourceAutoConfiguration.class})但是有时候不exclude也不报错？ 不懂为什么 2.用到shardingsphere时候，仅仅在maven中引用，没在任何地方调用就会报错(缺少shardi">
+    <meta name="description" content="浏览器同源政策及其规避方法http:&#x2F;&#x2F;www.ruanyifeng.com&#x2F;blog&#x2F;2016&#x2F;04&#x2F;same-origin-policy.html 跨域资源共享 CORS 详解https:&#x2F;&#x2F;www.ruanyifeng.com&#x2F;blog&#x2F;2016&#x2F;04&#x2F;cors.html springboot被请求的api 可以加@CrossOrigin解决 但是@RequestMapping必须是meth">
 <meta property="og:type" content="article">
-<meta property="og:title" content="springBoot 自动配置遇到的问题">
-<meta property="og:url" content="https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="same-origin policy与跨域资源共享CORS">
+<meta property="og:url" content="https://yiyayamaya.github.io/2021/12/15/same-origin-policy%E4%B8%8E%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%ABCORS/index.html">
 <meta property="og:site_name" content="皇姑区第一亚索的博客">
-<meta property="og:description" content="1.配置数据源问题 application.yml可不可以什么都不写？不配置数据源可能会报错 可能需要 @SpringBootApplication(exclude &#x3D;{ DataSourceAutoConfiguration.class})但是有时候不exclude也不报错？ 不懂为什么 2.用到shardingsphere时候，仅仅在maven中引用，没在任何地方调用就会报错(缺少shardi">
+<meta property="og:description" content="浏览器同源政策及其规避方法http:&#x2F;&#x2F;www.ruanyifeng.com&#x2F;blog&#x2F;2016&#x2F;04&#x2F;same-origin-policy.html 跨域资源共享 CORS 详解https:&#x2F;&#x2F;www.ruanyifeng.com&#x2F;blog&#x2F;2016&#x2F;04&#x2F;cors.html springboot被请求的api 可以加@CrossOrigin解决 但是@RequestMapping必须是meth">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-10-28T09:20:30.000Z">
-<meta property="article:modified_time" content="2021-10-28T09:24:55.212Z">
+<meta property="article:published_time" content="2021-12-15T05:48:58.000Z">
+<meta property="article:modified_time" content="2021-12-15T05:50:39.874Z">
 <meta property="article:author" content="皇姑区第一亚索">
 <meta name="twitter:card" content="summary">
     
@@ -112,7 +112,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">springBoot 自动配置遇到的问题</div>
+        <div class="flex-col header-title ellipsis">same-origin policy与跨域资源共享CORS</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,11 +134,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">springBoot 自动配置遇到的问题</h1>
+        <h1 class="title">same-origin policy与跨域资源共享CORS</h1>
         <h5 class="subtitle">
             
-                <time datetime="2021-10-28T09:20:30.000Z" itemprop="datePublished" class="page-time">
-  2021-10-28
+                <time datetime="2021-12-15T05:48:58.000Z" itemprop="datePublished" class="page-time">
+  2021-12-15
 </time>
 
 
@@ -155,13 +155,13 @@
 <div class="container body-wrap">
     
 
-<article id="post-springBoot-自动配置遇到的问题"
+<article id="post-same-origin-policy与跨域资源共享CORS"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">springBoot 自动配置遇到的问题</h1>
+        <h1 class="post-card-title">same-origin policy与跨域资源共享CORS</h1>
         <div class="post-meta">
-            <time class="post-time" title="2021-10-28 17:20:30" datetime="2021-10-28T09:20:30.000Z"  itemprop="datePublished">2021-10-28</time>
+            <time class="post-time" title="2021-12-15 13:48:58" datetime="2021-12-15T05:48:58.000Z"  itemprop="datePublished">2021-12-15</time>
 
             
 
@@ -174,9 +174,10 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>1.配置数据源问题 application.yml可不可以什么都不写？<br>不配置数据源可能会报错 可能需要 @SpringBootApplication(exclude ={ DataSourceAutoConfiguration.class})<br>但是有时候不exclude也不报错？ 不懂为什么</p>
-<p>2.用到shardingsphere时候，仅仅在maven中引用，没在任何地方调用就会报错(缺少shardingsphere的数据源配置)。<br>第一次遇见 是因为自动配置吗？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.apache.shardingsphere&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;sharding-jdbc-spring-boot-starter&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;4.1.1&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+            <p>浏览器同源政策及其规避方法<br><a href="http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html</a></p>
+<p>跨域资源共享 CORS 详解<br><a href="https://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="noopener">https://www.ruanyifeng.com/blog/2016/04/cors.html</a></p>
+<p>springboot被请求的api 可以加@CrossOrigin解决 但是@RequestMapping必须是method=RequestMethod.POST,get就不行。why？</p>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -184,7 +185,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2021-10-28T09:24:55.212Z" itemprop="dateUpdated">2021-10-28 17:24:55</time>
+    最后更新时间：<time datetime="2021-12-15T05:50:39.874Z" itemprop="dateUpdated">2021-12-15 13:50:39</time>
 </span><br>
 
 
@@ -212,7 +213,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/&title=《springBoot 自动配置遇到的问题》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/12/15/same-origin-policy%E4%B8%8E%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%ABCORS/&title=《same-origin policy与跨域资源共享CORS》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -222,22 +223,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/&title=《springBoot 自动配置遇到的问题》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/12/15/same-origin-policy%E4%B8%8E%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%ABCORS/&title=《same-origin policy与跨域资源共享CORS》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/12/15/same-origin-policy%E4%B8%8E%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%ABCORS/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《springBoot 自动配置遇到的问题》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《same-origin policy与跨域资源共享CORS》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/12/15/same-origin-policy%E4%B8%8E%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%ABCORS/&via=https://yiyayamaya.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/12/15/same-origin-policy%E4%B8%8E%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%ABCORS/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -257,21 +258,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2021/11/17/x86-x86-64-x64%E8%BF%99%E5%87%A0%E4%B8%AA%E8%AF%B4%E6%B3%95%E5%88%B0%E5%BA%95%E6%80%8E%E4%B9%88%E5%9B%9E%E4%BA%8B/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">x86 x86_64 x64这几个说法到底怎么回事</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2021/10/25/mysql-%E5%88%86%E7%BB%84%E7%BB%93%E6%9E%9C%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC%E8%AE%B0%E5%BD%95/" id="post-next" class="post-nav-link">
+      <a href="/2021/12/14/mysql-%E6%B1%82%E6%97%B6%E9%97%B4%E7%9A%84%E7%BB%9D%E5%AF%B9%E5%B7%AE-timediff-%E6%9C%89%E5%9D%91/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">mysql 分组结果的最大值记录</h4>
+        <h4 class="title">mysql 求时间的绝对差 timediff 有坑</h4>
       </a>
     </div>
   
@@ -440,7 +434,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/&title=《springBoot 自动配置遇到的问题》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/12/15/same-origin-policy%E4%B8%8E%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%ABCORS/&title=《same-origin policy与跨域资源共享CORS》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -450,22 +444,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/&title=《springBoot 自动配置遇到的问题》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/12/15/same-origin-policy%E4%B8%8E%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%ABCORS/&title=《same-origin policy与跨域资源共享CORS》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/12/15/same-origin-policy%E4%B8%8E%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%ABCORS/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《springBoot 自动配置遇到的问题》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《same-origin policy与跨域资源共享CORS》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/12/15/same-origin-policy%E4%B8%8E%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%ABCORS/&via=https://yiyayamaya.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/12/15/same-origin-policy%E4%B8%8E%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%ABCORS/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -476,7 +470,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEeElEQVR42u3aS24bMRAFQN3/0s4BAsnvdVOAKNesAtuZIYsL9u/xiJ+f8nn2f///+bO/efbO5IvJGx7veDBhwoQJ00cyJRtuF9RuuF1J/vVnq82/iAkTJkyYvoMpf13+ydc/z2/hzbeSNb/+LiZMmDBh+mtMyXWbJ8Ovr/xN0JCHIJgwYcKECVNeVG2314YF7U/aRBoTJkyYMH0r06a0miz9VPMySV/3zVFMmDBhwvRNTPti673/fst8EyZMmDBh+himn/Xz+hrOl7UpIiejRZv9YsKECROme5k2Seysfdjy5WXcTZkYEyZMmDB9K1N+zc/KqWebo5ty7SyAqGeRMGHChAnThzHl7ck2ypgtKA878sAiHx6K0m9MmDBhwnQV07vHX9qG6Ky3mJDl5emnqS8mTJgwYbqQqW0Wtlf4qRZmW8Btw4J6L5gwYcKE6RKm2ZhLnprm+Xc7HnS26PzLmzFhwoQJ07VM+ys23/xsiS1fnr7mg0qYMGHChOl2pryROWuCzq7eVW82PsiCDxMmTJgwXciUl3TbjZ1KTdvttYcd7QUTJkyYMH0FU55A5u3AWSl5U/ydHWE034QJEyZMmC5kyq/tUwtqr/P8Ip9BF+vEhAkTJkzXMrWhQFtCnaXWbbsx79zmpedfmpqYMGHChOnjmdrW4D6MeF/YMWtqRoEIJkyYMGG6lmnzgRw0CSaSMnFedG6ftjCNCRMmTJhuZMr9Zg3I2Rfz0Z9NiblYGyZMmDBhupAp3/AsMW4Tzll5dzbiUxBjwoQJE6avYGoT0VnK2r7hsXjaFPeXiAkTJkyYMF3L1Ka4s6xwdkm3Az374ONp6osJEyZMmK5i2hRAi6u0RJ+VYt9RUMaECRMmTLcznU1ck8t4E4K0EIeTbUyYMGHCdC3T5upNlt5e0pumZnL8bcqNCRMmTJhuZ9pcz6cu9VkheHOpt6NImDBhwoTpRqZZ4XUTa2wGXjcjpwcSWkyYMGHCdC1T2ybME9rZkM2seTkbRY3Sb0yYMGHCdDnT2eW2QcMp7jwEadeMCRMmTJjuZZo1AtuCbN4QnZWV9wcTJcmYMGHChOlCplkBdLPJfJgmD0Q2hxoVhTFhwoQJ07VMm6Lt5pLO4TZJdZ66R4EOJkyYMGG6kKmwXLQn80bj2aChTcWfvgETJkyYMF3L1F6f7UU7I8vbjZujmu0REyZMmDDdxXTqdbN25iw02UDkb8OECRMmTN/HtGkB5s3RU6M5s7brrEGLCRMmTJjuZdq/ug0O8vefoj9WA8CECRMmTBcy/ZRPni62KMm3ZmFKnuRHw6mYMGHChOkqptmdmP82H4iZ/eWsYL0ZDMKECRMmTDcytdftbNvtUM6s6Jwc4SykwIQJEyZMtzNttto2ONsib35U7XEm+8WECRMmTH+HaV8gzouws9S3Pc6ieI0JEyZMmP4AU3vZ7xuQeeLaFqPrJBwTJkyYMF3OlA/rbJZ4dlhnM5STU2LChAkTptuZ2gJoW8yd9QTbwZq2vbovCmPChAkTpo9n+geM+Vip5LGDngAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEm0lEQVR42u3a24rbMBQF0P7/T0+h9KFlSLL3OR6InOWnwXVsaakgncuvX/H19ed6/q/fn/n3zqO/n38lf/L5G5KvX3BhwoQJE6a3ZPp6eiXPJM8n08vfkN9/TpnMBRMmTJgw3YMped3z7f/5h/PDRHJnNvLN0QQTJkyYMH0CUz7hZHAJ6LVHkPaAggkTJkyYPpMpSZL+RAa6TeDmuJgwYcKE6ROY8te1wWo+vdl7WtAfz4VjwoQJE6Y3Y2o34zv9/YP9TZgwYcKE6Q2YvkZXEui2yeJZ+TMvVc6akP7+ChMmTJgwHcvUJnOThpg2nXrVoSQJ19vQfZjzxoQJEyZMb8/UbtX5M7NjQZt63gfGmDBhwoTpHkyzRpx2QEkBMm/92ZQ2k6A6GgomTJgwYTqKaRZkbsLIfYCdL3mytC8WGxMmTJgw3ZQpLytukrb5Jr1v0IkyAd9/iwkTJkyYDme6dottB7RHaZO/ddCOCRMmTJiOZWrTr8nn8/Lk7FjQpp43IT0mTJgwYbofU761z9puZoHx82+1Kd32DZgwYcKE6XSmfUkyn3bbQJO37+Qh7rCVBxMmTJgw3YKpHWKbJt5v2EkwPCN+8V1MmDBhwnQgUzu9fGu/qoi4CX1npdBhjhkTJkyYML0lUzKlJO3bttTUQ4wPAe3hoEguY8KECROmA5lmid120Psg9iq+PG39MPTFhAkTJkwHMrXha34UaAuW+dbeNuK04S4mTJgwYboT074RZzax/GoD8lmD0Yt6LyZMmDBhugVTEgq2oWx+Jw+/2+XMjwVRkhcTJkyYMB3ClG/5s2Hlx4L9oWETDLclT0yYMGHCdArTbGvMw858o501+syaaOsQGhMmTJgwHcu034BnH26/eFVT7CZtjQkTJkyYTmSaFfny8DLZ2pNrH1TnuA9DX0yYMGHCdCzTVZto3uo6K222xdT2IPKicQcTJkyYMB3LNAs1kwhx3xbTvvOqhfnvGUyYMGHCdAumTaK2DXE3BLPwexMqY8KECROmezDNBpofF6KttyyXzhagTltjwoQJE6bDmfKh5wPapGiTgDy/nx9WHv4WEyZMmDAdy9Ru+fvCYV5AzTf+azkeHlAwYcKECdOxTO2081fPUsZ5aXMWcre/xYQJEyZM5zLNOJLSYJFCjY8gebn02tIsJkyYMGG6K9O+CSZZgHYMs79noXJ9fsGECRMmTG/GNCsi5unUdiib40W7ePmyYcKECROmc5la0asm2aaJZ8XXfPFe/HfBhAkTJky3YJq117SF0n1xcbY8s9LswyQvJkyYMGE6hKnd8mf7YxGFj1qLNg09w19hwoQJE6ZDmGbtL/mEZ4FrUpLMU9XtgmHChAkTpjsx7U8Ts6aZ/D3tCJNwfdZ4hAkTJkyYzmXaHAKuagNty415OfOyFDYmTJgwYTqcaV/2u6r82SZ527kM09yYMGHChOljmGab/bVBbLKE7aguPhBgwoQJE6YDmfLptceLfPPOg+RNkvdh7RcTJkyYMB3LtN/yk/ckuMkb2vv5fF+EvpgwYcKE6UCmTYJ1BrFPLl9VcG2PNZgwYcKE6Sim387hSIHX1FNlAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 

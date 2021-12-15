@@ -150,6 +150,259 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-全局变量-局部变量的生命周期"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-09-18 11:35:38" datetime="2021-09-18T03:35:38.000Z"  itemprop="datePublished">2021-09-18</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/09/18/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F-%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">全局变量 局部变量的生命周期</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        先开个坑 起因是python中的一个例子
+下面的代码运行完后driver(浏览器窗口)不加driver.quit()也会自己退出，可能是因为局部变量被回收了
+1234567def create_driver():    driver=xxx   if __name__ == "__main__":    create_driver()
+
+改成这样的全局就好了。
+12345678driver=...
+    
+
+        <a href="/2021/09/18/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F-%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-尝试自己编译clash顺便docker入门"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-09-15 15:37:29" datetime="2021-09-15T07:37:29.000Z"  itemprop="datePublished">2021-09-15</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/09/15/%E5%B0%9D%E8%AF%95%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91clash%E9%A1%BA%E4%BE%BFdocker%E5%85%A5%E9%97%A8/">尝试自己编译clash顺便docker入门</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        镜像是文件，容器是进程$ docker ps // 查看所有正在运行容器$ docker stop containerId // containerId 是容器的ID  
+$ docker ps -a // 查看所有容器$ docker ps -a -q // 查看所有容器ID  
+$ docker stop $(docker ps -a -q) //  stop停止所有容器$ docker...
+    
+
+        <a href="/2021/09/15/%E5%B0%9D%E8%AF%95%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91clash%E9%A1%BA%E4%BE%BFdocker%E5%85%A5%E9%97%A8/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-mysql-分页"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-09-07 17:49:53" datetime="2021-09-07T09:49:53.000Z"  itemprop="datePublished">2021-09-07</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/09/07/mysql-%E5%88%86%E9%A1%B5/">mysql 分页</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        MySQL 百万级数据量分页查询方法及其优化
+https://www.huaweicloud.com/articles/7cb1402c2d18baedfa12dd610ff2eaac.html
+在使用Mybatis时，最头痛的就是写分页了，需要先写一个查询count的select语句，然后再写一个真正分页查询(limit)的语句https://blog.csdn.net/Agly_Clar...
+    
+
+        <a href="/2021/09/07/mysql-%E5%88%86%E9%A1%B5/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-java中super-的用法"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-09-07 14:53:32" datetime="2021-09-07T06:53:32.000Z"  itemprop="datePublished">2021-09-07</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/09/07/java%E4%B8%ADsuper-%E7%9A%84%E7%94%A8%E6%B3%95/">java中super()的用法</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        va继承中，经常会碰上super()方法，今天恰好碰上，小小的研究了一下。
+super可以理解为是指向自己超（父）类对象的一个指针，而这个超类指的是离自己最近的一个父类。
+在子类的构造方法的第一行，必须是第一行调用super()，这样就调用了父类的构造方法，如果父类有多个不同的构造方法，则根据调用super()时传入的参数调
+顺便记录下关于Java继承中构造方法的一些东西：在调用子类构造方法...
+    
+
+        <a href="/2021/09/07/java%E4%B8%ADsuper-%E7%9A%84%E7%94%A8%E6%B3%95/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-post可以说是缩写版的-ajax"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-08-24 16:07:02" datetime="2021-08-24T08:07:02.000Z"  itemprop="datePublished">2021-08-24</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/08/24/post%E5%8F%AF%E4%BB%A5%E8%AF%B4%E6%98%AF%E7%BC%A9%E5%86%99%E7%89%88%E7%9A%84-ajax/">$.post可以说是缩写版的$.ajax</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        石锤了 官方说法 总忘 水了一篇文章
+
+
+
+
+    
+
+        <a href="/2021/08/24/post%E5%8F%AF%E4%BB%A5%E8%AF%B4%E6%98%AF%E7%BC%A9%E5%86%99%E7%89%88%E7%9A%84-ajax/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-mysql-外键-ON-DELETE-CASCADE"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-08-24 14:35:34" datetime="2021-08-24T06:35:34.000Z"  itemprop="datePublished">2021-08-24</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/08/24/mysql-%E5%A4%96%E9%94%AE-ON-DELETE-CASCADE/">mysql 外键 ON DELETE CASCADE</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        https://www.yiibai.com/mysql/foreign-key.html
+https://www.yiibai.com/mysql/on-delete-cascade.html
+假设有两张表：建筑物(buildings)和房间(rooms)。 在这个数据库模型中，每个建筑物都有一个或多个房间。 然而，每个房间只属于一个建筑物。没有建筑物则房间是不会存在的。
+当我们从buil...
+    
+
+        <a href="/2021/08/24/mysql-%E5%A4%96%E9%94%AE-ON-DELETE-CASCADE/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-一次前端父页面向子页面传值的思考"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -319,277 +572,12 @@ jmap命令将程序的内存数据保存下来，jmap -dump:live,format=b,file=m
 
         </li>
     
-        <li class="post-list-item fade">
-            <article id="post-java-多线程学习"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-07-22 11:28:26" datetime="2021-07-22T03:28:26.000Z"  itemprop="datePublished">2021-07-22</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/07/22/java-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AD%A6%E4%B9%A0/">java 多线程学习</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        先看廖雪峰https://www.liaoxuefeng.com/wiki/1252599548343744/1304521607217185在计算机中，我们把一个任务称为一个进程，浏览器就是一个进程，视频播放器是另一个进程，类似的，音乐播放器和Word都是进程。某些进程内部还需要同时执行多个子任务。例如，我们在使用Word时，Word可以让我们一边打字，一边进行拼写检查，同时还可以在后台进...
-    
-
-        <a href="/2021/07/22/java-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AD%A6%E4%B9%A0/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-java-synchronized"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-07-13 14:36:29" datetime="2021-07-13T06:36:29.000Z"  itemprop="datePublished">2021-07-13</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/07/13/java-synchronized/">java synchronized</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        
-当一个线程访问同步代码块时，首先是需要得到锁才能执行  
-
-
-其实“锁”本身是个对象，synchronized这个关键字并不是“锁”。从语法上讲，Java中的每个对象都可以看做一把锁，在HotSpot JVM实现中，锁有个专门的名字：监视器（Monitor）。Monitor对象存在于每个Java对象的对象头中，这也是为什么Java中任意对象可以作为锁的原因，有关Monitor后续会详细介绍...
-    
-
-        <a href="/2021/07/13/java-synchronized/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-java-异常"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-07-12 13:54:22" datetime="2021-07-12T05:54:22.000Z"  itemprop="datePublished">2021-07-12</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/07/12/java-%E5%BC%82%E5%B8%B8/">java 异常</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        
-我怎么隐隐约约觉得写过异常相关的文章 但是找不到了。  
-
-
-
-
-
-Error是内存不足这种。
-
-Exception：分为未检查异常(RuntimeException)和已检查异常(非RuntimeException)
-
-checkedException ：受检查的异常，这种异常是强制我们catch或方法声明throws的异常。如果不处理，编译器会报错。计的目的是为了提醒开发者处理一些场景...
-    
-
-        <a href="/2021/07/12/java-%E5%BC%82%E5%B8%B8/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-mysql-索引什么时候更新"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-07-09 11:47:23" datetime="2021-07-09T03:47:23.000Z"  itemprop="datePublished">2021-07-09</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/07/09/mysql-%E7%B4%A2%E5%BC%95%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E6%9B%B4%E6%96%B0/">mysql 索引什么时候更新</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        https://stackoverflow.com/questions/17282041/when-does-mysql-update-the-indexes
-索引更新有两个方面。
-第一部分是在索引中插入/更新/删除条目。一旦记录更改，索引就会更新，并且此过程会阻止查询直到完成。这允许基于索引列上的条件更快地检索记录，这是索引最容易理解的目的。
-第二部分是更新索引的统计信息。这允许优化器确定...
-    
-
-        <a href="/2021/07/09/mysql-%E7%B4%A2%E5%BC%95%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E6%9B%B4%E6%96%B0/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-mysql-索引选择的原理—优化器"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-07-09 11:35:55" datetime="2021-07-09T03:35:55.000Z"  itemprop="datePublished">2021-07-09</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/07/09/mysql-%E7%B4%A2%E5%BC%95%E9%80%89%E6%8B%A9%E7%9A%84%E5%8E%9F%E7%90%86%E2%80%94%E4%BC%98%E5%8C%96%E5%99%A8/">mysql 索引选择的原理—优化器</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        https://blog.csdn.net/weixin_39846186/article/details/113370118
-选择索引是mysql决定的写 SQL 语句的时候，并没有主动指定使用哪个索引。也就是说，使用哪个索引是由 MySQL 来确定的。有这种情况，一条本来可以执行得很快的语句，却由于 MySQL 选错了索引，而导致执行速度变得很慢。  
-
-将慢查询日志的阈值设置为 0，表...
-    
-
-        <a href="/2021/07/09/mysql-%E7%B4%A2%E5%BC%95%E9%80%89%E6%8B%A9%E7%9A%84%E5%8E%9F%E7%90%86%E2%80%94%E4%BC%98%E5%8C%96%E5%99%A8/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-java同步试水"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-07-06 15:57:20" datetime="2021-07-06T07:57:20.000Z"  itemprop="datePublished">2021-07-06</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/07/06/java%E5%90%8C%E6%AD%A5%E8%AF%95%E6%B0%B4/">java同步试水</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        
-今天遇到个需求，可能有同时两个方法写入同一个excel。  
-
-
- 怎么能让一个方法同时被调用，创建线程就行了
- 为什么用匿名内部类的形式创建thread及两种实现多线程的基本方式
- static不能向上抛出异常了
- 即使不是static，实现Runnable接口不能抛异常只能捕获异常
- main里不能访问实例方法，只能静态方法
- java中方法必须写在类体里
- 为什么要向上转型而不是直接...
-    
-
-        <a href="/2021/07/06/java%E5%90%8C%E6%AD%A5%E8%AF%95%E6%B0%B4/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
     </ul>
 
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
+    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
     </div>
 </nav>
 

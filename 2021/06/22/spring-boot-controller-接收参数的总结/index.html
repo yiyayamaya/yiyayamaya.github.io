@@ -21,15 +21,15 @@
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="1.@RequestBody 注解，必须与 contentType 类型application&#x2F;json配合使用。 把前端接收来的json封装到对象中。 2.@RequestParam 注解，必须与 contentType 类型application&#x2F;x-www-form-urlencoded配合使用，其为默认类型。 3.JSON.stringify() 把对象类型转换为字符串类型，一般配合 @R">
+    <meta name="description" content="contentType是告诉发送到服务端的数据类型，dataType是接收服务端的数据类型。 简单的数据用默认的application&#x2F;x-www-form-urlencoded即可，post的方法体中会是a&#x3D;bc&amp;d&#x3D;e%2Cf形式。但是这种形式满足不了复杂的json嵌套。 上面的话展开说就是  这种格式的特点就是，name&#x2F;value 成为一组，每组之间用 &amp; 联接，而 nam">
 <meta property="og:type" content="article">
 <meta property="og:title" content="spring boot controller 接收参数的总结">
 <meta property="og:url" content="https://yiyayamaya.github.io/2021/06/22/spring-boot-controller-%E6%8E%A5%E6%94%B6%E5%8F%82%E6%95%B0%E7%9A%84%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="皇姑区第一亚索的博客">
-<meta property="og:description" content="1.@RequestBody 注解，必须与 contentType 类型application&#x2F;json配合使用。 把前端接收来的json封装到对象中。 2.@RequestParam 注解，必须与 contentType 类型application&#x2F;x-www-form-urlencoded配合使用，其为默认类型。 3.JSON.stringify() 把对象类型转换为字符串类型，一般配合 @R">
+<meta property="og:description" content="contentType是告诉发送到服务端的数据类型，dataType是接收服务端的数据类型。 简单的数据用默认的application&#x2F;x-www-form-urlencoded即可，post的方法体中会是a&#x3D;bc&amp;d&#x3D;e%2Cf形式。但是这种形式满足不了复杂的json嵌套。 上面的话展开说就是  这种格式的特点就是，name&#x2F;value 成为一组，每组之间用 &amp; 联接，而 nam">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-22T06:20:03.000Z">
-<meta property="article:modified_time" content="2021-07-17T02:55:00.751Z">
+<meta property="article:modified_time" content="2021-12-10T05:49:41.079Z">
 <meta property="article:author" content="皇姑区第一亚索">
 <meta name="twitter:card" content="summary">
     
@@ -174,28 +174,91 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>1.@RequestBody 注解，必须与 contentType 类型application/json配合使用。 把前端接收来的json封装到对象中。</p>
-<p>2.@RequestParam 注解，必须与 contentType 类型application/x-www-form-urlencoded配合使用，其为默认类型。</p>
-<p>3.JSON.stringify() 把对象类型转换为字符串类型，一般配合 @RequestBody 注解和contentType 类型application/json使用。</p>
-<p>下面是一个ajax 规定了data类型JSON.stringify()； contentType是application/json<br>‘’’</p>
-<pre><code>        $.ajax({
+            <p>contentType是告诉发送到服务端的数据类型，dataType是接收服务端的数据类型。</p>
+<p>简单的数据用默认的application/x-www-form-urlencoded即可，post的方法体中会是a=bc&amp;d=e%2Cf形式。但是这种形式满足不了复杂的json嵌套。</p>
+<p>上面的话展开说就是</p>
+<blockquote>
+<p>这种格式的特点就是，name/value 成为一组，每组之间用 &amp; 联接，而 name与value 则是使用 = 连接。如：  wwwh.baidu.com/q?key=fdsa&amp;lang=zh  这是get , 而 post 请求则是使用请求体，参数不在 url 中，在请求体中的参数表现形式也是: key=fdsa&amp;lang=zh的形式，这种形式在一般的情况下是没有什么问题的，但是在一些复杂的情况下就有问题了。 如果在ajax 中你要传一个复杂的json 对像，也&gt;就说是对象嵌数组，数组中包括对象，这样你怎么传：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> data: &#123;</span><br><span class="line">   a: [&#123;</span><br><span class="line">     x: 2</span><br><span class="line">   &#125;]</span><br><span class="line"> &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>如上面这个复杂对象，get 和 post 都没有办法进行传送，因为历史的原因，ajax 只支持简单JSON对象(不带嵌套的)。所以在 ajax 中，你指定的 application/x-www-form-urlencoded 就不能传复杂JSON对象。你可以测试一下。<br>application/json 的类型，把 json 的对像，用JSON.stringify序列化后，然后发送，在服务器端接到然后用 JSON.parse 进行还原就行了，这样就能处理复杂的对象了。</p>
+</blockquote>
+<p>下面的内容可能不准确 因为本文重点在于application/x-www-form-urlencoded vs application/json。我之前不懂误以为是@RequestParam vs @RequestBody。</p>
+<p>1.<del>@RequestBody 注解，必须与 contentType 类型application/json配合使用。 把前端接收来的json封装到对象中。</del></p>
+<blockquote>
+<p><a href="https://blog.csdn.net/a460550542/article/details/103307204" target="_blank" rel="noopener">https://blog.csdn.net/a460550542/article/details/103307204</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@RequestBody注解常用来处理POST请求，并且content-type不是默认的application/x-www-form-urlcoded编码的内容，比如说：application/json或者是application/xml等。一般情况下来说常用其来处理application/json类型。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在《Spring 实战》中，表明了@RequestBody注解的含义和使用方式：用来解析请求体（可能是POST,PUT,DELETE,GET请求）中Content-Type为application/json类型的请求，利用消息转换器将其转换为对应的java对象。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当请求中的ContentType分别为一下三种类型时，结果如下： </p>
+<table>
+<thead>
+<tr>
+<th align="center">是否加上注解\ContentType</th>
+<th align="center">x-www-form-urlencoded</th>
+<th align="center">form-data</th>
+<th align="center">application/json</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">不加@RequestBody注解</td>
+<td align="center">能接收</td>
+<td align="center">能接收</td>
+<td align="center">不能接收</td>
+</tr>
+<tr>
+<td align="center">加上@RequestBody注解</td>
+<td align="center">不能接收</td>
+<td align="center">不能接收</td>
+<td align="center">能接收</td>
+</tr>
+</tbody></table>
+</blockquote>
+<p>@RequestBody是读取的流的方式, 在取 body参数时第一个参数取到后把request.getInputStream()关闭，导致后面的@requestBody的对象拿取不到，就会报错。</p>
+<p>@RequestBody，它是用来处理前台定义发来的数据Content-Type: 不是application/x-www-form-urlencoded编码的内容，例如application/json, application/xml等。</p>
+<p>关于@RequestBody有一篇超长csdn文章<a href="https://blog.csdn.net/justry_deng/article/details/80972817" target="_blank" rel="noopener">https://blog.csdn.net/justry_deng/article/details/80972817</a></p>
+<p>2.@RequestParam 注解，不加貌似也没区别，    public String test(@RequestParam  Long parentId) vs public String test( Long parentId)<br>只是加了这个参数parentId就不能空了。除非用RequestParam(required=false)。</p>
+<p>3.不加注解接收参数，参数类型可以为简单类型public String test(int parentId) ，也可以为对象类型  public String test(Version version)但是混用？</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">public String test(int parentId)</th>
+<th align="center">public String test(Version version)</th>
+<th align="center">public String test(  Map&lt;String, Object&gt;  map )</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">啥也不加 + x-www-form-urlencoded</td>
+<td align="center">行</td>
+<td align="center">行</td>
+<td align="center">不行</td>
+</tr>
+<tr>
+<td align="center">@RequestParam + x-www-form-urlencoded</td>
+<td align="center">行</td>
+<td align="center">不行</td>
+<td align="center">不行</td>
+</tr>
+<tr>
+<td align="center">@RequestBody + application/json</td>
+<td align="center">不行</td>
+<td align="center">行</td>
+<td align="center">行</td>
+</tr>
+</tbody></table>
+<p>下面是一个ajax 规定了data类型JSON.stringify()； contentType是application/json</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$.ajax(&#123;</span><br><span class="line"></span><br><span class="line">    type: &quot;POST&quot;,</span><br><span class="line">    data: JSON.stringify(task),</span><br><span class="line">    contentType: &quot;application&#x2F;json;charset&#x3D;UTF-8&quot;,</span><br><span class="line">    url: &quot;&#x2F;updateTask&quot;,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-            type: &quot;POST&quot;,
-            dataType: &quot;json&quot;,
-            data: JSON.stringify(task),
-            contentType: &quot;application/json;charset=UTF-8&quot;,
-            url: &quot;/updateTask&quot;,
 
 
-        });</code></pre>
-<p>‘’’</p>
+
 <p>其对应的controller层就是这样的 完美对应上面的第三条。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public Response updateTask(@RequestBody Task task) &#123;&#125;</span><br></pre></td></tr></table></figure>
 
 
-
-
-
+<p>如果想接受多个实体类 用map<br>@RequestBody  Map&lt;String, Version&gt;  map<br>也需要前台发来json<br>但是map可不可以用@RequestParam呢 不行</p>
+<p>application/x-www-form-urlencoded 这种形式是没有办法将复杂的 JSON 组织成键值对形式</p>
+<p><a href="https://www.cnblogs.com/htoooth/p/7242217.html" target="_blank" rel="noopener">https://www.cnblogs.com/htoooth/p/7242217.html</a></p>
+<blockquote>
+<p>controller里map接收了 怎么转呢？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import com.alibaba.fastjson.JSON;</span><br><span class="line">import com.alibaba.fastjson.TypeReference;</span><br><span class="line"></span><br><span class="line">JSON.parseObject(JSON.toJSONString(数据), new TypeReference&lt;对象&gt;() &#123;</span><br><span class="line"></span><br><span class="line">&#125;); </span><br></pre></td></tr></table></figure>
+</blockquote>
 
         </div>
 
@@ -204,7 +267,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2021-07-17T02:55:00.751Z" itemprop="dateUpdated">2021-07-17 10:55:00</time>
+    最后更新时间：<time datetime="2021-12-10T05:49:41.079Z" itemprop="dateUpdated">2021-12-10 13:49:41</time>
 </span><br>
 
 
