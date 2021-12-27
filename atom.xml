@@ -6,7 +6,7 @@
   <link href="https://yiyayamaya.github.io/atom.xml" rel="self"/>
   
   <link href="https://yiyayamaya.github.io/"/>
-  <updated>2021-12-15T05:50:39.874Z</updated>
+  <updated>2021-12-22T02:01:48.062Z</updated>
   <id>https://yiyayamaya.github.io/</id>
   
   <author>
@@ -17,13 +17,137 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>css display:inline display:block</title>
+    <link href="https://yiyayamaya.github.io/2021/12/21/css-display-inline-display-block/"/>
+    <id>https://yiyayamaya.github.io/2021/12/21/css-display-inline-display-block/</id>
+    <published>2021-12-21T11:50:12.000Z</published>
+    <updated>2021-12-22T02:01:48.062Z</updated>
+    
+    <content type="html"><![CDATA[<p>在&lt;p&gt;&lt;/p&gt; 标签里面嵌套 div 等 原生块级元素  会在渲染页面时候出错，div 标签会出现在p标签的下方并且和p标签同级。</p><p>没有达到 div 是 p 标签的子元素的预期。</p><p>这是因为p标签里面不能嵌套原生块级元素。</p><p>只需要把  原生块级元素  换为 span 等行内元素就可以实现效果了。并且加上 display : block; 样式也不会出错。 </p><p>display：block的作用是让其他标签如：a、span等行内元素获得div的特性，比较常用于<a><span>这两个标签——因为这两个标签非块元素，如果不用display：block定义一下，那么定义width、height等和长宽相关的css属性时会发现完全不生效。</p><p>CSS块级元素和行内元素</p><p>块级元素：</p><p>独占一行；元素的宽高、以及内外边距都可设置；元素宽度在不设置的情况下，是它本身父容器的100%。</p><p>行内元素：</p><p>不会自动进行换行；元素的宽高不可设置；内边距可以设置、外边距水平方向有效，竖直方向无效；元素宽度在不设置的情况下，随内部元素的内容变化。</p><p>我们知道display:inline 和display:block的用发了，他们的作用是将块级元素转化为内联元素或者是内联元素转化为块级元素。</p><p>现在的这个貌似是两个的结合体：inline-block 为什么在我加载的这个场景能发挥奇效? 说不清</p><p>inline-block是元素具备了两种（块级和内联）元素的功能，inline最重要的一点就是：元素能够在一行展示，block 元素让它能设置宽高(有宽高能显示)。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;在&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt; 标签里面嵌套 div 等 原生块级元素  会在渲染页面时候出错，div 标签会出现在p标签的下方并且和p标签同级。&lt;/p&gt;
+&lt;p&gt;没有达到 div 是 p 标签的子元素的预期。&lt;/p&gt;
+&lt;p&gt;这是因为p标签里面不能嵌套原生块级元素。</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>mysql 技术内幕(InnoDB存储引擎)第2版 笔记</title>
+    <link href="https://yiyayamaya.github.io/2021/12/20/mysql-%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95-InnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E-%E7%AC%AC2%E7%89%88-%E7%AC%94%E8%AE%B0/"/>
+    <id>https://yiyayamaya.github.io/2021/12/20/mysql-%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95-InnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E-%E7%AC%AC2%E7%89%88-%E7%AC%94%E8%AE%B0/</id>
+    <published>2021-12-20T12:22:40.000Z</published>
+    <updated>2021-12-20T13:03:00.144Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.cnblogs.com/gaochundong/p/binary_search_tree.html" target="_blank" rel="noopener">https://www.cnblogs.com/gaochundong/p/binary_search_tree.html</a><br>一个二叉树的查找时间是线性的，定位时间也是线性的，那相比数组来说到底哪里有优势呢？毕竟数组的查找时间虽然是线性 O(n)，但定位时间却是常量 O(1) 啊？的确是这样，通常来说普通的二叉树确实不能提供比数组更好的性能。然而，如果我们按照一定的规则来组织排列二叉树中的元素时，就可以很大程度地改善查询时间和定位时间。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.cnblogs.com/gaochundong/p/binary_search_tree.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.cnblogs.com/gaochundon</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Ajax会自动将返回的对象属性首字母转化为小写</title>
+    <link href="https://yiyayamaya.github.io/2021/12/16/Ajax%E4%BC%9A%E8%87%AA%E5%8A%A8%E5%B0%86%E8%BF%94%E5%9B%9E%E7%9A%84%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7%E9%A6%96%E5%AD%97%E6%AF%8D%E8%BD%AC%E5%8C%96%E4%B8%BA%E5%B0%8F%E5%86%99/"/>
+    <id>https://yiyayamaya.github.io/2021/12/16/Ajax%E4%BC%9A%E8%87%AA%E5%8A%A8%E5%B0%86%E8%BF%94%E5%9B%9E%E7%9A%84%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7%E9%A6%96%E5%AD%97%E6%AF%8D%E8%BD%AC%E5%8C%96%E4%B8%BA%E5%B0%8F%E5%86%99/</id>
+    <published>2021-12-16T03:01:47.000Z</published>
+    <updated>2021-12-16T03:02:12.715Z</updated>
+    
+    <content type="html"><![CDATA[<p>不知道是只有ajax还是所有http请求</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;不知道是只有ajax还是所有http请求&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>mysql 多行变一行</title>
+    <link href="https://yiyayamaya.github.io/2021/12/16/mysql-%E5%A4%9A%E8%A1%8C%E5%8F%98%E4%B8%80%E8%A1%8C/"/>
+    <id>https://yiyayamaya.github.io/2021/12/16/mysql-%E5%A4%9A%E8%A1%8C%E5%8F%98%E4%B8%80%E8%A1%8C/</id>
+    <published>2021-12-16T02:14:50.000Z</published>
+    <updated>2021-12-16T03:34:35.742Z</updated>
+    
+    <content type="html"><![CDATA[<p>写的不错<br>SELECT name ,<br>MAX(CASE type WHEN ‘数学’ THEN score ELSE 0 END ) math,<br>MAX(CASE type WHEN ‘英语’ THEN score ELSE 0 END ) English ,<br>MAX(CASE type WHEN ‘语文’ THEN score ELSE 0 END ) Chinese<br>FROM stu<br>GROUP BY name<br><a href="https://blog.csdn.net/rainyspring4540/article/details/50231435" target="_blank" rel="noopener">https://blog.csdn.net/rainyspring4540/article/details/50231435</a></p><p>这篇没咋看<br><a href="https://www.cnblogs.com/weix-l/p/7521278.html" target="_blank" rel="noopener">https://www.cnblogs.com/weix-l/p/7521278.html</a></p><p>乱入讲join性能的<br>因为之前写了一个复杂的(机器类型:总数) left join (机器类型:具有心跳机器数) left join (机器类型:开启机器数) 变成了 (机器类型:总数:具有心跳机器数:开启机器数)</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">select</span> a.machineType, a.totalCount, b.machineWithLivingHeartbeatCount, c.machineStatusOnCount</span><br><span class="line">        <span class="keyword">from</span> (<span class="keyword">select</span> machine_type machineType, <span class="keyword">count</span>(*) totalCount <span class="keyword">from</span> atc_machine <span class="keyword">group</span> <span class="keyword">by</span> machine_type) a</span><br><span class="line">                 <span class="keyword">left</span> <span class="keyword">join</span></span><br><span class="line">             (<span class="keyword">select</span> machine_type, <span class="keyword">count</span>(*) machineWithLivingHeartbeatCount</span><br><span class="line">              <span class="keyword">from</span> atc_machine</span><br><span class="line">              <span class="keyword">where</span> <span class="keyword">DATE_ADD</span>(last_heartbeat, <span class="built_in">INTERVAL</span> <span class="comment">#&#123;interval&#125; MINUTE) &gt; NOW()</span></span><br><span class="line">              <span class="keyword">group</span> <span class="keyword">by</span> machine_type) b</span><br><span class="line">             <span class="keyword">on</span> a.machineType = b.machine_type</span><br><span class="line">                 <span class="keyword">left</span> <span class="keyword">join</span></span><br><span class="line">             (<span class="keyword">select</span> machine_type, <span class="keyword">count</span>(*) machineStatusOnCount</span><br><span class="line">              <span class="keyword">from</span> atc_machine</span><br><span class="line">              <span class="keyword">where</span> <span class="keyword">status</span> = <span class="number">1</span></span><br><span class="line">              <span class="keyword">group</span> <span class="keyword">by</span> machine_type) c</span><br><span class="line">             <span class="keyword">on</span> a.machineType = c.machine_type;</span><br></pre></td></tr></table></figure><p><a href="https://database.51cto.com/art/202011/631613.htm" target="_blank" rel="noopener">https://database.51cto.com/art/202011/631613.htm</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;写的不错&lt;br&gt;SELECT name ,&lt;br&gt;MAX(CASE type WHEN ‘数学’ THEN score ELSE 0 END ) math,&lt;br&gt;MAX(CASE type WHEN ‘英语’ THEN score ELSE 0 END ) English</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>开坑之WebSecurityConfigurerAdapter</title>
+    <link href="https://yiyayamaya.github.io/2021/12/15/%E5%BC%80%E5%9D%91%E4%B9%8BWebSecurityConfigurerAdapter/"/>
+    <id>https://yiyayamaya.github.io/2021/12/15/%E5%BC%80%E5%9D%91%E4%B9%8BWebSecurityConfigurerAdapter/</id>
+    <published>2021-12-15T07:28:48.000Z</published>
+    <updated>2021-12-15T07:48:31.974Z</updated>
+    
+    <content type="html"><![CDATA[<p>maven里依赖了<br><dependency><br>    <groupId>org.springframework.boot</groupId><br>    <artifactId>spring-boot-starter-security</artifactId><br></dependency></p><p>就导致页面上要登陆 密码是随机生成的 在日志里有</p><p>然后加一个public class SecurityConfiguration extends WebSecurityConfigurerAdapter {}的配置<br>这玩意有什么用 不加行不行</p><p><a href="https://spring.io/blog/2013/07/03/spring-security-java-config-preview-web-security/#wsca" target="_blank" rel="noopener">https://spring.io/blog/2013/07/03/spring-security-java-config-preview-web-security/#wsca</a></p><p>可能会从雷丰阳带你过spring源码中学到这个 可是我只看了几集</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;maven里依赖了&lt;br&gt;&lt;dependency&gt;&lt;br&gt;    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;&lt;br&gt;    &lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>开坑之maven怎么排除parent里面的依赖</title>
+    <link href="https://yiyayamaya.github.io/2021/12/15/%E5%BC%80%E5%9D%91%E4%B9%8Bmaven%E6%80%8E%E4%B9%88%E6%8E%92%E9%99%A4parent%E9%87%8C%E9%9D%A2%E7%9A%84%E4%BE%9D%E8%B5%96/"/>
+    <id>https://yiyayamaya.github.io/2021/12/15/%E5%BC%80%E5%9D%91%E4%B9%8Bmaven%E6%80%8E%E4%B9%88%E6%8E%92%E9%99%A4parent%E9%87%8C%E9%9D%A2%E7%9A%84%E4%BE%9D%E8%B5%96/</id>
+    <published>2021-12-15T07:25:09.000Z</published>
+    <updated>2021-12-15T07:27:44.373Z</updated>
+    
+    <content type="html"><![CDATA[<p>maven parent中的依赖不能用exclude排除 </p><p><a href="https://blog.csdn.net/qq_32596527/article/details/112969562" target="_blank" rel="noopener">https://blog.csdn.net/qq_32596527/article/details/112969562</a><br>试了 在我的项目里有问题 不知道和 <type>pom</type> <scope>import</scope> 有没有关系</p><p><a href="https://stackoverflow.com/questions/2681759/is-there-anyway-to-exclude-artifacts-inherited-from-a-parent-pom" target="_blank" rel="noopener">https://stackoverflow.com/questions/2681759/is-there-anyway-to-exclude-artifacts-inherited-from-a-parent-pom</a><br>一个回答说了一堆没看懂几条</p><p>感觉应该系统学习下maven的配置</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;maven parent中的依赖不能用exclude排除 &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/qq_32596527/article/details/112969562&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>same-origin policy与跨域资源共享CORS</title>
     <link href="https://yiyayamaya.github.io/2021/12/15/same-origin-policy%E4%B8%8E%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%ABCORS/"/>
     <id>https://yiyayamaya.github.io/2021/12/15/same-origin-policy%E4%B8%8E%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%ABCORS/</id>
     <published>2021-12-15T05:48:58.000Z</published>
-    <updated>2021-12-15T05:50:39.874Z</updated>
+    <updated>2021-12-21T06:11:15.714Z</updated>
     
-    <content type="html"><![CDATA[<p>浏览器同源政策及其规避方法<br><a href="http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html</a></p><p>跨域资源共享 CORS 详解<br><a href="https://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="noopener">https://www.ruanyifeng.com/blog/2016/04/cors.html</a></p><p>springboot被请求的api 可以加@CrossOrigin解决 但是@RequestMapping必须是method=RequestMethod.POST,get就不行。why？</p>]]></content>
+    <content type="html"><![CDATA[<p>浏览器同源政策及其规避方法<br><a href="http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html</a></p><p>跨域资源共享 CORS 详解<br><a href="https://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="noopener">https://www.ruanyifeng.com/blog/2016/04/cors.html</a><br>此篇文章貌似没给出太具体的解决</p><p>springboot被请求的api 可以加@CrossOrigin解决 </p><p><a href="https://www.cnblogs.com/xdp-gacl/p/3789624.html" target="_blank" rel="noopener">https://www.cnblogs.com/xdp-gacl/p/3789624.html</a> HttpServletResponse对象介绍</p><p><a href="https://www.jianshu.com/p/8bc6b82403c5" target="_blank" rel="noopener">https://www.jianshu.com/p/8bc6b82403c5</a> 一篇差不多的介绍 貌似结构清晰一些</p><p>同一个人讲的 HttpServletRequest和HttpServletResponse<br><a href="https://blog.csdn.net/qq_34666857/article/details/104677407" target="_blank" rel="noopener">https://blog.csdn.net/qq_34666857/article/details/104677407</a></p><p><a href="https://blog.csdn.net/qq_34666857/article/details/104838171" target="_blank" rel="noopener">https://blog.csdn.net/qq_34666857/article/details/104838171</a></p><p>廖雪峰结合servlet讲的<br><a href="https://www.liaoxuefeng.com/wiki/1252599548343744/1328705066500130" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/1252599548343744/1328705066500130</a></p><p>　　Web服务器收到客户端的http请求，会针对每一次请求，分别创建一个用于代表请求的request对象、和代表响应的response对象。<br>request和response对象即然代表请求和响应，那我们要获取客户机提交过来的数据，只需要找request对象就行了。要向客户机输出数据，只需要找response对象就行了。</p><p>　　HttpServletResponse对象代表服务器的响应。这个对象中封装了向客户端发送数据、发送响应头，发送响应状态码的方法。查看HttpServletResponse的API，可以看到这些相关的方法。</p><p>之前跨域出问题 就是因为@CrosOrigin注解会让spring会往response里加Access-Control-Allow-Origin解决跨域 但是我操作了response把这个头给重置掉 写到这我去试了一下再给那个下载的respose加一个Access-Control-Allow-Origin头 果然跨域问题解决了</p><p>http get 可以开始下载 ajax get url不能开始下载 为什么？ 其实硬要也可以 但是通常都是http get啊<a href="https://www.cnblogs.com/nuccch/p/7151228.html" target="_blank" rel="noopener">https://www.cnblogs.com/nuccch/p/7151228.html</a></p><p>1，负责向客户端(浏览器)发送数据的相关方法 **</p><p>1.getOutputStream()    该方法用于返回Servlet引擎创建的字节输出流对象，Servlet程序可以按字节形式输出响应正文。<br>2.getWriter()    该方法用于返回Servlet引擎创建的字符输出流对象，Servlet程序可以按字符形式输出响应正文。</p>]]></content>
     
     
       
@@ -309,130 +433,6 @@
     <summary type="html">&lt;p&gt;va继承中，经常会碰上super()方法，今天恰好碰上，小小的研究了一下。&lt;/p&gt;
 &lt;p&gt;super可以理解为是指向自己超（父）类对象的一个指针，而这个超类指的是离自己最近的一个父类。&lt;/p&gt;
 &lt;p&gt;在子类的构造方法的第一行，必须是第一行调用super()，这样就调用了父类</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>$.post可以说是缩写版的$.ajax</title>
-    <link href="https://yiyayamaya.github.io/2021/08/24/post%E5%8F%AF%E4%BB%A5%E8%AF%B4%E6%98%AF%E7%BC%A9%E5%86%99%E7%89%88%E7%9A%84-ajax/"/>
-    <id>https://yiyayamaya.github.io/2021/08/24/post%E5%8F%AF%E4%BB%A5%E8%AF%B4%E6%98%AF%E7%BC%A9%E5%86%99%E7%89%88%E7%9A%84-ajax/</id>
-    <published>2021-08-24T08:07:02.000Z</published>
-    <updated>2021-08-24T08:11:07.455Z</updated>
-    
-    <content type="html"><![CDATA[<p>石锤了 官方说法 总忘 水了一篇文章</p><img src="/2021/08/24/post%E5%8F%AF%E4%BB%A5%E8%AF%B4%E6%98%AF%E7%BC%A9%E5%86%99%E7%89%88%E7%9A%84-ajax/2021-08-24_16-09.png" class="" title="This is an example image">]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;石锤了 官方说法 总忘 水了一篇文章&lt;/p&gt;
-&lt;img src=&quot;/2021/08/24/post%E5%8F%AF%E4%BB%A5%E8%AF%B4%E6%98%AF%E7%BC%A9%E5%86%99%E7%89%88%E7%9A%84-ajax/2021-08-24</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>mysql 外键 ON DELETE CASCADE</title>
-    <link href="https://yiyayamaya.github.io/2021/08/24/mysql-%E5%A4%96%E9%94%AE-ON-DELETE-CASCADE/"/>
-    <id>https://yiyayamaya.github.io/2021/08/24/mysql-%E5%A4%96%E9%94%AE-ON-DELETE-CASCADE/</id>
-    <published>2021-08-24T06:35:34.000Z</published>
-    <updated>2021-08-24T06:47:20.430Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://www.yiibai.com/mysql/foreign-key.html" target="_blank" rel="noopener">https://www.yiibai.com/mysql/foreign-key.html</a></p><p><a href="https://www.yiibai.com/mysql/on-delete-cascade.html" target="_blank" rel="noopener">https://www.yiibai.com/mysql/on-delete-cascade.html</a></p><p>假设有两张表：建筑物(buildings)和房间(rooms)。 在这个数据库模型中，每个建筑物都有一个或多个房间。 然而，每个房间只属于一个建筑物。没有建筑物则房间是不会存在的。</p><p>当我们从buildings表中删除一行时，还要删除rooms表中引用建筑物表中行的行。 </p><p>我们希望rooms表中涉及到建筑物编号2的行记录也将被删除(讲得通俗一点：假设2号楼倒塌了，那么2号楼的房间应该也就不存在了)。以下是演示MySQL ON DELETE CASCADE参考操作如何工作的步骤。</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">USE</span> testdb;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> rooms (</span><br><span class="line">    room_no <span class="built_in">INT</span> PRIMARY <span class="keyword">KEY</span> AUTO_INCREMENT,</span><br><span class="line">    room_name <span class="built_in">VARCHAR</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    building_no <span class="built_in">INT</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span> (building_no)</span><br><span class="line">        <span class="keyword">REFERENCES</span> buildings (building_no)</span><br><span class="line">        <span class="keyword">ON</span> <span class="keyword">DELETE</span> <span class="keyword">CASCADE</span></span><br><span class="line">)<span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span><br></pre></td></tr></table></figure><p>为何说外键有性能问题：1.数据库需要维护外键的内部管理；2.外键等于把数据的一致性事务实现，全部交给数据库服务器完成；3.有了外键，当做一些涉及外键字段的增，删，更新操作之后，需要触发相关操作去检查，而不得不消耗资源；4.外键还会因为需要请求对其他表内部加锁而容易出现死锁情况；</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.yiibai.com/mysql/foreign-key.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.yiibai.com/mysql/foreign-key.html&lt;/a&gt;&lt;</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>一次前端父页面向子页面传值的思考</title>
-    <link href="https://yiyayamaya.github.io/2021/08/24/%E4%B8%80%E6%AC%A1%E5%89%8D%E7%AB%AF%E7%88%B6%E9%A1%B5%E9%9D%A2%E5%90%91%E5%AD%90%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC%E7%9A%84%E6%80%9D%E8%80%83/"/>
-    <id>https://yiyayamaya.github.io/2021/08/24/%E4%B8%80%E6%AC%A1%E5%89%8D%E7%AB%AF%E7%88%B6%E9%A1%B5%E9%9D%A2%E5%90%91%E5%AD%90%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC%E7%9A%84%E6%80%9D%E8%80%83/</id>
-    <published>2021-08-24T05:42:15.000Z</published>
-    <updated>2021-08-24T05:52:01.731Z</updated>
-    
-    <content type="html"><![CDATA[<img src="/2021/08/24/%E4%B8%80%E6%AC%A1%E5%89%8D%E7%AB%AF%E7%88%B6%E9%A1%B5%E9%9D%A2%E5%90%91%E5%AD%90%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC%E7%9A%84%E6%80%9D%E8%80%83/tutieshi_640x360_4s.gif" class="" title="This is an example image"><p>点开的新窗口的一个值是从父页面传进子页面的值而不是子页面异步获取的<br>这种东西通常不能在子里面修改 如果嗯要修改<br>一、需要刷新父<br>刷新父亲的两种方法1.reload 2.不reload 单纯改值<br>二、要么不要传 用子异步请求</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;img src=&quot;/2021/08/24/%E4%B8%80%E6%AC%A1%E5%89%8D%E7%AB%AF%E7%88%B6%E9%A1%B5%E9%9D%A2%E5%90%91%E5%AD%90%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC%</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>jquery 学习</title>
-    <link href="https://yiyayamaya.github.io/2021/08/22/jquery-%E5%AD%A6%E4%B9%A0/"/>
-    <id>https://yiyayamaya.github.io/2021/08/22/jquery-%E5%AD%A6%E4%B9%A0/</id>
-    <published>2021-08-22T06:04:01.000Z</published>
-    <updated>2021-08-23T03:57:21.316Z</updated>
-    
-    <content type="html"><![CDATA[<p>jquery 对象 vs dom对象<br>用#id作为选择符取得的是jQuery对象与document.getElementById(“id”)得到的DOM对象，这两者并不等价。</p><p>(一)jQuery对象是一个数据对象，可以通过[index]的方法，来得到相应的DOM对象。<br>例：</p><p>var $v =$(“#v”) ; //jQuery对象</p><p>var v=$v[0]; //DOM对象</p><p>alert(v.checked) //检测这个checkbox是否被选中</p><p>var $email = $(“#email”); // refers to the jQuery object representation of the dom object<br>var email_field = $(“#email”).get(0); // refers to the dom object itself</p><p>仅仅是变量名的一种规范</p><p>注：jquery对象命名时，通常以$开头，比如 var $ps = $(‘p’)，这样的好处是，一眼就知道$ps是一个jquery对象，程序可读性大大提高。<br>————————————<br>jquery选择器返回多个还是一个</p><p>一、当使用id选择器时，会返回对应的jquery对象</p><p>let files = $(“#uploadFile_batchImport”);<br>let file = files[0].files[0];<br>以上代码中，files是jquery对象，files[0]是dom元素，file则是dom元素的files属性的第一个文件。<br>二、当使用类选择器时，返回的是多个dom对象组成的jquery对象<br>let obj = $(“.intro”);</p><p>let aDom = obj[0];</p><p>此时，obj是多个dom元素组成的jquery对象，aDom是个dom对象。</p><p>[attribute]    $(“[href]”)    具有href属性的所有元素</p><p>[attribute=value]    $(“[href=’default.htm’]”)    href属性值等于“default.htm”的所有元素</p><p>$(“p”) 选取 <p> 元素。</p><p>$(“p.intro”) 选取所有 class=”intro” 的 <p> 元素。</p><p>$(“p#demo”) 选取所有 id=”demo” 的 <p> 元素。</p><p>jQuery 使用 XPath 表达式来选择带有给定属性的元素。</p><p>$(“[href]”) 选取所有带有 href 属性的元素。</p><p>$(“[href=’#’]”) 选取所有带有 href 值等于 “#” 的元素。</p><p>$(“[href!=’#’]”) 选取所有带有 href 值不等于 “#” 的元素。</p><p>$(“[href$=’.jpg’]”) 选取所有 href 值以 “.jpg” 结尾的元素。</p><p>按tag查找 按class查找 按属性查找 组合查找 多项选择器</p><p>层级选择器（Descendant Selector）<br>如果两个DOM元素具有层级关系，就可以用$(‘ancestor descendant’)来选择，层级之间用空格隔开。例如：</p><p>子选择器（Child Selector）</p><p>.find()<br>.parent()方法</p><p>parent()是唯一的，为什么可以加selector呢？<br>本方法也可以接受一个字符串选择器，用于筛选返回的元素。</p><p>本方法用于选择给定jQuery对象中包含的DOM元素或者DOM元素集的祖先节点，并将这些节点包装成jQuery对象返回，返回的节点集是以从里到外的顺序排序的。</p><p>parents()同理</p><p>这里我们看到有一个prevObject，这个this.prevObject到底是用来干什么的呢？没错，jQuery通过这个属性维护了一个jQuery对象栈，只要我们使用选择相关的方法（如find()，eq()等）获取新的jQuery对象，jQuery就会把之前的对象存储在prevObject中。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;jquery 对象 vs dom对象&lt;br&gt;用#id作为选择符取得的是jQuery对象与document.getElementById(“id”)得到的DOM对象，这两者并不等价。&lt;/p&gt;
-&lt;p&gt;(一)jQuery对象是一个数据对象，可以通过[index]的方法，来得到相应</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>form表单中button type是button而不是submit</title>
-    <link href="https://yiyayamaya.github.io/2021/08/12/form%E8%A1%A8%E5%8D%95%E4%B8%ADbutton-type%E6%98%AFbutton%E8%80%8C%E4%B8%8D%E6%98%AFsubmit/"/>
-    <id>https://yiyayamaya.github.io/2021/08/12/form%E8%A1%A8%E5%8D%95%E4%B8%ADbutton-type%E6%98%AFbutton%E8%80%8C%E4%B8%8D%E6%98%AFsubmit/</id>
-    <published>2021-08-12T01:41:34.000Z</published>
-    <updated>2021-08-24T06:03:07.117Z</updated>
-    
-    <content type="html"><![CDATA[<p>遇到了一个需求和这个楼主一抹一样。   <a href="https://segmentfault.com/q/1010000005039644" target="_blank" rel="noopener">https://segmentfault.com/q/1010000005039644</a></p><p>因为是通过ajax请求服务器来实现登录的，所以我没有用button type=”submit”，但是现在问题是如果type是button的话，就不能实现敲回车自动触发按钮的功能了，我想做到在输入框里敲一下回车就自动触发登录的功能，请问该如何实现啊？</p><p>换回 type=”submit”，在 form 的 onsubmit 事件中触发 AJAX 请求，并 event.preventDefault() 就可以了。</p><p>顺便看到了一篇白话解释 Javascript事件preventDefault,stopPropagation及return false的区别<br><a href="https://segmentfault.com/a/1190000008227026" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008227026</a><br>讲得很好。提到了一下javascript中两种事件传播模式:捕获模式(capturing)冒泡模式(bubbling)</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;遇到了一个需求和这个楼主一抹一样。   &lt;a href=&quot;https://segmentfault.com/q/1010000005039644&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://segmentfault.com/q/10100</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>通过一次线上问题排查内存过大来学习jvm基础</title>
-    <link href="https://yiyayamaya.github.io/2021/07/29/%E9%80%9A%E8%BF%87%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%86%85%E5%AD%98%E8%BF%87%E5%A4%A7%E6%9D%A5%E5%AD%A6%E4%B9%A0jvm%E5%9F%BA%E7%A1%80/"/>
-    <id>https://yiyayamaya.github.io/2021/07/29/%E9%80%9A%E8%BF%87%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%86%85%E5%AD%98%E8%BF%87%E5%A4%A7%E6%9D%A5%E5%AD%A6%E4%B9%A0jvm%E5%9F%BA%E7%A1%80/</id>
-    <published>2021-07-29T06:31:35.000Z</published>
-    <updated>2021-08-02T08:26:35.699Z</updated>
-    
-    <content type="html"><![CDATA[<p>用到的工具 jmap jstack jvisualvm现在叫visualVM MAT JConsole </p><p>生成的dump文件可以用jhat分析</p><p>jmap命令将程序的内存数据保存下来，jmap -dump:live,format=b,file=m.hprof PID</p><p>然后我指着监控信息，让运维看：“大哥你看这监控历史，堆内存是达到过 6G 的，只是后面 GC 了，没问题啊！”</p><p>“JVM 的垃圾回收，只是一个逻辑上的回收，回收的只是 JVM 申请的那一块逻辑堆区域，将数据标记为空闲之类的操作，不是调用 free 将内存归还给操作系统”</p><p>JVM 的自动内存管理，其实只是先向操作系统申请了一大块内存，然后自己在这块已申请的内存区域中进行“自动内存管理”。JAVA 中的对象在创建前，会先从这块申请的一大块内存中划分出一部分来给这个对象使用，在 GC 时也只是这个对象所处的内存区域数据清空，标记为空闲而已</p><p>运维：“原来是这样，那按你的意思，JVM 就不会将 GC 回收后的空闲内存还给操作系统了吗？”</p><p>JVM 还是会归还内存给操作系统的，只是因为这个代价比较大，所以不会轻易进行。而且不同垃圾回收器 的内存分配算法不同，归还内存的代价也不同。</p><p>java加jvm参数正确格式应该是nohup java -Xms800m -Xmx800m -XX:PermSize=256m -XX:MaxPermSize=512m -XX:MaxNewSize=512m -jar 你的jar包 &gt;&gt;/dev/null &amp;</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;local&#x2F;java&#x2F;jdk1.8.0_131&#x2F;bin&#x2F;java -jar -server -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath&#x3D;&#x2F;data&#x2F;spb_zcmweb&#x2F;8103&#x2F;dump&#x2F;heap&#x2F;</span><br><span class="line"> -Djava.io.tmpdir&#x3D;&#x2F;data&#x2F;spb_zcmweb&#x2F;8103&#x2F;tmp&#x2F; </span><br><span class="line"> -Dserver.port&#x3D;8103 </span><br><span class="line"> -Dcom.sun.management.jmxremote</span><br><span class="line"> -Dcom.sun.management.jmxremote.port&#x3D;5103 </span><br><span class="line"> -Dcom.sun.management.jmxremote.rmi.port&#x3D;6103 </span><br><span class="line"> -Dcom.sun.management.jmxremote.authenticate&#x3D;false </span><br><span class="line"> -Dcom.sun.management.jmxremote.ssl&#x3D;false </span><br><span class="line"> -Dcom.sun.management.jmxremote.access.file&#x3D;&#x2F;usr&#x2F;local&#x2F;java&#x2F;jdk1.8.0_131&#x2F;jre&#x2F;lib&#x2F;management&#x2F;jmxremote.access </span><br><span class="line"> -Xmx2G -Xms2G -XX:+DisableExplicitGC -verbose:gc -Xloggc:&#x2F;data&#x2F;spb_zcmweb&#x2F;8103&#x2F;log&#x2F;gc.%t.log -XX:+PrintHeapAtGC -XX:+PrintTenuringDistribution -XX:+PrintGCApplicationStoppedTime -XX:+PrintGCTaskTimeStamps -XX:+PrintGCDetails -XX:+PrintGCDateStamps </span><br><span class="line"> -Dserver.connection-timeout&#x3D;60000 </span><br><span class="line"> -Dserver.tomcat.accept-count&#x3D;1000 </span><br><span class="line"> -Dserver.tomcat.max-threads&#x3D;300 </span><br><span class="line"> -Dserver.tomcat.min-spare-threads&#x3D;65 </span><br><span class="line"> -Dserver.tomcat.accesslog.enabled&#x3D;false </span><br><span class="line"> -Dserver.tomcat.accesslog.directory&#x3D;&#x2F;data&#x2F;spb_zcmweb&#x2F;8103&#x2F;log&#x2F; </span><br><span class="line"> -Dserver.tomcat.accesslog.prefix&#x3D;access_log </span><br><span class="line"> -Dserver.tomcat.accesslog.pattern&#x3D;combine </span><br><span class="line"> -Dserver.tomcat.accesslog.suffix&#x3D;.log </span><br><span class="line"> -Dserver.tomcat.accesslog.rotate&#x3D;true </span><br><span class="line"> -Dserver.tomcat.accesslog.rename-on-rotate&#x3D;true </span><br><span class="line"> -Dserver.tomcat.accesslog.request-attributes-enabled&#x3D;true </span><br><span class="line"> -Dserver.tomcat.accesslog.buffered&#x3D;true </span><br><span class="line"> -XX:NewRatio&#x3D;4 -XX:SurvivorRatio&#x3D;30 -XX:TargetSurvivorRatio&#x3D;90 -XX:MaxTenuringThreshold&#x3D;8 -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction&#x3D;70 -XX:ParallelGCThreads&#x3D;24 -XX:ConcGCThreads&#x3D;24 -XX:-UseGCOverheadLimit -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSFullGCsBeforeCompaction&#x3D;1 -XX:+CMSParallelRemarkEnabled -XX:+CMSScavengeBeforeRemark -XX:+ParallelRefProcEnabled -XX:+UseCMSCompactAtFullCollection -XX:CMSMaxAbortablePrecleanTime&#x3D;6000 -XX:CompileThreshold&#x3D;10 -XX:MaxInlineSize&#x3D;1024 -Dsun.net.client.defaultConnectTimeout&#x3D;60000 </span><br><span class="line"> -Dsun.net.client.defaultReadTimeout&#x3D;60000 </span><br><span class="line"> -Dnetworkaddress.cache.ttl&#x3D;300 -Dsun.net.inetaddr.ttl&#x3D;300 </span><br><span class="line"> -Djsse.enableCBCProtection&#x3D;false </span><br><span class="line"> -Djava.security.egd&#x3D;file:&#x2F;dev&#x2F;.&#x2F;urandom </span><br><span class="line"> -Dfile.encoding&#x3D;UTF-8 </span><br><span class="line"> -Dlog.path&#x3D;&#x2F;data&#x2F;spb_zcmweb&#x2F;8103&#x2F;log&#x2F; </span><br><span class="line"> -Dspring.profiles.active&#x3D;online  </span><br><span class="line"> &#x2F;data&#x2F;spb_zcmweb&#x2F;8103&#x2F;deploy&#x2F;zcmweb.jar zcmweb</span><br></pre></td></tr></table></figure><p>最后xxx.jar 后面加–spring.config.location</p><p>jmap指定<br>-heap：打印jvm heap的情况<br>-histo：打印jvm heap的直方图。其输出信息包括类名，对象数量，对象占用大小。<br>-histo:live ：同上，但是只答应存活对象的情况<br>-permstat：打印permanent generation heap情况</p><p>jmap -histo 18473 | head -30<br>jmap -histo 18473 | tail -30 </p><p>/home/wxj/Documents/Hexo-source-files/source/_posts/通过一次线上问题排查内存过大来学习jvm基础/2021-07-30_11-41.png</p><p>从打印结果可看出，类名中存在[C、[B等内容，只知道它占用了那么大的内存，但不知道由什么对象创建的。下一步需要将其他dump出来，使用内存分析工具进一步明确它是由谁引用的、由什么对象。</p><p>Heap Dump 是Java进程所使用的内存情况在某一时间的一次快照。 以文件的形式持久化到磁盘中。 </p><p>分析dump文件的几种方式<br>1、visualVM<br>2、MAT<br>3、jhat 15397.hprof (去localhost:7000查看)</p><p>插入内容：JDK命令行（jps、jstat、jinfo、jmap、jhat、jstack、jstatd、hprof）与JConsole<br><a href="https://www.huaweicloud.com/articles/9871161f404d4e817e18db0f40e815a1.html" target="_blank" rel="noopener">https://www.huaweicloud.com/articles/9871161f404d4e817e18db0f40e815a1.html</a></p><p>看本身大小时，占大头的都是char[] ,byte[]之类的，没什么意思（用jmap -histo:live pid 看的也是本身大小）。所以需要关心的是保留大小比较大的对象，看谁在引用这些char[], byte[]。</p><p>(MAT能看的信息更多，但VisualVM胜在JVM自带，用法如下：命令行输入jvisualvm，文件-&gt;装入-&gt;堆Dump－&gt;检查 -&gt; 查找20保留大小最大的对象，就会触发保留大小的计算，然后就可以类视图里浏览，按保留大小排序了)</p><p>可以从这个图看出这个类java.lang.ref.Finalizer占用500多M，表示这其中很多不能够被回对象的对象，此时点开hisgogram视图，并通过Retained Heap进行排序，如下截图：</p><p>从图中可以看出，被线线框圈起来的三个对象占用量非常大，那说明这几个大的对象并没有被释放，那现在就可以有针对性的从代码中去找这几个对象为什么没有被释放了。<br>再切换到dominator_tree视图：</p><p>这里可以看到velocity渲染也存在着问题，以及数据库的请求也比较多。</p><p><a href="https://blog.51cto.com/supercharles888/1347144" target="_blank" rel="noopener">https://blog.51cto.com/supercharles888/1347144</a> 讲了shallow size Retained size区别<br>Shallow Size是对象本身占据的内存的大小，不包含其引用的对象。对于常规对象（非数组）的Shallow Size由其成员变量的数量和类型来定，而数组的ShallowSize由数组类型和数组长度来决定，它为数组元素大小的总和。</p><p>Retained Size=当前对象大小+当前对象可直接或间接引用到的对象的大小总和。(间接引用的含义：A-&gt;B-&gt;C,C就是间接引用) ，并且排除被GC Roots直接或者间接引用的对象</p><p>Incoming references被什么实例引用了 和 Outgoing references引用了什么实例</p><p>一般来说，如果浅堆比较小，但是深堆比较大，那么这种对象比较可疑，首先找到深堆大的对象，然后通过incoming查看哪些对象引用这个对象，通过outgoing查看这个对象内部都有哪些对象</p><p>不确定这行写的对：dominator_tree中这两个值与Histogram中的区别是：dominator_tree基于实例的角度，而historgram基于类的角度</p><p>X86是一种架构，但是他有32位的和64位的！<br>32位的叫x86 ，后来出现基于它的64位版，就叫X86-64，后来有时简称X64。</p><p>Histogram是类粒度的，可以找到哪个类占用的堆内存比较多；dominator tree是对象粒度的，可以用来查看哪个对象引起占用堆内存比较大。选择dominator tree以后可以 group by class 就能按class看了！！！但是可能是因为unreachable 的原因，数目对不上。</p><p>升级版 JConsole 即 jvisualvm 。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;用到的工具 jmap jstack jvisualvm现在叫visualVM MAT JConsole &lt;/p&gt;
-&lt;p&gt;生成的dump文件可以用jhat分析&lt;/p&gt;
-&lt;p&gt;jmap命令将程序的内存数据保存下来，jmap -dump:live,format=b,file=m.</summary>
       
     
     
