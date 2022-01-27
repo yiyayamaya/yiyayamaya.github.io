@@ -14,24 +14,26 @@
     
     
     
-    <title>postList&lt;String&gt; list = new ArrayList&lt;&gt;() | 皇姑区第一亚索的博客</title>
+    <title>HTTP request 和response | 皇姑区第一亚索的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#9ACD32">
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="List list &#x3D; new ArrayList&lt;&gt;();多年来令我费解这个问题的不同问法有为什么面向接口编程？  插曲实现接口的方法一定要声明为public，因为接口中定义的方法都是默认为public（可以省略不写）的。  这个回答讲的很好烦人的苍蝇和烦人的电话推销员的例子但是他讲的是为什么要用接口 不能回答上面的问题 L l&#x3D;new AL;https:&#x2F;&#x2F;stackoverflo">
+    <meta name="description" content="http消息结构两种命名体系    场景：想要post下载文件，因为get下载文件参数只能 通过url传递，长度受限制。 ps.jQuery get() 和 post() 方法用于通过 HTTP GET 或 POST 请求从服务器请求数据。 从上面的解释中可以知道：ajax是一种技术方案，但并不是一种新技术。它依赖的是现有的CSS&#x2F;HTML&#x2F;Javascript，而其中最核心的依赖是浏览器提供的X">
 <meta property="og:type" content="article">
-<meta property="og:title" content="postList&lt;String&gt; list &#x3D; new ArrayList&lt;&gt;()">
-<meta property="og:url" content="https://yiyayamaya.github.io/2021/11/19/postList-String-list-new-ArrayList/index.html">
+<meta property="og:title" content="HTTP request 和response">
+<meta property="og:url" content="https://yiyayamaya.github.io/2022/01/24/HTTP-request-%E5%92%8Cresponse/index.html">
 <meta property="og:site_name" content="皇姑区第一亚索的博客">
-<meta property="og:description" content="List list &#x3D; new ArrayList&lt;&gt;();多年来令我费解这个问题的不同问法有为什么面向接口编程？  插曲实现接口的方法一定要声明为public，因为接口中定义的方法都是默认为public（可以省略不写）的。  这个回答讲的很好烦人的苍蝇和烦人的电话推销员的例子但是他讲的是为什么要用接口 不能回答上面的问题 L l&#x3D;new AL;https:&#x2F;&#x2F;stackoverflo">
+<meta property="og:description" content="http消息结构两种命名体系    场景：想要post下载文件，因为get下载文件参数只能 通过url传递，长度受限制。 ps.jQuery get() 和 post() 方法用于通过 HTTP GET 或 POST 请求从服务器请求数据。 从上面的解释中可以知道：ajax是一种技术方案，但并不是一种新技术。它依赖的是现有的CSS&#x2F;HTML&#x2F;Javascript，而其中最核心的依赖是浏览器提供的X">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-19T07:29:21.000Z">
-<meta property="article:modified_time" content="2021-11-22T02:17:13.789Z">
+<meta property="og:image" content="https://yiyayamaya.github.io/2022/01/24/HTTP-request-%E5%92%8Cresponse/2022-01-24_14-25.png">
+<meta property="article:published_time" content="2022-01-24T06:24:30.000Z">
+<meta property="article:modified_time" content="2022-01-27T01:55:02.231Z">
 <meta property="article:author" content="皇姑区第一亚索">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yiyayamaya.github.io/2022/01/24/HTTP-request-%E5%92%8Cresponse/2022-01-24_14-25.png">
     
         <link rel="alternate" type="application/atom+xml" title="皇姑区第一亚索的博客" href="/atom.xml">
     
@@ -112,7 +114,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">postList&lt;String&gt; list = new ArrayList&lt;&gt;()</div>
+        <div class="flex-col header-title ellipsis">HTTP request 和response</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,11 +136,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">postList&lt;String&gt; list = new ArrayList&lt;&gt;()</h1>
+        <h1 class="title">HTTP request 和response</h1>
         <h5 class="subtitle">
             
-                <time datetime="2021-11-19T07:29:21.000Z" itemprop="datePublished" class="page-time">
-  2021-11-19
+                <time datetime="2022-01-24T06:24:30.000Z" itemprop="datePublished" class="page-time">
+  2022-01-24
 </time>
 
 
@@ -155,13 +157,13 @@
 <div class="container body-wrap">
     
 
-<article id="post-postList-String-list-new-ArrayList"
+<article id="post-HTTP-request-和response"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">postList<String> list = new ArrayList<>()</h1>
+        <h1 class="post-card-title">HTTP request 和response</h1>
         <div class="post-meta">
-            <time class="post-time" title="2021-11-19 15:29:21" datetime="2021-11-19T07:29:21.000Z"  itemprop="datePublished">2021-11-19</time>
+            <time class="post-time" title="2022-01-24 14:24:30" datetime="2022-01-24T06:24:30.000Z"  itemprop="datePublished">2022-01-24</time>
 
             
 
@@ -174,25 +176,47 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>List<String> list = new ArrayList&lt;&gt;();<br>多年来令我费解<br>这个问题的不同问法有为什么面向接口编程？</p>
-<blockquote>
-<p>插曲<br>实现接口的方法一定要声明为public，因为接口中定义的方法都是默认为public（可以省略不写）的。</p>
-</blockquote>
-<p>这个回答讲的很好烦人的苍蝇和烦人的电话推销员的例子<br>但是他讲的是为什么要用接口 不能回答上面的问题 L l=new AL;<br><a href="https://stackoverflow.com/a/384067" target="_blank" rel="noopener">https://stackoverflow.com/a/384067</a></p>
-<p>我惊讶地发现实现了同一个接口的两个类居然都可以放进参数声明为借口的方法中<br>这么基本的功能我现在才意识到<br>比如</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">比如</span><br><span class="line">IPest[] iPestsArr=<span class="keyword">new</span> IPest[]&#123;telemarketer1,telemarketer2,houseFly1,houseFly2&#125;;</span><br><span class="line"></span><br><span class="line">再比如</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">inviteIPestOnly</span><span class="params">(IPest iPest)</span> </span>&#123;</span><br><span class="line">       iPest.BeAnnoying();</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="class"><span class="keyword">class</span> <span class="title">HouseFly</span> <span class="keyword">extends</span> <span class="title">Insect</span>  <span class="keyword">implements</span> <span class="title">IPest</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">   <span class="title">HouseFly</span> <span class="title">houseFly1</span> </span>= <span class="keyword">new</span> HouseFly();</span><br><span class="line"></span><br><span class="line">   diningRoom.inviteIPestOnly(houseFly1);</span><br></pre></td></tr></table></figure>
+            <p>http消息结构两种命名体系</p>
+<img src="/2022/01/24/HTTP-request-%E5%92%8Cresponse/2022-01-24_14-25.png" class="" title="This is an example image">
 
-<p>接口可以被理解成弱化的继承。<br>他也是一种分类手段，当不同类的对象(电话推销员、苍蝇)表现出相同特征(恼人)时通过这个特征来分类。<br>原文:I finally understood their use as a language construct by thinking of them as a means of classifying common traits or behaviors that were exhibited by potentially many non-related classes of objects.</p>
-<blockquote>
-<p>插播下策略模式<br>interface Fly, interface highhighFly extends Fly, interface landFly extends Fly</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Duck</span> </span>&#123;</span><br><span class="line">     <span class="keyword">protected</span> FlyBehavior flyBehavior;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">performFly</span><span class="params">()</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">       flyBehavior.fly();</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-<p>定义下策略模式：定义了算法族(陆地飞、高高地飞)，分别封装起来让他们可以相互替换。让算法的变化独立于使用算法的客户(各种duck)。</p>
-</blockquote>
-<p>这样做的好处之一<br>这个设计在 DiningRoom 和各种 Pests 之间耦合得足够松散，你可以引入新的害虫（想想 class Covid19 implements IPest {…};！），在编写 DiningRoom 类时甚至不存在！您不仅不需要更改Diningroom，甚至不需要重新编译它！在测试和大型项目中派上用场</p>
-<p>云顶阵容类型</p>
-<p>排名部分先后</p>
-<p>永动机 圣杯琴女&gt;S3.5女团&gt;人马维克托&gt;白学=niko<br>烂肉   森林雪人 重骑女枪 森林人马<br>爆发法王 龙魂法 S3女团</p>
-<p>斗枪<br>莫名其妙射手<br>攻速 裁决天使 决斗 征服<br>召唤物 狗都不玩 盖论猩红丧失发明</p>
+
+<p>场景：想要post下载文件，因为get下载文件参数只能 通过url传递，长度受限制。</p>
+<p>ps.<br>jQuery get() 和 post() 方法用于通过 HTTP GET 或 POST 请求从服务器请求数据。</p>
+<p>从上面的解释中可以知道：ajax是一种技术方案，但并不是一种新技术。它依赖的是现有的CSS/HTML/Javascript，而其中最核心的依赖是浏览器提供的XMLHttpRequest对象，是这个对象使得浏览器可以发出HTTP请求与接收HTTP响应。</p>
+<p>所以我用一句话来总结两者的关系：我们使用XMLHttpRequest对象来发送一个Ajax请求。</p>
+<p>也就是本来用XMLHttpRequest发最朴素的http psot/get，有了ajax以后就用ajax发 http post/get，省得每次都创建操作XMLHttpRequest。</p>
+<p>ajax post和表单post的区别</p>
+<p>没有区别，只是 AJAX 是，正如首字母缩写词所暗示的那样，是异步的，这意味着它不会阻止其他任何东西运行。表单和 AJAX 请求都发送 POST 请求，唯一的区别是浏览器使用表单 POST 请求的响应来加载新页面，其中 AJAX 请求响应被传递给 JavaScript 中的回调。</p>
+<p>Ajax 请求是在后台异步发送的 xhr 请求，由您的 javascript 代码处理，而表单请求是普通请求，将重新加载浏览器页面以及浏览器呈现的响应</p>
+<p>提交 HTML 表单会构造一个根据为 HTML 表单定义的规则格式化的 HTTP 请求，并使浏览器导航到它获得的响应。</p>
+<p>使用 JavaScript 发出请求允许编程构建更多种类的请求——包括添加自定义标头、以不同方式（例如 JSON）格式化数据，以及与 HTML 表单构建请求的方式相同——并导致响应用 JavaScript 处理。</p>
+<p>为什么不能用ajax下载？<br>ajax请求返回的参数是json,text,html,xml类型，ajax不能调用IO流，所以不可以完成下载功能，ajax可以获取文件的数据，但是不能保存到磁盘，为了保证计算机安全，JS不可以和磁盘进行交互。</p>
+<p>Hi Amanda,</p>
+<p>My name is Xingjian Wu and I was originally admitted to 21Fall semester and I deferred to 22Spring. But my visa is issued util this march. So I chose to take courses as a non-maticulating student this Spring semester. Before about January 10th, I am not sure the time when I can arrive US. Once I know I can arrive US on March, I submit the non-matriculating application. （In the process, I keep communicating with Bianka.） But after the application approveled. There are few courses avaliable.</p>
+<p>I originally wrote CS561WS and CS545WS in the non-matriculating application form, and I have enrolled in CS561WS successfully but my override application for CS545WS  was rejected (I have submitted an application for the second time and it is in progress now).I would like to enroll in two more courses in addition to the CS561WS, any two from CS545WS, CS546WS, CS570WS, CS574WS. But they are either closed or I am not eligible.</p>
+<ol>
+<li>I submitted the Request Enrollment in Closed Course Section for CS546WS and CS570WS. Can you please help me approve it?</li>
+</ol>
+<ol start="2">
+<li>What may happen if I enroll in a course from workday before notifying non-matriculating apartment? (For example, CS546WS releases a seat, and I enroll in it but it is not on my non-matriculating application form)</li>
+</ol>
+<p>通过contoller传过去参数  下载&lt;-&gt;get<br>跳转一次  从8991发到8999 从8999再发到8999 </p>
+<p>不reset 跨域仍在 不影响下载 </p>
+<p>用post来下载 vs 用表单get/表单post来下载</p>
+<p>表单的get post和http get post的关系？</p>
+<p>尝试1 get里加消息体 不会<br>、<br>post ajax没有跨域问题 get ajax有跨域问题？</p>
+<p>in () 有bug</p>
+<p>chrp</p>
+<p>为什么ajax不允许写磁盘 为什么表单就可以</p>
+<p>0不能跳 不能点击 颜色黑色</p>
+<input type="text" value="⬇️⬇️" readonly="" class="" id="emoji-copy">
+
+
+<p>⬇️⬇️</p>
+<p>{1：[],2:[],3:[]}</p>
+<p>前：前<br>后：后<br>前：后<br>后：前</p>
+<p>span6～12的父亲的a都去掉</p>
+<p>List&lt;Map&lt;Integer,String&gt;&gt;}</p>
 
         </div>
 
@@ -201,7 +225,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2021-11-22T02:17:13.789Z" itemprop="dateUpdated">2021-11-22 10:17:13</time>
+    最后更新时间：<time datetime="2022-01-27T01:55:02.231Z" itemprop="dateUpdated">2022-01-27 09:55:02</time>
 </span><br>
 
 
@@ -229,7 +253,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/11/19/postList-String-list-new-ArrayList/&title=《postList<String> list = new ArrayList<>()》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2022/01/24/HTTP-request-%E5%92%8Cresponse/&title=《HTTP request 和response》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -239,22 +263,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/11/19/postList-String-list-new-ArrayList/&title=《postList<String> list = new ArrayList<>()》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2022/01/24/HTTP-request-%E5%92%8Cresponse/&title=《HTTP request 和response》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/11/19/postList-String-list-new-ArrayList/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2022/01/24/HTTP-request-%E5%92%8Cresponse/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《postList<String> list = new ArrayList<>()》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/11/19/postList-String-list-new-ArrayList/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《HTTP request 和response》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2022/01/24/HTTP-request-%E5%92%8Cresponse/&via=https://yiyayamaya.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/11/19/postList-String-list-new-ArrayList/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2022/01/24/HTTP-request-%E5%92%8Cresponse/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -274,21 +298,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2021/11/30/%E4%BB%A5%E5%89%8D%E7%9C%8B%E5%88%B0%E8%BF%87%E4%B8%80%E7%AF%87%E5%BE%88%E5%A5%BD%E7%9A%84%E5%A4%A7offset-limit%E4%BC%98%E5%8C%96%E7%9A%84%E6%96%87%E7%AB%A0-%E7%8E%B0%E5%9C%A8%E6%89%BE%E4%B8%8D%E5%88%B0%E4%BA%86/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">以前看到过一篇很好的大offset limit优化的文章 现在找不到了</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2021/11/18/%E6%96%87%E6%A1%A3/" id="post-next" class="post-nav-link">
+      <a href="/2022/01/04/%E5%88%9B%E5%BB%BAList%E6%88%96%E8%80%85Map%E7%9A%84%E6%97%B6%E5%80%99%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E4%B8%8E%E4%B8%8D%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">文档</h4>
+        <h4 class="title">创建List或者Map的时候指定类型与不指定类型有什么区别</h4>
       </a>
     </div>
   
@@ -439,7 +456,7 @@
         </p>
     </div>
     <div class="bottom">
-        <p><span>皇姑区第一亚索 &copy; 2021</span>
+        <p><span>皇姑区第一亚索 &copy; 2021 - 2022</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
@@ -457,7 +474,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/11/19/postList-String-list-new-ArrayList/&title=《postList<String> list = new ArrayList<>()》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2022/01/24/HTTP-request-%E5%92%8Cresponse/&title=《HTTP request 和response》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -467,22 +484,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/11/19/postList-String-list-new-ArrayList/&title=《postList<String> list = new ArrayList<>()》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2022/01/24/HTTP-request-%E5%92%8Cresponse/&title=《HTTP request 和response》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/11/19/postList-String-list-new-ArrayList/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2022/01/24/HTTP-request-%E5%92%8Cresponse/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《postList<String> list = new ArrayList<>()》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/11/19/postList-String-list-new-ArrayList/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《HTTP request 和response》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2022/01/24/HTTP-request-%E5%92%8Cresponse/&via=https://yiyayamaya.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/11/19/postList-String-list-new-ArrayList/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2022/01/24/HTTP-request-%E5%92%8Cresponse/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -493,7 +510,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACt0lEQVR42u3awW7rMAwEwP7/T/ddCzSJd0krzQPGJ8NNLY0OEk3y6yu+vn9cv5+//q/29z9/8+z+5gsPDw9vMfXf1+uBn7FfT64dK3/Dg5ng4eHhHePNJpdMKF+C10+SQwIPDw/vM3n7gDva0F8uEB4eHt7/yEsOgzbF0P4SDw8P7295SYIgyZe29/mIx3MteHh4eDEvryJ9zv2R+h4eHh7euqreFsPaN+8TExfvx8PDwzvAa8PlTXtBkpadldAuUiR4eHh4t/Lasv3s4789JPLGgovCGx4eHt5hXpsG3YTjs5RunWjGw8PDeyOvLe23T5JWg80S4+Hh4b2Ht0kK5O+ZBcc3NATg4eHhvYWXB8TtEuwD6xsOBjw8PLwDvPa7Pt/620aEJNS+SEbg4eHh3cqbYRJk/nzWcHDxVzw8PLwDvDZt2u66efkqOVSKIwEPDw/vGK8t2LfheJ6czZsDiuAbDw8P7wBvc1S0mA3s5iIZHh4e3oKXbLWzslZUoMoTCnG0fJFrwcPDw1vzZl/u+2nlKYZZI8LFIYGHh4d3gJeUvtpQO5n6ZkEvZoiHh4d3Ey9JCsyi01kyIknOFqlbPDw8vAO8WZA6u980Tu2PIjw8PLy7eG1bQLtN74v9+SgP3oOHh4d3gJe/uj0MEsAscM+PHzw8PLx38k5s6LOk7azNq15XPDw8vAUvTyK0pf02UTtrwHr63YCHh4d3gNe2TLVDbkpubSMXHh4e3jned3m1zQFt4iBvMkjmgIeHh3eC126+7RTb5oB80isMHh4e3pq3KTW1LQibA2B4MODh4eEd4+WVo1kw3Ybms2QEHh4e3mfy2jasWXvBrMD2YCw8PDy8j+e172kXok2C4OHh4Z3j5S1WObLd6JMGgjYRjIeHh3eCN2tsmk2u/a98gW6o7+Hh4eFdj/IPXnAiFiPAPKEAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqElEQVR42u3aQW7jMBAEwPz/07vXBYLY3TOk4gVKJ0OQJRYPJNEzX1/x9eefK3/y+/Ov73z/1+u3Hbvw8PDwFkP/6XXJZ5I3JF9Mpib/Fx4eHt493k/DPfVM/oafYO148PDw8D6TtxlEclBOthk8PDy8/4W3H9zr+6/HgIeHh/cJvDxKyA/Kp2APZS14eHh4MS+vIn3O7yv1PTw8PLx1VX1W9GqjhLYAVowWDw8P7wJvE9G2H24X/Ty6fTNOPDw8vAu8/QG6LXfN2qraVgM8PDy8G7x9DDqLcZPfeXBc59N4eHh4a157Jzn45kPfH52LGAIPDw9vzZu1DmyG2G4G+RSvZgIPDw9vzZvh8yG2xbBkWt/sfnh4eHiHeHkAkS/ZsxaB9khdVPbw8PDwjvLajSH/16lJmTUu4OHh4T3Dy7eKZCmvz/WHogo8PDy8J3n50r+PD9o4eNOIgIeHh3eW124Js7Dg7LZRxBZ4eHh413h5QWtfoJpNR9v0gIeHh/cML490k8W9bZaaBbtvghI8PDy8C7w8MkhKU8mk5O/fRCRF6oyHh4e34G1K9e12MnumbUfAw8PDe4aXL+ttaSqPaGdH86LpCg8PD+8oLw9S2+HOSl+zgz4eHh7ek7x2Y8g/dmo7qdsO8PDw8K7x8oAgOfLmjQV5y9ewNQEPDw/vGm9TpJ8t320hLT/Wr/Y9PDw8vJJ3I7qdbTb5dSBrwcPDwyur6vk1ay9IYPnBPZk4PDw8vHu8dvHdlKbyoW++iIeHh/cM71RpanMInk1QtFHh4eHhXePllaPkMJ1HtPtdq85a8PDw8H6Jl7DbqDe5kzcr4OHh4X0abxOkttvDLGjGw8PDu81rY9ZZGWwfVbQhBR4eHt4NXvvJWUiRrNj5BF2p7+Hh4eG95/0FL1SSlwHR2TUAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 

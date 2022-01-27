@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>创建List或者Map的时候指定类型与不指定类型有什么区别 | 皇姑区第一亚索的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#9ACD32">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="https:&#x2F;&#x2F;bbs.csdn.net&#x2F;topics&#x2F;390949113 如：创建一个ListList list &#x3D; new ArrayList();List list &#x3D; new ArrayList();创建一个MapMap map &#x3D; new HashMap();Map&lt;String,String&gt; map &#x3D; HashMap&lt;String,String&gt;();指定类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="创建List或者Map的时候指定类型与不指定类型有什么区别">
+<meta property="og:url" content="https://yiyayamaya.github.io/2022/01/04/%E5%88%9B%E5%BB%BAList%E6%88%96%E8%80%85Map%E7%9A%84%E6%97%B6%E5%80%99%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E4%B8%8E%E4%B8%8D%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/index.html">
+<meta property="og:site_name" content="皇姑区第一亚索的博客">
+<meta property="og:description" content="https:&#x2F;&#x2F;bbs.csdn.net&#x2F;topics&#x2F;390949113 如：创建一个ListList list &#x3D; new ArrayList();List list &#x3D; new ArrayList();创建一个MapMap map &#x3D; new HashMap();Map&lt;String,String&gt; map &#x3D; HashMap&lt;String,String&gt;();指定类">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yiyayamaya.github.io/2022/01/04/%E5%88%9B%E5%BB%BAList%E6%88%96%E8%80%85Map%E7%9A%84%E6%97%B6%E5%80%99%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E4%B8%8E%E4%B8%8D%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/2022-01-04_11-29.png">
+<meta property="og:image" content="https://yiyayamaya.github.io/2022/01/04/%E5%88%9B%E5%BB%BAList%E6%88%96%E8%80%85Map%E7%9A%84%E6%97%B6%E5%80%99%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E4%B8%8E%E4%B8%8D%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/2022-01-04_14-46.png">
+<meta property="og:image" content="https://yiyayamaya.github.io/2022/01/04/%E5%88%9B%E5%BB%BAList%E6%88%96%E8%80%85Map%E7%9A%84%E6%97%B6%E5%80%99%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E4%B8%8E%E4%B8%8D%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/lowerBounds.png">
+<meta property="og:image" content="https://yiyayamaya.github.io/2022/01/04/%E5%88%9B%E5%BB%BAList%E6%88%96%E8%80%85Map%E7%9A%84%E6%97%B6%E5%80%99%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E4%B8%8E%E4%B8%8D%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/upperBounds.png">
+<meta property="article:published_time" content="2022-01-04T02:40:44.000Z">
+<meta property="article:modified_time" content="2022-01-04T07:07:39.367Z">
+<meta property="article:author" content="皇姑区第一亚索">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yiyayamaya.github.io/2022/01/04/%E5%88%9B%E5%BB%BAList%E6%88%96%E8%80%85Map%E7%9A%84%E6%97%B6%E5%80%99%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E4%B8%8E%E4%B8%8D%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/2022-01-04_11-29.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="皇姑区第一亚索的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">皇姑区第一亚索</h5>
+          <a href="mailto:wuxingjian98@gmail.com" title="wuxingjian98@gmail.com" class="mail">wuxingjian98@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                日志
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yiyayamaya" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">创建List或者Map的时候指定类型与不指定类型有什么区别</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">创建List或者Map的时候指定类型与不指定类型有什么区别</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-01-04T02:40:44.000Z" itemprop="datePublished" class="page-time">
+  2022-01-04
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="psot-创建List或者Map的时候指定类型与不指定类型有什么区别"
+  class="post-article article-type-psot fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">创建List或者Map的时候指定类型与不指定类型有什么区别</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-01-04 10:40:44" datetime="2022-01-04T02:40:44.000Z"  itemprop="datePublished">2022-01-04</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><a href="https://bbs.csdn.net/topics/390949113" target="_blank" rel="noopener">https://bbs.csdn.net/topics/390949113</a></p>
+<p>如：创建一个List<br>List list = new ArrayList();<br>List<String> list = new ArrayList<String>();<br>创建一个Map<br>Map map = new HashMap();<br>Map&lt;String,String&gt; map = HashMap&lt;String,String&gt;();<br>指定类型与不指定类型，这两种方式在底层有什么区别，或者在性能上有什么影响呢？</p>
+<p>指定了参数类型编译器在编译期间就会帮助你检查存入容器的对象是不是参数类型！不是就会报错！保证了类型安全！性能上没什么影响，因为泛型在运行期间会擦除！就是说用不用类型参数在运行期间编译后的运行代码是一样的！ Map map = new HashMap(); Map&lt;String,String&gt; map1 =new HashMap&lt;String,String&gt;(); System.out.println(map.getClass().equals(map1.getClass()));返回结果会true；说明他们运行的是同一份字节码！</p>
+<hr>
+<p>一个好的使用泛型的例子</p>
+<img src="/2022/01/04/%E5%88%9B%E5%BB%BAList%E6%88%96%E8%80%85Map%E7%9A%84%E6%97%B6%E5%80%99%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E4%B8%8E%E4%B8%8D%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/2022-01-04_11-29.png" class="" title="This is an example image">
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">Gen&lt;Integer&gt; intOb = <span class="keyword">new</span> Gen&lt;Integer&gt;(<span class="number">88</span>);</span><br><span class="line">intOb.showType();</span><br><span class="line"><span class="keyword">int</span> i = intOb.getOb();</span><br><span class="line">System.out.println(<span class="string">"value= "</span> + i);</span><br><span class="line">System.out.println(<span class="string">"----------------------------------"</span>);</span><br><span class="line"><span class="comment">// 定义泛型类Gen的一个String版本</span></span><br><span class="line">Gen&lt;String&gt; strOb = <span class="keyword">new</span> Gen&lt;String&gt;(<span class="string">"Hello Gen!"</span>);</span><br><span class="line">strOb.showType();</span><br><span class="line">String s = strOb.getOb();</span><br><span class="line">System.out.println(<span class="string">"value= "</span> + s);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//-------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">// 定义类Gen2的一个Integer版本</span></span><br><span class="line"></span><br><span class="line">Gen2 intOb_ = <span class="keyword">new</span> Gen2(<span class="keyword">new</span> Integer(<span class="number">88</span>));</span><br><span class="line">intOb_.showTyep();</span><br><span class="line"><span class="keyword">int</span> i_ = (Integer) intOb_.getOb();</span><br><span class="line">System.out.println(<span class="string">"value= "</span> + i_);</span><br><span class="line">System.out.println(<span class="string">"---------------------------------"</span>);</span><br><span class="line"><span class="comment">// 定义类Gen2的一个String版本</span></span><br><span class="line">Gen2 strOb_ = <span class="keyword">new</span> Gen2(<span class="string">"Hello Gen!"</span>);</span><br><span class="line">strOb_.showTyep();</span><br><span class="line">String s_ = (String) strOb_.getOb();</span><br><span class="line">System.out.println(<span class="string">"value= "</span> + s_);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>泛型带?的用法  上界通配符 <a href="https://www.liaoxuefeng.com/wiki/1252599548343744/1265105899616928" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/1252599548343744/1265105899616928</a></p>
+<p>使用类似&lt;? extends Number&gt;通配符作为方法参数时表示：</p>
+<p>方法内部可以调用获取Number引用的方法，例如：Number n = obj.getFirst();；</p>
+<p>方法内部无法调用传入Number引用的方法（null除外），例如：obj.setFirst(Number n);。</p>
+<p>即一句话总结：使用extends通配符表示可以读，不能写。</p>
+<p>使用类似<T extends Number>定义泛型类时表示：</p>
+<p>泛型类型限定为Number以及Number的子类。</p>
+<hr>
+<img src="/2022/01/04/%E5%88%9B%E5%BB%BAList%E6%88%96%E8%80%85Map%E7%9A%84%E6%97%B6%E5%80%99%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E4%B8%8E%E4%B8%8D%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/2022-01-04_14-46.png" class="" title="This is an example image">
+
+
+
+
+<p>所以我的尴尬症就犯了。实际上，编译器脑袋里认定的逻辑是这样的：</p>
+<p>苹果 IS-A 水果<br>装苹果的盘子 NOT-IS-A 装水果的盘子<br>所以，就算容器里装的东西之间有继承关系，但容器之间是没有继承关系的。<br>原因很明显，因为Plate<Apple>不是Plate<Fruit>的子类，因此，printFruit(Plate<Fruit>)不接受参数类型Plate<Apple>。</p>
+<p>为了让泛型用起来更舒服，Sun的大脑袋们就想出了&lt;? extends T&gt;和&lt;? super T&gt;的办法，来让“水果盘子”和“苹果盘子”之间发生关系。</p>
+<p>Plate&lt;？ extends Fruit&gt;</p>
+<p>翻译成人话就是：一个能放水果以及一切是水果派生类的盘子。再直白点就是：啥水果都能放的盘子。</p>
+<p>supper类似 下面图里表示用了&lt;?extends/super&gt;后能装的范围</p>
+<div style="width:50%;white-space: nowrap;"   ><img src="/2022/01/04/%E5%88%9B%E5%BB%BAList%E6%88%96%E8%80%85Map%E7%9A%84%E6%97%B6%E5%80%99%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E4%B8%8E%E4%B8%8D%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/lowerBounds.png" class="" title="This is an example image"><img src="/2022/01/04/%E5%88%9B%E5%BB%BAList%E6%88%96%E8%80%85Map%E7%9A%84%E6%97%B6%E5%80%99%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E4%B8%8E%E4%B8%8D%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/upperBounds.png" class="" title="This is an example image"></div>
+
+
+
+
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2022-01-04T07:07:39.367Z" itemprop="dateUpdated">2022-01-04 15:07:39</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://yiyayamaya.github.io">
+            <img src="/img/avatar1.jpg" alt="皇姑区第一亚索">
+            皇姑区第一亚索
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2022/01/04/%E5%88%9B%E5%BB%BAList%E6%88%96%E8%80%85Map%E7%9A%84%E6%97%B6%E5%80%99%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E4%B8%8E%E4%B8%8D%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/&title=《创建List或者Map的时候指定类型与不指定类型有什么区别》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2022/01/04/%E5%88%9B%E5%BB%BAList%E6%88%96%E8%80%85Map%E7%9A%84%E6%97%B6%E5%80%99%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E4%B8%8E%E4%B8%8D%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/&title=《创建List或者Map的时候指定类型与不指定类型有什么区别》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2022/01/04/%E5%88%9B%E5%BB%BAList%E6%88%96%E8%80%85Map%E7%9A%84%E6%97%B6%E5%80%99%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E4%B8%8E%E4%B8%8D%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《创建List或者Map的时候指定类型与不指定类型有什么区别》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2022/01/04/%E5%88%9B%E5%BB%BAList%E6%88%96%E8%80%85Map%E7%9A%84%E6%97%B6%E5%80%99%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E4%B8%8E%E4%B8%8D%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2022/01/04/%E5%88%9B%E5%BB%BAList%E6%88%96%E8%80%85Map%E7%9A%84%E6%97%B6%E5%80%99%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E4%B8%8E%E4%B8%8D%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/01/24/HTTP-request-%E5%92%8Cresponse/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">HTTP request 和response</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/12/31/%E5%8A%A8%E6%80%81%E6%B7%BB%E5%8A%A0dom%E5%86%8D%E7%BB%91%E5%AE%9A%E4%BA%8B%E4%BB%B6%E5%86%8D%E8%A7%A3%E7%BB%91%E4%BA%8B%E4%BB%B6/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">动态添加dom再绑定事件再解绑事件</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "lrdeEdMXEXCAsD9I3vd7hPnz-gzGzoHsz",
+            appKey: "w7U0ClAFDzQNEfIOgHoMaFwM",
+            avatar: "wavatar",
+			 emojiCDN: 'https://valinecdn.bili33.top/', 
+			 emojiMaps: {
+				"Tieba-New2": "Tieba-New/image_emoticon.png",
+				"Tieba-New3": "Tieba-New/image_emoticon10.png",
+				
+				"Tieba-New14": "Tieba-New/image_emoticon11.png",
+				
+				"Tieba-New25": "Tieba-New/image_emoticon12.png",
+				
+				"Tieba-New31": "Tieba-New/image_emoticon13.png",
+				"Tieba-New32": "Tieba-New/image_emoticon14.png",
+				"Tieba-New33": "Tieba-New/image_emoticon15.png",
+				"Tieba-New34": "Tieba-New/image_emoticon16.png",
+				"Tieba-New35": "Tieba-New/image_emoticon17.png",
+				"Tieba-New36": "Tieba-New/image_emoticon18.png",
+				"Tieba-New37": "Tieba-New/image_emoticon19.png",
+				"Tieba-New38": "Tieba-New/image_emoticon2.png",
+				"Tieba-New39": "Tieba-New/image_emoticon20.png",
+				"Tieba-New40": "Tieba-New/image_emoticon21.png",
+				"Tieba-New41": "Tieba-New/image_emoticon22.png",
+				"Tieba-New42": "Tieba-New/image_emoticon23.png",
+				"Tieba-New43": "Tieba-New/image_emoticon24.png",
+				"Tieba-New44": "Tieba-New/image_emoticon25.png",
+				"Tieba-New45": "Tieba-New/image_emoticon26.png",
+				"Tieba-New46": "Tieba-New/image_emoticon27.png",
+				"Tieba-New47": "Tieba-New/image_emoticon28.png",
+				"Tieba-New48": "Tieba-New/image_emoticon29.png",
+				"Tieba-New49": "Tieba-New/image_emoticon3.png",
+				"Tieba-New50": "Tieba-New/image_emoticon30.png",
+				"Tieba-New51": "Tieba-New/image_emoticon31.png",
+				"Tieba-New52": "Tieba-New/image_emoticon32.png",
+				"Tieba-New53": "Tieba-New/image_emoticon33.png",
+				
+				"Tieba-New60": "Tieba-New/image_emoticon4.png",
+				
+				"Tieba-New71": "Tieba-New/image_emoticon5.png",
+				"Tieba-New72": "Tieba-New/image_emoticon50.png",
+				"Tieba-New73": "Tieba-New/image_emoticon6.png",
+				"Tieba-New74": "Tieba-New/image_emoticon66.png",
+				"Tieba-New75": "Tieba-New/image_emoticon67.png",
+				"Tieba-New76": "Tieba-New/image_emoticon68.png",
+				"Tieba-New77": "Tieba-New/image_emoticon69.png",
+				"Tieba-New78": "Tieba-New/image_emoticon7.png",
+				"Tieba-New79": "Tieba-New/image_emoticon70.png",
+				"Tieba-New80": "Tieba-New/image_emoticon71.png",
+				"Tieba-New81": "Tieba-New/image_emoticon72.png",
+				"Tieba-New82": "Tieba-New/image_emoticon73.png",
+				"Tieba-New83": "Tieba-New/image_emoticon74.png",
+				"Tieba-New84": "Tieba-New/image_emoticon75.png",
+				"Tieba-New85": "Tieba-New/image_emoticon76.png",
+				
+				"Tieba-New89": "Tieba-New/image_emoticon8.png",
+				
+				"Tieba-New95": "Tieba-New/image_emoticon85.png",
+				"Tieba-New96": "Tieba-New/image_emoticon86.png",
+				"Tieba-New97": "Tieba-New/image_emoticon87.png",
+				"Tieba-New98": "Tieba-New/image_emoticon88.png",
+				"Tieba-New99": "Tieba-New/image_emoticon89.png",
+				"Tieba-New100": "Tieba-New/image_emoticon9.png",
+				"Tieba-New101": "Tieba-New/image_emoticon90.png",
+				"Tieba-New102": "Tieba-New/image_emoticon91.png",
+				"Tieba-New103": "Tieba-New/image_emoticon92.png",
+				"Tieba-New104": "Tieba-New/image_emoticon93.png",
+				"Tieba-New105": "Tieba-New/image_emoticon94.png",
+				"Tieba-New106": "Tieba-New/image_emoticon95.png",
+				"Tieba-New107": "Tieba-New/image_emoticon96.png",
+				"Tieba-New108": "Tieba-New/image_emoticon97.png",
+				"Tieba-New109": "Tieba-New/image_emoticon98.png"
+
+				
+				} ,
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>皇姑区第一亚索 &copy; 2021 - 2022</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2022/01/04/%E5%88%9B%E5%BB%BAList%E6%88%96%E8%80%85Map%E7%9A%84%E6%97%B6%E5%80%99%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E4%B8%8E%E4%B8%8D%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/&title=《创建List或者Map的时候指定类型与不指定类型有什么区别》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2022/01/04/%E5%88%9B%E5%BB%BAList%E6%88%96%E8%80%85Map%E7%9A%84%E6%97%B6%E5%80%99%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E4%B8%8E%E4%B8%8D%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/&title=《创建List或者Map的时候指定类型与不指定类型有什么区别》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2022/01/04/%E5%88%9B%E5%BB%BAList%E6%88%96%E8%80%85Map%E7%9A%84%E6%97%B6%E5%80%99%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E4%B8%8E%E4%B8%8D%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《创建List或者Map的时候指定类型与不指定类型有什么区别》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2022/01/04/%E5%88%9B%E5%BB%BAList%E6%88%96%E8%80%85Map%E7%9A%84%E6%97%B6%E5%80%99%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E4%B8%8E%E4%B8%8D%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2022/01/04/%E5%88%9B%E5%BB%BAList%E6%88%96%E8%80%85Map%E7%9A%84%E6%97%B6%E5%80%99%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E4%B8%8E%E4%B8%8D%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,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" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

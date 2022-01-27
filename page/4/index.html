@@ -150,6 +150,141 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-java-synchronized"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-07-13 14:36:29" datetime="2021-07-13T06:36:29.000Z"  itemprop="datePublished">2021-07-13</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/07/13/java-synchronized/">java synchronized</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+当一个线程访问同步代码块时，首先是需要得到锁才能执行  
+
+
+其实“锁”本身是个对象，synchronized这个关键字并不是“锁”。从语法上讲，Java中的每个对象都可以看做一把锁，在HotSpot JVM实现中，锁有个专门的名字：监视器（Monitor）。Monitor对象存在于每个Java对象的对象头中，这也是为什么Java中任意对象可以作为锁的原因，有关Monitor后续会详细介绍...
+    
+
+        <a href="/2021/07/13/java-synchronized/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-java-异常"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-07-12 13:54:22" datetime="2021-07-12T05:54:22.000Z"  itemprop="datePublished">2021-07-12</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/07/12/java-%E5%BC%82%E5%B8%B8/">java 异常</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+我怎么隐隐约约觉得写过异常相关的文章 但是找不到了。  
+
+
+
+
+
+Error是内存不足这种。
+
+Exception：分为未检查异常(RuntimeException)和已检查异常(非RuntimeException)
+
+checkedException ：受检查的异常，这种异常是强制我们catch或方法声明throws的异常。如果不处理，编译器会报错。计的目的是为了提醒开发者处理一些场景...
+    
+
+        <a href="/2021/07/12/java-%E5%BC%82%E5%B8%B8/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-mysql-索引什么时候更新"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-07-09 11:47:23" datetime="2021-07-09T03:47:23.000Z"  itemprop="datePublished">2021-07-09</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/07/09/mysql-%E7%B4%A2%E5%BC%95%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E6%9B%B4%E6%96%B0/">mysql 索引什么时候更新</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        https://stackoverflow.com/questions/17282041/when-does-mysql-update-the-indexes
+索引更新有两个方面。
+第一部分是在索引中插入/更新/删除条目。一旦记录更改，索引就会更新，并且此过程会阻止查询直到完成。这允许基于索引列上的条件更快地检索记录，这是索引最容易理解的目的。
+第二部分是更新索引的统计信息。这允许优化器确定...
+    
+
+        <a href="/2021/07/09/mysql-%E7%B4%A2%E5%BC%95%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E6%9B%B4%E6%96%B0/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-mysql-索引选择的原理—优化器"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -449,139 +584,12 @@
 
         </li>
     
-        <li class="post-list-item fade">
-            <article id="post-spring-mvc笔记"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-06-17 16:39:18" datetime="2021-06-17T08:39:18.000Z"  itemprop="datePublished">2021-06-17</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/06/17/spring-mvc%E7%AC%94%E8%AE%B0/">spring mvc笔记</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        5000 字的 Spring MVC 总结 - 动力节点在线的文章 - 知乎https://zhuanlan.zhihu.com/p/213805180
-1.@Requestbody自动解析JSON字符串封装到对象
-2.@ResponseBody这个注解会把对象自动转成json数据返回。不会再走视图。
-2021-06-19 09:34:15更新
-https://www.bilibili.co...
-    
-
-        <a href="/2021/06/17/spring-mvc%E7%AC%94%E8%AE%B0/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-记录一次hexo博客从windows被分到linux"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-05-18 20:45:49" datetime="2021-05-18T12:45:49.000Z"  itemprop="datePublished">2021-05-18</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/05/18/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1hexo%E5%8D%9A%E5%AE%A2%E4%BB%8Ewindows%E8%A2%AB%E5%88%86%E5%88%B0linux/">记录一次hexo博客从windows被分到linux</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        遇到的坑就是明明没变的很多文件从windows换到linux上去，全被git追踪到了变化，可是我明明没改啊。最后没办法全gitignore了，最后只把source文件git备份上去了。本质就是用u盘来回拷souce文件夹嘛。。如果后面主题修改的话再用u盘拷吧。。。
-操作流程是 想先发文的电脑 hexo d -g 然后看看git -am后push
-另一台电脑想同步了就 
-git fetch –...
-    
-
-        <a href="/2021/05/18/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1hexo%E5%8D%9A%E5%AE%A2%E4%BB%8Ewindows%E8%A2%AB%E5%88%86%E5%88%B0linux/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-一次笔试遇到的问题小总结"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-04-29 19:26:01" datetime="2021-04-29T11:26:01.000Z"  itemprop="datePublished">2021-04-29</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/04/29/%E4%B8%80%E6%AC%A1%E7%AC%94%E8%AF%95%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%B0%8F%E6%80%BB%E7%BB%93/">一次笔试遇到的问题小总结</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        123456789public static int test(int i) &#123;       try &#123;           i++;           return i - 1;       &#125; finally &#123;           return i + 2;       &#125;   &#125;
-
-上面的代码返回啥？答案是4.原因
-try...
-    
-
-        <a href="/2021/04/29/%E4%B8%80%E6%AC%A1%E7%AC%94%E8%AF%95%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%B0%8F%E6%80%BB%E7%BB%93/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
     </ul>
 
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/page/3/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">下一页</a>
+    <a class="extend prev" rel="prev" href="/page/3/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">下一页</a>
     </div>
 </nav>
 
@@ -609,7 +617,7 @@ try...
         </p>
     </div>
     <div class="bottom">
-        <p><span>皇姑区第一亚索 &copy; 2021</span>
+        <p><span>皇姑区第一亚索 &copy; 2021 - 2022</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
