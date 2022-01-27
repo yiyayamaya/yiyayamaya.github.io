@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://yiyayamaya.github.io/2022/01/24/HTTP-request-%E5%92%8Cresponse/</loc>
-    <lastmod>2022-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>http://www.example.com/foo.html</loc>
+    <lastmod>2018-06-04</lastmod>
   </url>
 </urlset>
