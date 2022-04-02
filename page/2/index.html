@@ -150,11 +150,175 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-mysql-多行变一行"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-12-15 21:14:50" datetime="2021-12-16T02:14:50.000Z"  itemprop="datePublished">2021-12-15</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/12/15/mysql-%E5%A4%9A%E8%A1%8C%E5%8F%98%E4%B8%80%E8%A1%8C/">mysql 多行变一行</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        写的不错SELECT name ,MAX(CASE type WHEN ‘数学’ THEN score ELSE 0 END ) math,MAX(CASE type WHEN ‘英语’ THEN score ELSE 0 END ) English ,MAX(CASE type WHEN ‘语文’ THEN score ELSE 0 END ) ChineseFROM stuGROUP B...
+    
+
+        <a href="/2021/12/15/mysql-%E5%A4%9A%E8%A1%8C%E5%8F%98%E4%B8%80%E8%A1%8C/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-开坑之WebSecurityConfigurerAdapter"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-12-15 02:28:48" datetime="2021-12-15T07:28:48.000Z"  itemprop="datePublished">2021-12-15</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/12/15/%E5%BC%80%E5%9D%91%E4%B9%8BWebSecurityConfigurerAdapter/">开坑之WebSecurityConfigurerAdapter</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        maven里依赖了    org.springframework.boot    spring-boot-starter-security
+就导致页面上要登陆 密码是随机生成的 在日志里有
+然后加一个public class SecurityConfiguration extends WebSecurityConfigurerAdapter {}的配置这玩意有什么用 不加行不行
+https:...
+    
+
+        <a href="/2021/12/15/%E5%BC%80%E5%9D%91%E4%B9%8BWebSecurityConfigurerAdapter/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-开坑之maven怎么排除parent里面的依赖"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-12-15 02:25:09" datetime="2021-12-15T07:25:09.000Z"  itemprop="datePublished">2021-12-15</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/12/15/%E5%BC%80%E5%9D%91%E4%B9%8Bmaven%E6%80%8E%E4%B9%88%E6%8E%92%E9%99%A4parent%E9%87%8C%E9%9D%A2%E7%9A%84%E4%BE%9D%E8%B5%96/">开坑之maven怎么排除parent里面的依赖</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        maven parent中的依赖不能用exclude排除 
+https://blog.csdn.net/qq_32596527/article/details/112969562试了 在我的项目里有问题 不知道和 pom import 有没有关系
+https://stackoverflow.com/questions/2681759/is-there-anyway-to-exclude-ar...
+    
+
+        <a href="/2021/12/15/%E5%BC%80%E5%9D%91%E4%B9%8Bmaven%E6%80%8E%E4%B9%88%E6%8E%92%E9%99%A4parent%E9%87%8C%E9%9D%A2%E7%9A%84%E4%BE%9D%E8%B5%96/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-same-origin-policy与跨域资源共享CORS"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-12-15 00:48:58" datetime="2021-12-15T05:48:58.000Z"  itemprop="datePublished">2021-12-15</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2021/12/15/same-origin-policy%E4%B8%8E%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%ABCORS/">same-origin policy与跨域资源共享CORS</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        浏览器同源政策及其规避方法http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html
+跨域资源共享 CORS 详解https://www.ruanyifeng.com/blog/2016/04/cors.html此篇文章貌似没给出太具体的解决
+springboot被请求的api 可以加@CrossOrigin解决 
+https...
+    
+
+        <a href="/2021/12/15/same-origin-policy%E4%B8%8E%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%ABCORS/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-mysql-求时间的绝对差-timediff-有坑"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2021-12-14 16:47:16" datetime="2021-12-14T08:47:16.000Z"  itemprop="datePublished">2021-12-14</time>
+        <time class="post-time" title="2021-12-14 03:47:16" datetime="2021-12-14T08:47:16.000Z"  itemprop="datePublished">2021-12-14</time>
 
         
 
@@ -197,7 +361,7 @@ SELECT timediff(‘2010-01-01 01:00:00’, ‘2010-01-02 01:00:00’);-24:00:00
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2021-11-30 10:17:34" datetime="2021-11-30T02:17:34.000Z"  itemprop="datePublished">2021-11-30</time>
+        <time class="post-time" title="2021-11-29 21:17:34" datetime="2021-11-30T02:17:34.000Z"  itemprop="datePublished">2021-11-29</time>
 
         
 
@@ -209,7 +373,7 @@ SELECT timediff(‘2010-01-01 01:00:00’, ‘2010-01-02 01:00:00’);-24:00:00
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/11/30/%E4%BB%A5%E5%89%8D%E7%9C%8B%E5%88%B0%E8%BF%87%E4%B8%80%E7%AF%87%E5%BE%88%E5%A5%BD%E7%9A%84%E5%A4%A7offset-limit%E4%BC%98%E5%8C%96%E7%9A%84%E6%96%87%E7%AB%A0-%E7%8E%B0%E5%9C%A8%E6%89%BE%E4%B8%8D%E5%88%B0%E4%BA%86/">以前看到过一篇很好的大offset limit优化的文章 现在找不到了</a>
+      <a class="post-title-link" href="/2021/11/29/%E4%BB%A5%E5%89%8D%E7%9C%8B%E5%88%B0%E8%BF%87%E4%B8%80%E7%AF%87%E5%BE%88%E5%A5%BD%E7%9A%84%E5%A4%A7offset-limit%E4%BC%98%E5%8C%96%E7%9A%84%E6%96%87%E7%AB%A0-%E7%8E%B0%E5%9C%A8%E6%89%BE%E4%B8%8D%E5%88%B0%E4%BA%86/">以前看到过一篇很好的大offset limit优化的文章 现在找不到了</a>
     </h3>
   
 
@@ -225,7 +389,7 @@ https://www.slideshare.net/slideshow/view?login=Eweaver&amp;preview=no&amp;slide
 https://stackoverflow.com/questions/4481388/...
     
 
-        <a href="/2021/11/30/%E4%BB%A5%E5%89%8D%E7%9C%8B%E5%88%B0%E8%BF%87%E4%B8%80%E7%AF%87%E5%BE%88%E5%A5%BD%E7%9A%84%E5%A4%A7offset-limit%E4%BC%98%E5%8C%96%E7%9A%84%E6%96%87%E7%AB%A0-%E7%8E%B0%E5%9C%A8%E6%89%BE%E4%B8%8D%E5%88%B0%E4%BA%86/" class="post-more waves-effect waves-button">
+        <a href="/2021/11/29/%E4%BB%A5%E5%89%8D%E7%9C%8B%E5%88%B0%E8%BF%87%E4%B8%80%E7%AF%87%E5%BE%88%E5%A5%BD%E7%9A%84%E5%A4%A7offset-limit%E4%BC%98%E5%8C%96%E7%9A%84%E6%96%87%E7%AB%A0-%E7%8E%B0%E5%9C%A8%E6%89%BE%E4%B8%8D%E5%88%B0%E4%BA%86/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -239,7 +403,7 @@ https://stackoverflow.com/questions/4481388/...
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2021-11-19 15:29:21" datetime="2021-11-19T07:29:21.000Z"  itemprop="datePublished">2021-11-19</time>
+        <time class="post-time" title="2021-11-19 02:29:21" datetime="2021-11-19T07:29:21.000Z"  itemprop="datePublished">2021-11-19</time>
 
         
 
@@ -283,7 +447,7 @@ List list = new ArrayList&lt;&gt;();多年来令我费解这个问题的不同�
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2021-11-18 10:02:04" datetime="2021-11-18T02:02:04.000Z"  itemprop="datePublished">2021-11-18</time>
+        <time class="post-time" title="2021-11-17 21:02:04" datetime="2021-11-18T02:02:04.000Z"  itemprop="datePublished">2021-11-17</time>
 
         
 
@@ -295,7 +459,7 @@ List list = new ArrayList&lt;&gt;();多年来令我费解这个问题的不同�
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/11/18/%E6%96%87%E6%A1%A3/">文档</a>
+      <a class="post-title-link" href="/2021/11/17/%E6%96%87%E6%A1%A3/">文档</a>
     </h3>
   
 
@@ -313,7 +477,7 @@ List list = new ArrayList&lt;&gt;();多年来令我费解这个问题的不同�
 二 第一天创建的所有任务的独一标志hashKeyreturn${第...
     
 
-        <a href="/2021/11/18/%E6%96%87%E6%A1%A3/" class="post-more waves-effect waves-button">
+        <a href="/2021/11/17/%E6%96%87%E6%A1%A3/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -327,7 +491,7 @@ List list = new ArrayList&lt;&gt;();多年来令我费解这个问题的不同�
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2021-11-17 16:21:06" datetime="2021-11-17T08:21:06.000Z"  itemprop="datePublished">2021-11-17</time>
+        <time class="post-time" title="2021-11-17 03:21:06" datetime="2021-11-17T08:21:06.000Z"  itemprop="datePublished">2021-11-17</time>
 
         
 
@@ -367,7 +531,7 @@ List list = new ArrayList&lt;&gt;();多年来令我费解这个问题的不同�
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2021-10-28 17:20:30" datetime="2021-10-28T09:20:30.000Z"  itemprop="datePublished">2021-10-28</time>
+        <time class="post-time" title="2021-10-28 05:20:30" datetime="2021-10-28T09:20:30.000Z"  itemprop="datePublished">2021-10-28</time>
 
         
 
@@ -394,175 +558,6 @@ List list = new ArrayList&lt;&gt;();多年来令我费解这个问题的不同�
     
 
         <a href="/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-mysql-分组结果的最大值记录"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-10-25 20:39:38" datetime="2021-10-25T12:39:38.000Z"  itemprop="datePublished">2021-10-25</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/10/25/mysql-%E5%88%86%E7%BB%84%E7%BB%93%E6%9E%9C%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC%E8%AE%B0%E5%BD%95/">mysql 分组结果的最大值记录</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        一个常见问题 这类问题有一个名字  greatest-n-per-group 可以在stackOverFlow上看到大量讨论
-分组中某栏最大好取 只要
-SELECT id, MAX(rev)FROM YourTableGROUP BY id
-若是要完整记录呢？有两种方法 一种inner join 一种left join inner似乎快一点？
-12345678--标准答案之inner joi...
-    
-
-        <a href="/2021/10/25/mysql-%E5%88%86%E7%BB%84%E7%BB%93%E6%9E%9C%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC%E8%AE%B0%E5%BD%95/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-mysql-not-in-GROUP-BY-clause-and-contains-nonaggregated-column"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-10-25 10:28:37" datetime="2021-10-25T02:28:37.000Z"  itemprop="datePublished">2021-10-25</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/10/25/mysql-not-in-GROUP-BY-clause-and-contains-nonaggregated-column/">mysql not in GROUP BY clause and contains nonaggregated column</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        这篇讲的很好https://www.twle.cn/t/654
-今天在做数据统计的时候遇到这个错误
-MySQL： 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column错误愿意大概是：SELECT 的字段列表没有包含在 GROUP BY 语句中
-很多年之前都用的...
-    
-
-        <a href="/2021/10/25/mysql-not-in-GROUP-BY-clause-and-contains-nonaggregated-column/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-mysql-存储过程"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-10-06 13:54:44" datetime="2021-10-06T05:54:44.000Z"  itemprop="datePublished">2021-10-06</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/10/06/mysql-%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/">mysql 存储过程</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        一次写的mysql造数据脚本 感觉写的不错
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192...
-    
-
-        <a href="/2021/10/06/mysql-%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-全局变量-局部变量的生命周期"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-09-18 11:35:38" datetime="2021-09-18T03:35:38.000Z"  itemprop="datePublished">2021-09-18</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/09/18/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F-%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">全局变量 局部变量的生命周期</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        先开个坑 起因是python中的一个例子
-下面的代码运行完后driver(浏览器窗口)不加driver.quit()也会自己退出，可能是因为局部变量被回收了
-1234567def create_driver():    driver=xxx   if __name__ == "__main__":    create_driver()
-
-改成这样的全局就好了。
-12345678driver=...
-    
-
-        <a href="/2021/09/18/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F-%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
