@@ -28,8 +28,8 @@
 <meta property="og:site_name" content="皇姑区第一亚索的博客">
 <meta property="og:description" content="本篇讨论都是迭代写法   二叉树的前序&#x3D;二叉树的dfs 比较符合人的思路 123456789101112131415161718192021class Solution &amp;#123;    public List&lt;Integer&gt; preorderTraversal(TreeNode root) &amp;#123;                Stack&lt;TreeNode&gt; s">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-06T07:05:18.000Z">
-<meta property="article:modified_time" content="2021-05-18T12:43:17.011Z">
+<meta property="article:published_time" content="2021-03-06T20:05:18.000Z">
+<meta property="article:modified_time" content="2022-04-08T01:57:05.889Z">
 <meta property="article:author" content="皇姑区第一亚索">
 <meta name="twitter:card" content="summary">
     
@@ -137,7 +137,7 @@
         <h1 class="title">前中后序</h1>
         <h5 class="subtitle">
             
-                <time datetime="2021-03-06T07:05:18.000Z" itemprop="datePublished" class="page-time">
+                <time datetime="2021-03-06T20:05:18.000Z" itemprop="datePublished" class="page-time">
   2021-03-06
 </time>
 
@@ -161,7 +161,7 @@
     <div class="post-card">
         <h1 class="post-card-title">前中后序</h1>
         <div class="post-meta">
-            <time class="post-time" title="2021-03-06 02:05:18" datetime="2021-03-06T07:05:18.000Z"  itemprop="datePublished">2021-03-06</time>
+            <time class="post-time" title="2021-03-06 15:05:18" datetime="2021-03-06T20:05:18.000Z"  itemprop="datePublished">2021-03-06</time>
 
             
 
@@ -182,6 +182,12 @@
 </br>
 
 <p>中序按照符合人的思路来比较不优雅，解题思路<br><a href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/jin-hu-shuang-bai-de-die-dai-zhong-xu-by-h4ri/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/jin-hu-shuang-bai-de-die-dai-zhong-xu-by-h4ri/</a></p>
+<p>这个思路有一个很好的视频讲解<br><a href="https://www.bilibili.com/video/BV15k4y1R7P3" target="_blank" rel="noopener">https://www.bilibili.com/video/BV15k4y1R7P3</a><br>1.每次控制权移交后进入while的新一次循环：我有左孩子吗<br>                                                  有就交控制权给左孩子 没有就自己进res<br>2.1里面自己进res了 我有右孩子吗<br>                               有就控制权给右孩子 没有就还控制权</p>
+<p>交控制权root=root.left/right 同时需要记录控制权变更stack.push(root.left/right);<br>还控制权root=stack.pop()</p>
+<p>我自己的实现 试了好久才写出来 感觉思路简单 实现并不容易</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;Integer&gt; <span class="title">inorderTraversal2</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//stack一开始是空的</span></span><br><span class="line">        Stack&lt;TreeNode&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="comment">//有左儿子 交控制权给左儿子 并断开左儿子 只有有左儿子的node可能会被交还控制权 需要push</span></span><br><span class="line">            <span class="keyword">if</span> (root.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                stack.push(root);</span><br><span class="line">                TreeNode tmp = root;</span><br><span class="line">                root = root.left;</span><br><span class="line">                tmp.left = <span class="keyword">null</span>;</span><br><span class="line">            &#125;<span class="comment">//没左</span></span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                res.add(root.val);</span><br><span class="line">                <span class="comment">//没左有右 断开右儿子 </span></span><br><span class="line">                <span class="keyword">if</span> (root.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    TreeNode tmp = root;</span><br><span class="line">                    root = root.right;</span><br><span class="line">                    <span class="comment">//这里断不断无所谓</span></span><br><span class="line">                    tmp.right = <span class="keyword">null</span>;</span><br><span class="line">                    <span class="comment">//没左没右</span></span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (stack.empty()) &#123;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    root = stack.pop();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
 <p>1.对于当前中序遍历到的某个节点，如果他左子树不空，就往左遍历，</p>
 <p>2.当作子树为空或遍历返回到当前节点时，访问当前这个节点（操作一下），然后将当前节点的左指针制空（防止循环遍历卡住）</p>
 <p>3.判断当前节点的右子树是否为空，不空就向右遍历，回到1，空就向上返回。</p>
@@ -202,7 +208,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2021-05-18T12:43:17.011Z" itemprop="dateUpdated">2021-05-18 08:43:17</time>
+    最后更新时间：<time datetime="2022-04-08T01:57:05.889Z" itemprop="dateUpdated">2022-04-07 21:57:05</time>
 </span><br>
 
 

@@ -6,7 +6,7 @@
   <link href="https://yiyayamaya.github.io/atom.xml" rel="self"/>
   
   <link href="https://yiyayamaya.github.io/"/>
-  <updated>2022-04-01T21:14:55.442Z</updated>
+  <updated>2022-04-23T20:04:59.116Z</updated>
   <id>https://yiyayamaya.github.io/</id>
   
   <author>
@@ -15,6 +15,68 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>570zyBook笔记</title>
+    <link href="https://yiyayamaya.github.io/2022/04/23/570zyBook%E7%AC%94%E8%AE%B0/"/>
+    <id>https://yiyayamaya.github.io/2022/04/23/570zyBook%E7%AC%94%E8%AE%B0/</id>
+    <published>2022-04-23T20:04:19.000Z</published>
+    <updated>2022-04-23T20:04:59.116Z</updated>
+    
+    <content type="html"><![CDATA[<p>2022年4月23日 第一章</p><p>Using the above approach, an executable can only run on a particular processor type (like an x86 processor); to run a program on multiple processor types, the programmer must have the compiler generate multiple executables. Some newer high-level languages like Java use an approach that allows the same executable to run on different processor types. The approach involves having the compiler generate an executable using machine instructions of a “virtual” processor; such an executable is sometimes called bytecode. Then, the real processor runs a program, sometimes called a virtual machine, that executes the instructions in the bytecode. Such an approach may yield slower program execution, but has the advantage of portable executables.</p><p>cache在cpu上</p><p>–</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;2022年4月23日 第一章&lt;/p&gt;
+&lt;p&gt;Using the above approach, an executable can only run on a particular processor type (like an x86 processor); to run</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>奇数偶数分类讨论</title>
+    <link href="https://yiyayamaya.github.io/2022/04/15/%E5%A5%87%E6%95%B0%E5%81%B6%E6%95%B0%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA/"/>
+    <id>https://yiyayamaya.github.io/2022/04/15/%E5%A5%87%E6%95%B0%E5%81%B6%E6%95%B0%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA/</id>
+    <published>2022-04-16T01:40:56.000Z</published>
+    <updated>2022-04-17T21:56:59.820Z</updated>
+    
+    <content type="html"><![CDATA[<p>判断字符串回文时<br>需要从中间向两头扩散判断是否都一样(当然也有别的方法)<br>我总是纠结奇数偶数分类讨论<br>可以用for(int i=0;i&lt;length/2;i++)<br> (i,length-i)<br>会涵盖奇数偶数两种情况 </p><p>但我还记得有一种更巧妙地方法 暂时想不到了<br>(size-1)/2 奇数是.5   </p><p>奇数 0 1 2 mid=1 mid±0.9=0.1和1.9 近似为0和2<br>偶数 0 1 2 3 mid=1.5  mid±0.9=0.6和2.4 近似为1和2 再往外扩散怎么算呢？<br>若是我写会想到这种 但是不好用 </p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;判断字符串回文时&lt;br&gt;需要从中间向两头扩散判断是否都一样(当然也有别的方法)&lt;br&gt;我总是纠结奇数偶数分类讨论&lt;br&gt;可以用for(int i=0;i&amp;lt;length/2;i++)&lt;br&gt; (i,length-i)&lt;br&gt;会涵盖奇数偶数两种情况 &lt;/p&gt;
+&lt;p&gt;但我还</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>112路径总和 一道不错的递归题</title>
+    <link href="https://yiyayamaya.github.io/2022/04/08/112%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C-%E4%B8%80%E9%81%93%E4%B8%8D%E9%94%99%E7%9A%84%E9%80%92%E5%BD%92%E9%A2%98/"/>
+    <id>https://yiyayamaya.github.io/2022/04/08/112%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C-%E4%B8%80%E9%81%93%E4%B8%8D%E9%94%99%E7%9A%84%E9%80%92%E5%BD%92%E9%A2%98/</id>
+    <published>2022-04-08T05:47:49.000Z</published>
+    <updated>2022-04-08T05:50:16.108Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//从当前节点开始能否找到一条和为sum的路线</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">digui</span><span class="params">(TreeNode node,<span class="keyword">int</span> cumulativeDistance,<span class="keyword">int</span> sum)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(node==<span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(node.left==<span class="keyword">null</span>&amp;&amp;node.right==<span class="keyword">null</span>)</span><br><span class="line">         &#123;</span><br><span class="line">             <span class="keyword">if</span>(cumulativeDistance+node.val==sum)</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">         <span class="keyword">return</span> digui(node.left,cumulativeDistance+node.val,sum)||digui(node.right,cumulativeDistance+node.val,sum);</span><br><span class="line"></span><br><span class="line">         </span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasPathSum</span><span class="params">(TreeNode root, <span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> digui(root,<span class="number">0</span>,sum);</span><br><span class="line">       </span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">     </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>hashMap treeMap linkedHashMap</title>
@@ -29,27 +91,6 @@
       
       
     <summary type="html">&lt;p&gt;HashMap、LinkedHashMap、TreeMap区别使用场景&lt;br&gt; HashMap中k的值没有顺序，常用来做统计。&lt;br&gt; LinkedHashMap吧。它内部有一个链表，保持Key插入的顺序。迭代的时候，也是按照插入顺序迭代&lt;br&gt; TreeMap的顺序是Ke</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>懈怠时应该想的</title>
-    <link href="https://yiyayamaya.github.io/2022/03/26/%E6%87%88%E6%80%A0%E6%97%B6%E5%BA%94%E8%AF%A5%E6%83%B3%E7%9A%84/"/>
-    <id>https://yiyayamaya.github.io/2022/03/26/%E6%87%88%E6%80%A0%E6%97%B6%E5%BA%94%E8%AF%A5%E6%83%B3%E7%9A%84/</id>
-    <published>2022-03-26T21:03:29.000Z</published>
-    <updated>2022-03-27T00:05:55.780Z</updated>
-    
-    <content type="html"><![CDATA[<p>群友<br>高考比自己低但是挣得比自己多的人<br>大学同学<br>马上奔3 最后的机会就是25之前</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;群友&lt;br&gt;高考比自己低但是挣得比自己多的人&lt;br&gt;大学同学&lt;br&gt;马上奔3 最后的机会就是25之前&lt;/p&gt;
-</summary>
       
     
     
@@ -385,47 +426,6 @@
     <summary type="html">&lt;p&gt;要统计的一天=第一天=atc_task_logs_20211117&lt;br&gt;第二天=atc_task_logs_20211118&lt;/p&gt;
 &lt;hr&gt;
 &lt;h4 id=&quot;一-第一天每个小类型创建数&quot;&gt;&lt;a href=&quot;#一-第一天每个小类型创建数&quot; class=&quot;headerlin</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>x86 x86_64 x64这几个说法到底怎么回事</title>
-    <link href="https://yiyayamaya.github.io/2021/11/17/x86-x86-64-x64%E8%BF%99%E5%87%A0%E4%B8%AA%E8%AF%B4%E6%B3%95%E5%88%B0%E5%BA%95%E6%80%8E%E4%B9%88%E5%9B%9E%E4%BA%8B/"/>
-    <id>https://yiyayamaya.github.io/2021/11/17/x86-x86-64-x64%E8%BF%99%E5%87%A0%E4%B8%AA%E8%AF%B4%E6%B3%95%E5%88%B0%E5%BA%95%E6%80%8E%E4%B9%88%E5%9B%9E%E4%BA%8B/</id>
-    <published>2021-11-17T08:21:06.000Z</published>
-    <updated>2021-11-17T09:35:34.553Z</updated>
-    
-    <content type="html"><![CDATA[<p>我们现在家用的全都是64位x86指令集  21世纪初家用的以前可能是32位x86指令集</p><p>32位x86指令集是英特尔发明的 本来从1980～2000年大家都用的好好的 后来发现32位不够了 想加到64位<br>这时候因特尔飘了  他做了一种不兼容32位x86的64位x86指令集 结果阴险的amd趁机做了一套兼容32位x86的64位x86指令集<br>甚至大言不惭的把这套命名为amd64<br>因特尔很不爽 但也没办法 给amd64起了个小名叫x86_64 来掩盖这个专利归amd所有的事</p><p>神发明了重骑女枪 并把它命名为7人口重骑女枪 本来大家都用的好好的 但是赛季末疯狂出花灯暴金币 游戏通常在9人口结束<br>这时候神想更进一步 他把7人口中的人马去掉 多出来的三个人口可以上三个骑士凑出4骑士 这也导致玩法和之前不兼容从而没有流行起来<br>阴险的窃贼手套趁机在神的7人口重骑女枪基础上挂2个秘术 前7个人口完全不变 甚至并大言不惭地把这个阵容命名为许氏重骑女枪<br>因为这个阵容和之前完全兼容 在没脑子的玩家里流传很广<br>神很不爽 但也没办法 但是神坚持叫这套阵容为9人口重骑女枪 来掩盖窃贼手套的贡献</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;我们现在家用的全都是64位x86指令集  21世纪初家用的以前可能是32位x86指令集&lt;/p&gt;
-&lt;p&gt;32位x86指令集是英特尔发明的 本来从1980～2000年大家都用的好好的 后来发现32位不够了 想加到64位&lt;br&gt;这时候因特尔飘了  他做了一种不兼容32位x86的6</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>springBoot 自动配置遇到的问题</title>
-    <link href="https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>https://yiyayamaya.github.io/2021/10/28/springBoot-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</id>
-    <published>2021-10-28T09:20:30.000Z</published>
-    <updated>2021-10-28T09:24:55.212Z</updated>
-    
-    <content type="html"><![CDATA[<p>1.配置数据源问题 application.yml可不可以什么都不写？<br>不配置数据源可能会报错 可能需要 @SpringBootApplication(exclude ={ DataSourceAutoConfiguration.class})<br>但是有时候不exclude也不报错？ 不懂为什么</p><p>2.用到shardingsphere时候，仅仅在maven中引用，没在任何地方调用就会报错(缺少shardingsphere的数据源配置)。<br>第一次遇见 是因为自动配置吗？</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.apache.shardingsphere&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;sharding-jdbc-spring-boot-starter&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;4.1.1&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;1.配置数据源问题 application.yml可不可以什么都不写？&lt;br&gt;不配置数据源可能会报错 可能需要 @SpringBootApplication(exclude ={ DataSourceAutoConfiguration.class})&lt;br&gt;但是有时候不ex</summary>
       
     
     

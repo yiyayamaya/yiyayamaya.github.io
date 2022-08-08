@@ -14,22 +14,22 @@
     
     
     
-    <title>cs 570 迷宫作业的思考 | 皇姑区第一亚索的博客</title>
+    <title>112路径总和 一道不错的递归题 | 皇姑区第一亚索的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#9ACD32">
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="迷宫作业要求https:&#x2F;&#x2F;drive.google.com&#x2F;file&#x2F;d&#x2F;1PX44v9dnboodE5qrMB0PsvmVGwTDOXjB&#x2F;view?usp&#x3D;sharing 从给定起点是否能够走到终点 如果这个点不是红色可走 不能(为什么需要这么标记？)如果界外 不能出口之终极出口 如果已经是终点 加入path 返回能如果递归能找到任何一个方向的一个 其他也有可能的方向是否被加入了？我认为不应">
+    <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435class Solution &amp;#123;    &#x2F;&#x2F;从当前节点开始能否找到一条和为sum的路线    public boolean digui(TreeNode node,int cumulativeDistance,int sum)    &amp;#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cs 570 迷宫作业的思考">
-<meta property="og:url" content="https://yiyayamaya.github.io/2022/03/26/cs-570-%E8%BF%B7%E5%AE%AB%E4%BD%9C%E4%B8%9A%E7%9A%84%E6%80%9D%E8%80%83/index.html">
+<meta property="og:title" content="112路径总和 一道不错的递归题">
+<meta property="og:url" content="https://yiyayamaya.github.io/2022/04/08/112%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C-%E4%B8%80%E9%81%93%E4%B8%8D%E9%94%99%E7%9A%84%E9%80%92%E5%BD%92%E9%A2%98/index.html">
 <meta property="og:site_name" content="皇姑区第一亚索的博客">
-<meta property="og:description" content="迷宫作业要求https:&#x2F;&#x2F;drive.google.com&#x2F;file&#x2F;d&#x2F;1PX44v9dnboodE5qrMB0PsvmVGwTDOXjB&#x2F;view?usp&#x3D;sharing 从给定起点是否能够走到终点 如果这个点不是红色可走 不能(为什么需要这么标记？)如果界外 不能出口之终极出口 如果已经是终点 加入path 返回能如果递归能找到任何一个方向的一个 其他也有可能的方向是否被加入了？我认为不应">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435class Solution &amp;#123;    &#x2F;&#x2F;从当前节点开始能否找到一条和为sum的路线    public boolean digui(TreeNode node,int cumulativeDistance,int sum)    &amp;#123;">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-26T19:12:38.000Z">
-<meta property="article:modified_time" content="2022-03-27T00:15:24.035Z">
+<meta property="article:published_time" content="2022-04-08T05:47:49.000Z">
+<meta property="article:modified_time" content="2022-04-08T05:50:16.108Z">
 <meta property="article:author" content="皇姑区第一亚索">
 <meta name="twitter:card" content="summary">
     
@@ -112,7 +112,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">cs 570 迷宫作业的思考</div>
+        <div class="flex-col header-title ellipsis">112路径总和 一道不错的递归题</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,11 +134,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">cs 570 迷宫作业的思考</h1>
+        <h1 class="title">112路径总和 一道不错的递归题</h1>
         <h5 class="subtitle">
             
-                <time datetime="2022-03-26T19:12:38.000Z" itemprop="datePublished" class="page-time">
-  2022-03-26
+                <time datetime="2022-04-08T05:47:49.000Z" itemprop="datePublished" class="page-time">
+  2022-04-08
 </time>
 
 
@@ -155,13 +155,13 @@
 <div class="container body-wrap">
     
 
-<article id="post-cs-570-迷宫作业的思考"
+<article id="post-112路径总和-一道不错的递归题"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">cs 570 迷宫作业的思考</h1>
+        <h1 class="post-card-title">112路径总和 一道不错的递归题</h1>
         <div class="post-meta">
-            <time class="post-time" title="2022-03-26 15:12:38" datetime="2022-03-26T19:12:38.000Z"  itemprop="datePublished">2022-03-26</time>
+            <time class="post-time" title="2022-04-08 01:47:49" datetime="2022-04-08T05:47:49.000Z"  itemprop="datePublished">2022-04-08</time>
 
             
 
@@ -174,18 +174,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>迷宫作业要求<br><a href="https://drive.google.com/file/d/1PX44v9dnboodE5qrMB0PsvmVGwTDOXjB/view?usp=sharing" target="_blank" rel="noopener">https://drive.google.com/file/d/1PX44v9dnboodE5qrMB0PsvmVGwTDOXjB/view?usp=sharing</a></p>
-<p>从给定起点是否能够走到终点</p>
-<p>如果这个点不是红色可走 不能(为什么需要这么标记？)<br>如果界外 不能<br>出口之终极出口 如果已经是终点 加入path 返回能<br>如果递归能找到任何一个方向的一个 其他也有可能的方向是否被加入了？我认为不应该被加入<br> 加入path 返回true</p>
-<p>{<br>有没有一种可能 好好走能走 因为选择了错误的路 堵死了本来可行的路<br>应该是没有 一个点可以往堵死可行的走 证明他可以走到可行 那可行的也不过是走到这个点<br>可行的可以走到更多点 因为过来了才走不到？<br>没可能  过来了的之影响了过来了的璐<br>}<br>如果递归都失败了 </p>
-<p>Java中的短路逻辑运算符</p>
-<p>如果逻辑表达式的求值在完成求值之前退出，则称为短路。发生短路是因为即使在表达式的完整计算之前结果就很清楚了，并且返回了结果。短路评估避免了不必要的工作并导致高效处理。</p>
-<p>在 AND 的情况下，表达式会被计算直到我们得到一个错误的结果，因为结果总是错误的，与其他条件无关。如果存在带有 &amp;&amp;(逻辑与) 的表达式，并且第一个操作数本身为假，则发生短路，不计算进一步的表达式，并返回假。</p>
-<p>短路走法一个走通了立马不试别的了vs不短路走法 一个走通了也要试试别的<br>只找一条路短路走法就好了<br>不短路走法会把一些路径变黑</p>
-<p>找所有路径 bfs dfs都可以<br><a href="https://blog.csdn.net/K346K346/article/details/51289478" target="_blank" rel="noopener">https://blog.csdn.net/K346K346/article/details/51289478</a></p>
-<p>二叉树的基本bfs dfs写法是几乎一摸一样的 只是queue和stack的区别</p>
-<p>while{<br>    pop/poll<br>    操作<br>    Left非空则进<br>    right非空则进<br>}</p>
-
+            <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//从当前节点开始能否找到一条和为sum的路线</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">digui</span><span class="params">(TreeNode node,<span class="keyword">int</span> cumulativeDistance,<span class="keyword">int</span> sum)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(node==<span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(node.left==<span class="keyword">null</span>&amp;&amp;node.right==<span class="keyword">null</span>)</span><br><span class="line">         &#123;</span><br><span class="line">             <span class="keyword">if</span>(cumulativeDistance+node.val==sum)</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">         <span class="keyword">return</span> digui(node.left,cumulativeDistance+node.val,sum)||digui(node.right,cumulativeDistance+node.val,sum);</span><br><span class="line"></span><br><span class="line">         </span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasPathSum</span><span class="params">(TreeNode root, <span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> digui(root,<span class="number">0</span>,sum);</span><br><span class="line">       </span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">     </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
 
         <blockquote class="post-copyright">
@@ -193,7 +182,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2022-03-27T00:15:24.035Z" itemprop="dateUpdated">2022-03-26 20:15:24</time>
+    最后更新时间：<time datetime="2022-04-08T05:50:16.108Z" itemprop="dateUpdated">2022-04-08 01:50:16</time>
 </span><br>
 
 
@@ -221,7 +210,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2022/03/26/cs-570-%E8%BF%B7%E5%AE%AB%E4%BD%9C%E4%B8%9A%E7%9A%84%E6%80%9D%E8%80%83/&title=《cs 570 迷宫作业的思考》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2022/04/08/112%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C-%E4%B8%80%E9%81%93%E4%B8%8D%E9%94%99%E7%9A%84%E9%80%92%E5%BD%92%E9%A2%98/&title=《112路径总和 一道不错的递归题》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -231,22 +220,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2022/03/26/cs-570-%E8%BF%B7%E5%AE%AB%E4%BD%9C%E4%B8%9A%E7%9A%84%E6%80%9D%E8%80%83/&title=《cs 570 迷宫作业的思考》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2022/04/08/112%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C-%E4%B8%80%E9%81%93%E4%B8%8D%E9%94%99%E7%9A%84%E9%80%92%E5%BD%92%E9%A2%98/&title=《112路径总和 一道不错的递归题》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2022/03/26/cs-570-%E8%BF%B7%E5%AE%AB%E4%BD%9C%E4%B8%9A%E7%9A%84%E6%80%9D%E8%80%83/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2022/04/08/112%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C-%E4%B8%80%E9%81%93%E4%B8%8D%E9%94%99%E7%9A%84%E9%80%92%E5%BD%92%E9%A2%98/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《cs 570 迷宫作业的思考》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2022/03/26/cs-570-%E8%BF%B7%E5%AE%AB%E4%BD%9C%E4%B8%9A%E7%9A%84%E6%80%9D%E8%80%83/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《112路径总和 一道不错的递归题》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2022/04/08/112%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C-%E4%B8%80%E9%81%93%E4%B8%8D%E9%94%99%E7%9A%84%E9%80%92%E5%BD%92%E9%A2%98/&via=https://yiyayamaya.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2022/03/26/cs-570-%E8%BF%B7%E5%AE%AB%E4%BD%9C%E4%B8%9A%E7%9A%84%E6%80%9D%E8%80%83/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2022/04/08/112%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C-%E4%B8%80%E9%81%93%E4%B8%8D%E9%94%99%E7%9A%84%E9%80%92%E5%BD%92%E9%A2%98/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -269,18 +258,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2022/04/01/hashMap-treeMap-linkedHashMap/" id="post-prev" class="post-nav-link">
+      <a href="/2022/04/15/%E5%A5%87%E6%95%B0%E5%81%B6%E6%95%B0%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">hashMap treeMap linkedHashMap</h4>
+        <h4 class="title">奇数偶数分类讨论</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2022/03/25/mysql-group-by-%E6%97%B6%E5%80%99%E7%A9%BA%E5%80%BC%E7%9A%84%E9%97%AE%E9%A2%98/" id="post-next" class="post-nav-link">
+      <a href="/2022/04/01/hashMap-treeMap-linkedHashMap/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">mysql group by 时候空值的问题</h4>
+        <h4 class="title">hashMap treeMap linkedHashMap</h4>
       </a>
     </div>
   
@@ -449,7 +438,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2022/03/26/cs-570-%E8%BF%B7%E5%AE%AB%E4%BD%9C%E4%B8%9A%E7%9A%84%E6%80%9D%E8%80%83/&title=《cs 570 迷宫作业的思考》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2022/04/08/112%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C-%E4%B8%80%E9%81%93%E4%B8%8D%E9%94%99%E7%9A%84%E9%80%92%E5%BD%92%E9%A2%98/&title=《112路径总和 一道不错的递归题》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -459,22 +448,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2022/03/26/cs-570-%E8%BF%B7%E5%AE%AB%E4%BD%9C%E4%B8%9A%E7%9A%84%E6%80%9D%E8%80%83/&title=《cs 570 迷宫作业的思考》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2022/04/08/112%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C-%E4%B8%80%E9%81%93%E4%B8%8D%E9%94%99%E7%9A%84%E9%80%92%E5%BD%92%E9%A2%98/&title=《112路径总和 一道不错的递归题》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2022/03/26/cs-570-%E8%BF%B7%E5%AE%AB%E4%BD%9C%E4%B8%9A%E7%9A%84%E6%80%9D%E8%80%83/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2022/04/08/112%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C-%E4%B8%80%E9%81%93%E4%B8%8D%E9%94%99%E7%9A%84%E9%80%92%E5%BD%92%E9%A2%98/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《cs 570 迷宫作业的思考》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2022/03/26/cs-570-%E8%BF%B7%E5%AE%AB%E4%BD%9C%E4%B8%9A%E7%9A%84%E6%80%9D%E8%80%83/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《112路径总和 一道不错的递归题》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2022/04/08/112%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C-%E4%B8%80%E9%81%93%E4%B8%8D%E9%94%99%E7%9A%84%E9%80%92%E5%BD%92%E9%A2%98/&via=https://yiyayamaya.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2022/03/26/cs-570-%E8%BF%B7%E5%AE%AB%E4%BD%9C%E4%B8%9A%E7%9A%84%E6%80%9D%E8%80%83/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2022/04/08/112%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C-%E4%B8%80%E9%81%93%E4%B8%8D%E9%94%99%E7%9A%84%E9%80%92%E5%BD%92%E9%A2%98/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -485,7 +474,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAD6klEQVR42u3aQY7bQAwEQP//0w6QU4JEcjc5MhKgdFrY2vGofGiTw9crvt4/r827f97zvriS9X995WqF+12tLhw4cODAETzq/ebut3t1T/IY+ToJa77C5RPhwIEDB45DHPfxdr+VPFDvmRKg2W7zCMeBAwcOHN/kSMqnTXyefWAcOHDgwPE/cmzKuU13rm1o4sCBAweO73MkzcEcq20CnjpwSpqbx3qlOHDgwIFjklZ1Ofdv/v3gfAcOHDhw4IgjdjZGkDcNk3dnIxezCwcOHDhw7Dnut9U2AU+FX1tAJiMRyafgwIEDB46zHLPDm/ax7wNyU561EJcoOHDgwIFjwZGXZ+0mNsc/9/e3IwsFEA4cOHDgWHPkowltC28WgTl0Ht75F4MDBw4cOE5xzMqzpBk3C/LZZ+WHT1FI48CBAweOEUcyZJC36s4OJczalHlT8tVmOA4cOHDg6M73h+Haxm3+SEnEboYeosYiDhw4cOAYcbTh1L6SNxnb0i6J/HY1HDhw4MCx58jbcLOBhlOU+T0zVhw4cODAcYrj+wR5QbUZpBgOSeDAgQMHjjXHJiCfHkGYNf6SNmK0Txw4cODAseDIHy+pCFum2Yhbe1RWTw7iwIEDB45DHK/RNfzgMhSTT293e2A5HDhw4MBRHt7sh+HaIYb2uGi2/9/exYEDBw4cD3DkpdE+XNvHa4/E6i8DBw4cOHCsOfYDB23R1VLmB0WbgzEcOHDgwHGWIxoaK2Py7Mqz0D2wHxw4cODAUe5nVpjl5damYZevk5R8UUjjwIEDB441x31Js2kXPjHokBR1RXmGAwcOHDge4MhDtG3btY259r/2NWtUwuHAgQMHjhFHWyCdAkpCfUYwPMTCgQMHDhxf4XjuATZNw02h+KFXigMHDhw4FhyboYE80pL729bk7NAr+iwcOHDgwLHmaIcG8jBuA7VdbRPYOHDgwIHjCY482NqQmzXyhkVXOTx3+Vw4cODAgWPN0R7b7IulJCzb11el2uYUCwcOHDhwlLVdEUjl8VIbjW0zsYW4LOFw4MCBA8eIow3ddlv5mu2h177kw4EDBw4cZznaJTYja21gtzGf16wf7sSBAwcOHIs73+W1by/mrcO2tGu/mL/8Lw4cOHDgWHPMGnybQG3LsFmjcP+DAAcOHDhwbDiScN3EZxu0+SFT27iMuHHgwIEDxyGOWXtucwS1j/lZ2/HD/Thw4MCB44scebHUNvj2D9/+LPgw0IADBw4cOL7IkZdV7ebacq5tF0a4OHDgwIHjEEfeepttd3bn7Fhr84MABw4cOHDsOTattPuF8iGDJHpn7cV9SYkDBw4cOGKOH2JLAZPqIG8mAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAAE+CAAAAAAxUyPsAAAFKklEQVR42u3dUW7bQAwE0Nz/0u0BArszHDkt0KevIlFl7ZMBcYcE8vUVH7++He/PzK/z/Zrvf55c5/093NY1Hfjw4cOHD9+8pGSRCe6r8xO4dkXJ+bkJPnz48OHDt/DlC0g+vr1acuvJ+S3K+zOjsgwfPnz48OH7MN/7G803/PmS3t9hAn27K3z48OHDh+/f4VuA8uAgjxtuxG3wgQ8fPnz48D3Fd3vBL23ydmN/ix6Sr8UP9Trw4cOHDx++cgrr//n3wwc+fPjw4cMXvJ5v2+w2Ls+LibbYykulowY+fPjw4cN30SiC8nyLnkcP01Y8GI/bI4Y/fBY+fPjw4cMXf9ZTr/CkXFjC/RZibx5En4IPHz58+PANfO3Q2D5kljehF7hb2BFdEx8+fPjw4Sv58uW1G+xkkctwWBtPtPeZfzo+fPjw4cN348uj83zYa2muP9V6b8P6Y/MAHz58+PDhC/ja0bEbYhsftEu9FUYPPGZ8+PDhw4fvVCHcYvd8YfsbP6dZ4o/jKBs+fPjw4cMX8+Xb9facpRRoQW+4t7b6yykDfPjw4cOHL+bbB79uwX0eKySt6xvl0pLHhw8fPnz4Tun0Y394qY3v8yg/obkFE/ldHRMXfPjw4cOH71va3C7sWfQ8gMjLixwiCQte3hs+fPjw4cN3mbw6otzOv9HnIXsbMdyugA8fPnz48H2Cr33x7xFDGz3cHmfbLM9/iw8fPnz48OW/fTYKzwuRvOn+VAs8+dLkjwcfPnz48OHL+ZJw/Na0zgP3PUBfIo+lFYEPHz58+PDd+NoF3IKG5MylxMlLk9sDK6YM8OHDhw8fvoAvP5JbaRe23MkS8bdFDD58+PDhw7fztQVBW9C0fYNbAyCPKpay6av9D/jw4cOHD188mJXc+q2xXcfic1v9VuIUXxd8+PDhw4cv5mtf+fnrfGlRL23ypVWfPx58+PDhw4ev5btF5MkGPie7hfVJWPBAEPD+bvHhw4cPH76SL7+hW1jfNtrzLX0bUuS/vX0J8OHDhw8fvqf4bmNqbdBwix7ykqht0rflET58+PDhw5fwJU3oJaxfGuG3Iikvs25FDz58+PDhw/cUX9sUv5UmedM6DzLa9nb7ML6eqqfw4cOHDx++eEn7rbc/acfI2nKkbdK/HFDDhw8fPnz4Br52m70EAW150UbtSXw/tdvx4cOHDx++E18bH7Qb7zxEWDb5+d0uLX98+PDhw4fv03zJMvIQ4dOJd16sLAUWPnz48OHDd+Nrt9NPRd4LbhthLM34vCzDhw8fPnz4Fr5nN/wtfRtkLK3u5euCDx8+fPjwtXxte3gvHdoRtHys7fYlaAMRfPjw4cOHb+e7Bd+3KDwJEfZNfltC3daLDx8+fPjwLXy3gPtGkEf2Swt8H0eLIgN8+PDhw4fv9B5PlrFE7fnoWx4T7I//VrThw4cPHz58N772om1xkGza2/GyBTcvXPDhw4cPH77P8bWN6qSIWUqZdshsoVnaCfjw4cOHD9/O91SjOn8webaRRANLCZWvt+7w48OHDx8+fOWRL3sfIFsaAzniUw0JfPjw4cOHr+XLR8qK7fSw1d8Ll1tIcXvY+PDhw4cP342vfZHny26v2RZPSyv9duDDhw8fPnw/yZfH8bfCoi1N3m/s2yG55Ar48OHDhw/f3+J7ttzJC5Rb3HAbC/hD0I8PHz58+PCd+NqBs3ZDnkcJtzZA/gCWEm3qdeDDhw8fPnyneLqN49vW+y2w2B95WwDhw4cPHz58Jd9vIYuIV2LAjGkAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
