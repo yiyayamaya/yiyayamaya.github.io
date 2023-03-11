@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>mysql 多行变一行 | 皇姑区第一亚索的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#9ACD32">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="写的不错SELECT name ,MAX(CASE type WHEN ‘数学’ THEN score ELSE 0 END ) math,MAX(CASE type WHEN ‘英语’ THEN score ELSE 0 END ) English ,MAX(CASE type WHEN ‘语文’ THEN score ELSE 0 END ) ChineseFROM stuGROUP BY n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql 多行变一行">
+<meta property="og:url" content="https://yiyayamaya.github.io/2021/12/16/mysql-%E5%A4%9A%E8%A1%8C%E5%8F%98%E4%B8%80%E8%A1%8C/index.html">
+<meta property="og:site_name" content="皇姑区第一亚索的博客">
+<meta property="og:description" content="写的不错SELECT name ,MAX(CASE type WHEN ‘数学’ THEN score ELSE 0 END ) math,MAX(CASE type WHEN ‘英语’ THEN score ELSE 0 END ) English ,MAX(CASE type WHEN ‘语文’ THEN score ELSE 0 END ) ChineseFROM stuGROUP BY n">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yiyayamaya.github.io/2021/12/16/mysql-%E5%A4%9A%E8%A1%8C%E5%8F%98%E4%B8%80%E8%A1%8C/2022-01-14_11-06.png">
+<meta property="article:published_time" content="2021-12-16T15:14:50.000Z">
+<meta property="article:modified_time" content="2022-01-14T03:09:54.000Z">
+<meta property="article:author" content="皇姑区第一亚索">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yiyayamaya.github.io/2021/12/16/mysql-%E5%A4%9A%E8%A1%8C%E5%8F%98%E4%B8%80%E8%A1%8C/2022-01-14_11-06.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="皇姑区第一亚索的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar1.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">皇姑区第一亚索</h5>
+          <a href="mailto:wuxingjian98@gmail.com" title="wuxingjian98@gmail.com" class="mail">wuxingjian98@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                日志
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yiyayamaya" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">mysql 多行变一行</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">mysql 多行变一行</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-12-16T15:14:50.000Z" itemprop="datePublished" class="page-time">
+  2021-12-16
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-mysql-多行变一行"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">mysql 多行变一行</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-12-16 10:14:50" datetime="2021-12-16T15:14:50.000Z"  itemprop="datePublished">2021-12-16</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>写的不错<br>SELECT name ,<br>MAX(CASE type WHEN ‘数学’ THEN score ELSE 0 END ) math,<br>MAX(CASE type WHEN ‘英语’ THEN score ELSE 0 END ) English ,<br>MAX(CASE type WHEN ‘语文’ THEN score ELSE 0 END ) Chinese<br>FROM stu<br>GROUP BY name<br><a href="https://blog.csdn.net/rainyspring4540/article/details/50231435" target="_blank" rel="noopener">https://blog.csdn.net/rainyspring4540/article/details/50231435</a></p>
+<p>这个case when的写法一步一步演变</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">version</span>,<span class="keyword">group_concat</span>(<span class="keyword">type</span>,<span class="string">':'</span>,score) step0,</span><br><span class="line">               <span class="keyword">group_concat</span>(<span class="keyword">type</span>,<span class="string">':'</span>,<span class="keyword">CASE</span> <span class="keyword">type</span> <span class="keyword">WHEN</span>  <span class="string">'0'</span>  <span class="keyword">THEN</span> score <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) step1, </span><br><span class="line">                <span class="keyword">group_concat</span>(<span class="keyword">CASE</span> <span class="keyword">type</span> <span class="keyword">WHEN</span>  <span class="string">'0'</span>  <span class="keyword">THEN</span> score <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) step2,        </span><br><span class="line">                <span class="keyword">MAX</span>(<span class="keyword">CASE</span> <span class="keyword">type</span> <span class="keyword">WHEN</span> <span class="string">'0'</span> <span class="keyword">THEN</span> score <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) step3</span><br><span class="line"></span><br><span class="line">        <span class="keyword">FROM</span> (<span class="keyword">select</span> client_file_version <span class="keyword">version</span>, machine_type <span class="keyword">type</span>, <span class="keyword">count</span>(*) score</span><br><span class="line">              <span class="keyword">from</span> atc_machine</span><br><span class="line">              <span class="keyword">group</span> <span class="keyword">by</span> client_file_version, machine_type) table_a</span><br><span class="line">        <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">version</span>;</span><br></pre></td></tr></table></figure>
+<p>结果如下</p>
+<img src="/2021/12/16/mysql-%E5%A4%9A%E8%A1%8C%E5%8F%98%E4%B8%80%E8%A1%8C/2022-01-14_11-06.png" class="" title="This is an example image">
+
+<p>如果想统计1和2的可以这么写<br>SUM(CASE WHEN type in(‘1’,’2’) THEN score ELSE 0 END) yier,</p>
+<p>这篇没咋看<br><a href="https://www.cnblogs.com/weix-l/p/7521278.html" target="_blank" rel="noopener">https://www.cnblogs.com/weix-l/p/7521278.html</a></p>
+<p>乱入讲join性能的<br>因为之前写了一个复杂的(机器类型:总数) left join (机器类型:具有心跳机器数) left join (机器类型:开启机器数) 变成了 (机器类型:总数:具有心跳机器数:开启机器数)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">select</span> a.machineType, a.totalCount, b.machineWithLivingHeartbeatCount, c.machineStatusOnCount</span><br><span class="line">        <span class="keyword">from</span> (<span class="keyword">select</span> machine_type machineType, <span class="keyword">count</span>(*) totalCount <span class="keyword">from</span> atc_machine <span class="keyword">group</span> <span class="keyword">by</span> machine_type) a</span><br><span class="line">                 <span class="keyword">left</span> <span class="keyword">join</span></span><br><span class="line">             (<span class="keyword">select</span> machine_type, <span class="keyword">count</span>(*) machineWithLivingHeartbeatCount</span><br><span class="line">              <span class="keyword">from</span> atc_machine</span><br><span class="line">              <span class="keyword">where</span> <span class="keyword">DATE_ADD</span>(last_heartbeat, <span class="built_in">INTERVAL</span> <span class="comment">#&#123;interval&#125; MINUTE) &gt; NOW()</span></span><br><span class="line">              <span class="keyword">group</span> <span class="keyword">by</span> machine_type) b</span><br><span class="line">             <span class="keyword">on</span> a.machineType = b.machine_type</span><br><span class="line">                 <span class="keyword">left</span> <span class="keyword">join</span></span><br><span class="line">             (<span class="keyword">select</span> machine_type, <span class="keyword">count</span>(*) machineStatusOnCount</span><br><span class="line">              <span class="keyword">from</span> atc_machine</span><br><span class="line">              <span class="keyword">where</span> <span class="keyword">status</span> = <span class="number">1</span></span><br><span class="line">              <span class="keyword">group</span> <span class="keyword">by</span> machine_type) c</span><br><span class="line">             <span class="keyword">on</span> a.machineType = c.machine_type;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://database.51cto.com/art/202011/631613.htm" target="_blank" rel="noopener">https://database.51cto.com/art/202011/631613.htm</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2022-01-14T03:09:54.000Z" itemprop="dateUpdated">2022-01-13 22:09:54</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://yiyayamaya.github.io">
+            <img src="/img/avatar1.jpg" alt="皇姑区第一亚索">
+            皇姑区第一亚索
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/12/16/mysql-%E5%A4%9A%E8%A1%8C%E5%8F%98%E4%B8%80%E8%A1%8C/&title=《mysql 多行变一行》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/12/16/mysql-%E5%A4%9A%E8%A1%8C%E5%8F%98%E4%B8%80%E8%A1%8C/&title=《mysql 多行变一行》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/12/16/mysql-%E5%A4%9A%E8%A1%8C%E5%8F%98%E4%B8%80%E8%A1%8C/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《mysql 多行变一行》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/12/16/mysql-%E5%A4%9A%E8%A1%8C%E5%8F%98%E4%B8%80%E8%A1%8C/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/12/16/mysql-%E5%A4%9A%E8%A1%8C%E5%8F%98%E4%B8%80%E8%A1%8C/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/12/16/Ajax%E4%BC%9A%E8%87%AA%E5%8A%A8%E5%B0%86%E8%BF%94%E5%9B%9E%E7%9A%84%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7%E9%A6%96%E5%AD%97%E6%AF%8D%E8%BD%AC%E5%8C%96%E4%B8%BA%E5%B0%8F%E5%86%99/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Ajax会自动将返回的对象属性首字母转化为小写</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/12/15/%E5%BC%80%E5%9D%91%E4%B9%8BWebSecurityConfigurerAdapter/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">开坑之WebSecurityConfigurerAdapter</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "lrdeEdMXEXCAsD9I3vd7hPnz-gzGzoHsz",
+            appKey: "w7U0ClAFDzQNEfIOgHoMaFwM",
+            avatar: "wavatar",
+			 emojiCDN: 'https://valinecdn.bili33.top/', 
+			 emojiMaps: {
+				"Tieba-New2": "Tieba-New/image_emoticon.png",
+				"Tieba-New3": "Tieba-New/image_emoticon10.png",
+				
+				"Tieba-New14": "Tieba-New/image_emoticon11.png",
+				
+				"Tieba-New25": "Tieba-New/image_emoticon12.png",
+				
+				"Tieba-New31": "Tieba-New/image_emoticon13.png",
+				"Tieba-New32": "Tieba-New/image_emoticon14.png",
+				"Tieba-New33": "Tieba-New/image_emoticon15.png",
+				"Tieba-New34": "Tieba-New/image_emoticon16.png",
+				"Tieba-New35": "Tieba-New/image_emoticon17.png",
+				"Tieba-New36": "Tieba-New/image_emoticon18.png",
+				"Tieba-New37": "Tieba-New/image_emoticon19.png",
+				"Tieba-New38": "Tieba-New/image_emoticon2.png",
+				"Tieba-New39": "Tieba-New/image_emoticon20.png",
+				"Tieba-New40": "Tieba-New/image_emoticon21.png",
+				"Tieba-New41": "Tieba-New/image_emoticon22.png",
+				"Tieba-New42": "Tieba-New/image_emoticon23.png",
+				"Tieba-New43": "Tieba-New/image_emoticon24.png",
+				"Tieba-New44": "Tieba-New/image_emoticon25.png",
+				"Tieba-New45": "Tieba-New/image_emoticon26.png",
+				"Tieba-New46": "Tieba-New/image_emoticon27.png",
+				"Tieba-New47": "Tieba-New/image_emoticon28.png",
+				"Tieba-New48": "Tieba-New/image_emoticon29.png",
+				"Tieba-New49": "Tieba-New/image_emoticon3.png",
+				"Tieba-New50": "Tieba-New/image_emoticon30.png",
+				"Tieba-New51": "Tieba-New/image_emoticon31.png",
+				"Tieba-New52": "Tieba-New/image_emoticon32.png",
+				"Tieba-New53": "Tieba-New/image_emoticon33.png",
+				
+				"Tieba-New60": "Tieba-New/image_emoticon4.png",
+				
+				"Tieba-New71": "Tieba-New/image_emoticon5.png",
+				"Tieba-New72": "Tieba-New/image_emoticon50.png",
+				"Tieba-New73": "Tieba-New/image_emoticon6.png",
+				"Tieba-New74": "Tieba-New/image_emoticon66.png",
+				"Tieba-New75": "Tieba-New/image_emoticon67.png",
+				"Tieba-New76": "Tieba-New/image_emoticon68.png",
+				"Tieba-New77": "Tieba-New/image_emoticon69.png",
+				"Tieba-New78": "Tieba-New/image_emoticon7.png",
+				"Tieba-New79": "Tieba-New/image_emoticon70.png",
+				"Tieba-New80": "Tieba-New/image_emoticon71.png",
+				"Tieba-New81": "Tieba-New/image_emoticon72.png",
+				"Tieba-New82": "Tieba-New/image_emoticon73.png",
+				"Tieba-New83": "Tieba-New/image_emoticon74.png",
+				"Tieba-New84": "Tieba-New/image_emoticon75.png",
+				"Tieba-New85": "Tieba-New/image_emoticon76.png",
+				
+				"Tieba-New89": "Tieba-New/image_emoticon8.png",
+				
+				"Tieba-New95": "Tieba-New/image_emoticon85.png",
+				"Tieba-New96": "Tieba-New/image_emoticon86.png",
+				"Tieba-New97": "Tieba-New/image_emoticon87.png",
+				"Tieba-New98": "Tieba-New/image_emoticon88.png",
+				"Tieba-New99": "Tieba-New/image_emoticon89.png",
+				"Tieba-New100": "Tieba-New/image_emoticon9.png",
+				"Tieba-New101": "Tieba-New/image_emoticon90.png",
+				"Tieba-New102": "Tieba-New/image_emoticon91.png",
+				"Tieba-New103": "Tieba-New/image_emoticon92.png",
+				"Tieba-New104": "Tieba-New/image_emoticon93.png",
+				"Tieba-New105": "Tieba-New/image_emoticon94.png",
+				"Tieba-New106": "Tieba-New/image_emoticon95.png",
+				"Tieba-New107": "Tieba-New/image_emoticon96.png",
+				"Tieba-New108": "Tieba-New/image_emoticon97.png",
+				"Tieba-New109": "Tieba-New/image_emoticon98.png"
+
+				
+				} ,
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>皇姑区第一亚索 &copy; 2021 - 2023</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yiyayamaya.github.io/2021/12/16/mysql-%E5%A4%9A%E8%A1%8C%E5%8F%98%E4%B8%80%E8%A1%8C/&title=《mysql 多行变一行》 — 皇姑区第一亚索的博客&pic=https://yiyayamaya.github.io/img/avatar1.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yiyayamaya.github.io/2021/12/16/mysql-%E5%A4%9A%E8%A1%8C%E5%8F%98%E4%B8%80%E8%A1%8C/&title=《mysql 多行变一行》 — 皇姑区第一亚索的博客&source=什么都写" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yiyayamaya.github.io/2021/12/16/mysql-%E5%A4%9A%E8%A1%8C%E5%8F%98%E4%B8%80%E8%A1%8C/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《mysql 多行变一行》 — 皇姑区第一亚索的博客&url=https://yiyayamaya.github.io/2021/12/16/mysql-%E5%A4%9A%E8%A1%8C%E5%8F%98%E4%B8%80%E8%A1%8C/&via=https://yiyayamaya.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yiyayamaya.github.io/2021/12/16/mysql-%E5%A4%9A%E8%A1%8C%E5%8F%98%E4%B8%80%E8%A1%8C/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADMklEQVR42u3ayW4bMRAFQP//T0+A3IzEk/eao0CkiidBC4dFH9q9fH3F6/q9vh5a1w8ree6f33/2bNjY2Ng7sq/bdf+w9rcJ736f5HV0rdjY2NjHsZOjtCEk36H97cpJsLGxsT+ZnRw3D433aUYbSrGxsbGxc/Z9uSf/NPl+fhHY2NjY2PnWeTrRHmtWnHp5LQ0bGxv77dlto/edX7+wv42NjY39luxrYc1GatqAlBe5ipNjY2NjH8Ru2wDt4E77q+Q6Vr457H5gY2NjvzH7voj/1Dv3ZZ08wbj/YxQNaWxsbOzj2LO4147jPDtkuVRawsbGxj6InV/KSou3TR7ypKVNn6KrwcbGxt6K/YrSfx4I86C4Pvrz7VfY2NjYx7Hzluqzn7bU2UX/5X1sbGzsg9iz1CIvLbWln7ypkO/24z7Y2NjYR7Dz4Zu8GTALKknFa1Zg+kcqgo2Njb05Ow9jycNWWrmzslTekMDGxsb+BPb6odeThLzItdIkwMbGxj6P/dTwzfqU0Mp15JeFjY2NfRI7Lw+tFInWx3faVsQDk0rY2NjYG7JnaUk0HNMWdEZpSXG52NjY2AexZ4M4s7GblXGcWdiri0rY2NjYG7KT5u4sdLWHmzVlh+UnbGxs7OPYeeBpu8f5KGS+2yxwftsZGxsb+yB2245tkflgzUpTOWlCYGNjY38ye1YYagd62nDVtn6L+SBsbGzsbdnt+3kbYKVx21590U7GxsbGPpqdb9SmAW1RaaXBPBzZwcbGxt6K3Y7jJMWgPL1JLmtlGKgoJ2FjY2MfwW4LN+1/+1ew1gte0QmxsbGxD2L/n/Sj3WElZLYJDDY2Nvbu7LaUkweMK17PpjpRGQsbGxv7IPasE5qP9eTth+RZRYLRRm9sbGzsbdlXudqCUQJY2actPGFjY2Ofx26DwSwhWY+o7cW1ZTJsbGzs3dkJo/1O3nhoi/6z8SBsbGzsT2C3QWt9ECePrkvpxH0eho2Njf3B7PyIrw5psyvGxsbG/kx2fjXruyXvzwpP2NjY2KeyZ83adkwnCV15CtS2h4suNzY2NvZW7LbRmxxx1uidFfpXQiM2Njb25uxfXHAShfjz03EAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
